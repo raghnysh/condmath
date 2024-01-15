@@ -2,7 +2,7 @@
 
 This project consists of my rough notes on condensed mathematics, a
 subject that is developed in the references [[1]](#1), [[2]](#2), and
-[[3]](#3).  The notes are, at best, a work in progress.
+[[3]](#3).  The project is a work in progress.
 
 ## Copying
 
