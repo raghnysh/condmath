@@ -18,15 +18,16 @@ copy of the CC0 dedication.
 
 ## References
 
-<a id="clausen-and-scholze_2022">Clausen, Dustin and Peter Scholze
-(2022)</a>, *Condensed mathematics and complex geometry*,
+Clausen, Dustin and Peter Scholze (<a
+id="clausen-and-scholze_2022">2022</a>), *Condensed mathematics and
+complex geometry*,
 ⟨[https://people.mpim-bonn.mpg.de/scholze/Complex.pdf](https://people.mpim-bonn.mpg.de/scholze/Complex.pdf)⟩.
 
-<a id="scholze_2019a">Scholze, Peter (2019a)</a>, *Lectures on
+Scholze, Peter (<a id="scholze_2019a">2019a</a>), *Lectures on
 analytic geometry*,
 ⟨[https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf](https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf)⟩.
 
-<a id="scholze_2019b">Scholze, Peter (2019b)</a>, *Lectures on
+Scholze, Peter (<a id="scholze_2019b">2019b</a>), *Lectures on
 condensed mathematics*,
 ⟨[https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf](https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf)⟩.
 
