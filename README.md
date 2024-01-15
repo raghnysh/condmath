@@ -1,8 +1,10 @@
 # Notes on condensed mathematics
 
 This project consists of my rough notes on condensed mathematics, a
-subject that is developed in the references [[1]](#1), [[2]](#2), and
-[[3]](#3).  The project is a work in progress.
+subject that was developed in the references Scholze
+([2019b](#scholze_2019b)), Scholze ([2019a](#scholze_2019a)), and
+Clausen and Scholze ([2022](#clausen-and-scholze_2022)).  The project
+is a work in progress.
 
 ## Copying
 
@@ -16,17 +18,17 @@ copy of the CC0 dedication.
 
 ## References
 
-<a id="1">[1]</a> Dustin Clausen and Peter Scholze, *Condensed
-mathematics and complex geometry*, 2022,
+<a id="clausen-and-scholze_2022">Clausen, Dustin and Peter Scholze
+(2022)</a>, *Condensed mathematics and complex geometry*,
 ⟨[https://people.mpim-bonn.mpg.de/scholze/Complex.pdf](https://people.mpim-bonn.mpg.de/scholze/Complex.pdf)⟩.
 
-<a id="2">[2]</a> Peter Scholze, *Lectures on condensed mathematics*,
-2019,
-⟨[https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf](https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf)⟩.
-
-<a id="3">[3]</a> Peter Scholze, *Lectures on analytic geometry*,
-2019,
+<a id="scholze_2019a">Scholze, Peter (2019a)</a>, *Lectures on
+analytic geometry*,
 ⟨[https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf](https://people.mpim-bonn.mpg.de/scholze/Analytic.pdf)⟩.
+
+<a id="scholze_2019b">Scholze, Peter (2019b)</a>, *Lectures on
+condensed mathematics*,
+⟨[https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf](https://people.mpim-bonn.mpg.de/scholze/Condensed.pdf)⟩.
 
 [CC0FILE]: COPYING
 
