@@ -57,8 +57,135 @@ are available at \url{https://github.com/raghnysh/condmath}.
 
 This section contains some preliminaries on set theory: ordinals,
 transfinite induction, cardinals, etc.  The description of these
-topics here is informal because nothing is gained for the purposes of
-these notes by making the development more rigorous.
+topics here is informal because nothing is gained for these notes by
+making the development more rigorous.
+
+\subsection{Ordered sets}
+\label{sec:5f3q5o8v}
+
+This subsection is a recapitulation of some basic notions about orders
+on sets.  It is essentially a summary of \S1 of Chapter~III in
+\textcite{bib:lmhdqwpw}.
+
+The \firstterm{negation} of a relation \(R\) on a set \(X\) is the
+relation \(R^\neg\) on \(X\) that is defined by setting, for all
+\(x, y \in X\), \(x R^\neg y\) if \(x\) is not related to \(y\) with
+respect to \(R\), that is, if the statement \(x R y\) is false.  The
+\firstterm{opposite} of \(R\) is the relation \(R^{\mathrm{op}}\) on
+\(X\) that is defined by setting \(x R^{\mathrm{op}} y\) if \(y R x\).
+The \firstterm{strictification} of \(R\) is the relation \(R^\neq\) on
+\(X\) that is defined by setting \(x R^\neq y\) if \(x R y\) and
+\(x \neq y\).  It is obvious that negation and forming the opposite
+are involutive while strictification is idempotent, that is,
+\begin{displaymath}
+  (R^\neg)^\neg = R, \quad
+  (R^{\mathrm{op}})^{\mathrm{op}} = R, \quad
+  (R^\neq)^\neq = R^\neq,
+\end{displaymath}
+and that taking the opposite commutes with the other two operations:
+\begin{displaymath}
+  (R^{\mathrm{op}})^\neg = (R^\neg)^{\mathrm{op}}, \quad
+  (R^{\mathrm{op}})^\neq = (R^\neq)^{\mathrm{op}}.
+\end{displaymath}
+
+An \firstterm{order} on \(X\) is a relation \(R\) on it which is:
+\begin{enumerate}
+\item \firstterm{reflexive}: \(x R x\) for every element \(x\) of
+  \(X\);
+\item \firstterm{anti-symmetric}: if \(x, y \in X\), and \(x R y\) and
+\(y R x\), then \(x = y\); and
+\item \firstterm{transitive}: if \(x, y, z \in X\), and \(x R y\) and
+  \(y R z\), then \(x R z\).
+\end{enumerate}
+An \firstterm{ordered set} is a set together with an order on it.
+
+Usually the symbol \(\leq\) (or a similar symbol such as \(\preceq\)
+or \(\sqsubseteq\)) is used as notation for an order.  If \(\leq\) is
+used to denote an order, the opposite of \(\leq\) is denoted by
+\(\geq\).  The strictification of \(\leq\) is denoted by \(<\), and
+that of \(\geq\) by \(>\).  The negations of \(\leq, \geq, <, >\) are
+denoted by \(\nleq, \ngeq, \nless, \ngtr\), respectively.  The
+corresponding notations when another symbol is used instead of
+\(\leq\) are analogous to these notations.
+
+The restriction of an order \(\leq\) on \(X\) to any subset \(Y\) of
+\(X\) is an order on \(Y\), which is said to be \firstterm{induced} by
+the order on \(X\).  A family \((X_i)_{i \in I}\) of sets and an order
+\(\leq_i\) on each \(X_i\) together induce on the set
+\(X = \prod_{i \in I}X_i\) an order \(\leq\) called the
+\firstterm{product} order, which is defined by setting for any two
+elements \(x= (x_i)\) and \(y = (y_i)\) of \(X\), \(x \leq y\) if
+\(x_i \leq y_i\) for all \(i\).  The product order specialises to an
+order on the set \(Y^X\) of all functions from a set \(X\) to a set
+\(Y\), in which any two functions \(f,g\) satisfy the condition
+\(f \leq g\) if and only if \(f(x) \leq g(x)\) for all \(x \in X\).
+
+A function \(f\) from an ordered set \(X\) to an ordered set \(Y\) is
+called \firstterm{increasing} (respectively, \firstterm{decreasing})
+if \(f(x) \leq f(x')\) (respectively, \(f(x) \geq f(x')\)) for all
+\(x, x' \in X\) such that \(x \leq x'\).  It is called
+\firstterm{strictly increasing} (respectively, \firstterm{strictly
+  decreasing}) if \(f(x) < f(x')\) (respectively, \(f(x) > f(x')\))
+for all \(x, x' \in X\) such that \(x < x'\).  These definitions imply
+that an injective increasing (respectively, decreasing) function is
+strictly increasing (respectively, strictly decreasing).
+
+An element \(a\) of an ordered set \(X\) is called \firstterm{minimal}
+(respectively, \firstterm{maximal}) if it is the only element \(x\) of
+\(X\) such that \(x \leq a\) (respectively, \(x \geq a\)).  It is
+called a \firstterm{minimum} (respectively, \firstterm{maximum}) of
+\(X\) if \(a \leq x\) (respectively, \(a \geq x\)) for all
+\(x \in X\).  Anti-symmetry implies that \(X\) has at most one
+minimum, and at most one maximum.  A minimum (respectively, maximum)
+of \(X\) is a minimal element (respectively, maximal element) of
+\(X\).  In fact, if \(a\) is a minimum (respectively, maximum) of
+\(X\), then it is the unique minimal element (respectively, maximal
+element) of \(X\).
+
+An element \(a\) of \(X\) is called a \firstterm{lower bound}
+(respectively, \firstterm{upper bound}) of a subset \(Y\) of \(X\) if
+\(a \leq y\) (respectively, \(a \geq y\)) for all \(y \in Y\).  A
+subset of \(X\) is said to be \firstterm{bounded below} (respectively,
+\firstterm{bounded above}) if it has a lower bound (respectively,
+upper bound).  A maximum of the set of lower bounds of \(Y\) is called
+the \firstterm{infimum} of \(Y\), and a minimum of the set of upper
+bounds of \(Y\) is called the \firstterm{supremum} of \(Y\).  The
+infimum and supremum of \(Y\) are unique when they exist, and are
+respectively denoted by \(\inf Y\) and \(\sup Y\).
+
+An ordered set \(X\) is said to be \firstterm{directed} (respectively,
+\firstterm{codirected}) if every subset of \(X\) with two elements is
+bounded above (respectively, bounded below).  A maximal element of a
+directed set is its maximum, and a minimal element of a codirected set
+is its minimum.
+
+A \firstterm{lattice} is an ordered set \(X\) with the property that
+every subset of \(X\) with two elements has an infimum and a supremum.
+The product of a family of lattices is again a lattice.
+
+An order on a set \(X\) is said to be \firstterm{total} if for any two
+elements \(x, y\) of \(X\), either \(x \leq y\) or \(y \leq x\).  A
+\firstterm{totally ordered set} is an ordered set whose order is
+total.  Every strictly increasing function from a totally ordered set
+to any ordered set is injective.
+
+For any two elements \(a, b\) of an ordered set \(X\), any of the sets
+\begin{align*}
+  [a, b]& = \{ x \in X \,\vert\, a \leq x \leq b \},&
+  [a, b)& = \{ x \in X \,\vert\, a \leq x < b \}, \\
+  (a, b]& = \{ x \in X \,\vert\, a < x \leq b \},&
+  (a, b)& = \{ x \in X \,\vert\, a < x < b \},
+\end{align*}
+or the sets
+\begin{align*}
+    [a, \infty)& = \{ x \in X \,\vert\, a \leq x \},&
+  (a, \infty)& = \{ x \in X \,\vert\, a < x \}, \\
+  (-\infty, b]& = \{ x \in X \,\vert\, x \leq b \},&
+  (-\infty, b)& = \{ x \in X \,\vert\, x < b \},
+\end{align*}
+or the set \(X\) itself, is called an \firstterm{interval}.  A subset
+\(Y\) of \(X\) is called a \firstterm{segment} if for every
+\(a \in Y\), the interval \((-\infty, a]\) is contained in \(Y\).
 
 \bibsection
 
