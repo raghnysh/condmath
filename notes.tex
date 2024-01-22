@@ -73,19 +73,27 @@ relation \(R^\neg\) on \(X\) that is defined by setting, for all
 respect to \(R\), that is, if the statement \(x R y\) is false.  The
 \firstterm{opposite} of \(R\) is the relation \(R^{\mathrm{op}}\) on
 \(X\) that is defined by setting \(x R^{\mathrm{op}} y\) if \(y R x\).
-The \firstterm{strictification} of \(R\) is the relation \(R^\neq\) on
-\(X\) that is defined by setting \(x R^\neq y\) if \(x R y\) and
-\(x \neq y\).  It is obvious that negation and forming the opposite
-are involutive while strictification is idempotent, that is,
+The \firstterm{irreflexive kernel} of \(R\) is the relation \(R^\neq\)
+on \(X\) that is defined by setting \(x R^\neq y\) if \(x R y\) and
+\(x \neq y\).  The \firstterm{reflexive closure} of \(R\) is the
+relation \(R^=\) on \(X\) that is defined by setting \(x R^= y\) if
+\(x R y\) or \(x = y\); it is the smallest reflexive relation on \(X\)
+that contains \(R\).
+
+It is obvious that negation and forming the opposite are involutive
+while the irreflexive kernel and reflexive closure are idempotent,
+that is,
 \begin{displaymath}
   (R^\neg)^\neg = R, \quad
   (R^{\mathrm{op}})^{\mathrm{op}} = R, \quad
-  (R^\neq)^\neq = R^\neq,
+  (R^\neq)^\neq = R^\neq, \quad
+  (R^=)^= = R^=,
 \end{displaymath}
-and that taking the opposite commutes with the other two operations:
+and that taking the opposite commutes with the other three operations:
 \begin{displaymath}
   (R^{\mathrm{op}})^\neg = (R^\neg)^{\mathrm{op}}, \quad
-  (R^{\mathrm{op}})^\neq = (R^\neq)^{\mathrm{op}}.
+  (R^{\mathrm{op}})^\neq = (R^\neq)^{\mathrm{op}}, \quad
+  (R^{\mathrm{op}})^= = (R^=)^{\mathrm{op}}.
 \end{displaymath}
 
 An \firstterm{order} on \(X\) is a relation \(R\) on it which is:
@@ -102,11 +110,22 @@ An \firstterm{ordered set} is a set together with an order on it.
 Usually the symbol \(\leq\) (or a similar symbol such as \(\preceq\)
 or \(\sqsubseteq\)) is used as notation for an order.  If \(\leq\) is
 used to denote an order, the opposite of \(\leq\) is denoted by
-\(\geq\).  The strictification of \(\leq\) is denoted by \(<\), and
+\(\geq\).  The irreflexive kernel of \(\leq\) is denoted by \(<\), and
 that of \(\geq\) by \(>\).  The negations of \(\leq, \geq, <, >\) are
 denoted by \(\nleq, \ngeq, \nless, \ngtr\), respectively.  The
 corresponding notations when another symbol is used instead of
 \(\leq\) are analogous to these notations.
+
+Taking the irreflexive kernel is a bijection from the set of orders on
+\(X\) onto the set of all relations \(<\) on \(X\) which are:
+\begin{enumerate}
+\item \firstterm{irreflexive}: there is no element \(x\) of \(X\) such
+  that \(x < x\);
+\item \emph{transitive}: if \(x,y,z \in X\), and \(x < y\) and
+  \(y < z\), then \(x < z\).
+\end{enumerate}
+The inverse of this bijection maps any relation with these two
+properties to its reflexive closure.
 
 The restriction of an order \(\leq\) on \(X\) to any subset \(Y\) of
 \(X\) is an order on \(Y\), which is said to be \firstterm{induced} by
@@ -128,7 +147,11 @@ if \(f(x) \leq f(x')\) (respectively, \(f(x) \geq f(x')\)) for all
   decreasing}) if \(f(x) < f(x')\) (respectively, \(f(x) > f(x')\))
 for all \(x, x' \in X\) such that \(x < x'\).  These definitions imply
 that an injective increasing (respectively, decreasing) function is
-strictly increasing (respectively, strictly decreasing).
+strictly increasing (respectively, strictly decreasing).  An
+\firstterm{isomorphism} from \(X\) to \(Y\) is an increasing bijection
+from \(X\) onto \(Y\) whose inverse is also increasing.  An
+isomorphism from \(X\) to itself is called an \firstterm{automorphism}
+of \(X\).
 
 An element \(a\) of an ordered set \(X\) is called \firstterm{minimal}
 (respectively, \firstterm{maximal}) if it is the only element \(x\) of
@@ -164,10 +187,17 @@ every subset of \(X\) with two elements has an infimum and a supremum.
 The product of a family of lattices is again a lattice.
 
 An order on a set \(X\) is said to be \firstterm{total} if for any two
-elements \(x, y\) of \(X\), either \(x \leq y\) or \(y \leq x\).  A
-\firstterm{totally ordered set} is an ordered set whose order is
-total.  Every strictly increasing function from a totally ordered set
-to any ordered set is injective.
+elements \(x, y\) of \(X\), either \(x \leq y\) or \(y \leq x\).  An
+order on \(X\) is total if and only if it has the property of
+\firstterm{trichotomy}: for any two elements \(x, y\) of \(X\),
+exactly one of the conditions \(x < y\), \(x = y\), \(x > y\) is true.
+A \firstterm{totally ordered set} is an ordered set whose order is
+total.  Every strictly increasing surjection from a totally ordered
+set \(X\) onto any ordered set \(Y\) is an isomorphism; in particular,
+any increasing bijection from \(X\) onto \(Y\) is an isomorphism.
+Zorn's lemma, which is equivalent to the axiom of choice, states that
+an ordered set in which every totally ordered subset is bounded above
+has a maximal element.
 
 For any two elements \(a, b\) of an ordered set \(X\), any of the sets
 \begin{align*}
@@ -185,7 +215,353 @@ or the sets
 \end{align*}
 or the set \(X\) itself, is called an \firstterm{interval}.  A subset
 \(Y\) of \(X\) is called a \firstterm{segment} if for every
-\(a \in Y\), the interval \((-\infty, a]\) is contained in \(Y\).
+\(a \in Y\), the interval \((-\infty, a]\) is contained in \(Y\).  The
+union and the intersection of a family of segments of \(X\) are
+evidently segments, as are the empty set and \(X\).
+
+\subsection{Well-ordered sets}
+\label{sec:62tryw49}
+
+An order on a set \(X\) is called a \firstterm{well-order} if every
+nonempty subset of \(X\) has a minimum.  A well-order is total: if
+\(x,y\) are two elements of \(X\), and if, for instance, \(x\) is the
+minimum of the set \(\{ x, y \}\), then \(x \leq y\).  A well-order on
+\(X\) induces a well-order on every subset of \(X\).  Zermelo's
+theorem, which is equivalent to the axiom of choice, states that every
+set has a well-order.
+
+A \firstterm{well-ordered set} is an ordered set whose order is a
+well-order.  Every subset of a well-ordered set that is bounded above
+has a supremum.
+
+\begin{theorem}
+  \label{thm:htdzbbwv}
+  Every segment of a well-ordered set \(X\) that is a proper subset of
+  \(X\) is an interval \((-\infty, a)\) for a unique element \(a\) of
+  \(X\).
+\end{theorem}
+
+The complement \(Z\) of a proper segment \(Y\) of \(X\), being
+nonempty, has a minimum \(a\).  For any element \(y\) of \(Y\), the
+interval \((-\infty,y]\) is contained in \(Y\), so the element \(a\)
+of \(X\) that lies outside \(Y\) is not in that interval; the
+trichotomy property implies that \(a > y\).  Conversely, any element
+\(y\) of \(X\) that is \(<\) the minimum \(a\) of \(Z\) lies outside
+\(Z\), and is hence in \(Y\).  Therefore, \(Y = (-\infty,a)\).
+
+\begin{theorem}
+  \label{thm:b4yv5x3a}
+  The function \(x \mapsto (-\infty, x)\) is an isomorphism from any
+  well-ordered set \(X\) onto the set of proper segments of \(X\)
+  ordered by inclusion.  In particular, the set of segments of \(X\)
+  is well-ordered by inclusion.
+\end{theorem}
+
+The transitivity of \(<\) and \Cref{thm:htdzbbwv} imply that the
+stated map is an increasing bijection from the totally ordered set
+\(X\) onto the ordered set \(S\) of proper segments of \(X\), and is
+hence an isomorphism.  It follows that \(S\) is well-ordered by
+inclusion.  As every element of \(S\) is contained in \(X\), the set
+of all segments of \(X\) is also well-ordered.
+
+\begin{theorem}
+  \label{thm:36vndfrs}
+  Any segment \(Y\) of a well-ordered set \(X\) satisfies exactly one
+  of the following conditions:
+  \begin{enumerate}
+  \item \(Y\) is an interval \((-\infty, a]\) for a unique
+    \(a \in X\).
+  \item \(Y\) is the union of the intervals \((-\infty, y)\) as \(y\)
+    runs over \(Y\).
+  \end{enumerate}
+\end{theorem}
+
+In case \(Y\) has a maximum \(a\), it is contained in the interval
+\((-\infty, a]\); as \(a\) belongs to the segment \(Y\),
+\((-\infty, a]\) is contained in \(Y\); therefore,
+\(Y = (-\infty, a]\); anti-symmetry implies that \(a\) is the unique
+element of \(X\) for which this equality is true.  On the other hand,
+if \(Y\) does not have a maximum, for every element \(t\) of \(Y\),
+there is an element \(y\) of \(Y\) such that \(y > t\), and because
+\(Y\) is a segment, \((-\infty, y)\) is contained in \(Y\); thus,
+\(Y\) is the union of the segments \((-\infty, y)\) as \(y\) runs over
+\(Y\).
+
+\begin{theorem}
+  \label{thm:y3go6w2h}
+  Let \(S\) be a set of segments of a well-ordered set \(X\) such
+  that:
+  \begin{enumerate}
+  \item if \(x \in X\) and \((-\infty, x) \in S\), then
+    \((-\infty, x] \in S\); and
+  \item the union of any family of elements of \(S\) belongs to \(S\).
+  \end{enumerate}
+  Then every segment of \(X\) belongs to \(S\).
+\end{theorem}
+
+If the set \(T\) of segments of \(X\) that do not belong to \(S\) is
+non-empty, then \Cref{thm:b4yv5x3a} implies that \(T\) has a minimum
+\(Y\) under inclusion.  By \Cref{thm:36vndfrs}, this segment \(Y\) is
+either \((-\infty, a]\) for some \(a \in X\), or the union of the
+segments \((-\infty, y)\) as \(y\) runs over \(Y\).  In the first
+case, the segment \((-\infty, a)\) is a proper subset of the minimum
+\(Y\) of \(T\), and hence belongs to \(S\); the first hypothesis on
+\(S\) implies that \(Y \in S\), a contradiction.  In the second case,
+the segments \((-\infty, y)\) for \(y \in Y\) are proper subsets of
+\(Y\), and hence belong to \(S\); the second hypothesis on \(S\)
+implies that \(Y \in S\), again a contradiction.
+
+An \firstterm{inductive} subset of an ordered set \(X\) is a subset
+\(Y\) of \(X\) with the property that any element \(x\) of \(X\) such
+that \((-\infty, x) \subset Y\) belongs to \(Y\).
+
+\begin{theorem}[Principle of transfinite induction]
+  \label{thm:5vxgawq0}
+  The only inductive subset of a well-ordered set \(X\) is \(X\)
+  itself.
+\end{theorem}
+
+If the complement \(Z\) of an inductive subset \(Y\) of \(X\) is
+nonempty, then \(Z\) has a minimum \(a\).  Trichotomy implies that
+every element \(x\) of \((-\infty, a)\) belongs to \(Y\); as \(Y\) is
+inductive, \(a \in Y\), a contradiction.
+
+Here is another proof, one that uses \Cref{thm:y3go6w2h}.  If an
+inductive subset \(Y\) of \(X\) contains the interval \((-\infty, x)\)
+for some \(x \in X\), it contains \(x\) also, hence
+\((-\infty, x] \subset Y\).  On the other hand, the union of any
+family of segments contained in \(Y\) is obviously a subset of \(Y\).
+Therefore, every segment of \(X\) is contained in \(Y\).  In
+particular, \(X \subset Y\).
+
+Given a function of sets \(p : E \to X\), a \firstterm{section} of
+\(p\) on a subset \(Y\) of \(X\) is a function \(s : Y \to E\) such
+that \(p(s(x)) = x\) for all \(x \in Y\).  The set of all sections of
+\(p\) on \(Y\) is denoted below by the symbol \(\Gamma(Y, p)\).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:srxrngd8}
+  Let \(X\) be a well-ordered set, and \(p : E \to X\) a function from
+  a set \(E\) to \(X\).  Suppose that for every element \(x\) of
+  \(X\), \(f_x\) is a function from \(\Gamma((-\infty, x), p)\) to
+  \(p^{-1}(x)\).  Then there exists a unique section \(s\) of \(p\) on
+  \(X\) such that \(s(x) = f_x(s \vert_{(-\infty, x)})\) for all
+  \(x \in X\).
+\end{theorem}
+
+Call a section \(s\) of \(p\) on a segment \(Y\) of \(X\)
+\emph{inductive} if \(s(x) = f_x(s \vert_{(-\infty, x)})\) for all
+\(x \in Y\).  The set of points where two inductive sections \(s\) and
+\(t\) of \(p\) on \(Y\) agree is an inductive subset of the
+well-ordered set \(Y\), so transfinite induction (\Cref{thm:5vxgawq0})
+implies that \(s = t\).  The restriction of an inductive section \(s\)
+of \(p\) on \(Y\) to a segment contained in \(Y\) is also inductive.
+
+Let \(S\) be the set of segments \(Y\) of \(X\) such that there is an
+inductive section of \(p\) on \(Y\).  We will show that \(S\)
+satisfies the conditions of \Cref{thm:y3go6w2h}.
+
+Suppose \(a \in X\) and \(Y = (-\infty, a)\) belongs to \(S\).  Let
+\(s\) be an inductive section of \(p\) on \(Y\).  Define a section
+\(t\) of \(p\) on \(Z = (-\infty, a]\) as follows:
+\begin{displaymath}
+  t(x) =
+  \begin{cases}
+    s(x) & \text{if} ~ x \in Y \\
+    f_a(s) & \text{if} ~ x = a.
+  \end{cases}
+\end{displaymath}
+As \(t\) extends \(s\),
+\begin{displaymath}
+  t(x) = s(x) = f_x(s \vert_{(-\infty, x)}) =
+  f_x(t \vert_{(-\infty, x)})
+\end{displaymath}
+for all \(x \in Y\), and
+\begin{displaymath}
+  t(a) = f_a(s) = f_a(t \vert_{(-\infty, a)}).
+\end{displaymath}
+Therefore, \(t\) is inductive, and \(Z \in S\).
+
+Suppose, on the other hand, that \(Y\) is the union of a family
+\((Y_i)_{i \in I}\) of elements of \(S\).  On each \(Y_i\), there is
+an inductive section \(s_i\) of \(p\).  For all \(i, j \in I\), the
+segment \(Y_{ij} = Y_i \cap Y_j\) belongs to \(S\) because the
+restriction \(s_{ij}\) of \(s_i\) to \(Y_{ij}\) is inductive.  As the
+restriction \(s_{ji}\) of \(s_{Y_j}\) to \(Y_{ij}\) is also inductive,
+the uniqueness statement above implies that \(s_{ij} = s_{ji}\).
+There is, therefore, a unique function \(s : Y \to E\) which restricts
+to \(s_i\) on each \(Y_i\).  It is obviously an inductive section of
+\(p\), hence \(Y \in S\).
+
+\Cref{thm:y3go6w2h} implies that every segment of \(X\) belongs to
+\(S\).  In particular, \(X \in S\).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:5kg5ewo1}
+  Let \(X\) be a well-ordered set, and \(T\) any set.  Suppose that
+  for every element \(x\) of \(X\), \(f_x\) is a function from
+  \(T^{(-\infty, x)}\) to \(T\).  Then there exists a unique function
+  \(u : X \to T\) such that \(u(x) = f_x(u \vert_{(-\infty, x)})\) for
+  all \(x \in X\).
+\end{theorem}
+
+Any fibre of the first projection \(p : X \times T \to X\) is
+canonically identified with \(T\), and a section of \(p\) on a subset
+\(Y\) of \(X\) is canonically identified with a function from \(Y\) to
+\(T\).  Therefore, the present statement follows from
+\Cref{thm:srxrngd8}.
+
+\begin{theorem}
+  \label{thm:hw1jxum0}
+  If \(f\) is a strictly increasing function from a well-ordered set
+  \(X\) to itself, then \(x \leq f(x)\) for all \(x \in X\).
+\end{theorem}
+
+If the set \(M\) of \(x \in X\) such that \(x > f(x)\) is non-empty,
+it has a minimum \(a\).  Let \(b = f(a)\).  As \(a \in M\), \(a > b\);
+as \(f\) is strictly increasing, \(f(a) > f(b)\), that is,
+\(b > f(b)\).  Thus, \(b \in M\) and \(b < a\), a contradiction.
+
+\begin{theorem}
+  \label{thm:yvftewxp}
+  The identity function is the only automorphism of any well-ordered
+  set.
+\end{theorem}
+
+Let \(f\) be an automorphism of a well-ordered set \(X\), and \(g\)
+its inverse.  Being increasing bijections, they are strictly
+increasing.  \Cref{thm:hw1jxum0} implies that for any \(x \in X\),
+\(x \leq f(x)\) and \(x \leq g(x)\); putting \(f(x)\) in the place of
+\(x\) in the second of these inequalities gives
+\(f(x) \leq g(f(x)) = x\); by anti-symmetry, \(f(x) = x\).
+
+\begin{theorem}
+  \label{thm:uvocd4lt}
+  There is at most one isomorphism from a well-ordered set to another.
+\end{theorem}
+
+If \(f\) and \(g\) are two isomorphisms from a well-ordered set \(X\)
+to another well-ordered set \(Y\), then \(g \circ f^{-1}\) is an
+automorphism of \(X\).  It must be the identity map of \(X\) by
+\Cref{thm:yvftewxp}, so \(f = g\).
+
+\begin{theorem}
+  \label{thm:q14zcdkw}
+  If \(f\) is an isomorphism from a well-ordered set \(X\) onto a
+  segment \(Y\) of \(X\), then \(Y = X\) and \(f\) is the identity
+  function of \(X\).
+\end{theorem}
+
+Let \(f' : X \to X\) be the composite of \(f\) and the inclusion map
+from \(Y\) to \(X\).  It is increasing and injective, hence strictly
+increasing.  \Cref{thm:hw1jxum0} implies that for any \(x \in X\),
+\(x \leq f'(x) = f(x)\); as \(Y = f(X)\) is a segment of \(X\),
+\(x \in Y\).  Therefore, \(Y = X\).  It follows from
+\Cref{thm:yvftewxp} that \(f\) is the identity map of \(X\).
+
+\begin{theorem}
+  \label{thm:7z7bwher}
+  Let \(X\) and \(Y\) be well-ordered sets, and suppose that \(f\) is
+  an isomorphism from \(X\) onto a segment \(Y'\) of \(Y\), and \(g\)
+  is an isomorphism from \(Y\) onto a segment \(X'\) of \(X\).  Then
+  \(X' = X\), \(Y' = Y\), and \(g = f^{-1}\).
+\end{theorem}
+
+The composite \(g \circ f\) is an isomorphism from \(X\) onto the
+segment \(X'\) of \(X\).  By \Cref{thm:q14zcdkw}, \(X' = X\) and
+\(g \circ f\) is the identity function of \(X\).  Similarly,
+\(Y' = Y\) and \(f \circ g\) is the identity function of \(Y\).
+
+\begin{theorem}
+  \label{thm:zi5pzuap}
+  Let \(X, Y\) be two well-ordered sets, and \(f, g\) two increasing
+  functions from \(X\) to \(Y\) such that \(f(X)\) is a segment of
+  \(Y\) and \(g\) is strictly increasing.  Then \(f(x) \leq g(x)\) for
+  all \(x \in X\).
+\end{theorem}
+
+If the set \(M\) of \(x \in X\) such that \(f(x) > g(x)\) is
+non-empty, it has a minimum \(a\).  The segment \(f(X)\) of \(Y\)
+contains \(f(a)\), hence it contains the interval \((-\infty, f(a)]\).
+Therefore, the element \(g(a)\) of this interval belongs to \(f(X)\):
+\(g(a) = f(z)\) for some \(z \in X\).  As \(f\) is increasing and
+\(f(z) < f(a)\), trichotomy gives \(z < a\), so \(z \notin M\):
+\(f(z) \leq g(z)\).  The hypothesis that \(g\) is strictly increasing
+and the relation \(z < a\) imply that \(g(z) < g(a)\).  It follows
+that
+\begin{displaymath}
+  f(z) \leq g(z) < g(a) = f(z),
+\end{displaymath}
+a contradiction.
+
+\begin{theorem}
+  \label{thm:vy95iuyi}
+  For any two well-ordered sets \(X\) and \(Y\), either \(X\) is
+  isomorphic to a segment of \(Y\), or \(Y\) is isomorphic to a
+  segment of \(X\).
+\end{theorem}
+
+Let \(X_0\) be the set of elements \(x\) of \(X\) for which there
+exists an element \(y\) of \(Y\) such that the interval
+\((-\infty, x)\) of \(X\) is isomorphic to the interval
+\((-\infty, y)\) of \(Y\).  If \(y, y' \in Y\) and \((-\infty, y)\) is
+isomorphic to \((-\infty, y'\), then \(y = y'\); for if, for instance,
+\(y < y'\), then \((-\infty, y')\) is isomorphic to its segment
+\((-\infty, y)\), so by \Cref{thm:q14zcdkw},
+\((-\infty, y) = (-\infty, y')\), a contradiction.  Thus, for every
+\(x \in X_0\), there is a unique element \(y\) of \(Y\) such that
+\((-\infty, x)\) is isomorphic to \((-\infty, y)\).  We thus have a
+function \(f : X_0 \to Y\) such that \((-\infty, x)\) is isomorphic to
+\((-\infty, f(x))\).  Its image \(Y_0\) consists of the points
+\(y \in Y\) for which there is an \(x \in X\) such that
+\((-\infty, x)\) is isomorphic to \((-\infty, y)\).  Let
+\(g : X_0 \to Y_0\) be the function induced by \(f\).
+
+Suppose \(x \in X_0\) and \(x' < x\).  Let \(u\) be an isomorphism
+from \((-\infty, x)\) onto \((-\infty, g(x))\).  Then \(u\) and
+\(u^{-1}\) are strictly increasing, so \(u((-\infty, x'))\) equals
+\((-\infty, u(x'))\).  Thus, \(u\) restricts to an isomorphism from
+\((-\infty, x')\) onto \((-\infty, u(x'))\).  This means that
+\(x' \in X_0\) and \(g(x') = u(x') < g(x)\).  Therefore, \(X_0\) is a
+segment of \(X\), and \(g\) is strictly increasing.  As \(g\) is
+surjective as well and \(X_0\) is totally ordered, \(g\) is an
+isomorphism.  In particular, \(Y_0\) is a segment of \(Y\).  Thus,
+\(g\) is an isomorphism from the segment \(X_0\) of \(X\) onto the
+segment \(Y_0\) of \(Y\).
+
+It therefore suffices to prove that either \(X_0 = X\) or \(Y_0 = Y\).
+If \(X_0 \neq X\) and \(Y_0 \neq Y\), \Cref{thm:htdzbbwv} implies that
+\(X_0 = (-\infty, a)\) and \(Y_0 = (-\infty, b)\) for some \(a \in X\)
+and \(b \in Y\).  This means that \(g\) is an isomorphism from
+\((-\infty, a)\) onto \((-\infty, b)\).  Therefore,
+\(a \in X_0 = (-\infty, a)\), a contradiction.
+
+\begin{theorem}
+  \label{thm:xhbclgwz}
+  Every subset of a well-ordered set \(X\) is isomorphic to a segment
+  of \(X\).
+\end{theorem}
+
+Suppose \(Y\) is a subset of \(X\) that is not isomorphic to any
+segment of \(X\).  By \Cref{thm:vy95iuyi}, there is an isomorphism
+\(f\) from \(X\) onto a proper segment \(Y'\) of \(Y\).
+\Cref{thm:htdzbbwv} gives an element \(b\) of \(Y\) such that
+\begin{displaymath}
+  Y' = \{ y \in Y \,\vert\, y < b \}.
+\end{displaymath}
+Let \(g : X \to X\) denote the composite of \(f\) and the inclusion
+from \(Y'\) to \(X\).  It is strictly increasing, so
+\Cref{thm:hw1jxum0} implies that \(b \leq g(b)\), a contradiction
+because \(g(b) \in Y'\).
+
+Suppose \((X_i)_{i \in I}\) is a family of ordered sets indexed by a
+well-ordered set \(I\).  Define a relation \(<\) on the product set
+\(X = \prod_{i \in I} X_i\) by setting \(x < y\) if \(x \neq y\) and
+\(x_j < y_j\), where \(x = (x_i)\), \(y = (y_i)\), and \(j\) is the
+minimum of the set of all \(i \in I\) satisfying \(x_i \neq y_i\).
+The reflexive closure of \(<\) is an order on \(X\), which is called
+the \firstterm{lexicographic} order.  It is a total order if every
+\(X_i\) is totally ordered.
 
 \bibsection
 

@@ -18,6 +18,16 @@
 
 \RequirePackage { newpxtext }
 \RequirePackage [ scaled = 0.95 ] { inconsolata }
+
+%% I will use the newpxmath package for mathematics fonts, and the
+%% amsthm and thmtools packages for typesetting theorems.  According
+%% to the newpxmath documentation, amsmath must be loaded before
+%% amsthm, and amsthm must be loaded before newpxmath.
+
+\RequirePackage [ leqno ] { amsmath }
+\RequirePackage { amsthm }
+\RequirePackage { thmtools }
+
 \RequirePackage [ vvarbb ] { newpxmath }
 \RequirePackage [ cal = rsfso ] { mathalpha }
 
@@ -300,6 +310,32 @@
     \url{http://creativecommons.org/publicdomain/zero/1.0/}~for~the~
     CC0~dedication.
   }
+
+%% ===================================================================
+%% Equations and theorems
+%% ===================================================================
+
+\numberwithin { equation } { subsection }
+
+\declaretheoremstyle
+  [
+    sibling = equation,
+    headfont = \normalfont,
+    headformat = { (\NUMBER) ~ \NAME ~ \NOTE },
+    bodyfont = \thfamily
+  ]
+  {
+    mytheorem
+  }
+
+\declaretheorem
+  [
+    name = Theorem,
+    Refname = Theorem,
+    refname = theorem,
+    style = mytheorem
+  ]
+  { theorem }
 
 %% ===================================================================
 %% Macros for the text
