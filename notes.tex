@@ -134,7 +134,7 @@ the order on \(X\).  A family \((X_i)_{i \in I}\) of sets and an order
 \(X = \prod_{i \in I}X_i\) an order \(\leq\) called the
 \firstterm{product} order, which is defined by setting for any two
 elements \(x= (x_i)\) and \(y = (y_i)\) of \(X\), \(x \leq y\) if
-\(x_i \leq y_i\) for all \(i\).  The product order specialises to an
+\(x_i \leq_i y_i\) for all \(i\).  The product order specialises to an
 order on the set \(Y^X\) of all functions from a set \(X\) to a set
 \(Y\), in which any two functions \(f,g\) satisfy the condition
 \(f \leq g\) if and only if \(f(x) \leq g(x)\) for all \(x \in X\).
@@ -176,11 +176,13 @@ bounds of \(Y\) is called the \firstterm{supremum} of \(Y\).  The
 infimum and supremum of \(Y\) are unique when they exist, and are
 respectively denoted by \(\inf Y\) and \(\sup Y\).
 
-An ordered set \(X\) is said to be \firstterm{directed} (respectively,
+An order on a set \(X\) is called \firstterm{directed} (respectively,
 \firstterm{codirected}) if every subset of \(X\) with two elements is
-bounded above (respectively, bounded below).  A maximal element of a
-directed set is its maximum, and a minimal element of a codirected set
-is its minimum.
+bounded above (respectively, bounded below).  A \firstterm{directed
+  set} (respectively, \firstterm{codirected set}) is an ordered set
+whose order is directed (respectively, codirected).  A maximal element
+of a directed set is its maximum, and a minimal element of a
+codirected set is its minimum.
 
 A \firstterm{lattice} is an ordered set \(X\) with the property that
 every subset of \(X\) with two elements has an infimum and a supremum.
@@ -236,9 +238,10 @@ has a supremum.
 
 \begin{theorem}
   \label{thm:htdzbbwv}
-  Every segment of a well-ordered set \(X\) that is a proper subset of
-  \(X\) is an interval \((-\infty, a)\) for a unique element \(a\) of
-  \(X\).
+  Every segment \(Y\) of a well-ordered set \(X\) that is a proper
+  subset of \(X\) is an interval \((-\infty, a)\) for a unique element
+  \(a\) of \(X\); in fact, \(a\) is the minimum of the complement of
+  \(Y\) in \(X\).
 \end{theorem}
 
 The complement \(Z\) of a proper segment \(Y\) of \(X\), being
@@ -247,7 +250,11 @@ interval \((-\infty,y]\) is contained in \(Y\), so the element \(a\)
 of \(X\) that lies outside \(Y\) is not in that interval; the
 trichotomy property implies that \(a > y\).  Conversely, any element
 \(y\) of \(X\) that is \(<\) the minimum \(a\) of \(Z\) lies outside
-\(Z\), and is hence in \(Y\).  Therefore, \(Y = (-\infty,a)\).
+\(Z\), and is hence in \(Y\).  Therefore, \(Y = (-\infty,a)\).  If
+\(a'\) is any element of \(X\) such that \(Y = (-\infty, a')\), then
+\(a'\), which is the minimum of the complement \([a', \infty)\) of the
+interval \((-\infty, a')\), is also the minimum of the complement of
+\(Y\); thus, \(a' = a\).
 
 \begin{theorem}
   \label{thm:b4yv5x3a}
@@ -344,54 +351,53 @@ that \(p(s(x)) = x\) for all \(x \in Y\).  The set of all sections of
   Let \(X\) be a well-ordered set, and \(p : E \to X\) a function from
   a set \(E\) to \(X\).  Suppose that for every element \(x\) of
   \(X\), \(f_x\) is a function from \(\Gamma((-\infty, x), p)\) to
-  \(p^{-1}(x)\).  Then there exists a unique section \(s\) of \(p\) on
-  \(X\) such that \(s(x) = f_x(s \vert_{(-\infty, x)})\) for all
+  \(p^{-1}(x)\).  Then there exists a unique section \(u\) of \(p\) on
+  \(X\) such that \(u(x) = f_x(u \vert_{(-\infty, x)})\) for all
   \(x \in X\).
 \end{theorem}
 
-Call a section \(s\) of \(p\) on a segment \(Y\) of \(X\)
-\emph{inductive} if \(s(x) = f_x(s \vert_{(-\infty, x)})\) for all
-\(x \in Y\).  The set of points where two inductive sections \(s\) and
-\(t\) of \(p\) on \(Y\) agree is an inductive subset of the
+Call a section \(u\) of \(p\) on a segment \(Y\) of \(X\)
+\emph{inductive} if \(u(x) = f_x(u \vert_{(-\infty, x)})\) for all
+\(x \in Y\).  The set of points where two inductive sections \(u\) and
+\(v\) of \(p\) on \(Y\) agree is an inductive subset of the
 well-ordered set \(Y\), so transfinite induction (\Cref{thm:5vxgawq0})
-implies that \(s = t\).  The restriction of an inductive section \(s\)
-of \(p\) on \(Y\) to a segment contained in \(Y\) is also inductive.
+implies that \(u = v\).  The restriction of an inductive section of
+\(p\) on \(Y\) to a segment contained in \(Y\) is also inductive.
 
 Let \(S\) be the set of segments \(Y\) of \(X\) such that there is an
 inductive section of \(p\) on \(Y\).  We will show that \(S\)
 satisfies the conditions of \Cref{thm:y3go6w2h}.
 
 Suppose \(a \in X\) and \(Y = (-\infty, a)\) belongs to \(S\).  Let
-\(s\) be an inductive section of \(p\) on \(Y\).  Define a section
-\(t\) of \(p\) on \(Z = (-\infty, a]\) as follows:
+\(u\) be an inductive section of \(p\) on \(Y\).  Define a section
+\(v\) of \(p\) on \(Z = (-\infty, a]\) as follows:
 \begin{displaymath}
-  t(x) =
+  v(x) =
   \begin{cases}
-    s(x) & \text{if} ~ x \in Y \\
-    f_a(s) & \text{if} ~ x = a.
+    u(x) & \text{if} ~ x \in Y \\
+    f_a(u) & \text{if} ~ x = a.
   \end{cases}
 \end{displaymath}
-As \(t\) extends \(s\),
+As \(v\) extends \(u\),
 \begin{displaymath}
-  t(x) = s(x) = f_x(s \vert_{(-\infty, x)}) =
-  f_x(t \vert_{(-\infty, x)})
+  v(x) = u(x) = f_x(u \vert_{(-\infty, x)}) =
+  f_x(v \vert_{(-\infty, x)})
 \end{displaymath}
 for all \(x \in Y\), and
 \begin{displaymath}
-  t(a) = f_a(s) = f_a(t \vert_{(-\infty, a)}).
+  v(a) = f_a(u) = f_a(v \vert_{(-\infty, a)}).
 \end{displaymath}
-Therefore, \(t\) is inductive, and \(Z \in S\).
+Therefore, \(v\) is inductive, and \(Z \in S\).
 
 Suppose, on the other hand, that \(Y\) is the union of a family
 \((Y_i)_{i \in I}\) of elements of \(S\).  On each \(Y_i\), there is
-an inductive section \(s_i\) of \(p\).  For all \(i, j \in I\), the
-segment \(Y_{ij} = Y_i \cap Y_j\) belongs to \(S\) because the
-restriction \(s_{ij}\) of \(s_i\) to \(Y_{ij}\) is inductive.  As the
-restriction \(s_{ji}\) of \(s_{Y_j}\) to \(Y_{ij}\) is also inductive,
-the uniqueness statement above implies that \(s_{ij} = s_{ji}\).
-There is, therefore, a unique function \(s : Y \to E\) which restricts
-to \(s_i\) on each \(Y_i\).  It is obviously an inductive section of
-\(p\), hence \(Y \in S\).
+an inductive section \(u_i\) of \(p\).  For all \(i, j \in I\), the
+restriction \(u_{ij}\) of \(u_i\) to the segment
+\(Y_{ij} = Y_i \cap Y_j\) is inductive.; as the restriction \(u_{ji}\)
+of \(u_j\) to \(Y_{ij}\) is also inductive, the uniqueness statement
+above implies that \(u_{ij} = u_{ji}\).  There is, therefore, a unique
+function \(u : Y \to E\) which restricts to \(u_i\) on each \(Y_i\).
+It is obviously an inductive section of \(p\), hence \(Y \in S\).
 
 \Cref{thm:y3go6w2h} implies that every segment of \(X\) belongs to
 \(S\).  In particular, \(X \in S\).
@@ -473,28 +479,6 @@ segment \(X'\) of \(X\).  By \Cref{thm:q14zcdkw}, \(X' = X\) and
 \(Y' = Y\) and \(f \circ g\) is the identity function of \(Y\).
 
 \begin{theorem}
-  \label{thm:zi5pzuap}
-  Let \(X, Y\) be two well-ordered sets, and \(f, g\) two increasing
-  functions from \(X\) to \(Y\) such that \(f(X)\) is a segment of
-  \(Y\) and \(g\) is strictly increasing.  Then \(f(x) \leq g(x)\) for
-  all \(x \in X\).
-\end{theorem}
-
-If the set \(M\) of \(x \in X\) such that \(f(x) > g(x)\) is
-non-empty, it has a minimum \(a\).  The segment \(f(X)\) of \(Y\)
-contains \(f(a)\), hence it contains the interval \((-\infty, f(a)]\).
-Therefore, the element \(g(a)\) of this interval belongs to \(f(X)\):
-\(g(a) = f(z)\) for some \(z \in X\).  As \(f\) is increasing and
-\(f(z) < f(a)\), trichotomy gives \(z < a\), so \(z \notin M\):
-\(f(z) \leq g(z)\).  The hypothesis that \(g\) is strictly increasing
-and the relation \(z < a\) imply that \(g(z) < g(a)\).  It follows
-that
-\begin{displaymath}
-  f(z) \leq g(z) < g(a) = f(z),
-\end{displaymath}
-a contradiction.
-
-\begin{theorem}
   \label{thm:vy95iuyi}
   For any two well-ordered sets \(X\) and \(Y\), either \(X\) is
   isomorphic to a segment of \(Y\), or \(Y\) is isomorphic to a
@@ -562,6 +546,663 @@ minimum of the set of all \(i \in I\) satisfying \(x_i \neq y_i\).
 The reflexive closure of \(<\) is an order on \(X\), which is called
 the \firstterm{lexicographic} order.  It is a total order if every
 \(X_i\) is totally ordered.
+
+\subsection{Exercises}
+\label{sec:q1c2w2jy}
+
+\begin{exercise}
+  \label{exe:eydusvz3}
+  Show that taking the irreflexive kernel is a bijection from the set
+  of orders on any set \(X\) onto the set of all irreflexive and
+  transitive relations on \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:swjbrepg}
+  Verify that a maximal element of a directed set is its maximum, and
+  a minimal element of a codirected set is its minimum.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:yowl3axc}
+  Show that a product of lattices is a lattice.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:4knqif5b}
+  Prove that an order is total if and only if it has the trichotomy
+  property.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:v1tw1ijd}
+  Show that every strictly increasing surjection from a totally
+  ordered set \(X\) onto any ordered set \(Y\) is an isomorphism, and
+  that any increasing bijection from \(X\) onto \(Y\) is an
+  isomorphism.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:gsdhavsp}
+  Let \(X, Y\) be two well-ordered sets, and \(f, g\) two increasing
+  functions from \(X\) to \(Y\) such that \(f(X)\) is a segment of
+  \(Y\) and \(g\) is strictly increasing.  Show that
+  \(f(x) \leq g(x)\) for all \(x \in X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:rpm18mof}
+  Check that the union and the intersection of a family of segments of
+  an ordered set \(X\) are segments, as are the empty set and \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:oh59gz4i}
+  Prove the following reformulation of transfinite recursion
+  (\Cref{thm:srxrngd8}).  Let \(X\) be a well-ordered set, and
+  \((E_x)_{x \in X}\) a family of sets indexed by \(X\).  Suppose that
+  for every \(x \in X\), \(f_x\) is a function from the product set
+  \(\prod_{y \in (-\infty, x)} E_y\) to \(E_x\).  Then there is a
+  unique element \(e\) of \(\prod_{x \in X} E_x\) such that
+  \(e_x = f_x((e_y)_{y \in (-\infty, x)})\) for all \(x \in X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:eghnwow2}
+  Here is a proof of \Cref{thm:vy95iuyi} using transfinite recursion.
+  Suppose \(X\) and \(Y\) are well-ordered sets such that \(Y\) is not
+  isomorphic to any segment of \(X\).  Use \Cref{thm:5kg5ewo1} to
+  get a function \(u : X \to Y\) such that \(u(x)\) is the minimum of
+  \(Y \setminus u((-\infty, x))\) for all \(x \in X\).  Prove that
+  \(u\) is an isomorphism from \(X\) onto a segment of \(Y\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vgms7ihx}
+  Here is another proof, from \textcite[\S2.5,
+  Theorem~3]{bib:lmhdqwpw}, of \Cref{thm:vy95iuyi}, which uses Zorn's
+  lemma.  Let \(X\) and \(Y\) be well-ordered sets.  Consider the set
+  \(P\) of all pairs \((A,f)\) consisting of a segment \(A\) of \(X\)
+  and a function \(f : A \to Y\) which is an isomorphism onto a
+  segment of \(Y\).  Define an order on \(P\) by setting
+  \((A,f) \leq (A',f')\) if \(A \subset A'\) and \(f = f' \vert_A\).
+  Apply Zorn's lemma to \(P\) to show that either \(X\) is isomorphic
+  to a segment of \(Y\), or \(Y\) is isomorphic to a segment of \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:9d868h6m}
+  This exercise gives a proof of Zorn's lemma using Zermelo's theorem
+  and transfinite recursion \parencite[Chapter~II,
+  Theorem~9.4]{bib:h8xsxpp7}.  Let X be an ordered set in which every
+  totally ordered subset is bounded above.
+  \begin{enumerate}
+  \item Show that if \(M\) is a maximal totally ordered subset of
+    \(X\), that is, a totally ordered subset of \(X\) which is not
+    properly contained in another totally ordered subset of \(X\),
+    then any upper bound of \(M\) is a maximal element of \(X\).
+  \item Denote the given order on \(X\) by \(\leq\).  Zermelo's
+    theorem gives a well-order \(\leq'\) on \(X\).  Use transfinite
+    recursion (\Cref{thm:5kg5ewo1}) to get a family
+    \((M_x)_{x \in X}\) of totally ordered subsets of \((X, \leq)\)
+    such that, for any \(x \in X\), \(M_x\) equals
+    \((\cup_{y <' x} M_y) \cup \{ x \}\) if this set is totally
+    ordered under \(\leq\), and is empty otherwise.  Prove that the
+    union of the \(M_x\) is a maximal totally ordered subset of
+    \((X, \leq)\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:5qa65h5w}
+  Here is another proof of Zorn's lemma using Zermelo's theorem and
+  transfinite recursion \parencite[Part~II, Chapter~14,
+  Solution~1]{bib:uw2wsr3k}.  Let X be an ordered set in which every
+  well-ordered subset is bounded above.  Denote the given order on
+  \(X\) by \(\leq\).  Zermelo's theorem gives a well-order \(\leq'\)
+  on \(X\).  Use transfinite recursion to define a subset \(M\) of
+  \(X\) such that any element \(x\) of \(X\) belongs to \(M\) if and
+  only if \(y < x\) for all \(y \in M\) such that \(y <' x\).  Prove
+  that \(M\) is totally ordered, and that any upper bound of \(M\) is
+  a maximal element of \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:x9ewqbv6}
+  Prove the following generalisation of transfinite recursion
+  (\Cref{thm:srxrngd8}).  Let \(X\) be a well-ordered set.  By
+  \Cref{exe:rpm18mof}, the segments of \(X\) form a topology on \(X\)
+  in which any intersection of open sets is open; endowing the set
+  \(X\) with this topology makes it a topological space.  Let \(F\) be
+  a sheaf of sets on \(X\).  Suppose that for every point \(x \in X\),
+  \(f_x\) is a function from \(F((-\infty, x))\) to
+  \(F((-\infty, x])\) which is a section of the restriction map:
+  \(f_x(s) \vert_{(-\infty, x)} = s\) for all
+  \(s \in F((-\infty, x))\).  Show that there exists a unique element
+  \(u \in F(X)\) such that
+  \(u \vert_{(-\infty, x]} = f_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:k8tmok20}
+  A final proof of Zorn's lemma using Zermelo's theorem and
+  transfinite recursion, this time from \textcite[Chapter~XVI, \S4,
+  Theorem~1]{bib:embpmrus}.  Let \(X\) be an ordered set in which
+  every well-ordered subset is bounded above.  Suppose that \(X\) has
+  no maximal element.  Arrive at a contradiction as follows.
+  \begin{enumerate}
+  \item Denote the given order on \(X\) by \(\leq\).  Verify that
+    every well-ordered subset \(A\) of \(X\) has a strict upper bound,
+    that is, an element \(b \in X\) such that \(a < b\) for all
+    \(a \in A\).
+  \item Zermelo's theorem gives a well-order \(\leq'\) on \(X\).  Use
+    transfinite recursion (\Cref{exe:x9ewqbv6}) to get a strictly
+    increasing function \(u\) from \((X, \leq')\) to \((X, \leq)\)
+    with the property that \(u(x) \leq' b\) whenever \(x,b \in X\) are
+    such that \(u(y) < b\) for all \(y <' x\).
+  \item Verify that \(u\) is strictly increasing from \((X, \leq')\)
+    to \((X, \leq')\).
+  \item Show that \(u(X)\) is a well-ordered subset of \((X, \leq)\)
+    which does not have a strict upper bound in \((X, \leq)\).
+  \end{enumerate}
+\end{exercise}
+
+\subsection{Solutions}
+\label{sec:fzhm4l61}
+
+\begin{solution}[\ref{exe:eydusvz3}]
+  \label{sol:bxkmo56h}
+  The irreflexive kernel \(<\) of an order \(\leq\) on \(X\) is
+  obviously irreflexive; if \(x,y,z \in X\), and \(x < y\) and
+  \(y < z\), the transitivity of \(\leq\) implies that \(x \leq z\),
+  and because \(x \neq y\) the anti-symmetry of \(\leq\) implies that
+  \(x \neq z\), so \(<\) is transitive.  Conversely, if \(<\) is an
+  irreflexive and transitive relation on \(X\), its reflexive closure
+  \(\leq\) is obviously reflexive; if \(x \leq y\) and \(y \leq z\),
+  either of the equalities \(x = y\) and \(y = z\) implies that
+  \(x \leq z\), so \(\leq\) is transitive; lastly, if \(x \leq y\) and
+  \(y \leq x\), the transitivity of \(\leq\) and the irreflexivity of
+  \(<\) imply that \(x = y\); thus, \(\leq\) is an order.  It is
+  obvious that the maps \(\leq \mapsto <\) and \(< \mapsto \leq\) are
+  inverses of each other.
+\end{solution}
+
+\begin{solution}[\ref{exe:swjbrepg}]
+  \label{sol:pcqde5hb}
+  If \(a\) is a maximal element of a directed set \(X\), then for any
+  \(x \in X\), the set \(\{ a, x \}\) has an upper bound \(y\).  As
+  \(a\) is maximal, the relation \(a \leq y\) implies that \(a = y\);
+  and as \(x \leq y\), it follows that \(x \leq a\).  Thus, \(a\) is a
+  maximum of \(X\).  The second statement of the exercise follows from
+  the first because the opposite of a directed order is codirected.
+\end{solution}
+
+\begin{solution}[\ref{exe:yowl3axc}]
+  \label{sol:rfwhck5v}
+  Let \(X\) be the product of a family \((X_i)_{i \in I}\) of
+  lattices.  Suppose \(x = (x_i)\) and \(y = (y_i)\) are two elements
+  of \(X\).  As each \(X_i\) is a lattice, the set
+  \(Y_i = \{ x_i, y_i \}\) has a supremum \(a_i\) and an infimum
+  \(b_i\) in \(X_i\).  It is obvious that the element \(a = (a_i)\) of
+  \(X\) is an upper bound of the set \(Y = \{ x, y \}\); if
+  \(z = (z_i)\) is any upper bound of \(Y\), then \(z_i\) is an upper
+  bound of \(Y_i\), hence \(a_i \leq z_i\) for all \(i\); thus,
+  \(a \leq z\); it follows that \(a\) is the supremum of \(Y\).
+  Similarly, \((b_i)\) is the infimum of \(Y\).
+\end{solution}
+
+\begin{solution}[\ref{exe:4knqif5b}]
+  \label{sol:ien6orgc}
+  An order with the trichotomy property is obviously total.
+  Conversely, if an order \(\leq\) on on a set \(X\) is total, and if
+  \(x,y \in X\) are such that \(x \nless y\) and \(x \neq y\), then
+  \(x \nleq y\), hence \(x \geq y\); as \(x \neq y\), \(x > y\); thus,
+  at least one of the three alternatives \(x < y\), \(x = y\),
+  \(x > y\) is valid; it is obvious that \(x = y\) rules out the other
+  two alternatives; if \(x < y\), then \(x \neq y\), and by
+  anti-symmetry \(x \ngtr y\); similarly, if \(x > y\), then
+  \(x \neq y\) and \(x \nless y\); thus, \(\leq\) has the trichotomy
+  property.
+\end{solution}
+
+\begin{solution}[\ref{exe:v1tw1ijd}]
+  \label{sol:rd6deawb}
+  If \(f : X \to Y\) is a strictly increasing surjection, and if
+  \(x, x' \in X\) and \(f(x) = f(x')\), then \(x \nless x'\) and
+  \(x \ngtr x'\); so the trichotomy of the order on \(X\) implies that
+  \(x = x'\); thus, \(f\) is injective, and hence a bijection; if
+  \(y, y' \in Y\) and \(y \leq y'\), then the anti-symmetry of the
+  order on \(Y\), and the strictly increasing property of \(f\) imply
+  that \(f^{-1}(y) \ngtr f^{-1}(y')\); therefore, again by trichotomy,
+  \(f^{-1}(y) \leq f^{-1}(y')\); thus, \(f\) is an isomorphism.  An
+  increasing bijection from \(X\) to \(Y\) is strictly increasing
+  because it is injective, so it is an isomorphism by the first
+  statement.
+\end{solution}
+
+\begin{solution}[\ref{exe:gsdhavsp}]
+  \label{sol:ja6mjzt3}
+  If the set \(M\) of \(x \in X\) such that \(f(x) > g(x)\) is
+  non-empty, it has a minimum \(a\).  The segment \(f(X)\) of \(Y\)
+  contains \(f(a)\), hence it contains the interval
+  \((-\infty, f(a)]\).  Therefore, the element \(g(a)\) of this
+  interval belongs to \(f(X)\): \(g(a) = f(z)\) for some \(z \in X\).
+  As \(f\) is increasing and \(f(z) < f(a)\), trichotomy gives
+  \(z < a\), so \(z \notin M\): \(f(z) \leq g(z)\).  The hypothesis
+  that \(g\) is strictly increasing and the relation \(z < a\) imply
+  that \(g(z) < g(a)\).  It follows that \(f(z) < g(a)\), a
+  contradiction because \(f(z) = g(a)\).
+\end{solution}
+
+\begin{solution}[\ref{exe:rpm18mof}]
+  \label{sol:aeu4zzog}
+  If \(Y\) is either the empty set or \(X\), it is a segment because
+  it satisfies the condition that \((-\infty, a] \subset Y\) for every
+  \(a \in Y\) vacuously in the first case and by the definition of
+  containment in the second case.  If \((Y_i)_{i \in I}\) is a family
+  of segments of \(X\), and \(y\) an element of their union \(Y\),
+  then there is an \(i \in I\) such that \(y \in Y_i\); as \(Y_i\) is
+  a segment, it contains \((-\infty, y]\), hence so does its superset
+  \(Y\).  Similarly, if \(y\) belongs to the intersection \(Z\) of the
+  \(Y_i\), then for every \(i\), the segment \(Y_i\) contains \(y\),
+  hence it contains \((-\infty, y]\); it follows that \(Z\) contains
+  \((-\infty, y]\).
+\end{solution}
+
+\begin{solution}[\ref{exe:oh59gz4i}]
+  \label{sol:h64ep1j0}
+  Let \(E\) denote the disjoint union of the \(E_x\), and identify
+  each \(E_x\) with its canonical image in \(E\), so the \(E_x\) form
+  a partition of \(E\); let \(p : E \to X\) be the function which maps
+  any element of \(E_x\) to \(x\).  For any subset \(Y\) of X, there
+  is a canonical identification of \(\prod_{x \in Y} E_x\) with
+  \(\Gamma(Y,p)\), and for any \(x \in X\), \(p^{-1}(x) = E_x\).
+  Therefore, the statement in the exercise follows from
+  \Cref{thm:srxrngd8}.  Conversely, given this statement we can
+  recover that theorem by putting \(E_x = p^{-1}(x)\) for all
+  \(x \in X\); \(E\) is then canonically identified with the disjoint
+  union of the \(E_x\).  Therefore, the statement in the exercise is a
+  reformulation of the theorem.
+\end{solution}
+
+\begin{solution}[\ref{exe:eghnwow2}]
+  \label{sol:eiv4acyz}
+  If \(Y\) were empty, it would be isomorphic to the segment
+  \(\emptyset\) of \(X\), contrary to the assumption that \(Y\) is not
+  isomorphic to any segment of \(X\); so \(Y \neq \emptyset\).  Fix an
+  arbitrary element \(y_0\) of \(Y\), for instance, its minimum.  For
+  every element \(x\) of \(X\), define a function
+  \(f_x : Y^{(-\infty, x)} \to Y\) by setting
+  \begin{displaymath}
+    f_x(s) =
+    \begin{cases}
+      \min \, (Y \setminus s((-\infty, x))) & \text{if} ~ s ~ \text{is
+                                              not surjective} \\
+      y_0 & \text{if} ~ s ~ \text{is surjective}
+    \end{cases}
+  \end{displaymath}
+  for every function \(s : (-\infty, x) \to Y\).  \Cref{thm:5kg5ewo1}
+  gives a unique function \(u : X \to Y\) such that
+  \(u(x) = f_x(u \vert_{(-\infty, x)})\) for all \(x \in X\).
+
+  Let \(S\) be the set of segments \(X'\) of \(X\) such that \(u\)
+  maps \(X'\) isomorphically onto some segment of \(Y\).  The
+  hypothesis that \(Y\) is not isomorphic to any segment of \(X\)
+  implies that \(u(X') \neq Y\) for all \(X' \in S\).  We will verify
+  that \(S\) satisfies the two conditions of \Cref{thm:y3go6w2h}.
+
+  Suppose \(x \in X\) and \((-\infty, x) \in S\).  As
+  \(u((-\infty, x))\) is a proper segment of \(Y\),
+  \begin{equation}
+    \label{eq:81bkcp3j}
+    u(x) = f_x(u \vert_{(-\infty, x)}) =
+    \min \, (Y \setminus u((-\infty, x))),
+  \end{equation}
+  and by \Cref{thm:htdzbbwv}, \(u((-\infty, x)) = (-\infty, u(x))\).
+  Therefore,
+  \begin{displaymath}
+    u((-\infty, x]) = (-\infty, u(x)].
+  \end{displaymath}
+  If \(x' < x\), then \(u(x')\) belongs to
+  \(u((-\infty, x)) = (-\infty, u(x))\), hence \(u(x') < u(x)\); as
+  \(u\) is an isomorphism on \((-\infty, x)\), it follows that it is
+  strictly increasing on \((-\infty, x]\).  Thus, \(u\) maps
+  \((-\infty, x]\) isomorphically onto the segment \((-\infty, u(x)]\)
+  of \(Y\), hence \((-\infty, x] \in S\).
+
+  Suppose \((X_i)_{i \in I}\) is a family of elements of \(S\), and
+  let \(X'\) denote their union.  Then \(u(X')\) is the union of the
+  segments \(u(X_i)\), and is hence a segment.  If \(x,x'\) are
+  elements of \(X'\) such that \(x < x'\), then there is an index
+  \(i\) such that \(x' \in X_i\); as \(X_i\) is a segment,
+  \(x \in X_i\), so as \(u\) is an isomorphism on \(X_i\),
+  \(u(x) < u(x')\); thus, \(u\) is strictly increasing on \(X'\).
+  Therefore, \(u\) maps \(X'\) isomorphically onto the segment
+  \(u(X')\) of \(Y\), and \(X' \in S\).
+
+  By \Cref{thm:y3go6w2h}, every segment of \(X\) belongs to \(S\).
+  Therefore, for any \(x \in X\), the segment \((-\infty, x)\) belongs
+  to \(S\), so \cref{eq:81bkcp3j} implies that \(u(x)\) is the minimum
+  of \(Y \setminus u((-\infty, x))\).  Also, \(X \in S\), hence \(u\)
+  induces an isomorphism from \(X\) onto a segment of \(Y\).
+\end{solution}
+
+\begin{solution}[\ref{exe:vgms7ihx}]
+  \label{sol:cjc2vy2q}
+  Suppose \(Q\) is a totally ordered subset of \(P\).  The union \(U\)
+  of the sets \(A\) as \((A,f)\) runs over \(Q\) is a segment of \(X\)
+  because each \(A\) is a segment.  As \(Q\) is totally ordered, there
+  is a unique function \(u : U \to Y\) such that \(u \vert_A = f\) for
+  all \((A,f) \in Q\).  The subset \(u(U)\) of \(Y\) is the union of
+  the segments \(u(A)\) as \((A,f)\) runs over \(Q\), and is hence a
+  segment.  If \(x,x'\) are elements of \(U\) such that \(x < x'\),
+  then there is an element \((A,f)\) of \(Q\) such that \(x' \in A\);
+  as \(A\) is a segment, \(x \in A\), so as \(f\) is an isomorphism on
+  \(A\), \(f(x) < f(x')\); thus, \(u\) is strictly increasing on
+  \(U\).  Therefore, \(u\) maps \(U\) isomorphically onto the segment
+  \(u(U)\) of \(Y\), hence \((U,u) \in P\).  It is obvious that
+  \((U,u)\) is an upper bound of \(Q\).  Thus, every totally ordered
+  subset of \(P\) is bounded above.  By Zorn's lemma, \(P\) has a
+  maximal element \((M, g)\).
+
+  It suffices to show that either \(M = X\) or \(g(M) = X\).  Suppose
+  that neither of these equalities is true.  \Cref{thm:htdzbbwv} then
+  gives \(a \in X\) and \(b \in Y\) such that \(M = (-\infty, a)\) and
+  \(g(M) = (-\infty, b)\).  Define a function
+  \(h : (-\infty, a] \to Y\) by setting
+  \begin{displaymath}
+    h(x) =
+    \begin{cases}
+      g(x) & \text{if} ~ x < a \\
+      b & \text{if} ~ x = b.
+    \end{cases}
+  \end{displaymath}
+  It is strictly increasing, and its image equals \((-\infty, b]\).
+  Therefore, the pair \(((-\infty, a], h)\) belongs to \(P\).  It is
+  \(>\) than the maximal element \((M, g)\) of \(P\), a contradiction.
+\end{solution}
+
+\begin{solution}[\ref{exe:9d868h6m}]
+  \label{sol:yfgula0x}
+  If \(a\) is an upper bound of a maximal totally ordered subset \(M\)
+  of \(X\), then the set \(M \cup \{ a \}\) is totally ordered because
+  \(x \leq a\) for all \(x \in M\); the maximality of \(M\) implies
+  that \(a \in M\); thus, \(a\) is the maximum of \(M\), and is also
+  the unique upper bound of \(M\) in \(X\); if \(b \in X\) and
+  \(a \leq b\), then \(b\) is an upper bound of \(M\), so \(b = a\);
+  therefore, \(a\) is a maximal element of \(X\).
+
+  Denote the given order on \(X\) by \(\leq\).  Zermelo's theorem
+  gives a well-order \(\leq'\) on \(X\).  For any \(x \in X\), denote
+  the set of all \(y \in X\) such that \(y <' x\) by \(k(x)\).  Let
+  \(T\) denote the set of all totally ordered subsets of
+  \((X, \leq)\).  For any \(x \in X\), define a function
+  \(f_x : T^{k(x)} \to T\) by
+  \begin{displaymath}
+    f_x(s) =
+    \begin{cases}
+      (\cup_{y \in k(x)} s(y)) \cup \{ x \}
+      & \text{if} ~ (\cup_{y \in k(x)} s(y)) \cup \{ x \} ~
+        \text{is totally} \\
+      & \text{ordered with respect to} ~ \leq \\
+      \emptyset & \text{otherwise}
+    \end{cases}
+  \end{displaymath}
+  for every function \(s : k(x) \to T\).  By \Cref{thm:5kg5ewo1},
+  there is a unique function \(u : X \to T\) such that
+  \(u(x) = f_x(u \vert_{k(x)})\) for all \(x \in X\).  Denote \(u(x)\)
+  by \(M_x\) for any \(x \in X\), and let \(M = \cup_{x \in X}M_x\).
+  For any \(x \in X\), \(M_x\) equals
+  \((\cup_{y \in k(x)}M_y) \cup \{ x \}\) if this set is totally
+  ordered under \(\leq\), and is empty otherwise; in particular, if
+  \(M_x\) is non-empty, it contains \(M_y\) for all \(y \in X\) such
+  that \(y \leq' x\).
+
+  If \(a, b \in M\), there are elements \(x,y\) of \(X\) such that
+  \(a \in M_x\) and \(b \in M_y\); as \(\leq'\) is total, we can
+  assume that \(y \leq' x\); as \(M_x\) contains \(a\), it is
+  non-empty, and hence contains \(M_z\) for all \(z \in X\) such that
+  \(z \leq' x\); in particular, \(M_y \subset M_x\), so
+  \(a, b \in M_x\); as \(M_x\) is totally ordered, either \(a \leq b\)
+  or \(b \leq a\); it follows that \(M\) is totally ordered with
+  respect to \(\leq\).  Suppose \(N\) is a totally ordered subset of
+  \((X, \leq)\) that contains \(M\); let \(x \in N\); then the set
+  \((\cup_{y \in k(x)}M_y) \cup \{ x \}\) is contained in \(N\), and
+  is hence totally ordered under \(\leq\); therefore, it equals
+  \(M_x\), hence \(x \in M_x\); it follows that \(N = M\).  Thus,
+  \(M\) is a maximal totally ordered subset of \((X, \leq)\).
+\end{solution}
+
+\begin{solution}[\Cref{exe:5qa65h5w}]
+  \label{sol:s0vlfhkj}
+  For any \(x \in X\), denote the set of all \(y \in X\) such that
+  \(y <' x\) by \(k(x)\).  Let \(B\) denote the set consisting of the
+  natural numbers \(0\) and \(1\).  For any \(x \in X\), define a
+  function \(f_x : B^{k(x)} \to B\) by setting
+  \begin{displaymath}
+    f_x(s) =
+    \begin{cases}
+      1
+      & \text{if} ~ y < x ~ \text{for all} ~ y \in k(x) ~
+        \text{such that} ~ s(x) = 1 \\
+      0
+      & \text{otherwise}
+    \end{cases}
+  \end{displaymath}
+  for every function \(s : k(x) \to B\).  By \Cref{thm:5kg5ewo1},
+  there is a unique function \(u : X \to B\) such that
+  \(u(x) = f_x(u \vert_{k(x)})\) for all \(x \in X\).  Let \(M\)
+  denote the set of elements \(x\) of \(X\) such that \(u(x) = 1\).
+  Thus, an element \(x\) of \(X\) belongs to \(M\) if and only if
+  \(y < x\) for all \(y \in M \cap k(x)\).
+
+  If \(x,y \in Y\) and \(y <' x\), then \(y \in M \cap k(x)\), so
+  \(y < x\).  Therefore, the identity function \(h: M \to M\) is a
+  strictly increasing bijection from \((M, \leq')\) onto
+  \((M, \leq)\).  Since the order \(\leq'\) on \(M\) is total,
+  \Cref{exe:v1tw1ijd} implies that \(h\) is an isomorphism from
+  \((M, \leq')\) onto \((M, \leq)\).  As \(\leq'\) is a well-order on
+  \(M\), it follows that \(\leq\) also is a well-order on \(M\).  The
+  hypothesis of the exercise implies that \(M\) is bounded above in
+  \((X, \leq)\).  If \(a\) is any upper bound of \(M\) in
+  \((X, \leq)\), then for all \(y \in M \cap k(a)\), \(y \leq a\); as
+  \(y <' a\), \(y \neq a\), so \(y < a\); it follows that \(a \in M\);
+  thus, \(a\) is the maximum of \((M, \leq)\), and is also the unique
+  upper bound of \(M\) in \((X, \leq)\); if \(b \in X\) and
+  \(a \leq b\), then \(b\) is an upper bound of \(M\) in
+  \((X, \leq)\), so \(b = a\); therefore, \(a\) is a maximal element
+  of \((X, \leq)\).
+\end{solution}
+
+\begin{solution}[\ref{exe:x9ewqbv6}]
+  \label{sol:l1p9lj7v}
+  For any segment \(Y\) of \(X\), let \(G(Y)\) be the set of sections
+  \(u \in F(Y)\) with the property that
+  \(u \vert_{(-\infty, x]} = f_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in Y\).  It is obvious that if \((Y_i)_{i \in I}\) is a family
+  of segments of \(X\), \(Y\) their union, and \(u\) an element of
+  \(F(Y)\), then \(u \in G(Y)\) if and only if
+  \(u \vert_{Y_i} \in G(Y_i)\) for all \(i\); therefore, \(G\) is a
+  subsheaf of \(F\).
+
+  Suppose \(Y\) is a segment and \(u,v \in G(Y)\).  Then the set
+  \(Y'\) of points \(x \in Y\) such that the germs \(u_x\) and \(v_x\)
+  are equal is inductive: if \((-\infty, a) \subset Y'\) for some
+  \(a \in Y\), then
+  \(u \vert_{(-\infty, a)} = v \vert_{(-\infty, a)}\) because \(F\) is
+  a sheaf; therefore,
+  \begin{displaymath}
+    u \vert_{(-\infty, a]} = f_x(u \vert_{(-\infty, a)}) =
+    f_x(v \vert_{(-\infty, a)}) = v \vert_{(-\infty, a]};
+  \end{displaymath}
+  as \((-\infty, a]\) is an open neighbourhood of \(a\),
+  \(u_a = v_a\), hence \(a \in Y'\).  Therefore, by transfinite
+  induction (\Cref{thm:5vxgawq0}), \(Y' = Y\).  As \(F\) is a sheaf,
+  it follows that \(u = v\).  Thus, \(G(Y)\) has at most one element
+  for any segment \(Y\).
+
+  Let \(S\) be the set of segments \(Y\) of \(X\) such that
+  \(G(Y) \neq \emptyset\).  We will check that \(S\) satisfies the
+  conditions of \Cref{thm:y3go6w2h}.
+
+  Suppose \(a \in X\) and \(Y = (-\infty, a)\) belongs to \(S\).  Let
+  \(u\) be the unique element of \(G(Y)\).  We then have the element
+  \(v = f_a(u)\) of \(F(Z)\), where \(Z = (-\infty, a]\).  As
+  \(v \vert_Y = u\),
+  \begin{displaymath}
+    v \vert_{(-\infty, x]} = u \vert_{(-\infty, x]} =
+    f_x(u \vert_{(-\infty, x)}) = f_x(v \vert_{(-\infty, x)})
+  \end{displaymath}
+  for all \(x \in Y\), and
+  \begin{displaymath}
+    v \vert_{(-\infty, a]} = v = f_a(u) = f_a(v \vert_{(-\infty, a)}).
+  \end{displaymath}
+  Therefore, \(v \in G(Z)\), and \(Z \in S\).
+
+  Suppose, on the other hand, that \(Y\) is the union of a family
+  \((Y_i)_{i \in I}\) of elements of \(S\).  For each \(i\), let
+  \(u_i\) be the unique element of \(G(Y_i)\).  For all \(i,j\), the
+  the restrictions \(u_{ij}\) and \(u_{ji}\) of \(u_i\) and \(u_j\),
+  respectively, to the segment \(Y_{ij} = Y_i \cap Y_j\) belong to
+  \(G(Y_{ij})\); as \(G(Y_{ij})\) has at most one element,
+  \(u_{ij} = u_{ji}\).  Since \(G\) is a sheaf, there is therefore a
+  unique element \(u\) of \(G(Y)\) which restricts to \(u_i\) on each
+  \(Y_i\).  It follows that \(Y \in S\).
+
+  \Cref{thm:y3go6w2h} implies that every segment of \(X\) belongs to
+  \(S\).  In particular, \(X \in S\).
+
+  We can recover \Cref{thm:srxrngd8} from this exercise by taking
+  \(F\) to be the sheaf of sections of the function \(p : E \to X\)
+  that appears in the statement of that theorem.  Given a function
+  \(f_x : \Gamma((-\infty, x)) \to p^{-1}(x)\) for every \(x \in X\),
+  we get a function \(g_x\) from \(F((-\infty,x))\) to
+  \(F((-\infty, x])\) for every \(x \in X\) by setting
+  \begin{displaymath}
+    g_x(s)(y) =
+    \begin{cases}
+      s(y) & \text{if} ~ y < x \\
+      f_x(s) & \text{if} ~ y = x
+    \end{cases}
+  \end{displaymath}
+  for all \(s \in F((-\infty, x))\) and \(y \leq x\).  It is obvious
+  that \(g_x(s) \vert_{(-\infty, x)} = s\) for all
+  \(s \in F((-\infty, x))\).  Therefore, there exists a unique element
+  \(u \in F(X)\) such that
+  \(u \vert_{(-\infty, x]} = g_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in X\).  It is the unique section \(s\) of \(p\) with the
+  property that \(u(x) = f_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in X\).  So this exercise does generalise \Cref{thm:srxrngd8}.
+\end{solution}
+
+\begin{solution}[\ref{exe:k8tmok20}]
+  \label{sol:zipx00sf}
+  Denote the given order on \(X\) by \(\leq\).  One of the hypotheses
+  on \(X\) is that any well-ordered subset \(A\) of \(X\) has an upper
+  bound \(b\); as \(X\) does not have a maximal element, there exists
+  an element \(c\) of \(X\) such that \(b < c\); thus \(a \leq b < c\)
+  for all \(a \in A\), so \(c\) is a strict upper bound of \(A\).
+
+  Zermelo's theorem gives a well-order \(\leq'\) on \(X\).  For every
+  well-ordered subset \(A\) of \((X, \leq)\), the set \(A^*\) of
+  \(b \in X\) such that \(a < b\) for all \(a \in X\) is non-empty; as
+  \(\leq'\) is a well-order, there is a unique element \(\varphi(A)\)
+  of \(A^*\) such that \(\varphi(A) \leq' b\) for all \(b \in A^*\).
+  If \(A,B\) are well-ordered subsets of \((X, \leq)\) such that
+  \(A \subset B\), then \(B^* \subset A^*\), hence
+  \(\varphi(A) \leq' \varphi(B)\).
+
+  Make the set \(X\) a topological space by giving it the topology
+  whose open sets are the segments of \((X, \leq')\), as in
+  \Cref{exe:x9ewqbv6}.  For every open subset \(Y\) of \(X\), let
+  \(F(Y)\) be the set of strictly increasing functions from
+  \((Y, \leq')\) to \((X, \leq)\).  If \((Y_i)_{i \in I}\) is a family
+  of segments of \((X, \leq')\), and \(Y\) their union, then a
+  function \(s : Y \to X\) belongs to \(F(Y)\) if and only if
+  \(s \vert_{Y_i}\) belongs to \(F(Y_i)\) for every \(i\).  Therefore,
+  \(F\) is a subsheaf of the sheaf of \(X\)-valued functions on the
+  topological space \(X\).  For every \(x \in X\), let
+  \begin{displaymath}
+    k(x) = \{ y \in X \,\vert\, y <' x \},
+    \quad
+    l(x) = \{ y \in X \,\vert\, y \leq' x \} = k(x) \cup \{ x \};
+  \end{displaymath}
+  for any element \(s\) of \(F(k(x))\), define an element \(f_x(s)\)
+  of \(F(l(x))\) by setting
+  \begin{displaymath}
+    f_x(s)(y) =
+    \begin{cases}
+      s(y) & \text{if} ~ y <' x \\
+      \varphi(s(k(x))) & \text{if} ~ y = x
+    \end{cases}
+  \end{displaymath}
+  for all \(y \in l(x)\); this definition makes sense because \(s\) is
+  an isomorphism from the well-ordered set \((k(x), \leq')\) onto the
+  ordered set \((s(k(x)), \leq)\), so \(s(k(x))\) is a well-ordered
+  subset of \((X, \leq)\); it is obvious that
+  \(f_x(s) \vert_{k(x)} = s\); we thus get a function
+  \(f_x : F(k(x)) \to F(l(x))\) that satisfies the conditions of
+  \Cref{exe:x9ewqbv6}.  There is therefore a unique element
+  \(u \in F(X)\) such that \(u \vert_{l(x)} = f_x(u \vert_{k(x)})\)
+  for all \(x \in X\).  By the definition of \(F\), \(u\) is a
+  strictly increasing function from \((X, \leq')\) to \((X, \leq)\).
+  If \(x, b \in X\) and \(u(y) < b\) for all \(y \in k(x)\), then
+  \(b \in (u(k(x)))^*\), hence \(u(x) = \varphi(u(k(x))) \leq' b\).
+
+  Suppose \(x, y \in X\) and \(y <' x\).  Then \(k(y) \subset k(x)\),
+  hence \(u(k(y))) \subset u(k(x))\),
+  \begin{displaymath}
+    u(y) = \varphi(u(k(y))) \leq \varphi(u(k(x))) = u(x).
+  \end{displaymath}
+  On the other hand, as \(u\) is strictly increasing from
+  \((X, \leq')\) to \((X, \leq)\), \(u(y) < u(x)\), so
+  \(u(y) \neq u(x)\).  Therefore, \(u(y) <' u(x)\). Thus, \(u\) is
+  strictly increasing from \((X, \leq')\) to \((X, \leq')\).
+  \Cref{thm:hw1jxum0} implies that \(x \leq' u(x)\) for all
+  \(x \in X\).
+
+  Let \(M = u(X)\).  As \(u\) is an isomorphism from \((X, \leq')\)
+  onto \((M, \leq)\), \(M\) is a well-ordered subset of \((X, \leq)\).
+  Suppose \(M\) has a strict upper bound \(b\) in \((X, \leq)\).  Then
+  \(u(y) < b\) for all \(y \in k(b)\), hence \(u(b) \leq' b\).  On the
+  other hand, \(b \leq' u(b)\) by the conclusion of the previous
+  paragraph.  It follows that \(u(b) = b\), a contradiction as
+  \(u(b) < b\).
+
+  An alternative definition of \(u\), using \Cref{thm:5kg5ewo1}
+  instead of \Cref{exe:x9ewqbv6}, is as follows.  As the well-ordered
+  subset \(\emptyset\) of \((X, \leq)\) has an upper bound in
+  \((X, \leq)\), the set \(X\) is non-empty; fix an element
+  \(x_0 \in X\).  For every \(x \in X\), define a function
+  \(f_x : X^{k(x)} \to X\) by setting
+  \begin{displaymath}
+    f_x(s) =
+    \begin{cases}
+      \varphi(s(k(x)))
+      & \text{if} ~ s ~ \text{is strictly increasing} \\
+      & \text{from} ~ (k(x), \leq') ~ \text{to} ~ (X, \leq) \\
+      x_0
+      &
+        \text{otherwise}
+    \end{cases}
+  \end{displaymath}
+  for every function \(s : k(x) \to X\).  Transfinite recursion
+  (\Cref{thm:5kg5ewo1}) gives a unique function \(u : X \to X\) such
+  that \(u(x) = f_x(u \vert_{k(x)})\) for all \(x \in X\).  Let \(Y\)
+  be the set of all \(x \in X\) such that \(u\) is strictly increasing
+  from \((k(x), \leq')\) to \((X, \leq)\).  For all \(x \in Y\),
+  \(u(x) = \varphi(u(k(x)))\).  If \(x \in X\) and \(k(x) \subset Y\),
+  then for all \(y, z \in X\) such that \(z <' y <' x\),
+  \(u(z) < u(y)\) because \(y \in k(x) \subset Y\) and
+  \(u(y) = \varphi(u(k(y)))\) is a strict upper bound of \(u((k(y)))\)
+  in \((X, \leq)\); therefore, \(u\) is strictly increasing from
+  \((k(x), \leq')\) to \((X, \leq)\), so \(x \in Y\).  Thus, \(Y\) is
+  an inductive subset of \((X, \leq')\).  Transfinite induction
+  (\Cref{thm:5vxgawq0}) implies that \(Y = X\).  It follows that
+  \(u(x) = \varphi(u(k(x)))\) for all \(x \in X\).  The rest of the
+  solution is as before.
+\end{solution}
 
 \bibsection
 

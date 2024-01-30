@@ -166,6 +166,7 @@
     block = par,
     seconds = true,
     style = authoryear,
+    useprefix = true,
     datamodel = condmath
   ]
   { biblatex }
@@ -317,6 +318,9 @@
 
 \numberwithin { equation } { subsection }
 
+\Crefformat{equation}{Equation~(#2#1#3)}
+\crefformat{equation}{equation~(#2#1#3)}
+
 \declaretheoremstyle
   [
     sibling = equation,
@@ -336,6 +340,67 @@
     style = mytheorem
   ]
   { theorem }
+
+%% ===================================================================
+%% Exercises
+%% ===================================================================
+
+\declaretheoremstyle
+  [
+    sibling = equation,
+    preheadhook = {
+      \cs_set:cpn { theenumi } { \alph { enumi } }
+      \cs_set:cpn { labelenumi } { ( \theenumi ) }
+      \cs_set:cpn { theenumii } { \roman { enumii } }
+      \cs_set:cpn { labelenumii } { ( \theenumii ) }
+    },
+    headfont = \normalfont,
+    headformat = { (\NUMBER) ~ \NOTE },
+    headpunct = {},
+    bodyfont = \rmfamily
+  ]
+  {
+    myexercise
+  }
+
+\declaretheorem
+  [
+    name = Exercise,
+    Refname = Exercise,
+    refname = exercise,
+    style = myexercise
+  ]
+  { exercise }
+
+%% ===================================================================
+%% Solutions
+%% ===================================================================
+
+\declaretheoremstyle
+  [
+    sibling = equation,
+    preheadhook = {
+      \cs_set:cpn { theenumi } { \alph { enumi } }
+      \cs_set:cpn { labelenumi } { ( \theenumi ) }
+      \cs_set:cpn { theenumii } { \roman { enumii } }
+      \cs_set:cpn { labelenumii } { ( \theenumii ) }
+    },
+    headfont = \normalfont,
+    headformat = { (\NUMBER) ~ Solution ~ to \NOTE },
+    bodyfont = \rmfamily
+  ]
+  {
+    mysolution
+  }
+
+\declaretheorem
+  [
+    name = Solution,
+    Refname = Solution,
+    refname = solution,
+    style = mysolution
+  ]
+  { solution }
 
 %% ===================================================================
 %% Macros for the text
