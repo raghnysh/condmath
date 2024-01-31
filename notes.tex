@@ -230,7 +230,11 @@ nonempty subset of \(X\) has a minimum.  A well-order is total: if
 minimum of the set \(\{ x, y \}\), then \(x \leq y\).  A well-order on
 \(X\) induces a well-order on every subset of \(X\).  Zermelo's
 theorem, which is equivalent to the axiom of choice, states that every
-set has a well-order.
+set has a well-order.  It is notationally convenient, especially when
+the set \(X\) in question comes with an already given order, to
+rephrase Zermelo's theorem as follows: for every set \(X\), there
+exist a well-ordered set \(\Lambda\) and a bijection between
+\(\Lambda\) and \(X\).
 
 A \firstterm{well-ordered set} is an ordered set whose order is a
 well-order.  Every subset of a well-ordered set that is bounded above
@@ -594,6 +598,8 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \label{exe:rpm18mof}
   Check that the union and the intersection of a family of segments of
   an ordered set \(X\) are segments, as are the empty set and \(X\).
+  Thus, the segments of \(X\) form a topology on \(X\) in which any
+  intersection of open sets is open.
 \end{exercise}
 
 \begin{exercise}
@@ -641,15 +647,15 @@ the \firstterm{lexicographic} order.  It is a total order if every
     \(X\), that is, a totally ordered subset of \(X\) which is not
     properly contained in another totally ordered subset of \(X\),
     then any upper bound of \(M\) is a maximal element of \(X\).
-  \item Denote the given order on \(X\) by \(\leq\).  Zermelo's
-    theorem gives a well-order \(\leq'\) on \(X\).  Use transfinite
-    recursion (\Cref{thm:5kg5ewo1}) to get a family
-    \((M_x)_{x \in X}\) of totally ordered subsets of \((X, \leq)\)
-    such that, for any \(x \in X\), \(M_x\) equals
-    \((\cup_{y <' x} M_y) \cup \{ x \}\) if this set is totally
-    ordered under \(\leq\), and is empty otherwise.  Prove that the
-    union of the \(M_x\) is a maximal totally ordered subset of
-    \((X, \leq)\).
+  \item Zermelo's theorem gives a well-ordered set \(\Lambda\) and a
+    bijection \(h\) from the set \(\Lambda\) to the set \(X\).  Use
+    transfinite recursion (\Cref{thm:5kg5ewo1}) to get a family
+    \((M_\lambda)_{\lambda \in \Lambda}\) of totally ordered subsets
+    of \(X\) such that, for any \(\lambda \in \Lambda\), \(M_\lambda\)
+    equals \((\cup_{\mu < \lambda} M_\mu) \cup \{ h(\lambda) \}\) if
+    this set is a totally ordered subset of \(X\), and is empty
+    otherwise.  Prove that the union of the \(M_\lambda\) is a maximal
+    totally ordered subset of \(X\).
   \end{enumerate}
 \end{exercise}
 
@@ -658,22 +664,21 @@ the \firstterm{lexicographic} order.  It is a total order if every
   Here is another proof of Zorn's lemma using Zermelo's theorem and
   transfinite recursion \parencite[Part~II, Chapter~14,
   Solution~1]{bib:uw2wsr3k}.  Let X be an ordered set in which every
-  well-ordered subset is bounded above.  Denote the given order on
-  \(X\) by \(\leq\).  Zermelo's theorem gives a well-order \(\leq'\)
-  on \(X\).  Use transfinite recursion to define a subset \(M\) of
-  \(X\) such that any element \(x\) of \(X\) belongs to \(M\) if and
-  only if \(y < x\) for all \(y \in M\) such that \(y <' x\).  Prove
-  that \(M\) is totally ordered, and that any upper bound of \(M\) is
-  a maximal element of \(X\).
+  well-ordered subset is bounded above.  Zermelo's theorem gives a
+  well-ordered set \(\Lambda\) and a bijection from the set
+  \(\Lambda\) to the set \(X\).  Use transfinite recursion to define a
+  subset \(M\) of \(X\) such that any element \(x\) of \(X\) belongs
+  to \(M\) if and only if \(y < x\) for all \(y \in M\) such that
+  \(h^{-1}(y) < h^{-1}(x)\).  Prove that \(M\) is totally ordered, and
+  that any upper bound of \(M\) is a maximal element of \(X\).
 \end{exercise}
 
 \begin{exercise}
   \label{exe:x9ewqbv6}
   Prove the following generalisation of transfinite recursion
-  (\Cref{thm:srxrngd8}).  Let \(X\) be a well-ordered set.  By
-  \Cref{exe:rpm18mof}, the segments of \(X\) form a topology on \(X\)
-  in which any intersection of open sets is open; endowing the set
-  \(X\) with this topology makes it a topological space.  Let \(F\) be
+  (\Cref{thm:srxrngd8}).  Let \(X\) be a well-ordered set.  Make the
+  set \(X\) a topological space by giving it the topology whose open
+  sets are the segments of \(X\) (\Cref{exe:rpm18mof}).  Let \(F\) be
   a sheaf of sets on \(X\).  Suppose that for every point \(x \in X\),
   \(f_x\) is a function from \(F((-\infty, x))\) to
   \(F((-\infty, x])\) which is a section of the restriction map:
@@ -692,19 +697,20 @@ the \firstterm{lexicographic} order.  It is a total order if every
   every well-ordered subset is bounded above.  Suppose that \(X\) has
   no maximal element.  Arrive at a contradiction as follows.
   \begin{enumerate}
-  \item Denote the given order on \(X\) by \(\leq\).  Verify that
-    every well-ordered subset \(A\) of \(X\) has a strict upper bound,
-    that is, an element \(b \in X\) such that \(a < b\) for all
-    \(a \in A\).
-  \item Zermelo's theorem gives a well-order \(\leq'\) on \(X\).  Use
+  \item Verify that every well-ordered subset \(A\) of \(X\) has a
+    strict upper bound, that is, an element \(b \in X\) such that
+    \(a < b\) for all \(a \in A\).
+  \item Zermelo's theorem gives a well-ordered set \(\Lambda\) and a
+    bijection \(h\) from the set \(\Lambda\) onto the set \(X\).  Use
     transfinite recursion (\Cref{exe:x9ewqbv6}) to get a strictly
-    increasing function \(u\) from \((X, \leq')\) to \((X, \leq)\)
-    with the property that \(u(x) \leq' b\) whenever \(x,b \in X\) are
-    such that \(u(y) < b\) for all \(y <' x\).
-  \item Verify that \(u\) is strictly increasing from \((X, \leq')\)
-    to \((X, \leq')\).
-  \item Show that \(u(X)\) is a well-ordered subset of \((X, \leq)\)
-    which does not have a strict upper bound in \((X, \leq)\).
+    increasing function \(u\) from \(\Lambda\) to \(X\) with the the
+    property that \(h^{-1}(u(\lambda)) \leq h^{-1}(b)\) for all
+    \(\lambda \in \Lambda\) and for every strict upper bound \(b\) of
+    \(u((-\infty, \lambda))\) in \(X\).
+  \item Verify that \(h^{-1} \circ u\) is a strictly increasing
+    function from \(\Lambda\) to \(\Lambda\).
+  \item Show that \(u(\Lambda)\) is a well-ordered subset of \(X\)
+    which does not have a strict upper bound.
   \end{enumerate}
 \end{exercise}
 
@@ -933,86 +939,96 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \(a \leq b\), then \(b\) is an upper bound of \(M\), so \(b = a\);
   therefore, \(a\) is a maximal element of \(X\).
 
-  Denote the given order on \(X\) by \(\leq\).  Zermelo's theorem
-  gives a well-order \(\leq'\) on \(X\).  For any \(x \in X\), denote
-  the set of all \(y \in X\) such that \(y <' x\) by \(k(x)\).  Let
-  \(T\) denote the set of all totally ordered subsets of
-  \((X, \leq)\).  For any \(x \in X\), define a function
-  \(f_x : T^{k(x)} \to T\) by
+  Let \(T\) denote the set of all totally ordered subsets of \(X\).
+  For any \(\lambda \in \Lambda\), define a function
+  \(f_\lambda : T^{(-\infty, \lambda)} \to T\) by
   \begin{displaymath}
-    f_x(s) =
+    f_\lambda(s) =
     \begin{cases}
-      (\cup_{y \in k(x)} s(y)) \cup \{ x \}
-      & \text{if} ~ (\cup_{y \in k(x)} s(y)) \cup \{ x \} ~
-        \text{is totally} \\
-      & \text{ordered with respect to} ~ \leq \\
-      \emptyset & \text{otherwise}
+      (\cup_{\mu < \lambda} s(\mu)) \cup \{ h(\lambda) \}
+      & \text{if the subset} ~
+        (\cup_{\mu < \lambda} s(\mu)) \cup \{ h(\lambda) \} \\
+      & \text{of} ~ X ~ \text{is totally ordered} \\
+      \emptyset
+      & \text{otherwise}
     \end{cases}
   \end{displaymath}
-  for every function \(s : k(x) \to T\).  By \Cref{thm:5kg5ewo1},
-  there is a unique function \(u : X \to T\) such that
-  \(u(x) = f_x(u \vert_{k(x)})\) for all \(x \in X\).  Denote \(u(x)\)
-  by \(M_x\) for any \(x \in X\), and let \(M = \cup_{x \in X}M_x\).
-  For any \(x \in X\), \(M_x\) equals
-  \((\cup_{y \in k(x)}M_y) \cup \{ x \}\) if this set is totally
-  ordered under \(\leq\), and is empty otherwise; in particular, if
-  \(M_x\) is non-empty, it contains \(M_y\) for all \(y \in X\) such
-  that \(y \leq' x\).
+  for every function \(s : (-\infty, \lambda) \to T\).  By
+  \Cref{thm:5kg5ewo1}, there is a unique function
+  \(u : \Lambda \to T\) such that
+  \(u(\lambda) = f_\lambda(u \vert_{(-\infty, \lambda)})\) for all
+  \(\lambda \in \Lambda\).  Denote \(u(\lambda)\) by \(M_\lambda\) for
+  any \(\lambda \in \Lambda\), and let
+  \(M = \cup_{\lambda \in \Lambda} M_\lambda\).  For any
+  \(\lambda \in \Lambda\), \(M_\lambda\) equals
+  \((\cup_{\mu < \lambda} M_\mu) \cup \{ h(\lambda) \}\) if this
+  subset of \(X\) is totally ordered, and is empty otherwise; in
+  particular, if \(M_\lambda\) is non-empty, it contains \(M_\mu\) for
+  all \(\mu \leq \lambda\).
 
-  If \(a, b \in M\), there are elements \(x,y\) of \(X\) such that
-  \(a \in M_x\) and \(b \in M_y\); as \(\leq'\) is total, we can
-  assume that \(y \leq' x\); as \(M_x\) contains \(a\), it is
-  non-empty, and hence contains \(M_z\) for all \(z \in X\) such that
-  \(z \leq' x\); in particular, \(M_y \subset M_x\), so
-  \(a, b \in M_x\); as \(M_x\) is totally ordered, either \(a \leq b\)
-  or \(b \leq a\); it follows that \(M\) is totally ordered with
-  respect to \(\leq\).  Suppose \(N\) is a totally ordered subset of
-  \((X, \leq)\) that contains \(M\); let \(x \in N\); then the set
-  \((\cup_{y \in k(x)}M_y) \cup \{ x \}\) is contained in \(N\), and
-  is hence totally ordered under \(\leq\); therefore, it equals
-  \(M_x\), hence \(x \in M_x\); it follows that \(N = M\).  Thus,
-  \(M\) is a maximal totally ordered subset of \((X, \leq)\).
+  If \(x, y \in M\), there are elements \(\lambda, \mu\) of
+  \(\Lambda\) such that \(x \in M_\lambda\) and \(y \in M_\mu\); as
+  \(\Lambda\) is totally ordered, we can assume that
+  \(\mu \leq \lambda\); as \(M_\lambda\) contains \(x\), it is
+  non-empty, and hence contains \(M_\nu\) for all
+  \(\nu \leq \lambda\); in particular, \(M_\mu \subset M_\lambda\), so
+  \(x, y \in M_\lambda\); as \(M_\lambda\) is totally ordered, either
+  \(x \leq y\) or \(y \leq x\); it follows that \(M\) is a totally
+  ordered subset of \(X\).  Suppose \(N\) is a totally ordered subset
+  of \(X\) that contains \(M\); let \(x \in N\), and let
+  \(\lambda = h^{-1}(x)\); then the set
+  \((\cup_{\mu < \lambda} M_\mu) \cup \{ h(\lambda) \}\) is contained
+  in \(N\), and is hence a totally ordered subset of \(X\); therefore,
+  it equals \(M_\lambda\), hence \(x = h(\lambda) \in M_\lambda\); it
+  follows that \(N = M\).  Thus, \(M\) is a maximal totally ordered
+  subset of \(X\).
 \end{solution}
 
-\begin{solution}[\Cref{exe:5qa65h5w}]
+\begin{solution}[\ref{exe:5qa65h5w}]
   \label{sol:s0vlfhkj}
-  For any \(x \in X\), denote the set of all \(y \in X\) such that
-  \(y <' x\) by \(k(x)\).  Let \(B\) denote the set consisting of the
-  natural numbers \(0\) and \(1\).  For any \(x \in X\), define a
-  function \(f_x : B^{k(x)} \to B\) by setting
+  Let \(B\) denote the set consisting of the natural numbers \(0\) and
+  \(1\).  For any \(\lambda \in \Lambda\), define a function
+  \(f_\lambda : B^{(-\infty, \lambda)} \to B\) by setting
   \begin{displaymath}
-    f_x(s) =
+    f_\lambda(s) =
     \begin{cases}
       1
-      & \text{if} ~ y < x ~ \text{for all} ~ y \in k(x) ~
-        \text{such that} ~ s(x) = 1 \\
+      & \text{if} ~ h(\mu) < h(\lambda) ~ \text{for all}
+        ~ \mu < \lambda ~ \text{such that} ~ s(\mu) = 1 \\
       0
       & \text{otherwise}
     \end{cases}
   \end{displaymath}
-  for every function \(s : k(x) \to B\).  By \Cref{thm:5kg5ewo1},
-  there is a unique function \(u : X \to B\) such that
-  \(u(x) = f_x(u \vert_{k(x)})\) for all \(x \in X\).  Let \(M\)
-  denote the set of elements \(x\) of \(X\) such that \(u(x) = 1\).
-  Thus, an element \(x\) of \(X\) belongs to \(M\) if and only if
-  \(y < x\) for all \(y \in M \cap k(x)\).
+  for every function \(s : (-\infty, \lambda) \to B\).  By
+  \Cref{thm:5kg5ewo1}, there is a unique function
+  \(u : \Lambda \to B\) such that
+  \(u(\lambda) = f_\lambda(u \vert_{(-\infty, \lambda)})\) for all
+  \(\lambda \in \Lambda\).  Let \(M\) denote the set of elements of of
+  \(X\) of the form \(h(\lambda)\) with \(\lambda \in \Lambda\) and
+  \(u(\lambda) = 1\).  Thus, an element \(x\) of \(X\) belongs to
+  \(M\) if and only if the element \(\lambda = h^{-1}(x)\) of
+  \(\Lambda\) has the property that \(h(\mu) < h(\lambda)\) for all
+  \(\mu < \lambda\) such that \(u(\mu) = 1\); equivalently,
+  \(x \in M\) if and only if \(y < x\) for all \(y \in M\) such that
+  \(h^{-1}(y) < h^{-1}(x)\).
 
-  If \(x,y \in Y\) and \(y <' x\), then \(y \in M \cap k(x)\), so
-  \(y < x\).  Therefore, the identity function \(h: M \to M\) is a
-  strictly increasing bijection from \((M, \leq')\) onto
-  \((M, \leq)\).  Since the order \(\leq'\) on \(M\) is total,
-  \Cref{exe:v1tw1ijd} implies that \(h\) is an isomorphism from
-  \((M, \leq')\) onto \((M, \leq)\).  As \(\leq'\) is a well-order on
-  \(M\), it follows that \(\leq\) also is a well-order on \(M\).  The
-  hypothesis of the exercise implies that \(M\) is bounded above in
-  \((X, \leq)\).  If \(a\) is any upper bound of \(M\) in
-  \((X, \leq)\), then for all \(y \in M \cap k(a)\), \(y \leq a\); as
-  \(y <' a\), \(y \neq a\), so \(y < a\); it follows that \(a \in M\);
-  thus, \(a\) is the maximum of \((M, \leq)\), and is also the unique
-  upper bound of \(M\) in \((X, \leq)\); if \(b \in X\) and
-  \(a \leq b\), then \(b\) is an upper bound of \(M\) in
-  \((X, \leq)\), so \(b = a\); therefore, \(a\) is a maximal element
-  of \((X, \leq)\).
+  If \(\lambda,\mu \in h^{-1}(M)\) and \(\mu < \lambda\), then
+  \(h(\lambda) \in M\) and \(u(\mu) = 1\), so \(h(\mu) < h(\lambda)\).
+  Therefore, \(h\) induces a strictly increasing bijection from
+  \(h^{-1}(M)\) onto \(M\).  Since \(h^{-1}(M)\) is totally ordered,
+  \Cref{exe:v1tw1ijd} implies that \(h\) induces an isomorphism from
+  \(h^{-1}(M)\) onto \(M\).  As \(h^{-1}(M)\) is a well-ordered subset
+  of \(\Lambda\), it follows that \(M\) is a well-ordered subset of
+  \(X\).  The hypothesis of the exercise implies that \(M\) is bounded
+  above in \(X\).  If \(a\) is any upper bound of \(M\) in \(X\), and
+  \(\lambda = h^{-1}(a)\), then for all
+  \(\mu < \lambda\) such that \(u(\mu) = 1\), \(h(\mu) \in M\), so
+  \(h(\mu) \leq a = h(\lambda)\); as \(\mu \neq \lambda\),
+  \(h(\mu) \neq h(\lambda)\), so \(h(\mu) < h(\lambda)\); it follows
+  that \(a = h(\lambda) \in M\); thus, \(a\) is the maximum of \(M\),
+  and is also the unique upper bound of \(M\) in \(X\); if \(b \in X\)
+  and \(a \leq b\), then \(b\) is an upper bound of \(M\) in \(X\), so
+  \(b = a\); therefore, \(a\) is a maximal element of \(X\).
 \end{solution}
 
 \begin{solution}[\ref{exe:x9ewqbv6}]
@@ -1098,110 +1114,127 @@ the \firstterm{lexicographic} order.  It is a total order if every
 
 \begin{solution}[\ref{exe:k8tmok20}]
   \label{sol:zipx00sf}
-  Denote the given order on \(X\) by \(\leq\).  One of the hypotheses
-  on \(X\) is that any well-ordered subset \(A\) of \(X\) has an upper
-  bound \(b\); as \(X\) does not have a maximal element, there exists
-  an element \(c\) of \(X\) such that \(b < c\); thus \(a \leq b < c\)
-  for all \(a \in A\), so \(c\) is a strict upper bound of \(A\).
+  One of the hypotheses on \(X\) is that any well-ordered subset \(A\)
+  of \(X\) has an upper bound \(z\); as \(X\) does not have a maximal
+  element, there exists an element \(b\) of \(X\) such that \(z < b\);
+  thus \(a \leq z < b\) for all \(a \in A\), so \(b\) is a strict
+  upper bound of \(A\).
 
-  Zermelo's theorem gives a well-order \(\leq'\) on \(X\).  For every
-  well-ordered subset \(A\) of \((X, \leq)\), the set \(A^*\) of
-  \(b \in X\) such that \(a < b\) for all \(a \in X\) is non-empty; as
-  \(\leq'\) is a well-order, there is a unique element \(\varphi(A)\)
-  of \(A^*\) such that \(\varphi(A) \leq' b\) for all \(b \in A^*\).
-  If \(A,B\) are well-ordered subsets of \((X, \leq)\) such that
-  \(A \subset B\), then \(B^* \subset A^*\), hence
-  \(\varphi(A) \leq' \varphi(B)\).
+  For every well-ordered subset \(A\) of \(X\), the set \(A^*\) of
+  strict upper bounds of \(A\) is a non-empty subset of \(X\), hence
+  \(h^{-1}(A^*)\) is a non-empty subset of \(\Lambda\); as \(\Lambda\)
+  is well-ordered, \(h^{-1}(A^*)\) has a minimum \(\varphi(A)\); thus,
+  \(\varphi(A)\) is the unique element of \(\Lambda\) such that
+  \(h(\varphi(A)) \in A^*\) and \(\varphi(A) \leq h^{-1}(b)\) for all
+  \(b \in A^*\).  If \(A,B\) are well-ordered subsets of \(X\) such
+  that \(A \subset B\), then \(B^* \subset A^*\), hence
+  \(\varphi(A) \leq \varphi(B)\).
 
-  Make the set \(X\) a topological space by giving it the topology
-  whose open sets are the segments of \((X, \leq')\), as in
-  \Cref{exe:x9ewqbv6}.  For every open subset \(Y\) of \(X\), let
-  \(F(Y)\) be the set of strictly increasing functions from
-  \((Y, \leq')\) to \((X, \leq)\).  If \((Y_i)_{i \in I}\) is a family
-  of segments of \((X, \leq')\), and \(Y\) their union, then a
-  function \(s : Y \to X\) belongs to \(F(Y)\) if and only if
-  \(s \vert_{Y_i}\) belongs to \(F(Y_i)\) for every \(i\).  Therefore,
-  \(F\) is a subsheaf of the sheaf of \(X\)-valued functions on the
-  topological space \(X\).  For every \(x \in X\), let
+  Make the set \(\Lambda\) a topological space by giving it the
+  topology whose open sets are the segments of \(\Lambda\)
+  (\Cref{exe:rpm18mof}).  For every segment \(\Sigma\) of \(\Lambda\),
+  let \(F(\Sigma)\) be the set of strictly increasing functions from
+  \(\Sigma\) to \(X\).  If \((\Sigma_i)_{i \in I}\) is a family of
+  segments of \(\Lambda\), and \(\Sigma\) their union, then a function
+  \(s : \Sigma \to X\) belongs to \(F(\Sigma)\) if and only if
+  \(s \vert_{\Sigma_i}\) belongs to \(F(\Sigma_i)\) for every \(i\).
+  Therefore, \(F\) is a subsheaf of the sheaf of \(X\)-valued
+  functions on the topological space \(\Lambda\).  For every
+  \(\lambda \in \Lambda\) and \(s \in F((-\infty, \lambda))\), define
+  a function \(f_\lambda(s) : (-\infty, \lambda] \to X\) by setting
   \begin{displaymath}
-    k(x) = \{ y \in X \,\vert\, y <' x \},
-    \quad
-    l(x) = \{ y \in X \,\vert\, y \leq' x \} = k(x) \cup \{ x \};
-  \end{displaymath}
-  for any element \(s\) of \(F(k(x))\), define an element \(f_x(s)\)
-  of \(F(l(x))\) by setting
-  \begin{displaymath}
-    f_x(s)(y) =
+    f_\lambda(s)(\mu) =
     \begin{cases}
-      s(y) & \text{if} ~ y <' x \\
-      \varphi(s(k(x))) & \text{if} ~ y = x
+      s(\mu) & \text{if} ~ \mu < \lambda \\
+      h(\varphi(s((-\infty, \lambda)))) & \text{if} ~ \mu = \lambda
     \end{cases}
   \end{displaymath}
-  for all \(y \in l(x)\); this definition makes sense because \(s\) is
-  an isomorphism from the well-ordered set \((k(x), \leq')\) onto the
-  ordered set \((s(k(x)), \leq)\), so \(s(k(x))\) is a well-ordered
-  subset of \((X, \leq)\); it is obvious that
-  \(f_x(s) \vert_{k(x)} = s\); we thus get a function
-  \(f_x : F(k(x)) \to F(l(x))\) that satisfies the conditions of
-  \Cref{exe:x9ewqbv6}.  There is therefore a unique element
-  \(u \in F(X)\) such that \(u \vert_{l(x)} = f_x(u \vert_{k(x)})\)
-  for all \(x \in X\).  By the definition of \(F\), \(u\) is a
-  strictly increasing function from \((X, \leq')\) to \((X, \leq)\).
-  If \(x, b \in X\) and \(u(y) < b\) for all \(y \in k(x)\), then
-  \(b \in (u(k(x)))^*\), hence \(u(x) = \varphi(u(k(x))) \leq' b\).
-
-  Suppose \(x, y \in X\) and \(y <' x\).  Then \(k(y) \subset k(x)\),
-  hence \(u(k(y))) \subset u(k(x))\),
+  for all \(\mu \in (-\infty, \lambda]\); this definition makes sense
+  because \(s\) is an isomorphism from the well-ordered set
+  \((-\infty, \lambda)\) onto the ordered set
+  \(s((-\infty, \lambda))\), so \(s((-\infty, \lambda))\) is a
+  well-ordered subset of \(X\); as
   \begin{displaymath}
-    u(y) = \varphi(u(k(y))) \leq \varphi(u(k(x))) = u(x).
+    h(\varphi(s((-\infty, \lambda)))) \in (s((-\infty, \lambda)))^*,
   \end{displaymath}
-  On the other hand, as \(u\) is strictly increasing from
-  \((X, \leq')\) to \((X, \leq)\), \(u(y) < u(x)\), so
-  \(u(y) \neq u(x)\).  Therefore, \(u(y) <' u(x)\). Thus, \(u\) is
-  strictly increasing from \((X, \leq')\) to \((X, \leq')\).
-  \Cref{thm:hw1jxum0} implies that \(x \leq' u(x)\) for all
-  \(x \in X\).
+  \(f_\lambda(s)\) is strictly increasing; it is obvious that
+  \(f_\lambda(s) \vert_{(-\infty, \lambda)} = s\); we thus get a
+  function \(f_\lambda\) from \(F((-\infty, \lambda))\) to
+  \(F((-\infty, \lambda])\) that satisfies the conditions of
+  \Cref{exe:x9ewqbv6}.  There is therefore a unique element
+  \(u \in F(\Lambda)\) such that
+  \(u \vert_{(-\infty, \lambda]} = f_\lambda(u \vert_{(-\infty,
+    \lambda)})\) for all \(\lambda \in \Lambda\).  By the definition
+  of \(F\), \(u\) is a strictly increasing function from \(\Lambda\)
+  to \(X\).  If \(\lambda \in \Lambda\) and \(b\) is a strict upper
+  bound of \(u((-\infty, \lambda))\) in \(X\), then
+  \(h^{-1}(u(\lambda)) = \varphi(u((-\infty, \lambda))) \leq
+  h^{-1}(b)\).
 
-  Let \(M = u(X)\).  As \(u\) is an isomorphism from \((X, \leq')\)
-  onto \((M, \leq)\), \(M\) is a well-ordered subset of \((X, \leq)\).
-  Suppose \(M\) has a strict upper bound \(b\) in \((X, \leq)\).  Then
-  \(u(y) < b\) for all \(y \in k(b)\), hence \(u(b) \leq' b\).  On the
-  other hand, \(b \leq' u(b)\) by the conclusion of the previous
-  paragraph.  It follows that \(u(b) = b\), a contradiction as
-  \(u(b) < b\).
+  Suppose \(\lambda, \mu \in \Lambda\) and \(\mu < \lambda\).  Then
+  \(u((-\infty, \mu))) \subset u((-\infty, \lambda))\), hence
+  \begin{displaymath}
+    h^{-1}(u(\mu)) = \varphi(u((-\infty, \mu))) \leq
+    \varphi(u((-\infty, \lambda))) = h^{-1}(u(\lambda)).
+  \end{displaymath}
+  On the other hand, as \(u\) is strictly increasing,
+  \(u(\mu) < u(\lambda)\), so
+  \(h^{-1}(u(\mu)) \neq h^{-1}(u(\lambda))\).  Therefore,
+  \(h^{-1}(u(\mu)) < h^{-1}(u(\lambda))\). Thus, \(h^{-1} \circ u\) is
+  a strictly increasing function from \(\Lambda\) to \(\Lambda\).
+  \Cref{thm:hw1jxum0} implies that \(\lambda \leq h^{-1}(u(\lambda))\)
+  for all \(\lambda \in \Lambda\).
+
+  Let \(M = u(\Lambda)\).  As \(u\) is an isomorphism from \(\Lambda\)
+  onto \(M\), \(M\) is a well-ordered subset of \(X\).  Suppose \(M\)
+  has a strict upper bound \(b\) in \(X\).  Let
+  \(\lambda = h^{-1}(b)\).  Then \(b\) is a strict upper bound of
+  \(u((-\infty, \lambda))\) also, hence
+  \(h^{-1}(u(\lambda)) \leq h^{-1}(b) = \lambda\).  On the other hand,
+  \(\lambda \leq h^{-1}(u(\lambda))\) by the conclusion of the
+  previous paragraph.  It follows that
+  \(h^{-1}(u(\lambda)) = \lambda\), that is,
+  \(u(\lambda) = h(\lambda) = b\), which is a contradiction because
+  \(u(\lambda) < b\).
 
   An alternative definition of \(u\), using \Cref{thm:5kg5ewo1}
   instead of \Cref{exe:x9ewqbv6}, is as follows.  As the well-ordered
-  subset \(\emptyset\) of \((X, \leq)\) has an upper bound in
-  \((X, \leq)\), the set \(X\) is non-empty; fix an element
-  \(x_0 \in X\).  For every \(x \in X\), define a function
-  \(f_x : X^{k(x)} \to X\) by setting
+  subset \(\emptyset\) of \(X\) has an upper bound in \(X\), the set
+  \(X\) is non-empty; fix an element \(x_0 \in X\).  For every
+  \(\lambda \in \Lambda\), define a function
+  \(f_\lambda : X^{(-\infty, \lambda)} \to X\) by setting
   \begin{displaymath}
-    f_x(s) =
+    f_\lambda(s) =
     \begin{cases}
-      \varphi(s(k(x)))
+      h(\varphi(s((-\infty, \lambda))))
       & \text{if} ~ s ~ \text{is strictly increasing} \\
-      & \text{from} ~ (k(x), \leq') ~ \text{to} ~ (X, \leq) \\
       x_0
       &
         \text{otherwise}
     \end{cases}
   \end{displaymath}
-  for every function \(s : k(x) \to X\).  Transfinite recursion
-  (\Cref{thm:5kg5ewo1}) gives a unique function \(u : X \to X\) such
-  that \(u(x) = f_x(u \vert_{k(x)})\) for all \(x \in X\).  Let \(Y\)
-  be the set of all \(x \in X\) such that \(u\) is strictly increasing
-  from \((k(x), \leq')\) to \((X, \leq)\).  For all \(x \in Y\),
-  \(u(x) = \varphi(u(k(x)))\).  If \(x \in X\) and \(k(x) \subset Y\),
-  then for all \(y, z \in X\) such that \(z <' y <' x\),
-  \(u(z) < u(y)\) because \(y \in k(x) \subset Y\) and
-  \(u(y) = \varphi(u(k(y)))\) is a strict upper bound of \(u((k(y)))\)
-  in \((X, \leq)\); therefore, \(u\) is strictly increasing from
-  \((k(x), \leq')\) to \((X, \leq)\), so \(x \in Y\).  Thus, \(Y\) is
-  an inductive subset of \((X, \leq')\).  Transfinite induction
-  (\Cref{thm:5vxgawq0}) implies that \(Y = X\).  It follows that
-  \(u(x) = \varphi(u(k(x)))\) for all \(x \in X\).  The rest of the
-  solution is as before.
+  for every function \(s : (-\infty, \lambda) \to X\).  Transfinite
+  recursion (\Cref{thm:5kg5ewo1}) gives a unique function
+  \(u : \Lambda \to X\) such that
+  \(u(\lambda) = f_\lambda(u \vert_{(-\infty, \lambda)})\) for all
+  \(\lambda \in \Lambda\).  Let \(\Sigma\) be the set of all
+  \(\lambda \in \Lambda\) such that \(u\) is strictly increasing on
+  \((-\infty, \lambda)\).  For all \(\lambda \in \Sigma\),
+  \(u(\lambda) = h(\varphi(u((-\infty, \lambda))))\).  If
+  \(\lambda \in \Lambda\) and \((-\infty, \lambda) \subset \Sigma\),
+  then for all \(\mu, \nu \in \Lambda\) such that
+  \(\nu < \mu < \lambda\), \(u(\nu) < u(\mu)\) because
+  \(\mu \in (-\infty, \lambda) \subset \Sigma\) and
+  \(u(\mu) = h(\varphi(u((-\infty, \mu))))\) belongs to
+  \((u((-\infty, \mu)))^*\); therefore, \(u\) is strictly increasing
+  on \((-\infty, \lambda)\), so \(\lambda \in \Sigma\).  Thus,
+  \(\Sigma\) is an inductive subset of \(\Lambda\).  Transfinite
+  induction (\Cref{thm:5vxgawq0}) implies that \(\Sigma = \Lambda\).
+  It follows that \(u(\lambda) = h(\varphi(u((-\infty, \lambda))))\)
+  for all \(\lambda \in \Lambda\).  In particular,
+  \(u(\lambda) \in (u((-\infty, \lambda)))^*\) for all
+  \(\lambda \in \Lambda\), hence \(u\) is strictly increasing.  The
+  rest of the solution is as before.
 \end{solution}
 
 \bibsection
