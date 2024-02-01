@@ -596,10 +596,25 @@ the \firstterm{lexicographic} order.  It is a total order if every
 
 \begin{exercise}
   \label{exe:rpm18mof}
-  Check that the union and the intersection of a family of segments of
-  an ordered set \(X\) are segments, as are the empty set and \(X\).
-  Thus, the segments of \(X\) form a topology on \(X\) in which any
-  intersection of open sets is open.
+  This exercise is about a simple topology on an ordered set.
+  \begin{enumerate}
+  \item \label{item:xzh0qsyg} Check that the union and the
+    intersection of a family of segments of an ordered set \(X\) are
+    segments, as are the empty set and \(X\).  Thus, the segments of
+    \(X\) form a topology on \(X\) in which any intersection of open
+    sets is open.
+  \item \label{item:ef4d89pd} Suppose \(X\) is a well-ordered set, and
+    let \(Y\) be any ordered set.  For any segment \(U\) of \(X\), let
+    \(F(U)\) be the set of strictly increasing functions from \(U\) to
+    \(Y\).  Show that this defines a subsheaf \(F\) of the sheaf of
+    \(Y\)-valued functions on the topological space \(X\) defined in
+    (\ref{item:xzh0qsyg}).
+  \item With \(X\) and \(Y\) as in (\ref{item:ef4d89pd}), for any
+    segment \(U\) of \(X\), let \(F(U)\) be the set of functions
+    \(f : U \to Y\) such that the subset \(f(U)\) of \(Y\) is totally
+    ordered.  Verify that this also defines a subsheaf \(F\) of the
+    sheaf of \(Y\)-valued functions on \(X\).
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -803,17 +818,50 @@ the \firstterm{lexicographic} order.  It is a total order if every
 
 \begin{solution}[\ref{exe:rpm18mof}]
   \label{sol:aeu4zzog}
-  If \(Y\) is either the empty set or \(X\), it is a segment because
-  it satisfies the condition that \((-\infty, a] \subset Y\) for every
-  \(a \in Y\) vacuously in the first case and by the definition of
-  containment in the second case.  If \((Y_i)_{i \in I}\) is a family
-  of segments of \(X\), and \(y\) an element of their union \(Y\),
-  then there is an \(i \in I\) such that \(y \in Y_i\); as \(Y_i\) is
+  If \(U\) is either the empty set or \(X\), it is a segment because
+  it satisfies the condition that \((-\infty, a] \subset U\) for every
+  \(a \in U\) vacuously in the first case and by the definition of
+  containment in the second case.  If \((U_i)_{i \in I}\) is a family
+  of segments of \(X\), and \(y\) an element of their union \(U\),
+  then there is an \(i \in I\) such that \(y \in U_i\); as \(U_i\) is
   a segment, it contains \((-\infty, y]\), hence so does its superset
-  \(Y\).  Similarly, if \(y\) belongs to the intersection \(Z\) of the
-  \(Y_i\), then for every \(i\), the segment \(Y_i\) contains \(y\),
-  hence it contains \((-\infty, y]\); it follows that \(Z\) contains
+  \(U\).  Similarly, if \(y\) belongs to the intersection \(V\) of the
+  \(U_i\), then for every \(i\), the segment \(U_i\) contains \(y\),
+  hence it contains \((-\infty, y]\); it follows that \(V\) contains
   \((-\infty, y]\).
+
+  Suppose \(X\) is a well-ordered set, and let \(Y\) be any ordered
+  set.  For any segment \(U\) of \(X\), let \(F(U)\) be the set of
+  strictly increasing functions from \(U\) to \(Y\).  Let
+  \((U_i)_{i \in I}\) be a family of segments of \(X\), \(U\) their
+  union, and \(f : U \to Y\) any function.  If \(f \in F(U)\), then it
+  is obvious that its restriction to any subset of \(U\) is also
+  strictly increasing, so \(f \vert_{U_i} \in F(U_i)\) for all \(i\).
+  Conversely, if \(f \vert_{U_i} \in F(U_i)\) for every \(i\), and if
+  \(x, x' \in U\) are such that \(x < x'\), then there is an index
+  \(i \in I\) such that \(x' \in U_i\); as \(U_i\) is a segment,
+  \(x \in U_i\), and as \(f \vert_{U_i}\) is strictly increasing,
+  \(f(x) < f(x')\); therefore, \(f \in F(U)\).  It follows that \(F\)
+  is a subsheaf of the sheaf of \(Y\)-valued functions on the
+  topological space \(X\).
+
+  Now suppose that \(X\) and \(Y\) are as above, and let \(F(U)\) be
+  the set of all functions \(f : U \to Y\) such that \(f(U)\) is a
+  totally ordered subset of \(Y\).  Let \((U_i)_{i \in I}\) be a
+  family of segments of \(X\), \(U\) their union, and \(f : U \to Y\)
+  any function.  If \(f \in F(U)\), then for every \(i\), \(f(U_i)\)
+  is a subset of the totally ordered subset \(f(U)\) of \(Y\), so
+  \(f(U_i)\) is also totally ordered, and
+  \(f \vert_{U_i} \in F(U_i)\).  Conversely, if
+  \(f \vert_{U_i} \in F(U_i)\) for all \(i\), and if
+  \(y, y' \in F(U)\), then there are \(x,x' \in U\) such that
+  \(f(x) = y\) and \(f(x') = y'\); as \(X\) is totally ordered, we can
+  assume that \(x \leq x'\); let \(i \in I\) be such that
+  \(x' \in U_i\); as \(U_i\) is a segment, \(x \in U_i\), so
+  \(y, y' \in F(U_i)\); as \(F(U_i)\) is totally ordered, either
+  \(y \leq y'\) or \(y' \leq y\); therefore, \(f(U)\) is totally
+  ordered, and \(f \in F(U)\).  It follows that \(F\) is a subsheaf of
+  the sheaf of \(Y\)-valued functions on \(X\).
 \end{solution}
 
 \begin{solution}[\ref{exe:oh59gz4i}]
@@ -1132,14 +1180,11 @@ the \firstterm{lexicographic} order.  It is a total order if every
 
   Make the set \(\Lambda\) a topological space by giving it the
   topology whose open sets are the segments of \(\Lambda\)
-  (\Cref{exe:rpm18mof}).  For every segment \(\Sigma\) of \(\Lambda\),
-  let \(F(\Sigma)\) be the set of strictly increasing functions from
-  \(\Sigma\) to \(X\).  If \((\Sigma_i)_{i \in I}\) is a family of
-  segments of \(\Lambda\), and \(\Sigma\) their union, then a function
-  \(s : \Sigma \to X\) belongs to \(F(\Sigma)\) if and only if
-  \(s \vert_{\Sigma_i}\) belongs to \(F(\Sigma_i)\) for every \(i\).
-  Therefore, \(F\) is a subsheaf of the sheaf of \(X\)-valued
-  functions on the topological space \(\Lambda\).  For every
+  (\Cref{exe:rpm18mof}(\ref{item:xzh0qsyg})).  For every segment \(U\)
+  of \(\Lambda\), let \(F(U)\) be the set of strictly increasing
+  functions from \(U\) to \(X\).  By
+  \Cref{exe:rpm18mof}(\ref{item:ef4d89pd}), \(F\) is a subsheaf of the
+  sheaf of \(X\)-valued functions on \(\Lambda\).  For every
   \(\lambda \in \Lambda\) and \(s \in F((-\infty, \lambda))\), define
   a function \(f_\lambda(s) : (-\infty, \lambda] \to X\) by setting
   \begin{displaymath}
