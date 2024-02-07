@@ -729,6 +729,144 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \end{enumerate}
 \end{exercise}
 
+\begin{exercise}[{\textcite[Chapter~4, \S2]{bib:lsf6zq1g}}]
+  \label{exe:8yw1mw3a}
+  Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
+  function from \(X\) to itself.  A subset \(Y\) of \(X\) is called
+  \firstterm{superinductive} for the pair \((a, f)\) if it satisfies
+  the following conditions:
+  \begin{enumerate}
+  \item \(a \in Y\).
+  \item \(f(Y) \subset Y\).
+  \item If \(Z\) is a nonempty totally ordered subset of \(Y\), and
+    \(b\) the supremum of \(Z\) in \(X\), then \(b \in Y\).
+  \end{enumerate}
+  A subset \(A\) of \(X\) is called \firstterm{minimally
+    superinductive} for \((a, f)\) if it is superinductive for
+  \((a, f)\), and no proper subset of \(A\) is superinductive for
+  \((a, f)\).  Show that \(X\) has a unique subset \(A\) that is
+  minimally superinductive for \((a, f)\).  Verify also that if
+  \(x \leq f(x)\) for all \(x \in X\), then \(a\) is the minimum of
+  \(A\).
+\end{exercise}
+
+\begin{exercise}[{\textcite[Chapter~4, Theorem~2.1]{bib:lsf6zq1g}}]
+  \label{exe:9l6q0c66}
+  Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
+  function from \(X\) to itself.  Suppose that \(X\) is minimally
+  superinductive for \((a, f)\).  Let \(R\) be a subset of
+  \(X \times X\) with the following properties:
+  \begin{enumerate}
+  \item \label{item:u0r5igra} For all \(x \in X\), \((x, a) \in R\).
+  \item \label{item:3jc58w0r} If \(x, y \in X\) are such that
+    \((x, y)\) and \((y, x)\) belong to \(R\), then \((x, f(y))\)
+    belongs to \(R\).
+  \item \label{item:fh1pwe19} If \(x\) is an element of \(X\), \(Y\) a
+    nonempty totally ordered subset of \(X\), \(b\) the supremum of
+    \(Y\) in \(X\), and \((x, y) \in R\) for all \(y \in Y\), then
+    \((x, b) \in R\).
+  \end{enumerate}
+  Prove that if \(x \in X\) is such that \((y, x) \in R\) for all
+  \(y \in X\), then \((x, y) \in R\) for all \(y \in R\).  Deduce from
+  this statement that \(R = X \times X\).
+\end{exercise}
+
+\begin{exercise}[{\textcite[Th\'eor\`eme~1]{bib:je0dhslq}}]
+  \label{exe:yf8euudc}
+  Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
+  function from \(X\) to itself.  Suppose that \(x \leq f(x)\) for all
+  \(x \in X\), and that \(X\) is minimally superinductive for
+  \((a, f)\).  Prove that for all \(x,y \in X\), either
+  \(f(x) \leq y\) or \(y \leq x\); in particular, \(X\) is totally
+  ordered.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:htz5ftfy}
+  Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
+  function from \(X\) to itself.  Suppose that \(x \leq f(x)\) for all
+  \(x \in X\), and that \(X\) is minimally superinductive for
+  \((a, f)\).  Let \(x, y \in X\).  Prove the following statements:
+  \begin{enumerate}
+  \item If \(x \leq y \leq f(x)\), then either \(x = y\) or
+    \(y = f(x)\).
+  \item If \(x < y\), then \(f(x) \leq y\).
+  \item The function \(f : X \to X\) is increasing.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[{\textcite[Corollaire~1 of Th\'eor\`eme~1]{bib:je0dhslq}}]
+  \label{exe:ycuba4tr}
+  Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
+  function from \(X\) to itself.  Suppose that \(x \leq f(x)\) for all
+  \(x \in X\).  Let \(A\) be the unique subset of \(X\) that is
+  minimally superinductive for \((a, f)\) (\Cref{exe:8yw1mw3a}), and
+  let \(b \in X\).  Prove the equivalence of the following statements:
+  \begin{enumerate}
+  \item \label{item:31iv9t84} \(b \in A\) and \(f(b) = b\).
+  \item \label{item:zg0eno8k} \(b\) is the maximum of \(A\).
+  \item \label{item:zhfu99x4} \(b\) is the supremum of \(A\).
+  \end{enumerate}
+  In particular, \(f\) has at most one fixed point in \(A\).
+\end{exercise}
+
+\begin{exercise}[Bourbaki-Witt fixed point theorem]
+  \label{exe:al7fffh1}
+  Let \(X\) be an ordered set, and \(f\) a function from \(X\) to
+  itself.  Suppose that every totally ordered subset of \(X\) has a
+  supremum, and that \(x \leq f(x)\) for all \(x \in X\).  Prove that
+  for every \(x \in X\), there exists an element \(b\) of \(X\) such
+  that \(x \leq b\) and \(f(b) = b\); in particular, \(f\) has a fixed
+  point in \(X\).
+\end{exercise}
+
+\begin{exercise}[{\textcite[Corollaire~2 of
+    Th\'eor\`eme~1]{bib:je0dhslq}}]
+  \label{exe:313bq61a}
+  Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
+  function from \(X\) to itself.  Suppose that \(x \leq f(x)\) for all
+  \(x \in X\), and that \(X\) is minimally superinductive for
+  \((a, f)\).
+  \begin{enumerate}
+  \item Show that if a subset \(Y\) of \(X\) does not have an infimum
+    in \(X\), then \(Y\) is empty.
+  \item Prove that \(X\) is well-ordered.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[{\textcite[p.~437]{bib:je0dhslq}}]
+  \label{exe:m0vdltb2}
+  This exercise gives a derivation of Zermelo's theorem from the axiom
+  of choice using the previous few exercises on superinductivity.  Let
+  \(X\) be an arbitrary set.  Denote by \(\mathcal{P}\) the power set
+  of \(X\), and by \(\mathcal{P}'\) the set of elements of
+  \(\mathcal{P}\) that are distinct from \(X\).  The axiom of choice
+  gives a function \(g : \mathcal{P}' \to X\) with the property that
+  \(g(Y) \in X \setminus Y\) for every \(Y \in \mathcal{P}'\).  Order
+  \(\mathcal{P}\) by inclusion: for all \(Y, Z \in \mathcal{P}\),
+  \(Y \leq Z\) if \(Y\) is a subset of \(Z\).  Define a function
+  \(f : \mathcal{P} \to \mathcal{P}\) by setting
+  \begin{displaymath}
+    f(Y) =
+    \begin{cases}
+      Y \cup \{ g(Y) \} & \text{if} ~ Y \neq X \\
+      X & \text{if} ~ Y = X
+    \end{cases}
+  \end{displaymath}
+  for all \(Y \in \mathcal{P}\).  Thus, \(Y \leq f(Y)\) for all
+  \(Y \in \mathcal{P}\).  Let \(\mathcal{A}\) be the unique subset of
+  \(\mathcal{P}\) that is minimally superinductive for the pair
+  \((\emptyset, f)\) (\Cref{exe:8yw1mw3a}).
+  \begin{enumerate}
+  \item Verify that \(X \in \mathcal{A}\).
+  \item Let \(\mathcal{A}'\) denote the set of elements of
+    \(\mathcal{A}\) that are distinct from \(X\).  Show that the
+    function \(g : \mathcal{P}' \to X\) restricts to a bijection from
+    \(\mathcal{A}'\) onto \(X\).  Deduce from this statement that
+    there is a well-order on the set \(X\).
+  \end{enumerate}
+\end{exercise}
+
 \subsection{Solutions}
 \label{sec:fzhm4l61}
 
@@ -1280,6 +1418,285 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \(u(\lambda) \in (u((-\infty, \lambda)))^*\) for all
   \(\lambda \in \Lambda\), hence \(u\) is strictly increasing.  The
   rest of the solution is as before.
+\end{solution}
+
+\begin{solution}[\ref{exe:8yw1mw3a}]
+  \label{sol:iyf7ad62}
+  There is a subset of \(X\) that is superinductive for \((a, f)\),
+  for instance, \(X\) itself.  Let \(A\) be the intersection of all
+  the subsets of \(X\) that are superinductive for \((a, f)\).  It is
+  the smallest subset of \(X\) that is superinductive for \((a, f)\).
+  In particular, it is minimally superinductive for \((a, f)\).  If
+  \(Y\) is a subset of \(X\) that is minimally superinductive for
+  \((a, f)\), then \(A \subset Y\), hence \(A = Y\).  Thus, \(A\) is
+  the unique subset of \(X\) that is minimally superinductive for
+  \((a, f)\).
+
+  Suppose \(x \leq f(x)\) for all \(x \in X\).  Then the subset
+  \([a, \infty)\) of \(X\) is superinductive for \((a, f)\): it
+  contains \(a\); if \(a \leq x\), then as \(x \leq f(x)\),
+  \(a \leq f(x)\); and if \(Z\) is a nonempty totally ordered subset
+  of \([a, \infty)\), and \(b\) the supremum of \(Z\) in \(X\), then
+  as \(a \leq z\) and \(z \leq b\) for an arbitrary element \(z\) of
+  the nonempty set \(Z\), \(a \leq b\).  Therefore, \(A\) is contained
+  in \([a, \infty)\).  As \(a \in A\), \(a\) is the minimum of \(A\).
+\end{solution}
+
+\begin{solution}[\ref{exe:9l6q0c66}]
+  \label{sol:st5xn271}
+  For any \(x \in X\), let
+  \begin{displaymath}
+    A_x = \{ y \in X \,\vert\, (x, y) \in R \},
+    \quad
+    B_x = \{ y \in X \,\vert\, (y, x) \in R \}.
+  \end{displaymath}
+  For the first part of the exercise, we have to show that if
+  \(B_x = X\), then \(A_x = X\).  So suppose \(B_x = X\).  As \(X\) is
+  minimally superinductive for \((a, f)\), to show that \(A_x = X\),
+  it is enough to show that \(A_x\) is superinductive for \((a, f)\).
+  Property (\ref{item:u0r5igra}) of \(R\) implies that
+  \((x, a) \in R\), so \(a \in A_x\).  Let \(y \in A_x\); then
+  \((x, y) \in R\); as \(B_x = X\), \(y \in B_x\), so
+  \((y, x) \in R\); by property (\ref{item:3jc58w0r}) of \(R\),
+  \((x, f(y)) \in R\); therefore, \(f(y) \in A_x\); thus,
+  \(f(A_x) \subset A_x\).  Let \(Z\) be a nonempty totally ordered
+  subset of \(A_x\), and \(b\) the supremum of \(Z\) in \(X\); as
+  \(Z \subset A_x\), \((x, y) \in R\) for all \(y \in Z\); by property
+  (\ref{item:fh1pwe19}) of \(R\), \((x, b) \in R\); therefore,
+  \(b \in A_x\).  Therefore, \(A_x\) is superinductive for \((a, f)\),
+  and hence equals \(X\).
+
+  To prove that \(R = X \times X\), it is enough to show that \(X\)
+  equals the set
+  \begin{displaymath}
+    B =
+    \{ x \in X \,\vert\, (y, x) \in R ~ \text{for all} ~ y \in X \} =
+    \{ x \in X \,\vert\, B_x = X \}.
+  \end{displaymath}
+  As before, we only need to verify that \(B\) is superinductive for
+  \((a, f)\).  By property (\ref{item:u0r5igra}) of \(R\),
+  \(a \in B\).  Suppose \(x \in B\); let \(y \in X\); as \(x \in B\),
+  \(B_x = X\), so \(y \in B_x\), that is, \((y, x) \in R\); as
+  \(B_x = X\), by the first part of the exercise, \(A_x = X\), so
+  \(y \in A_x\), that is, \((x, y) \in R\); therefore, by property
+  (\ref{item:3jc58w0r}) of \(R\), \((y, f(x)) \in R\); as this is true
+  for all \(y \in X\), \(f(x) \in B\); it follows that
+  \(f(B) \subset B\).  Let \(Z\) be a nonempty totally ordered subset
+  of \(B\), and \(b\) the supremum of \(Z\) in \(X\); let \(y \in X\);
+  as \(Z \subset B\), for all \(z \in Z\), \(B_z = X\), so
+  \(y \in B_z\), hence \((y, z) \in R\); property
+  (\ref{item:fh1pwe19}) implies that \((y, b) \in R\); as this holds
+  for all \(y \in X\), \(b \in B\).  Therefore, \(B\) is
+  superinductive for \((a,f)\), hence \(R = X \times X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:yf8euudc}]
+  \label{sol:k2kxymc8}
+  Let \(R\) be the set of all elements \((x, y)\) of \(X \times X\)
+  such that either \(f(x) \leq y\) or \(y \leq x\).  We will check
+  that \(R\) has the properties listed in \Cref{exe:9l6q0c66}.  As
+  \(x \leq f(x)\) for all \(x \in X\), and \(X\) is minimally
+  inductive for \((a, f)\), by \Cref{exe:8yw1mw3a}, \(a\) is the
+  minimum of \(X\); therefore, for all \(x \in X\), \(a \leq x\),
+  hence \((x, a) \in R\).  Suppose \(x, y \in X\) are such that
+  \((x,y)\) and \((y, x)\) belong to \(R\); we have to check that
+  \((x, f(y)) \in R\), that is, that either \(f(x) \leq f(y)\) or
+  \(f(y) \leq x\); as \((x, y) \in R\), either \(f(x) \leq y\) or
+  \(y \leq x\); as \((y, x) \in R\), either \(f(y) \leq x\) or
+  \(x \leq y\); if \(f(x) \leq y\), then as \(y \leq f(y)\),
+  \(f(x) \leq f(y)\), so \((x, f(y)) \in R\); if \(f(y) \leq x\), it
+  is obvious that \((x,f(y)) \in R\); lastly, if \(y \leq x\) and
+  \(x \leq y\), then \(x = y\), so \(f(x) = f(y)\), hence
+  \((x,f(y)) \in R\); it follows that \((x, f(y)) \in R\) in all the
+  cases.  Let \(x\) be an element of \(X\), \(Y\) a nonempty totally
+  ordered subset of \(X\), and \(b\) the supremum of \(Y\) in \(X\),
+  and suppose that \((x, y) \in R\) for all \(y \in Y\); we have to
+  show that \((x, b) \in R\), that is, that either \(f(x) \leq b\) or
+  \(b \leq x\); for all \(y \in Y\), \((x, y) \in R\), hence
+  \(f(x) \leq y\) or \(y \leq x\); if \(y \leq x\) for all
+  \(y \in Y\), then as \(b\) is the supremum of \(Y\) in \(X\),
+  \(b \leq x\), so \((x, b) \in R\); on the other hand, if
+  \(y \nleq x\) for some \(y \in Y\), then \(f(x) \leq y\); as \(b\)
+  is an upper bound of \(Y\), \(y \leq b\); therefore,
+  \(f(x) \leq b\), hence \((x, b) \in R\); thus, \((x, b) \in R\) in
+  all the cases.  It follows that \(R\) has the properties listed in
+  \Cref{exe:9l6q0c66}, hence \(R = X \times X\).  Therefore, for all
+  \(x, y \in X\), either \(f(x) \leq y\) or \(y \leq x\).  In
+  particular, as \(x \leq f(x)\) for all \(x \in X\), \(X\) is totally
+  ordered.
+\end{solution}
+
+\begin{solution}[\ref{exe:htz5ftfy}]
+  \label{sol:h2e8o5az}
+  Suppose \(x \leq y \leq f(x)\).  By \Cref{exe:yf8euudc}, either
+  \(f(x) \leq y\) or \(y \leq x\).  If \(f(x) \leq y\), then as
+  \(y \leq f(x)\), we have \(y = f(x)\).  On the other hand, if
+  \(y \leq x\), then as \(x \leq y\), we have \(y = x\).
+
+  Suppose \(x < y\).  By \Cref{exe:yf8euudc}, either \(f(x) \leq y\)
+  or \(y \leq x\).  If \(y \leq x\), then as \(x < y\), we get
+  \(y < y\), contradicting the irreflexivity of \(<\).  Therefore,
+  \(f(x) \leq y\).
+
+  Suppose \(x \leq y\).  If \(x = y\), then \(f(x) = f(y)\).  On the
+  other hand, if \(x \neq y\), then \(x < y\), so by the previous
+  part, \(f(x) \leq y\); as \(y \leq f(y)\), it follows that
+  \(f(x) \leq f(y)\).  Thus, \(f(x) \leq f(y)\) in all the cases,
+  hence \(f\) is increasing.
+\end{solution}
+
+\begin{solution}[\ref{exe:ycuba4tr}]
+  \label{sol:yyedjd3p}
+  Suppose \(b \in A\) and \(f(b) = b\).  Let \(B\) denote the set of
+  elements \(x\) of \(A\) such that \(x \leq b\).  We will check that
+  \(B\) is superinductive for \((a, f)\).  \Cref{exe:8yw1mw3a} implies
+  that \(a\) is the minimum of \(A\), so \(a \leq b\), hence
+  \(a \in B\).  Suppose \(x \in B\); then \(x \leq b\); by
+  \Cref{exe:htz5ftfy}, \(f\) is increasing on \(A\), so
+  \(f(x) \leq f(b)\); as \(b\) is a fixed point of \(f\), it follows
+  that \(f(x) \leq b\); as \(A\) is superinductive for \((a, f)\),
+  \(f(x) \in A\); hence \(f(x) \in B\); thus, \(f(B) \subset B\).  Let
+  \(Z\) be a nonempty totally ordered subset of \(B\), and \(c\) the
+  supremum of \(Z\) in \(X\); as \(Z \subset B\), \(z \leq b\) for all
+  \(z \in Z\); therefore, as \(b\) is the supremum of \(Z\) in \(X\),
+  \(c \leq b\); thus, \(c \in B\).  It follows that the subset \(B\)
+  of \(A\) is superinductive for \((a, f)\).  As \(A\) is minimally
+  superinductive for \((a,f)\), we have \(B = A\).  Thus, \(x \leq b\)
+  for all \(x \in A\), that is, \(b\) is the maximum of \(A\).
+
+  It is obvious that if \(b\) is the maximum of \(A\), it is the
+  supremum of \(A\).
+
+  Suppose \(b\) is the supremum of \(A\).  The subset \(A\) of \(A\)
+  is nonempty because it contains \(a\), and it is totally ordered by
+  \Cref{exe:yf8euudc}.  As \(b\) is the supremum of \(A\) in \(X\),
+  and \(A\) is superinductive for \((a, f)\), it follows that
+  \(b \in A\).  Since \(f(A) \subset A\), \(f(b) \in A\).  Therefore,
+  as \(b\) is the supremum of \(A\) in \(X\), \(f(b) \leq b\).  On the
+  other hand, by the hypothesis on \(f\), \(b \leq f(b)\).  It follows
+  that \(f(b) = b\).
+
+  If \(b_1\) and \(b_2\) are fixed points of \(f\) in \(A\), then each
+  of them is the maximum of \(A\), hence \(b_1 = b_2\).  Thus, \(f\)
+  has at most one fixed point in \(A\).
+\end{solution}
+
+\begin{solution}[\ref{exe:al7fffh1}]
+  \label{sol:ibjwlmqf}
+  Let \(x \in X\), and let \(X_x = [x, \infty)\).  As \(y \leq f(y)\)
+  for all \(y \in X\), \(f\) induces a function \(f_x : X_x \to X_x\).
+  The hypothesis on \(f\) implies that \(y \leq f_x(y)\) for all
+  \(y \in X_x\).  By \Cref{exe:8yw1mw3a}, there is a unique subset
+  \(A_x\) of \(X_x\) that is minimally superinductive for
+  \((x, f_x)\).  Also, by \Cref{exe:yf8euudc}, \(A_x\) is totally
+  ordered.  The hypothesis on \(X\) gives a supremum \(b\) of \(A_x\)
+  in \(X\).  As \(x \in A_x\), \(x \leq b\), so \(b \in X_x\).  Thus,
+  \(b\) is the supremum of \(A_x\) in \(X_x\).  By
+  \Cref{exe:ycuba4tr}, \(b \in A_x\) and \(f_x(b) = b\).  Thus,
+  \(x \leq b\) and \(f(b) = b\).
+
+  The hypothesis on \(X\) implies that the totally ordered subset
+  \(\emptyset\) of \(X\) has a supremum \(a\) in \(X\).  It is obvious
+  that \(a\) is the minimum of \(X\).  Putting \(a\) for \(x\) in the
+  first part of the exercise gives an element \(b\) of \(X\) such that
+  \(f(b) = b\).  Thus, \(f\) has a fixed point in \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:313bq61a}]
+  \label{sol:eh1t1jcm}
+  Let \(Y\) be a subset of \(X\) that does not have an infimum in
+  \(X\).  Let \(L\) be the set of lower bounds of \(Y\) in \(X\):
+  \begin{displaymath}
+    L = \{ l \in X \,\vert\, l \leq x ~ \text{for all} ~ x \in Y \}.
+  \end{displaymath}
+  An infimum of \(Y\) is just a maximum of \(L\), so \(L\) does not
+  have a maximum.  It follows that \(L \cap Y = \emptyset\); for, if
+  \(x \in L \cap Y\), then \(x \in Y\), so \(l \leq x\) for all
+  \(l \in L\); as \(x \in L\), this means that \(x\) is a maximum of
+  \(L\), a contradiction.  We will verify that \(L\) is superinductive
+  for \((a, f)\).  As \(X\) is minimally superinductive for
+  \((a, f)\), by \Cref{exe:8yw1mw3a}, \(a\) is the minimum of \(X\),
+  so \(a \leq x\) for all \(x \in Y\), hence \(a \in L\).  If \(l\) is
+  an element of \(L\), then as \(L \cap Y = \emptyset\),
+  \(l \notin Y\); as \(l \leq x\) for all \(x \in Y\), this implies
+  that \(l < x\) for all \(x \in Y\); by \Cref{exe:htz5ftfy},
+  \(f(l) \leq x\) for all \(x \in Y\); therefore, \(f(l) \in L\),
+  hence \(f(L) \subset L\).  Suppose \(Z\) is a nonempty subset of
+  \(X\), and \(b\) the supremum of \(Z\) in \(X\); then for all
+  \(x \in B\), \(z \leq x\) for all \(z \in Z\), hence \(b \leq x\);
+  so \(b \in L\).  Therefore, \(L\) is superinductive for \((a, f)\).
+  As \(X\) is minimally superinductive for \((a, f)\), it follows that
+  \(L = X\).  Thus, \(Y = X \cap Y = L \cap Y = \emptyset\).
+
+  We will now show that \(X\) is well-ordered.  Let \(Y\) be a
+  nonempty subset of \(X\).  We have to show that \(Y\) has a minimum.
+  By the first part of the exercise, \(Y\) has an infimum \(b\).  If
+  \(b \in Y\), then it must be the minimum of \(Y\), so it suffices to
+  show that \(b \in Y\).  Suppose \(b \notin Y\).  Then for all
+  \(x \in Y\), as \(b \leq x\), we have \(b < x\).  By
+  \Cref{exe:htz5ftfy}, \(f(b) \leq x\) for all \(x \in Y\).  Thus,
+  \(f(b)\) is a lower bound of \(Y\); so as \(b\) is the infimum of
+  \(Y\), \(f(b) \leq b\).  As \(b \leq f(b)\) by the hypothesis on
+  \(f\), it follows that \(f(b) = b\).  \Cref{exe:ycuba4tr} implies
+  that \(b\) is the maximum of \(X\).  This is a contradiction because
+  we have seen above that \(b < x\) if \(x\) is an arbitrary element
+  of the nonempty set \(Y\).  Therefore, \(b\) belongs to \(Y\), and
+  is hence the minimum of \(Y\).
+\end{solution}
+
+\begin{solution}[\ref{exe:m0vdltb2}]
+  \label{sol:7pp5s6s1}
+  Let \(U\) denote the union of the elements of \(\mathcal{A}\).  It
+  is the supremum of \(\mathcal{A}\) in \(\mathcal{P}\).  As
+  \(\mathcal{A}\) is minimally superinductive for \((\emptyset, f)\),
+  it follows from \Cref{exe:ycuba4tr} that \(U \in \mathcal{A}\) and
+  \(f(U) = U\).  But the definition of \(f\) implies that \(X\) is its
+  only fixed point.  Therefore, \(U = X\), so \(X \in \mathcal{A}\).
+
+  Let \(h : \mathcal{A}' \to X\) be the restriction of
+  \(g : \mathcal{P}' \to X\).  Define a function
+  \(u : X \to \mathcal{A}'\) by setting, for every \(x \in X\),
+  \(u(x)\) to be the union of the elements of \(\mathcal{A}\) that do
+  not contain \(x\); thus, \(u(x)\) is the supremum in \(\mathcal{P}\)
+  of the set of elements of \(\mathcal{A}\) that do not contain \(x\);
+  as \(\emptyset \in \mathcal{A}\), this set is a nonempty subset of
+  the totally ordered set \(\mathcal{A}\) (\Cref{exe:yf8euudc}); that
+  \(\mathcal{A}\) is superinductive for \((\emptyset, f)\) implies
+  that \(u(x) \in \mathcal{A}\); it is obvious that \(x \notin u(x)\),
+  so \(u(x) \neq X\); therefore, \(u(x)\) does belong to
+  \(\mathcal{A}'\).
+
+  We will first show that \(h(u(x)) = x\) for all \(x \in X\).  Let
+  \(x \in X\), and let \(Y = u(x)\).  We have to verify that
+  \(g(Y) = x\).  As \(u(x) \neq X\), \(Y \neq X\), so
+  \(f(Y) = Y \cup \{ g(Y) \}\); \(g(Y) \notin Y\), so \(Y < f(Y)\);
+  thus, \(f(Y) \in \mathcal{A}\) and \(f(Y) \nleq Y\); by definition,
+  \(Z \leq Y\) for all \(Z \in \mathcal{A}\) such that \(x \notin Z\);
+  therefore, \(x \in f(Y)\).  On the other hand, \(x \notin u(x)\), so
+  \(x \notin Y\).  Thus, \(x \in f(Y) \setminus Y\).  As
+  \(f(Y) \setminus Y = \{ g(Y) \}\), it follows that \(x = g(Y)\).
+  Therefore, \(h(u(x)) = x\) for all \(x \in X\).
+
+  Now we will check that \(u(h(Y)) = Y\) for all
+  \(Y \in \mathcal{A}'\).  Let \(Y \in \mathcal{A}'\), and let
+  \(x = h(Y)\) and \(Y' = u(x)\).  We have to show that \(Y = Y'\).
+  By the definition of \(h\), \(x = h(Y) = g(Y)\) does not belong to
+  \(Y\); as \(Z \leq Y'\) for all the elements of \(\mathcal{A}\) that
+  do not contain \(x\), we therefore have \(Y \leq Y'\).  On the other
+  hand, as \(f(Y) = Y \cup \{ g(Y) \} = Y \cup \{ x \}\),
+  \(x \in f(Y)\); as \(x \notin Y'\), this implies that
+  \(f(Y) \nleq Y'\); the set \(\mathcal{A}\) is minimally
+  superinductive for \((\emptyset, f)\), so by \Cref{exe:yf8euudc},
+  \(Y' \leq Y\).  It follows that \(Y = Y'\).  Therefore,
+  \(u(h(Y)) = Y\) for all \(Y \in \mathcal{A}'\).
+
+  Thus, \(h : \mathcal{A}' \to X\) is a bijection.  By transporting
+  the order on \(\mathcal{A}'\) through this bijection, we get a
+  unique order on \(X\) such that \(h\) is an isomorphism of ordered
+  sets.  \Cref{exe:313bq61a} implies that \(\mathcal{A}\) is
+  well-ordered, so \(\mathcal{A}'\) is well-ordered, and hence \(X\)
+  is also well-ordered.  So we have proved that the set \(X\) has a
+  well-order.
 \end{solution}
 
 \bibsection
