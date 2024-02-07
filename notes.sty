@@ -196,6 +196,15 @@
    \newunit\newblock}
   {}
   {}
+
+\xpatchbibdriver{article}
+  {\usebibmacro{doi+eprint+url}}
+  {\usebibmacro{doi+eprint+url}%
+   \newunit\newblock
+   \printfield{zbmathopen}%
+   \newunit\newblock}
+  {}
+  {}
 \ExplSyntaxOn
 
 \setcounter { biburllcpenalty }
