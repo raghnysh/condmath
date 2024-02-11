@@ -658,10 +658,11 @@ the \firstterm{lexicographic} order.  It is a total order if every
   Theorem~9.4]{bib:h8xsxpp7}.  Let X be an ordered set in which every
   totally ordered subset is bounded above.
   \begin{enumerate}
-  \item Show that if \(M\) is a maximal totally ordered subset of
-    \(X\), that is, a totally ordered subset of \(X\) which is not
-    properly contained in another totally ordered subset of \(X\),
-    then any upper bound of \(M\) is a maximal element of \(X\).
+  \item \label{item:ebwyq3lr} Show that if \(M\) is a maximal totally
+    ordered subset of \(X\), that is, a totally ordered subset of
+    \(X\) which is not properly contained in another totally ordered
+    subset of \(X\), then any upper bound of \(M\) is a maximal
+    element of \(X\).
   \item Zermelo's theorem gives a well-ordered set \(\Lambda\) and a
     bijection \(h\) from the set \(\Lambda\) to the set \(X\).  Use
     transfinite recursion (\Cref{thm:5kg5ewo1}) to get a family
@@ -864,6 +865,103 @@ the \firstterm{lexicographic} order.  It is a total order if every
     function \(g : \mathcal{P}' \to X\) restricts to a bijection from
     \(\mathcal{A}'\) onto \(X\).  Deduce from this statement that
     there is a well-order on the set \(X\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:rw9lhmv9}
+  Let \(X\) be a set, and \((X_i)_{i \in I}\) a partition of \(X\).
+  Denote by \(p\) the function from \(X\) to \(I\) which maps any
+  element \(x\) of \(X\) to the unique index \(i \in I\) such that
+  \(x \in X_i\).  Suppose that we are given an order on each of the
+  sets \(X_i\), and on the index set \(I\).
+  \begin{enumerate}
+  \item Show that there is a unique order on \(X\) which induces the
+    given order on each of the \(X_i\), and satisfies the condition
+    that \(x \leq y\) for all \(x, y \in X\) such that
+    \(p(x) < p(y)\).
+  \item If the orders on the \(X_i\) and \(I\) are well-orders, verify
+    that the above order on \(X\) is also a well-order.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:mfln3otu}
+  Let \(X\) be a set.  Let \(S\) be the set of pairs \((Y, \leq)\)
+  consisting of a subset \(Y\) of \(X\) and a well-order \(\leq\) on
+  \(Y\).  For any two elements \(s = (Y, \leq)\) and
+  \(s' = (Y', \leq')\) of \(S\), define \(s \sqsubseteq s'\) if \(Y\)
+  is a subset of \(Y'\), \(\leq\) is the order that is induced on
+  \(Y\) by \(\leq'\), and \(Y\) is a segment of \(Y'\) with respect to
+  \(\leq'\).
+  \begin{enumerate}
+  \item Check that \(\sqsubseteq\) is an order on \(S\).
+  \item Let \(T = (s_i)_{i \in I}\) be a family of elements of \(S\)
+    which is totally ordered with respect to \(\sqsubseteq\): for any
+    two indices \(i, j \in I\), either \(s_i \sqsubseteq s_j\) or
+    \(s_j \sqsubseteq s_i\).  Write \(s_i = (Y_i, \leq_i)\) for every
+    \(i\).  Let \(Y\) be the union of the sets \(Y_i\) as \(i\) runs
+    over \(I\).
+    \begin{enumerate}
+    \item Verify that there is a unique order \(\leq\) on \(Y\) which
+      induces \(\leq_i\) on each \(Y_i\).
+    \item Prove that \(\leq\) is a well-order on \(Y\).
+    \item Show that the element \(s = (Y, \leq)\) of \(S\) is a
+      supremum of the family \(T\): \(s_i \sqsubseteq s\) for all
+      \(i\), and if \(s'\) is another element of \(S\) such that
+      \(s_i \sqsubseteq s'\) for all \(i\), then \(s \sqsubseteq s'\).
+    \end{enumerate}
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:fgbbb6v2}
+  Use the Bourbaki-Witt fixed point theorem (\Cref{exe:al7fffh1}) to
+  derive Zermelo's theorem from the axiom of choice as follows.  Let
+  \(X\) be a set, and let \(S\) be the ordered set of
+  \Cref{exe:mfln3otu}.  Apply the Bourbaki-Witt fixed point theorem to
+  a suitable function on \(S\) to deduce that there is a well-order on
+  \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:64qxlchj}
+  Let \(X\) be an ordered set.  Denote by \(\mathcal{S}\) the set of
+  totally ordered subsets of \(X\).  Order \(\mathcal{S}\) by
+  inclusion: for \(Y, Z \in \mathcal{S}\), \(Y \leq Z\) if \(Y\) is a
+  subset of \(Z\).  Show that every totally ordered subset of
+  \(\mathcal{S}\) has a supremum in \(\mathcal{S}\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:h4ww3mr2}
+  This exercise shows how to deduce Zorn's lemma from the axiom of
+  choice using the Bourbaki-Witt fixed point theorem
+  (\Cref{exe:al7fffh1}).  Let \(X\) be an ordered set in which every
+  totally ordered subset is bounded above.  Apply the Bourbaki-Witt
+  fixed point theorem to an appropriate function on the ordered set
+  \(\mathcal{S}\) of \Cref{exe:64qxlchj} to deduce that \(X\) has a
+  maximal element.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:51daga9q}
+  Here is another proof of Zorn's lemma from the axiom of choice using
+  the Bourbaki-Witt fixed point theorem (\Cref{exe:al7fffh1}).  Let
+  \(X\) be an ordered set.  Denote by \(\mathcal{S}\) the set of
+  well-ordered subsets of \(X\).  For \(Y, Z \in \mathcal{S}\), define
+  \(Y \sqsubseteq Z\) if \(Y\) is a segment of \(Z\).
+  \begin{enumerate}
+  \item \label{item:j6hjwyxg} Show that \(\sqsubseteq\) is an order on
+    \(\mathcal{S}\), and that every totally ordered subset of
+    \(\mathcal{S}\) has a supremum in \(\mathcal{S}\).
+  \item \label{item:41f56yw7} Check that if \(M\) is a maximal element
+    of \(\mathcal{S}\), then any upper bound of \(M\) is a maximal
+    element of \(X\).
+  \item Suppose that every well-ordered subset of \(X\) is bounded
+    above.  Apply the Bourbaki-Witt fixed point theorem to a suitable
+    function on \(\mathcal{S}\) to deduce that \(X\) has a maximal
+    element.
   \end{enumerate}
 \end{exercise}
 
@@ -1697,6 +1795,327 @@ the \firstterm{lexicographic} order.  It is a total order if every
   well-ordered, so \(\mathcal{A}'\) is well-ordered, and hence \(X\)
   is also well-ordered.  So we have proved that the set \(X\) has a
   well-order.
+\end{solution}
+
+\begin{solution}[\ref{exe:rw9lhmv9}]
+  \label{sol:dcd6z7iz}
+  For every \(i \in I\), denote the given order on \(X_i\) by
+  \(\leq_i\), and let \(\leq_I\) denote the order on \(I\).  Define a
+  relation \(\leq\) on \(X\) by setting \(x \leq y\) if either
+  \(p(x) <_I p(y)\), or \(p(x) = p(y)\) and \(x \leq_{p(x)} y\) in the
+  ordered set \(X_{p(x)}\).  The reflexivity of this relation is
+  obvious.  If \(x, y \in X\) are such that \(x \leq y\), then the
+  definition of \(\leq\) implies that \(p(x) \leq_I p(y)\); therefore,
+  if also \(y \leq x\), then \(p(y) \leq_I p(x)\), hence the
+  anti-symmetry of \(\leq_I\) implies that \(p(x) = p(y)\); thus,
+  \(x \leq_{p(x)} y\) and \(y \leq_{p(x)} x\); the anti-symmetry of
+  \(\leq_{p(x)}\) implies that \(x = y\); therefore, \(\leq\) is
+  anti-symmetric.  If \(x, y, z \in X\) are such that \(x \leq y\) and
+  \(y \leq z\), then \(p(x) \leq_I p(y)\) and \(p(y) \leq_I p(z)\); if
+  either \(p(x) \neq p(y)\) or \(p(y) \neq p(z)\), then
+  \(p(x) <_I p(z)\), hence \(x \leq z\); on the other hand, if
+  \(p(x) = p(y) = p(z)\), then \(x \leq_{p(x)} y\) and
+  \(y \leq_{p(x)} z\), so the transitivity of \(\leq_{p(x)}\) implies
+  that \(x \leq_{p(x)} z\), hence \(x \leq z\); therefore, \(\leq\) is
+  transitive.  It follows that \(\leq\) is an order on \(X\).  If
+  \(i \in I\) and \(x, y \in X_i\), then \(p(x) = p(y) = i\), so
+  \(x \leq y\) if and only if \(x \leq_i y\); thus, \(\leq\) induces
+  \(\leq_i\) on \(X_i\); on the other hand, if \(x, y \in X\) and
+  \(p(x) <_I p(y)\), then the definition of \(\leq\) implies that
+  \(x \leq y\); so \(\leq\) has the required properties.  If \(\leq'\)
+  is another order on \(X\) that has these properties, then for any
+  \(x, y \in X\), we have \(x \leq y\) if and only if either
+  \(p(x) <_I p(y)\), or \(p(x) = p(y)\) and \(x \leq_{p(x)} y\);
+  therefore, \(\leq'\) equals \(\leq\); thus, \(\leq\) is the unique
+  order on \(X\) that satisfies the stated conditions.
+
+  Suppose now that all the orders \(\leq_i\) and \(\leq_I\) are
+  well-orders.  We have to show that \(\leq\) is a well-order on
+  \(X\).  Let \(Y\) be a nonempty subset of \(X\).  Then the set \(J\)
+  of the indices \(i \in I\) such that \(Y \cap X_i \neq \emptyset\)
+  is nonempty.  As \(\leq_I\) is a well-order, \(J\) has a minimum
+  \(k\) with respect to \(\leq_I\).  As \(\leq_k\) is a well-order,
+  the nonempty subset \(Y \cap X_k\) of \(X_k\) has a minimum \(a\)
+  with respect to \(\leq_k\).  We will check that \(a\) is the minimum
+  of \(Y\) with respect to \(\leq\).  Let \(x \in Y\).  Then
+  \(x \in Y \cap X_{p(x)}\), so \(p(x) \in J\), hence
+  \(k \leq_I p(x)\).  If \(k < p(x)\), then as \(p(a) = k\), \(p(a) <
+  p(x)\), so \(a \leq x\).  On the other hand, if \(k = p(x)\), then
+  \(a, x \in Y \cap X_k\); as \(a\) is the minimum of \(Y \cap X_k\)
+  with respect to \(\leq_k\), \(a \leq_k x\); thus, \(p(a) = p(x)\),
+  and \(a \leq_{p(a)} x\), hence \(a \leq x\).  Therefore, in all the
+  cases, \(a \leq x\).  It follows that \(a\) is the minimum of \(Y\)
+  with respect to \(\leq\).  This verifies that \(\leq\) is a
+  well-order on \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:mfln3otu}]
+  \label{sol:dnerb46y}
+  As any ordered set is a segment of itself, \(s \sqsubseteq s\) for
+  every element \(s = (Y, \leq)\) of \(S\), so \(\sqsubseteq\) is
+  reflexive.  If \(s = (Y, \leq)\) and \(s' = (Y', \leq')\) are two
+  elements of \(S\) such that \(s \sqsubseteq s'\) and
+  \(s' \sqsubseteq s\), then \(Y \subset Y'\) and \(Y' \subset Y\), so
+  \(Y = Y'\); as \(\leq\) and \(\leq'\) induce each other, they are
+  equal; therefore, \(s = s'\); thus, \(\sqsubseteq\) is
+  anti-symmetric.  If \(s = (Y, \leq)\), \(s' = (Y', \leq')\), and
+  \(s'' = (Y'', \leq'')\) are elements of \(S\) such that
+  \(s \sqsubseteq s'\) and \(s' \sqsubseteq s''\), then
+  \(Y \subset Y'\) and \(Y' \subset Y''\), hence \(Y \subset Y''\); as
+  \(\leq''\) induces \(\leq'\) on \(Y'\), and \(\leq'\) induces
+  \(\leq\) on \(Y\), \(\leq''\) induces \(\leq\) on \(Y\); because
+  \(Y\) is a segment of \(Y'\) with respect to \(\leq'\), \(Y'\) is a
+  segment of \(Y''\) with respect to \(\leq''\), and \(\leq''\)
+  induces \(\leq'\) on \(Y'\), it follows that \(Y\) is a segment of
+  \(Y''\) with respect to \(\leq''\); therefore,
+  \(s \sqsubseteq s''\), hence \(\sqsubseteq\) is transitive.  This
+  shows that \(\sqsubseteq\) is an order on \(S\).
+
+  Let \(T = (s_i)_{i \in I}\) be a family of elements of \(S\) which
+  is totally ordered with respect to \(\sqsubseteq\).  Write
+  \(s_i = (Y_i, \leq_i)\) for every \(i\).  Let \(Y\) be the union of
+  the \(Y_i\).  Define a relation \(\leq\) on \(Y\) as follows.  Let
+  \(x, y \in Y\).  As the family \(T\) is totally ordered with respect
+  to \(\sqsubseteq\), there exists an element \(i\) of \(I\) such that
+  \(x, y \in Y_i\); define \(x \leq y\) if \(x \leq_i y\) in \(Y_i\).
+  To check that this definition is independent of the choice of \(i\),
+  let \(j\) be another element of \(I\) such that \(x, y \in Y_j\).
+  We have to prove that \(x \leq_j y\) in \(Y_j\).  As the family
+  \(T\) is totally ordered with respect to \(\sqsubseteq\), either
+  \(s_i \sqsubseteq s_j\) or \(s_j \sqsubseteq s_i\).  If
+  \(s_i \sqsubseteq s_j\), then \(Y_i \subset Y_j\) and \(\leq_i\) is
+  induced by \(\leq_j\), so as \(x, y \in Y_i\) and \(x \leq_i y\), we
+  have \(x \leq_j y\).  On the other hand, if \(s_j \sqsubseteq s_i\),
+  then \(Y_j \subset Y_i\) and \(\leq_j\) is induced by \(\leq_i\), so
+  as \(x, y \in Y_j\) and \(x \leq_i y\), we have \(x \leq_j y\).
+  Therefore, \(\leq\) is a well-defined relation on \(Y\).  It has the
+  property that for all \(i \in I\) and \(x, y \in Y_i\), we have
+  \(x \leq_i y\) if and only if \(x \leq y\).
+
+  We will first check that \(\leq\) is an order on \(Y\).  The
+  reflexivity and anti-symmetry of \(\leq\) follow immediately from
+  those of the relations \(\leq_i\).  As for the transitivity of
+  \(\leq\), if \(x, y, z \in Y\) are such that \(x \leq y\) and
+  \(y \leq z\), then as the family \(T\) is totally ordered, there is
+  an element \(i\) of \(I\) such that \(x, y, z \in Y_i\); the
+  definition of \(\leq\) implies that \(x \leq_i y\) and
+  \(y \leq_i z\), so the transitivity of \(\leq_i\) gives
+  \(x \leq_i z\), hence \(x \leq z\).  Therefore, \(\leq\) is an order
+  on \(Y\).  For any \(i \in I\) and \(x, y \in Y_i\), we have
+  \(x \leq_i y\) if and only if \(x \leq y\), so \(\leq\) induces
+  \(\leq_i\) on \(Y_i\).  If \(\leq'\) is another order on \(Y\) that
+  induces \(\leq_i\) on each \(Y_i\), then for all \(x, y \in Y\),
+  there is an index \(i \in I\) such that \(x, y \in Y_i\); as
+  \(\leq_i\) is induced by \(\leq'\), we have \(x \leq_i y\) if and
+  only if \(x \leq' y\); on the other hand, we have already seen that
+  \(x \leq_i y\) if and only if \(x \leq y\); therefore, \(x \leq' y\)
+  if and only if \(x \leq y\); it follows that \(\leq'\) equals
+  \(\leq\).  Thus, \(\leq\) is the unique order on \(Y\) that induces
+  \(\leq_i\) on every \(Y_i\).
+
+  We will now show that \(\leq\) is a well-order on \(Y\).  Let \(A\)
+  be a nonempty subset of \(Y\).  Then there is an element \(i\) of
+  \(I\) such that \(A \cap Y_i \neq \emptyset\).  As \(\leq_i\) is a
+  well-order on \(Y_i\), \(A \cap Y_i\) has a minimum \(a\) with
+  respect to \(\leq_i\).  We will verify that \(a\) is the minimum of
+  \(A\) with respect to \(\leq\).  Let \(x \in A\).  We have to check
+  that \(a \leq x\).  Let \(j\) be an element of \(I\) such that
+  \(x \in Y_j\).  As the family \(T\) is totally ordered, either
+  \(s_i \sqsubseteq s_j\) or \(s_j \sqsubseteq s_i\).  If
+  \(s_i \sqsubseteq s_j\), then \(Y_i \subset Y_j\), so
+  \(a, x \in Y_j\); if \(a <_j x\), then \(a \leq_j x\), so
+  \(a \leq x\); on the other hand, if \(a \nless_j x\), then as
+  \(\leq_j\) is a total order on \(Y_j\), \(x \leq_j a\); as
+  \(a \in Y_i\), and \(Y_i\) is a segment of \(Y_j\) with respect to
+  \(\leq_j\), we get \(x \in Y_i\); thus, \(x \in A \cap Y_i\); as
+  \(a\) is the minimum of \(A \cap Y_i\) with respect to \(\leq_i\),
+  \(a \leq_i x\); since \(\leq_i\) is induced by \(\leq_j\),
+  \(a \leq_j x\); the anti-symmetry of \(\leq_j\) implies that
+  \(a = x\); in particular, \(a \leq x\).  If \(s_j \sqsubseteq s_i\),
+  then \(Y_j \subset Y_i\), so \(a, x \in A \cap Y_i\); as \(a\) is
+  the minimum of \(A \cap Y_i\) with respect to \(\leq_i\),
+  \(a \leq_i x\), hence \(a \leq x\).  Therefore, in both the cases,
+  \(a \leq x\).  Thus, \(a\) is the minimum of \(A\).  It follows that
+  \(\leq\) is a well-order on \(Y\).  We thus have an element
+  \(s = (Y, \leq)\) of \(S\).
+
+  The definitions of \(Y\) and \(\leq\) imply that for any
+  \(i \in I\), \(Y_i \subset Y\), and \(\leq_i\) is induced by
+  \(\leq\).  We will show that \(Y_i\) is a segment of \(Y\) with
+  respect to \(\leq\).  Let \(x \in Y_i\) and \(y \in Y\) be such that
+  \(y \leq x\).  We have to show that \(y \in Y_i\).  There is an
+  element \(j\) of \(I\) such that \(y \in Y_j\).  If
+  \(s_i \sqsubseteq s_j\), \(Y_i\) is a segment of \(Y_j\) with
+  respect to \(\leq_j\); also, as \(y \leq x\) and \(x, y \in A_j\),
+  \(y \leq_j x\); therefore, \(y \in Y_i\).  On the other hand, if
+  \(s_j \sqsubseteq s_i\), then \(Y_j\) is a subset of \(Y_i\), so
+  \(y \in Y_i\).  It follows that \(Y_i\) is a segment of \(Y\) with
+  respect to \(\leq\).  Thus, \(s_i \sqsubseteq s\) for all
+  \(i \in I\), hence \(s\) is an upper bound of the family \(T\) in
+  \(S\).
+
+  We will now verify that \(s\) is in fact the supremum of the family
+  \(T\) in \(S\).  Let \(s' = (Y', \leq')\) be an arbitrary upper
+  bound of \(T\) in \(S\).  We have to show that \(s \sqsubseteq s'\).
+  For all \(i \in I\), \(s_i \sqsubseteq s'\), so \(Y_i \subset Y'\);
+  as \(Y\) is the union of the \(Y_i\) as \(i\) runs over \(I\), it
+  follows that \(Y \subset Y'\).  Let \(x, y \in Y\); then there is an
+  element \(i\) of \(I\) such that \(x, y \in Y_i\); we have already
+  seen that \(x \leq_i y\) if and only if \(x \leq y\); on the other
+  hand, as \(s_i \sqsubseteq s'\), \(Y_i\) is a subset of \(Y'\) and
+  \(\leq_i\) is induced by \(\leq'\), so \(x \leq_i y\) if and only if
+  \(x \leq' y\); it follows that \(x \leq y\) if and only if
+  \(x \leq' y\); therefore, \(\leq\) is induced by \(\leq'\).  Let
+  \(x \in Y\) and \(y \in Y'\) be such that \(y \leq' x\); then there
+  is an element \(i\) of \(I\) such that \(x \in Y_i\); as
+  \(s_i \sqsubseteq s'\), \(Y_i\) is a segment of \(Y'\) with respect
+  to \(\leq'\); so, as \(x \in Y_i\), \(y \in Y'\), and \(y \leq' x\),
+  we have \(y \in Y_i\); since \(Y_i \subset Y\), this implies that
+  \(y \in Y\); therefore, \(Y\) is a segment of \(Y'\) with respect to
+  \(\leq'\).  Thus, \(s \sqsubseteq s'\).  Therefore, \(s\) is the
+  supremum of the family \(T\) in \(S\).
+\end{solution}
+
+\begin{solution}[\ref{exe:fgbbb6v2}]
+  \label{sol:v2ix8vst}
+  Let \(\mathcal{P}\) denote the power set of \(X\), and
+  \(\mathcal{P}'\) the set of elements of \(\mathcal{P}\) that are
+  distinct from \(X\).  The axiom of choice gives a function
+  \(g : \mathcal{P}' \to X\) with the property that
+  \(g(Y) \in X \setminus Y\) for all \(Y \in \mathcal{P}'\).  Let
+  \(S\) be the ordered set from \Cref{exe:mfln3otu}.  We define a
+  function \(f : S \to S\) as follows.  Let \(s = (Y, \leq)\) be an
+  element of \(S\).  If \(Y = X\), let \(f(s) = s\).  If \(Y \neq X\),
+  let \(f(s) = (Y', \leq')\), where \(Y' = Y \cup \{ g(Y) \}\), and
+  \(\leq'\) is the unique order on \(Y'\) which induces \(\leq\) on
+  \(Y\), and satisfies the condition that \(x \leq g(Y)\) for all
+  \(x \in Y\); the existence and uniqueness of \(\leq'\) and the fact
+  that it is a well-order on \(Y'\) follow from \Cref{exe:rw9lhmv9}.
+
+  By the definition of \(f\), \(s \sqsubseteq f(s)\) for all
+  \(s \in S\).  \Cref{exe:mfln3otu} implies that every totally ordered
+  subset of \(S\) has a supremum in \(S\).  Therefore, by the
+  Bourbaki-Witt fixed point theorem (\Cref{exe:al7fffh1}), \(f\) has a
+  fixed point \(s_0 = (Y_0, \leq_0)\).  The definition of \(f\)
+  implies that for every element \(s = (Y, \leq)\) of \(S\) such that
+  \(Y \neq X\), if we write \(f(s) = (Y', \leq')\), then
+  \(Y \neq Y'\), hence \(s \neq f(s)\).  Therefore, \(Y_0 = X\), so
+  \(\leq_0\) is a well-order on \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:64qxlchj}]
+  \label{sol:ejhxq7pq}
+  Let \(\mathcal{T}\) be a totally ordered subset of \(\mathcal{S}\).
+  Let \(A\) be the union of the elements of \(\mathcal{T}\).  Suppose
+  \(x, y \in A\).  As \(\mathcal{T}\) is totally ordered, there exists
+  an element \(Y\) of \(\mathcal{T}\) such that \(x, y \in Y\).  As
+  \(Y\) is a totally ordered subset of \(X\), either \(x \leq y\) or
+  \(y \leq x\).  Therefore, \(A\) is totally ordered, so
+  \(A \in \mathcal{S}\).  It is obvious that \(Y \leq A\) for all
+  \(Y \in \mathcal{T}\), so \(A\) is an upper bound of \(\mathcal{T}\)
+  in \(\mathcal{S}\).  Suppose \(B\) is another upper bound of
+  \(\mathcal{T}\) in \(\mathcal{S}\).  Then every element of
+  \(\mathcal{T}\) is a subset of \(B\), so the union \(A\) of the
+  elements of \(\mathcal{T}\) is also a subset of \(B\).  Thus,
+  \(A \leq B\).  It follows that \(A\) is the supremum of
+  \(\mathcal{T}\) in \(\mathcal{S}\).  Therefore, every totally
+  ordered subset of \(\mathcal{S}\) has a supremum in \(\mathcal{S}\).
+\end{solution}
+
+\begin{solution}[\ref{exe:h4ww3mr2}]
+  \label{sol:pgr3pn5c}
+  Let \(\mathcal{S}\) be the ordered set from \Cref{exe:64qxlchj}, and
+  \(\mathcal{M}\) the set of maximal elements of \(\mathcal{S}\).  The
+  axiom of choice gives a function
+  \(g : \mathcal{S} \setminus \mathcal{M} \to \mathcal{S}\) such that
+  \(Y < g(Y)\) for all \(Y \in \mathcal{S} \setminus \mathcal{M}\).
+  Define a function \(f : \mathcal{S} \to \mathcal{S}\) by setting
+  \begin{displaymath}
+    f(Y) =
+    \begin{cases}
+      Y & \text{if} ~ Y \in \mathcal{M} \\
+      g(Y) & \text{if} ~ Y \notin \mathcal{M}
+    \end{cases}
+  \end{displaymath}
+  for all \(Y \in \mathcal{S}\).  Then \(Y \leq f(Y)\) for all
+  \(Y \in \mathcal{S}\).  As every totally ordered subset of
+  \(\mathcal{S}\) has a supremum in \(\mathcal{S}\), by the
+  Bourbaki-Witt fixed point theorem (\Cref{exe:al7fffh1}), \(f\) has a
+  fixed point \(M\) in \(\mathcal{S}\).  For all
+  \(Y \in \mathcal{S} \setminus \mathcal{M}\), \(Y < g(Y)\), so
+  \(Y < f(Y)\).  Therefore, \(M \in \mathcal{M}\).  Thus, \(M\) is a
+  maximal totally ordered subset of \(X\).  The hypothesis on \(X\)
+  gives an upper bound \(a\) of \(M\) in \(X\).  It follows from part
+  (\ref{item:ebwyq3lr}) of \Cref{exe:9d868h6m} that \(a\) is a maximal
+  element of \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:51daga9q}]
+  \label{sol:5u09m13a}
+  Let \(S\) be the ordered set in \Cref{exe:mfln3otu}.  For any subset
+  \(Y\) of \(X\), let \(\leq_Y\) be the order on \(Y\) induced by the
+  given order on \(X\).  Let \(u : \mathcal{S} \to S\) be the function
+  that maps any element \(Y\) of \(\mathcal{S}\) to the element
+  \((Y, \leq_Y)\) of \(S\).  It is obvious that \(u\) is injective,
+  and that for all \(Y, Z \in \mathcal{S}\), we have
+  \(Y \sqsubseteq Z\) if and only if \(u(Y) \sqsubseteq u(Z)\).  It
+  follows that \(\sqsubseteq\) is an order on \(\mathcal{S}\), and
+  that \(u\) is an isomorphism of ordered sets from \(\mathcal{S}\)
+  onto the subset \(u(\mathcal{S})\) of \(S\).  If
+  \(\mathcal{T} = (Y_i)_{i \in I}\) is a family of elements of
+  \(\mathcal{S}\) that is totally ordered with respect to
+  \(\sqsubseteq\), and \(Y\) the union of the \(Y_i\), then \(\leq_Y\)
+  induces \(\leq_{Y_i}\) on each \(Y_i\); therefore, by
+  \Cref{exe:mfln3otu}, \(\leq\) is a well-order on \(Y\) (so
+  \(Y \in \mathcal{S}\)), and \(u(Y)\) is the supremum of the totally
+  ordered family \(T = (u(Y_i))_{i \in I}\) in \(S\); as \(u\) is an
+  isomorphism onto \(u(\mathcal{S})\), this implies that \(Y\) is the
+  supremum of the family \(\mathcal{T}\) in \(\mathcal{S}\).
+
+  Suppose \(Y\) is an element of \(\mathcal{S}\), and let \(a\) be a
+  strict upper bound of \(M\).  Let \(\bar{Y} = Y \cup \{ a \}\).
+  Then the order \(\leq_{\bar{Y}}\) on \(\bar{Y}\) induces \(\leq_Y\)
+  on \(Y\), and satisfies the condition that \(x \leq a\) for all
+  \(x \in Y\).  By \Cref{exe:rw9lhmv9}, \(\leq_{\bar{Y}}\) is the
+  unique order on \(\bar{Y}\) with this property, and is a well-order.
+  Therefore, \(\bar{Y} \in \mathcal{S}\).  If \(x \in Y\) and
+  \(y \in \bar{Y}\) are such that \(y < x\), then \(y \neq a\) because
+  \(x < a\); therefore, \(y \in Y\), hence \(Y\) is a segment of
+  \(\bar{Y}\).  Thus, \(Y \sqsubseteq \bar{Y}\).  As
+  \(Y \neq \bar{Y}\), this implies that \(Y\) is not a maximal element
+  of \(\mathcal{S}\).
+
+  It follows that if \(a\) is an upper bound of a maximal element
+  \(M\) of \(\mathcal{S}\), then \(a\) is not a strict upper bound of
+  \(M\).  This means that \(a\) belongs to \(M\), and is hence the
+  maximum and the unique upper bound of \(M\) in \(X\).  If
+  \(b \in X\) and \(a \leq b\), then \(b\) is an upper bound of \(M\),
+  so \(b = a\).  Therefore, \(a\) is a maximal element of \(X\).
+
+  Suppose that every well-ordered subset of \(X\) is bounded above.
+  Let \(\mathcal{M}\) be the set of maximal elements of
+  \(\mathcal{S}\).  The axiom of choice gives a function
+  \(g : \mathcal{S} \setminus \mathcal{M} \to \mathcal{S}\) such that
+  \(Y \sqsubset g(Y)\) for all
+  \(Y \in \mathcal{S} \setminus \mathcal{M}\).  Define a function
+  \(f : \mathcal{S} \to \mathcal{S}\) by setting
+  \begin{displaymath}
+    f(Y) =
+    \begin{cases}
+      Y & \text{if} ~ Y \in \mathcal{M} \\
+      g(Y) & \text{if} ~ Y \in \mathcal{S} \setminus \mathcal{M}
+    \end{cases}
+  \end{displaymath}
+  for all \(Y \in \mathcal{S}\).  Then \(Y \sqsubseteq f(Y)\) for all
+  \(Y \in \mathcal{S}\).  By part (\ref{item:j6hjwyxg}) of the
+  exercise, every totally ordered subset of \(\mathcal{S}\) has a
+  supremum.  Therefore, by the Bourbaki-Witt fixed point theorem
+  (\Cref{exe:al7fffh1}), \(f\) has a fixed point \(M\).  As
+  \(Z \sqsubset f(Z)\) for all
+  \(Z \in \mathcal{S} \setminus \mathcal{M}\), \(M\) is a maximal
+  element of \(\mathcal{S}\).  The hypothesis on \(X\) gives an upper
+  bound \(a\) of \(M\).  By part (\ref{item:41f56yw7}) of the
+  exercise, \(a\) is a maximal element of \(X\).
 \end{solution}
 
 \bibsection
