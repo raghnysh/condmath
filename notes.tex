@@ -116,16 +116,33 @@ denoted by \(\nleq, \ngeq, \nless, \ngtr\), respectively.  The
 corresponding notations when another symbol is used instead of
 \(\leq\) are analogous to these notations.
 
-Taking the irreflexive kernel is a bijection from the set of orders on
-\(X\) onto the set of all relations \(<\) on \(X\) which are:
-\begin{enumerate}
-\item \firstterm{irreflexive}: there is no element \(x\) of \(X\) such
-  that \(x < x\);
-\item \emph{transitive}: if \(x,y,z \in X\), and \(x < y\) and
-  \(y < z\), then \(x < z\).
-\end{enumerate}
-The inverse of this bijection maps any relation with these two
-properties to its reflexive closure.
+\begin{theorem}
+  \label{thm:ztywp662}
+  Taking the irreflexive kernel is a bijection from the set of orders
+  on \(X\) onto the set of all relations \(<\) on \(X\) which are:
+  \begin{enumerate}
+  \item \firstterm{irreflexive}: there is no element \(x\) of \(X\)
+    such that \(x < x\);
+  \item \emph{transitive}: if \(x,y,z \in X\), and \(x < y\) and
+    \(y < z\), then \(x < z\).
+  \end{enumerate}
+  The inverse of this bijection maps any relation with these two
+  properties to its reflexive closure.
+\end{theorem}
+
+The irreflexive kernel \(<\) of an order \(\leq\) on \(X\) is
+obviously irreflexive; if \(x,y,z \in X\), and \(x < y\) and
+\(y < z\), the transitivity of \(\leq\) implies that \(x \leq z\), and
+because \(x \neq y\) the anti-symmetry of \(\leq\) implies that
+\(x \neq z\), so \(<\) is transitive.  Conversely, if \(<\) is an
+irreflexive and transitive relation on \(X\), its reflexive closure
+\(\leq\) is obviously reflexive; if \(x \leq y\) and \(y \leq z\),
+either of the equalities \(x = y\) and \(y = z\) implies that
+\(x \leq z\), so \(\leq\) is transitive; lastly, if \(x \leq y\) and
+\(y \leq x\), the transitivity of \(\leq\) and the irreflexivity of
+\(<\) imply that \(x = y\); thus, \(\leq\) is an order.  It is obvious
+that the maps \(\leq \mapsto <\) and \(< \mapsto \leq\) are inverses
+of each other.
 
 The restriction of an order \(\leq\) on \(X\) to any subset \(Y\) of
 \(X\) is an order on \(Y\), which is said to be \firstterm{induced} by
@@ -159,21 +176,19 @@ An element \(a\) of an ordered set \(X\) is called \firstterm{minimal}
 called a \firstterm{minimum} (respectively, \firstterm{maximum}) of
 \(X\) if \(a \leq x\) (respectively, \(a \geq x\)) for all
 \(x \in X\).  Anti-symmetry implies that \(X\) has at most one
-minimum, and at most one maximum.  A minimum (respectively, maximum)
-of \(X\) is a minimal element (respectively, maximal element) of
-\(X\).  In fact, if \(a\) is a minimum (respectively, maximum) of
-\(X\), then it is the unique minimal element (respectively, maximal
-element) of \(X\).
+minimum, and at most one maximum.  If the minimum (respectively,
+maximum) of \(X\) exists, then it is the unique minimal element
+(respectively, maximal element) of \(X\).
 
 An element \(a\) of \(X\) is called a \firstterm{lower bound}
 (respectively, \firstterm{upper bound}) of a subset \(Y\) of \(X\) if
 \(a \leq y\) (respectively, \(a \geq y\)) for all \(y \in Y\).  A
 subset of \(X\) is said to be \firstterm{bounded below} (respectively,
 \firstterm{bounded above}) if it has a lower bound (respectively,
-upper bound).  A maximum of the set of lower bounds of \(Y\) is called
-the \firstterm{infimum} of \(Y\), and a minimum of the set of upper
-bounds of \(Y\) is called the \firstterm{supremum} of \(Y\).  The
-infimum and supremum of \(Y\) are unique when they exist, and are
+upper bound).  The maximum of the set of lower bounds of \(Y\) is
+called the \firstterm{infimum} of \(Y\); the minimum of the set of
+upper bounds of \(Y\) is called the \firstterm{supremum} of \(Y\).
+The infimum and supremum of \(Y\) are unique when they exist, and are
 respectively denoted by \(\inf Y\) and \(\sup Y\).
 
 An order on a set \(X\) is called \firstterm{directed} (respectively,
@@ -239,6 +254,71 @@ exist a well-ordered set \(\Lambda\) and a bijection between
 A \firstterm{well-ordered set} is an ordered set whose order is a
 well-order.  Every subset of a well-ordered set that is bounded above
 has a supremum.
+
+\begin{theorem}
+  \label{thm:3uwc4uyw}
+  Taking the irreflexive kernel is a bijection from the set of
+  well-orders on a set \(X\) onto the set of relations \(<\) on \(X\)
+  which have the following properties:
+  \begin{enumerate}
+  \item For any two distinct elements \(x, y\) of \(X\), either
+    \(x < y\) or \(y < x\).
+  \item Every nonempty subset \(Y\) of \(X\) has an element \(a\) such
+    that no element \(x\) of \(Y\) satisfies the condition \(x < a\).
+  \end{enumerate}
+  The inverse of this bijection maps any relation with these
+  properties to its reflexive closure.
+\end{theorem}
+
+Let \(\leq\) be a well-order on \(X\), and let \(<\) be its
+irreflexive kernel.  As \(\leq\) is a total order, it has the
+trichotomy property: for any two elements \(x, y\) of \(X\), exactly
+one of the conditions \(x < y\), \(x = y\), \(y < x\) is true.  In
+particular, for any two distinct elements \(x, y\) of \(X\), either
+\(x < y\) or \(y < x\).  If \(a\) is the minimum of a nonempty subset
+\(Y\) of \(X\), then for all \(x \in Y\), we have \(a \leq x\); the
+trichotomy of \(\leq\) implies that \(x \nless a\).
+
+Conversely, let \(<\) be a relation on \(X\) with the properties
+stated in the exercise.  We will first check that \(<\) is irreflexive
+and transitive.
+
+If \(x\) is any element of \(X\), the singleton \(Y = \{ x \}\) has an
+element \(a\) such that \(y \nless a\) for all \(y \in Y\).
+Necessarily, \(a = x\), so \(x \nless x\).  Therefore, \(<\) is
+irreflexive.
+
+We will now verify that for any \(x, y \in X\), exactly one of the
+conditions \(x < y\), \(x = y\), \(y < x\) holds.  The first
+hypothesis on \(<\) implies that at least one of these conditions is
+true.  If \(x = y\), then the irreflexivity of \(<\) implies that
+\(x \nless y\) and \(y \nless x\).  If \(x < y\), we have to rule out
+\(x = y\) and \(y < x\); the irreflexivity of \(<\) implies that
+\(x \neq y\); let \(a\) be an element of the set \(Y = \{ x, y \}\)
+such that \(t \nless a\) for all \(t \in Y\); as \(x < y\),
+\(a \neq y\), so \(a = x\); therefore, \(y \nless x\).  Similarly, if
+\(y < x\), then \(x \neq y\) and \(x \nless y\).  It follows that
+exactly one of the conditions \(x < y\), \(x = y\), \(y < x\) holds.
+
+Suppose \(x, y, z \in X\) are such that \(x < y\) and \(y < z\).  Let
+\(a\) be an element of the set \(Y = \{ x, y, z \}\) such that
+\(a \nless t\) for all \(t \in Y\).  As \(x < y\), \(a \neq y\), and
+as \(y < z\), \(a \neq z\), so \(a = x\).  Thus, \(z \nless x\).
+Also, \(x \neq z\), for otherwise the hypotheses \(x < y\) and
+\(y < z\) would imply that two of the conditions \(x < y\), \(x = y\),
+\(y < x\) hold.  Thus, \(x \neq z\) and \(z \nless x\).  It follows
+from the first hypothesis on \(<\) that \(x < z\).  Therefore, the
+relation \(<\) is transitive.
+
+As \(<\) is irreflexive and transitive, by \Cref{thm:3uwc4uyw}, its
+reflexive closure \(\leq\) is an order on \(X\).  It remains to check
+that every nonempty subset \(Y\) of \(X\) has a minimum with respect
+to \(\leq\).  Let \(a\) be an element of \(Y\) such that
+\(x \nless a\) for all \(x \in Y\).  Then the first hypothesis on
+\(<\) implies that for every \(x \in Y\), we have either \(x = a\) or
+\(a < x\), that is, \(a \leq x\).  Thus, \(a\) is the minimum of \(Y\)
+with respect to \(\leq\).  This verifies that \(\leq\) is a well-order
+on \(X\).
 
 \begin{theorem}
   \label{thm:htdzbbwv}
@@ -551,15 +631,892 @@ The reflexive closure of \(<\) is an order on \(X\), which is called
 the \firstterm{lexicographic} order.  It is a total order if every
 \(X_i\) is totally ordered.
 
+An element \(x\) of an ordered set \(X\) is called a
+\firstterm{successor} of an element \(w\) of \(X\) if \(w < x\) and
+there is no element \(t\) of \(X\) such that \(w < t < x\); this
+condition is equivalent to the condition that \(w < x\) and for any
+element \(t\) of \(X\) such that \(w \leq t \leq x\), we have either
+\(w = t\) or \(t = x\).  An element of \(X\) is called a
+\firstterm{successor element} of \(X\) if it is a successor of some
+element of \(X\).  An element of \(X\) is called a \firstterm{limit
+  element} of \(X\) if it is not a successor element of \(X\).  It is
+obvious that the minimum of \(X\), if it exists, is a limit element of
+\(X\).
+
+For any element \(w\) of an ordered set \(X\), let
+\begin{displaymath}
+  w^+ =
+  \begin{cases}
+    \min \, (w, \infty)
+    & \text{if the interval} ~ (w, \infty) ~
+      \text{has a minimum} \\
+    w
+    & \text{if} ~ (w, \infty) ~
+      \text{does not have a minimum}.
+  \end{cases}
+\end{displaymath}
+Similarly, for any element \(x\) of \(X\), let
+\begin{displaymath}
+  x^- =
+  \begin{cases}
+    \max \, (-\infty, x)
+    & \text{if the interval} ~ (-\infty, x) ~
+      \text{has a maximum} \\
+    x
+    & \text{if} ~ (-\infty, x) ~
+      \text{does not have a maximum}.
+  \end{cases}
+\end{displaymath}
+It is obvious that for any \(w \in X\), \(w \leq w^+\) with equality
+if and only if the interval \((w, \infty)\) does not have a minimum.
+Similarly, for any \(x \in X\), \(x^- \leq x\) with equality if and
+only if the interval \((-\infty, x)\) does not have a maximum.
+
+\begin{theorem}
+  \label{thm:q8h11s4b}
+  Let \(X\) be a totally ordered set, \(P(X)\) the set of elements
+  \(w\) of \(X\) such that \(w < w^+\), and \(S(X)\) the set of
+  elements \(x\) of \(X\) such that \(x^- < x\).
+  \begin{enumerate}
+  \item For any element \(w\) of \(X\), \(w^+\) is the infimum of the
+    interval \((w, \infty)\).  In particular, if \(w, t\) are elements
+    of \(X\) such that \(w < t\), then \(w^+ \leq t\).
+  \item For any element \(x\) of \(X\), \(x^-\) is the supremum of the
+    interval \((-\infty, x)\).  In particular, if \(x, t\) are
+    elements of \(X\) such that \(t < x\), then \(t \leq x^-\).
+  \item An element \(w\) of \(X\) has a successor if and only if it
+    belongs to \(P(X)\); in that case, \(w^+\) is the unique successor
+    of \(w\).  Similarly, an element \(x\) of \(X\) is a successor
+    element if and only if it belongs to \(S(X)\); in that case,
+    \(x^-\) is the unique element of \(X\) which has \(x\) as a
+    successor.  In particular, an element of \(X\) has at most one
+    successor, and is the successor of at most one element of \(X\).
+  \item The function \(w \mapsto w^+\) from \(X\) to \(X\) induces an
+    isomorphism of ordered sets from \(P(X)\) onto \(S(X)\).  The
+    inverse of this bijection maps an element \(x\) of \(S(X)\) to
+    \(x^-\).
+  \item An element \(x\) of \(X\) is a limit element of \(X\) if and
+    only if \(x^- = x\), that is, if and only if the interval
+    \((-\infty, x)\) does not have a maximum.  In particular, if \(x\)
+    is a limit element of \(X\), then the set \((-\infty, x)\) is
+    either empty or infinite, depending on whether \(x\) is the
+    minimum of \(X\) or not.
+  \item If \(X\) is well-ordered, then an element of \(X\) has a
+    successor if and only if it is not the maximum of \(X\).
+  \end{enumerate}
+\end{theorem}
+
+Let \(w \in X\).  If the interval \((w, \infty)\) has a minimum \(x\),
+then \(w^+ = x\) is obviously the infimum of \((w, \infty)\).  Suppose
+\((w, \infty)\) does not have a minimum.  It is obvious that \(w\) is
+a lower bound of \((w, \infty)\).  Let \(t\) be an arbitrary lower
+bound of \((w, \infty)\).  If \(w < t\), then \(t \in (w, \infty)\);
+as \(t\) is a lower bound of \((w, \infty)\), this implies that \(t\)
+is the minimum of \((w, \infty)\), contradicting the hypothesis that
+\((w, \infty)\) does not have a minimum.  Therefore, \(w \nless t\).
+As \(X\) is totally ordered, it follows that \(t \leq w\).  Therefore,
+\(w^+ = w\) is the infimum of \((w, \infty)\).  It follows that in
+both the cases, \(w^+\) is the infimum of \((w, \infty)\).  If
+\(w, t \in X\) are such that \(w < t\), then \(t \in (w, \infty)\); as
+\(w^+\) is the infimum of \((w, \infty)\), it is a lower bound of
+\((w, \infty)\), hence \(w^+ \leq t\).  This verifies the first part
+of the theorem.
+
+The proof of the second part of the theorem is similar to that of the
+first part.
+
+We will now show that an element \(x\) of \(X\) is a successor of an
+element \(w\) of \(X\) if and only if \(w < w^+ = x\) if and only if
+\(w = x^- < x\).  Suppose \(x\) is a successor of \(w\); then
+\(w < x\), so \(x \in (w, \infty)\); let \(t\) be any element of
+\((w, \infty)\); if \(t < x\), then \(w < t < x\), contradicting the
+assumption that \(x\) is a successor of \(w\); therefore, the
+trichotomy property of \(X\) implies that \(x \leq t\); it follows
+that \(x\) is the minimum of \((w, \infty)\); thus, \(w^+ = x\) and
+\(w < x = w^+\).  Suppose \(w < w^+ = x\); then \(w^+\), hence \(x\),
+is the minimum of \((w, \infty)\); in particular, \(x\) belongs to
+\((w, \infty)\), so \(w < x\), hence \(w\) belongs to
+\((-\infty, x)\); let \(t\) be any element of \((-\infty, x)\); then
+\(t < x\); as \(x\) is the minimum of \((w, \infty)\), \(x \leq s\)
+for all \(s \in (w, \infty)\), so \(t \notin (w, \infty)\); therefore,
+\(t \leq w\); it follows that \(w\) is the maximum of
+\((-\infty, x)\); thus, \(x^- = w\) and \(x^- = w < x\).  Suppose
+\(w = x^- < x\); then \(w < x\), and \(x^-\), hence \(w\), is the
+maximum of \((-\infty, x)\); let \(t\) be any element of \(X\) such
+that \(w \leq t \leq x\); suppose \(t \neq x\); then \(t < x\), so
+\(t \in (-\infty, x)\); as \(w\) is the maximum of \((-\infty, x)\),
+this implies that \(t \leq w\); therefore, \(w = t\); it follows that
+\(x\) is a successor of \(w\).  This verifies the equivalences stated
+at the beginning of this paragraph.
+
+For any element \(w\) of \(X\), the equivalence
+\begin{displaymath}
+  x ~ \text{is a successor of} ~ w
+  \Leftrightarrow
+  w < w^+ = x,
+\end{displaymath}
+valid for any element \(x\) of \(X\), says that \(w\) has a successor
+if and only if \(w \in P(X)\), and in that case, \(w^+\) is the unique
+successor of \(w\).  Similarly, for any element \(x\) of \(X\), the
+equivalence
+\begin{displaymath}
+  x ~ \text{is a successor of} ~ w
+  \Leftrightarrow
+  w = x^- < x,
+\end{displaymath}
+valid for any element \(w\) of \(X\), says that \(x\) is a successor
+element of \(X\) if and only if \(x \in S(X)\), and in that case,
+\(x^-\) is the unique element of \(X\) which has \(x\) as a successor.
+So the third part of the theorem is proved.
+
+Thus, the function \(w \mapsto w^+\) from \(X\) to \(X\) induces a
+function \(\sigma : P(X) \to S(X)\), and the function
+\(x \mapsto x^-\) from \(X\) to \(X\) induces a function
+\(\pi : S(X) \to P(X)\).  If \(w\) is any element of \(P(X)\), then
+\(x = w^+\) is a successor element of \(X\) because it is the
+successor of \(w\), so \(x^-\) is the unique element of \(X\) which
+has \(x\) as a successor, hence \(x^- = w\), that is, \((w^+)^- = w\);
+thus, \(\tau \circ \sigma = \mathbb{1}_{P(X)}\).  Similarly, if \(x\)
+is any element of \(S(X)\), then \(w = x^-\) has a successor, namely,
+\(x\), so \(w^+\) is the unique successor of \(w\); therefore,
+therefore, \(w^+ = x\), that is, \((x^-)^+ = x\); this means that
+\(\sigma \circ \pi = \mathbb{1}_{S(X)}\).  Thus, the functions
+\(\sigma\) and \(\pi\) are mutual inverses.  If \(w_1, w_2\) are
+elements of \(P(X)\) such that \(w_1 < w_2\), then by the first part
+of the theorem, \(w_1^+ \leq w_2\); as \(w_2 \in P(X)\),
+\(w_2 < w_2^+\); therefore, \(w_1^+ < w_2^+\).  Thus, \(\sigma\) is a
+strictly increasing bijection from \(P(X)\) onto \(S(X)\), and is
+hence an isomorphism from \(P(X)\) onto \(S(X)\).  This checks the
+fourth part of the theorem.
+
+By the third part of the theorem, \(S(X)\) is the set of successor
+elements of \(X\), so the set of limit elements of \(X\) is the set
+\begin{align*}
+  X \setminus S(X)
+  &=
+    \{ x \in X \,\vert\, x^- = x \} \\
+  &=
+    \{ x \in X \,\vert\,
+    (-\infty, x) ~ \text{does not have a maximum} \}.
+\end{align*}
+An element \(x\) of \(X\) is the minimum of \(X\) if and only if
+\((-\infty, x)\) is empty.  On the other hand, if \((-\infty, x)\) is
+nonempty and does not have a maximum, then it must be infinite because
+every nonempty finite subset of a totally ordered set has a maximum.
+This verifies the fifth part of the theorem.
+
+Lastly, if \(X\) is well-ordered and \(w \in X\), then the set
+\((w, \infty)\) has a minimum if and only if it is nonempty, that is,
+if and only if \(w\) is not the maximum of \(X\) in case it exists.
+The last part of the theorem follows.
+
+\begin{theorem}[Principle of transfinite induction]
+  \label{thm:g5v2vli5}
+  Let \(A\) be a subset of a well-ordered set \(X\) satisfying the
+  following conditions:
+  \begin{enumerate}
+  \item If \(x\) is a successor element of \(X\), and \(x^- \in A\),
+    then \(x \in A\).
+  \item If \(x\) is a limit element of \(X\), and
+    \((-\infty, x) \subset A\), then \(x \in A\).
+  \end{enumerate}
+  Then \(A\) equals \(X\).
+\end{theorem}
+
+Suppose \(x\) is an element of \(X\) such that
+\((-\infty, x) \subset A\).  We will show that \(x \in A\).  If \(x\)
+is a successor element of \(X\), then by \Cref{thm:q8h11s4b},
+\(x^- < x\); as \((-\infty, x) \subset A\), it follows that
+\(x^- \in A\); so the first hypothesis on \(A\) implies that
+\(x \in A\).  On the other hand, if \(x\) is a limit element of \(X\),
+then as \((-\infty, x) \subset A\), the second hypothesis on \(A\)
+implies that \(x \in A\).  Thus, in both the cases, \(x \in A\).
+Therefore, \(A\) is an inductive subset of \(X\), so by
+\Cref{thm:5vxgawq0}, \(A = X\).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:83vd5knr}
+  Let \(X\) be a well-ordered set, and \(p : E \to X\) a function from
+  a set \(E\) to \(X\).  Suppose that:
+  \begin{enumerate}
+  \item For every successor element \(x\) of \(X\), \(f_x\) is a
+    function from \(p^{-1}(x^-)\) to \(p^{-1}(x)\).
+  \item For every limit element \(x\) of \(X\), \(g_x\) is a function
+    from \(\Gamma((-\infty, x), p)\) to \(p^{-1}(x)\).
+  \end{enumerate}
+  Then there exists a unique section \(u\) of \(p\) on \(X\) such
+  that:
+  \begin{enumerate}
+  \item \(u(x) = f_x(u(x^-))\) for every successor element \(x\) of
+    \(X\), and
+  \item \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit element
+    \(x\) of \(X\).
+  \end{enumerate}
+\end{theorem}
+
+For every element \(x\) of \(X\), define a function \(h_x\) from
+\(\Gamma((-\infty, x), p)\) to \(p^{-1}(x)\) as follows:
+\begin{enumerate}
+\item If \(x\) is a successor element of \(X\), let
+  \(h_x(s) = f_x(s(x^-))\) for every section \(s\) of \(p\) on
+  \((-\infty, x)\).
+\item If \(x\) is a limit element of \(X\), let \(h_x = g_x\).
+\end{enumerate}
+Then transfinite recursion (\Cref{thm:srxrngd8}) gives a unique
+section \(u\) of \(p\) such that
+\(u(x) = h_x(u \vert_{(-\infty, x)})\) for all \(x \in X\).  Thus, if
+\(x\) is a successor element of \(X\), then
+\begin{displaymath}
+  u(x) =
+  h_x(u \vert_{(-\infty, x)}) =
+  f_x(u \vert_{(-\infty, x)} (x^-)) =
+  f_x(u(x^-)),
+\end{displaymath}
+and if \(x\) is a limit element of \(X\), then
+\begin{displaymath}
+  u(x) = h_x(u \vert_{(-\infty, x)}) = g_x(u \vert_{(-\infty, x)}).
+\end{displaymath}
+Therefore, \(u\) has the required properties.
+
+Suppose \(u'\) is another section of \(p\) which has the required
+properties.  Then for every successor element \(x\) of \(X\), we have
+\begin{displaymath}
+  u'(x) =
+  f_x(u'(x^-)) =
+  f_x(u' \vert_{(-\infty, x)}(x^-)) =
+  h_x(u' \vert_{(-\infty, x)}),
+\end{displaymath}
+while for every limit element \(x\) of \(X\), we have
+\begin{displaymath}
+  u'(x) = g_x(u' \vert_{(-\infty, x)}) = h_x(u' \vert_{(-\infty, x)}).
+\end{displaymath}
+Thus, \(u'(x) = h_x(u' \vert_{(-\infty, x)})\) for all \(x \in X\).
+As \(u\) is the only section of \(p\) on \(X\) with this property, we
+get \(u' = u\).
+
+It is convenient to expand \Cref{thm:83vd5knr} as follows.
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:hpleq0rr}
+  Let \(X\) be a nonempty well-ordered set, and \(p : E \to X\) a
+  function from a set \(E\) to \(X\).  Suppose that:
+  \begin{enumerate}
+  \item \(e\) is an element of \(p^{-1}(a)\), where \(a\) is the
+    minimum of \(X\).
+  \item For every successor element \(x\) of \(X\), \(f_x\) is a
+    function from \(p^{-1}(x^-)\) to \(p^{-1}(x)\).
+  \item For every limit element \(x\) of \(X\) other than the minimum
+    \(a\) of \(X\), \(g_x\) is a function from
+    \(\Gamma((-\infty, x), p)\) to \(p^{-1}(x)\).
+  \end{enumerate}
+  Then there exists a unique section \(u\) of \(p\) on \(X\) such
+  that:
+  \begin{enumerate}
+  \item \(u(a) = e\),
+  \item \(u(x) = f_x(u(x^-))\) for every successor element \(x\) of
+    \(X\), and
+  \item \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit element
+    \(x\) of \(X\) other than \(a\).
+  \end{enumerate}
+\end{theorem}
+
+As the set \((-\infty, a)\) is empty, \(\Gamma((-\infty, a), p)\) is a
+singleton consisting of the unique function from the empty set to
+\(E\).  So a function from \(\Gamma((-\infty, a), p)\) to
+\(p^{-1}(a)\) is canonically identified with an element of
+\(p^{-1}(a)\).  Therefore, the theorem follows from
+\Cref{thm:83vd5knr}.
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:a61v7g3m}
+  Let \(X\) be a well-ordered set, and \(T\) any set.  Suppose that
+  for every successor element \(x\) of \(X\), \(f_x\) is a function
+  from \(T\) to \(T\), and that for every limit element \(x\) of
+  \(X\), \(g_x\) is a function from \(T^{(-\infty, x)}\) to \(T\).
+  Then there exists a unique function \(u : X \to T\) such that
+  \(u(x) = f_x(u(x^-))\) for every successor element \(x\) of \(X\),
+  and \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit element
+  \(x\) of \(X\).
+\end{theorem}
+
+This theorem can be deduced from \Cref{thm:83vd5knr} just as
+(\ref{thm:5kg5ewo1}) was deduced from (\ref{thm:srxrngd8}).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:e3bitdp0}
+  Let \(X\) be a nonempty well-ordered set, and \(T\) any set.
+  Suppose that \(a\) is an element of \(T\), that for every successor
+  element \(x\) of \(X\), \(f_x\) is a function from \(T\) to \(T\),
+  and that for every limit element \(x\) of \(X\) other than the
+  minimum \(a\) of \(X\), \(g_x\) is a function from
+  \(T^{(-\infty, x)}\) to \(T\).  Then there exists a unique function
+  \(u : X \to T\) such that \(u(a) = e\), where \(a\) is the minimum
+  of \(X\), \(u(x) = f_x(u(x^-))\) for every successor element \(x\)
+  of \(X\), and \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit
+  element \(x\) of \(X\) other than \(a\).
+\end{theorem}
+
+This theorem is an expansion of \Cref{thm:a61v7g3m} just as
+(\ref{thm:hpleq0rr}) was an expansion of (\ref{thm:83vd5knr}).
+
+\subsection{Ordinals}
+\label{sec:t851d2lg}
+
+A set \(\alpha\) is called \firstterm{transitive} if every element of
+\(\alpha\) is a subset of \(\alpha\); that is, if \(\beta \in \alpha\)
+and \(\gamma \in \beta\), then \(\gamma \in \alpha\).
+
+An \firstterm{ordinal} is a set \(\alpha\) with the following
+properties:
+\begin{enumerate}
+\item \(\alpha\) is a transitive set.
+\item For any two distinct elements \(\beta, \gamma\) of \(\alpha\),
+  either \(\beta \in \gamma\) or \(\gamma \in \beta\).
+\item Every nonempty subset \(x\) of \(\alpha\) has an element
+  \(\beta\) such that \(\beta \cap x = \emptyset\).
+\end{enumerate}
+
+The empty set is obviously an ordinal.  For any natural number \(n\),
+let \([n]\) denote the set of natural numbers that are less than
+\(n\).  Then the function \(n \mapsto [n]\) is an injection from the
+set \(\mathbb{N}\) of natural numbers to its power set
+\(\mathcal{P}(\mathbb{N})\).  We will identify \(\mathbb{N}\) with its
+image \(\omega\) by this injection.  With this identification done,
+every natural number \(n\) is the set of all the natural numbers that
+are less than \(n\):
+\begin{align*}
+  0 & = \emptyset, \\
+  1 &= \{ 0 \} = \{ \emptyset \}, \\
+  2 &= \{ 0, 1 \} = \{ \emptyset, \{ \emptyset \} \}, \\
+  3 &= \{ 0, 1, 2 \} =
+      \{
+      \emptyset, \{ \emptyset \}, \{ \emptyset, \{ \emptyset \} \}
+      \},
+\end{align*}
+and so on.  Now every natural number is an ordinal, and the set
+\(\omega\) of all the natural numbers is itself an ordinal.
+
+If \(\alpha\) is a nonempty ordinal, then the third condition in the
+definition of ordinals gives an element \(\beta\) of \(\alpha\) such
+that \(\beta \cap \alpha = \emptyset\); as \(\alpha\) is a transitive
+set, \(\beta\) is a subset of \(\alpha\), so
+\(\beta \cap \alpha = \beta\), hence \(\beta = \emptyset\).  Thus the
+empty set is an element of every nonempty ordinal.
+
+\begin{theorem}
+  \label{thm:7cc2cckf}
+  Let \(\alpha\) be an ordinal.
+  \begin{enumerate}
+  \item (Well-ordering of \(\alpha\)).  Let \(\leq\) be the reflexive
+    closure of the relation \(\in\) on \(\alpha\): for any two
+    elements \(\beta, \gamma\) of \(\alpha\), \(\beta \leq \alpha\) if
+    \(\beta \in \gamma\) or \(\beta = \gamma\).  Then \(\leq\) is a
+    well-order on \(\alpha\).
+  \item (Irreflexivity of \(\in\)).  For every \(\beta \in \alpha\),
+    we have \(\beta \notin \beta\).  In particular,
+    \(\alpha \notin \alpha\).
+  \item (Trichotomy).  For any two elements \(\beta, \gamma\) of
+    \(\alpha\), exactly one of the conditions \(\beta \in \gamma\),
+    \(\beta = \gamma\), \(\gamma \in \beta\) is true.
+  \item (Transitivity of elements).  Every element of \(\beta\) is a
+    transitive set.
+  \end{enumerate}
+\end{theorem}
+
+The definition of ordinals implies that the relation \(\in\) has the
+following properties:
+\begin{enumerate}
+\item For any two distinct elements \(\beta, \gamma\) of \(\alpha\),
+  either \(\beta \in \gamma\) or \(\gamma \in \beta\).
+\item Every nonempty subset \(x\) of \(\alpha\) has an element
+  \(\beta\) such that no element \(\gamma\) of \(x\) satisfies the
+  condition \(\gamma \in \beta\).
+\end{enumerate}
+By \Cref{thm:3uwc4uyw}, the reflexive closure \(\leq\) of \(\in\) is a
+well-order on \(\alpha\).  As \(\in\) is the irreflexive kernel of the
+order \(\leq\) on \(\alpha\), by \Cref{thm:ztywp662} it is irreflexive
+and transitive.  The irreflexivity of \(\in\) on \(\alpha\) means that
+\(\beta \notin \beta\) for all \(\beta \in \alpha\).  In particular,
+if \(\alpha \in \alpha\), then substituting \(\alpha\) for \(\beta\)
+in the previous sentence, we have \(\alpha \notin \alpha\), a
+contradiction; therefore, \(\alpha \notin \alpha\).  The transitivity
+of \(\in\) on \(\alpha\) implies that if
+\(\beta, \gamma, \delta \in \alpha\) are such that
+\(\beta \in \gamma\) and \(\gamma \in \delta\), then
+\(\beta \in \delta\), so the element \(\delta\) of \(\alpha\) is
+transitive.
+
+The reflexive closure of the relation \(\in\) on an ordinal \(\alpha\)
+is called the \firstterm{canonical order} on \(\alpha\).  It is a
+well-order on \(\alpha\) by \Cref{thm:7cc2cckf}.  We will always
+denote it by \(\leq\).  Following our general notation for the
+irreflexive kernel of an order, we will denote the irreflexive kernel
+of \(\leq\) by \(<\); thus, \(<\) is the same as the relation \(\in\)
+on \(\alpha\): for all \(\beta, \gamma \in \alpha\),
+\(\beta < \gamma\) is just another notation for \(\beta \in \gamma\).
+
+\begin{theorem}
+  \label{thm:86se6zr0}
+  Let \(\alpha\) be an ordinal, and \(\beta, \gamma\) two elements of
+  \(\alpha\).  Then \(\beta \leq \gamma\) if and only if \(\beta\) is
+  a subset of \(\gamma\).  Also, \(\beta < \gamma\) if and only if
+  \(\beta \in \gamma\) if and only if \(\beta\) is a proper subset of
+  \(\gamma\).
+\end{theorem}
+
+We have already said that the relations \(<\) and \(\in\) on
+\(\alpha\) are the same, so \(\beta < \gamma\) just means that
+\(\beta \in \gamma\).  As for the other equivalence,
+\(\beta \leq \gamma\) if and only if either \(\beta \in \gamma\) or
+\(\beta = \gamma\).  So it suffices to prove that \(\beta \in \gamma\)
+if and only if \(\beta\) is a proper subset of \(\gamma\).  We will
+use the properties of \(\alpha\) from \Cref{thm:7cc2cckf}.  If
+\(\beta \in \gamma\), then as \(\gamma\) is a transitive set by the
+transitivity of the elements of \(\alpha\), \(\beta\) is a subset of
+\(\gamma\); also, the irreflixivity of \(\in\) on \(\alpha\) and the
+condition \(\beta \in \gamma\) imply that \(\beta \neq \gamma\);
+therefore, \(\beta\) is a proper subset of \(\gamma\).  Conversely, if
+\(\beta\) is a proper subset of \(\gamma\), then
+\(\beta \neq \gamma\), hence \(\gamma\) is not a subset of \(\beta\);
+as \(\beta\) is a transitive set, this implies that
+\(\gamma \notin \beta\); therefore, by the trichotomy property of
+\(\alpha\), \(\beta \in \gamma\).
+
+\begin{theorem}
+  \label{thm:9hac1s0p}
+  A set \(\alpha\) is an ordinal if and only if there is a well-order
+  on \(\alpha\) such that \(\beta = (-\infty, \beta)\) for all
+  \(\beta \in \alpha\).  In that case, such a well-order coincides
+  with the canonical order on the ordinal \(\alpha\), and is, in
+  particular, unique.
+\end{theorem}
+
+Suppose that \(\alpha\) has a well-order \(\sqsubseteq\) with the
+property that \(\beta = (-\infty, \beta)\) for every element \(\beta\)
+of \(\alpha\).  We will check that it satisfies the three conditions
+that together define an ordinal.  If \(\beta\) is an element of
+\(\alpha\), then \(\beta = (-\infty, \beta)\), so as
+\((-\infty, \beta)\) is a subset of \(\alpha\), \(\beta\) is a subset
+of \(\alpha\); therefore, \(\alpha\) is a transitive set.  If
+\(\beta, \gamma\) are distinct elements of \(\alpha\), then as the
+well-order \(\sqsubseteq\) is total, its trichotomy implies that
+either \(\beta \sqsubset \gamma\) or \(\gamma \sqsubset \beta\); if
+\(\beta \sqsubset \gamma\), then
+\(\beta \in (-\infty, \gamma) = \gamma\), and similarly if
+\(\gamma \sqsubset \beta\), then \(\gamma \in \beta\); therefore,
+either \(\beta \in \gamma\) or \(\gamma \in \beta\).  Lastly, any
+nonempty subset \(x\) of \(\alpha\) has a minimum \(\beta\) with
+respect to the well-order \(\sqsubseteq\); thus,
+\(\beta \sqsubseteq \gamma\) for all \(\gamma \in x\); the totality of
+\(\sqsubseteq\) implies that for all \(\gamma \in x\), we have
+\(\gamma \nsqsubset \beta\), so \(\gamma \notin (-\infty, \beta) =
+\beta\); therefore, \(\beta \cap x = \emptyset\).  It follows that
+\(\alpha\) is an ordinal.  Now, for any two elements \(\beta, \gamma\)
+of \(\alpha\), we have \(\beta \sqsubset \gamma\) if and only if
+\(\beta \in (-\infty, \gamma)\); as \((-\infty, \gamma) = \gamma\),
+this means that \(\beta \sqsubset \gamma\) if and only if \(\beta \in
+\gamma\); therefore, \(\beta \sqsubseteq \gamma\) if and only if
+\(\beta \in \gamma\) or \(\beta = \gamma\), that is, if and only if
+\(\beta \leq \gamma\), where \(\leq\) is the canonical order on the
+ordinal \(\alpha\).  Therefore, \(\sqsubseteq\) coincides with the
+canonical order on the ordinal \(\alpha\).
+
+Conversely, suppose that \(\alpha\) is an ordinal, and let \(\leq\)
+denote its canonical order.  By \Cref{thm:7cc2cckf}, \(\leq\) is a
+well-order on \(\alpha\).  For any element \(\beta\) of \(\alpha\), we
+have
+\begin{displaymath}
+  (-\infty, \beta) =
+  \{ \gamma \in \alpha \,\vert\, \gamma < \beta \} =
+  \{ \gamma \in \alpha \,\vert\, \gamma \in \beta \} =
+  \alpha \cap \beta = \beta
+\end{displaymath}
+because the irreflexive kernel \(<\) of \(\leq\) is the same as the
+relation \(\in\) on \(\alpha\), and the element \(\beta\) of the
+transitive set \(\alpha\) is a subset of \(\alpha\).
+
+\begin{theorem}
+  \label{thm:5qmhh3to}
+  Every element of an ordinal is an ordinal.
+\end{theorem}
+
+Let \(\beta\) be an element of an ordinal \(\alpha\).  By
+\Cref{thm:7cc2cckf}, \(\beta\) is a transitive set.  If
+\(\gamma, \delta\) are distinct elements of \(\beta\), then as
+\(\alpha\) is a transitive set, \(\gamma, \delta\) are distinct
+elements of \(\alpha\) too; therefore, either \(\gamma \in \delta\) or
+\(\delta \in \gamma\).  If \(x\) is a nonempty subset of \(\beta\),
+then as \(\alpha\) is a transitive set, \(x\) is a nonempty subset of
+\(\alpha\) too; therefore, \(x\) has an element \(\gamma\) such that
+\(\gamma \cap x = \emptyset\).  Thus, \(\beta\) satisfies all the
+conditions that define an ordinal.
+
+\begin{theorem}
+  \label{thm:lebsg6gf}
+  An ordinal \(\alpha\) is an element of an ordinal \(\beta\) if and
+  only if \(\alpha\) is a proper subset of \(\beta\).
+\end{theorem}
+
+If \(\alpha\) is an element of \(\beta\), then as \(\beta\) is a
+transitive set, \(\alpha\) is a subset of \(\beta\); by
+\Cref{thm:7cc2cckf}, \(\alpha \notin \alpha\); as
+\(\alpha \in \beta\), we therefore have \(\alpha \neq \beta\); thus,
+\(\alpha\) is a proper subset of \(\beta\).
+
+Suppose conversely that \(\alpha\) is a proper subset of \(\beta\).
+Then the proper subset \(x = \beta \setminus \alpha\) of \(\beta\) has
+an element \(\gamma\) such that \(\gamma \cap x = \emptyset\).  We
+will verify that \(\gamma = \alpha\).  The relation
+\(\gamma \cap x = \emptyset\) implies that
+\(\gamma \cap \beta \subset \alpha\).  As \(\gamma\) is an element of
+the transitive set \(\beta\), \(\gamma \subset \beta\), so
+\(\gamma \cap \beta = \gamma\).  Therefore, \(\gamma \subset \alpha\).
+To check the reverse inclusion, let \(\delta\) be an element of
+\(\alpha\).  As \(\alpha\) is a subset of \(\beta\),
+\(\delta \in \beta\).  Thus, both \(\gamma\) and \(\delta\) belong to
+\(\beta\).  If \(\gamma = \delta\), then as \(\delta \in \alpha\),
+\(\gamma \in \alpha\), a contradiction because
+\(\gamma \in x = \alpha \setminus \beta\); therefore,
+\(\gamma \neq \delta\).  On the other hand, if \(\gamma \in \delta\),
+then as \(\delta\) is an element of the transitive set \(\alpha\), we
+have \(\gamma \in \alpha\), leading to the same contradiction as in
+the previous case; therefore, \(\gamma \notin \delta\).  It follows
+that \(\delta \in \gamma\).  Thus, \(\alpha \subset \gamma\), hence
+\(\gamma = \alpha\).  As \(\gamma \in \beta\), this implies that
+\(\alpha \in \beta\).
+
+\begin{theorem}
+  \label{thm:xut6v700}
+  Any two ordinals \(\alpha\) and \(\beta\) satisfy exactly one of the
+  conditions \(\alpha \in \beta\), \(\alpha = \beta\),
+  \(\beta \in \alpha\).
+\end{theorem}
+
+Suppose \(\alpha \notin \beta\) and \(\alpha \neq \beta\).
+\Cref{thm:lebsg6gf} implies that \(\alpha\) is not a proper subset of
+\(\beta\) because \(\alpha \notin \beta\).  As \(\alpha \neq \beta\),
+this means that \(\alpha\) is not a subset of \(\beta\).  Therefore,
+the set \(x = \alpha \setminus \beta\) is a nonempty subset of the
+ordinal \(\alpha\), and hence has an element \(\gamma\) such that
+\(\gamma \cap x = \emptyset\).  Thus,
+\(\gamma \cap \alpha \subset \beta\).  As \(\gamma \in \alpha\) and
+\(\alpha\) is transitive, \(\gamma \subset \alpha\), so
+\(\gamma \cap \alpha = \gamma\).  Therefore, \(\gamma \subset \beta\).
+Now as \(\gamma \in x\), \(\gamma \notin \beta\).  By
+\Cref{thm:lebsg6gf}, \(\gamma\) is not a proper subset of \(\beta\).
+It follows that the subset \(\gamma\) of \(\beta\) equals \(\beta\).
+Since \(\gamma \in \alpha\), we get \(\beta \in \alpha\).  So at least
+one of the three stated conditions holds.
+
+If \(\alpha \in \beta\), then as \(\alpha \notin \alpha\)
+(\Cref{thm:7cc2cckf}), \(\alpha \neq \beta\); also
+\(\beta \notin \alpha\), for if \(\beta \in \alpha\), then as
+\(\alpha\) is transitive, the relations \(\alpha \in \beta\) and
+\(\beta \in \alpha\) imply that \(\alpha \in \alpha\), a
+contradiction.  Similarly, if \(\beta \in \alpha\), then
+\(\alpha \notin \beta\) and \(\alpha \neq \beta\).  Lastly, if
+\(\alpha = \beta\), then as \(\alpha \notin \alpha\), we have
+\(\alpha \notin \beta\) and \(\beta \notin \alpha\).  Therefore, the
+three stated conditions are mutually exclusive.
+
+\begin{theorem}
+  \label{thm:4ca41efr}
+  Every nonempty set \(X\) of ordinals has a unique element \(\alpha\)
+  such that \(\alpha \cap X = \emptyset\).  In fact, \(\alpha\) is the
+  intersection of the elements of \(X\).
+\end{theorem}
+
+Let \(\xi\) be an element of the nonempty set \(X\).  If
+\(\xi \cap X = \emptyset\), let \(\alpha = \xi\).  Suppose
+\(\xi \cap X \neq \emptyset\).  Then as \(\xi\) is an ordinal, there
+is an element \(\alpha\) of the nonempty subset \(\xi \cap X\) of
+\(\xi\) such that \(\alpha \cap \xi \cap X = \emptyset\).  The
+transitivity of \(\xi\) implies that its element \(\alpha\) is a
+subset of it, so \(\alpha \cap \xi = \alpha\).  Therefore, \(\alpha\)
+is an element of \(X\) such that \(\alpha \cap X = \emptyset\).  This
+verifies that there is an element \(\alpha\) of \(X\) such that
+\(\alpha \cap X = \emptyset\).
+
+To show that \(\alpha\) is the intersection of the elements of \(X\),
+it suffices to verify that it is a subset of every element \(\beta\)
+of \(X\).  As \(\alpha \cap X = \emptyset\), \(\beta\) does not belong
+to \(\alpha\).  Therefore, by \Cref{thm:xut6v700}, either
+\(\alpha \in \beta\) or \(\alpha = \beta\).  According to
+\Cref{thm:lebsg6gf}, \(\alpha \in \beta\) means that \(\alpha\) is a
+proper subset of \(\beta\).  Therefore, \(\alpha\) is either a proper
+subset of \(\beta\) or equals \(\beta\), that is, \(\alpha\) is a
+subset of \(\beta\).  It follows that \(\alpha\) is the intersection
+of the elements of \(X\).
+
+\begin{theorem}
+  \label{thm:22wi7nhu}
+  A set is an ordinal if and only if is transitive and all its
+  elements are ordinals.
+\end{theorem}
+
+If a set \(\alpha\) is an ordinal, then it is transitive by
+definition, and all its elements are ordinals by \Cref{thm:5qmhh3to}.
+
+Conversely, suppose \(\alpha\) is a transitive set all of whose
+elements are ordinals.  \Cref{thm:xut6v700} implies that if
+\(\beta, \gamma\) are distinct elements of \(X\), then either
+\(\beta \in \gamma\) or \(\gamma \in \beta\).  Every nonempty subset
+\(x\) of \(\alpha\), by \Cref{thm:4ca41efr}, has an element \(\beta\)
+such that \(\beta \cap x = \emptyset\).  Therefore, \(\alpha\) is an
+ordinal.
+
+\begin{theorem}
+  \label{thm:9s24zgf9}
+  Let \(X\) be a set of ordinals.  Then the union of the elements of
+  \(X\) is an ordinal.
+\end{theorem}
+
+Let \(\alpha\) denote the union of the elements of \(X\).  If
+\(\beta\) is an element of \(\alpha\), then there is an element
+\(\beta'\) of \(X\) such that \(\beta \in \beta'\); as \(\beta'\) is
+an ordinal, it is transitive, so \(\beta\) is a subset of \(\beta'\);
+by the definition of the union, \(\beta'\) is a subset of \(\alpha\);
+therefore, \(\beta\) is a subset of \(\alpha\); thus, \(\alpha\) is a
+transitive set.  Every element \(\beta\) of \(\alpha\) is an element
+of some element \(\beta'\) of \(X\); as \(\beta'\) is an ordinal, by
+\Cref{thm:5qmhh3to}, \(\beta\) is an ordinal too; thus, every element
+of \(\alpha\) is an ordinal.  It follows from \Cref{thm:22wi7nhu} that
+\(\alpha\) is an ordinal.
+
+\begin{theorem}[Principle of transfinite induction]
+  \label{thm:6ehprsvw}
+  Let \(\alpha\) be an ordinal, and \(x\) a subset of \(\alpha\) with
+  the property that for every element \(\beta\) of \(\alpha\) such
+  that \(\beta\) is a subset of \(x\), we have \(\beta \in x\).  Then
+  \(x\) equals \(\alpha\).
+\end{theorem}
+
+Let \(\leq\) denote the canonical order on \(\alpha\) as usual.  Thus,
+the irreflexive kernel \(<\) of \(\leq\) is the same as the relation
+\(\in\) on \(\alpha\).  This means that \(\beta = (-\infty, \beta)\)
+for all \(\beta \in \alpha\).  Therefore, the hypothesis on \(x\) says
+just that \(x\) is an inductive subset of \(\alpha\) with respect to
+\(\leq\).  As \(\leq\) is a well-order on \(\alpha\)
+(\Cref{thm:7cc2cckf}), by transfinite induction for well-ordered sets
+(\Cref{thm:5vxgawq0}), \(x = \alpha\).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:fa9kx7s9}
+  Let \(\alpha\) be an ordinal, and \(p : E \to \alpha\) a function
+  from a set \(E\) to \(\alpha\).  Suppose that for every element
+  \(\beta\) of \(\alpha\), \(f_\beta\) is a function from
+  \(\Gamma(\beta, p)\) to \(p^{-1}(\beta)\).  Then there is a unique
+  section \(u\) of \(p\) on \(\alpha\) such that
+  \(u(\beta) = f_\beta(u \vert_\beta)\) for all \(\beta \in \alpha\).
+\end{theorem}
+
+The notations \(\Gamma(\beta, p)\) and \(u \vert_\beta\), for an
+element \(\beta\) of \(\alpha\), in the statement of the theorem make
+sense because \(\beta\) is a subset of \(\alpha\) as the ordinal
+\(\alpha\) is a transitive set.  The statement itself follows from
+transfinite recursion for well-ordered sets (\Cref{thm:srxrngd8}),
+just as \Cref{thm:6ehprsvw} followed from transfinite induction for
+well-ordered sets.
+
+\begin{theorem}[Defintion by transfinite recursion]
+  \label{thm:3y2h6l46}
+  Let \(\alpha\) be an ordinal, and \(T\) any set.  Suppose that for
+  every element \(\beta\) of \(\alpha\), \(f_\beta\) is a function
+  from \(T^\beta\) to \(T\).  Then there exists a unique function
+  \(u : \alpha \to T\) such that \(u(\beta) = f_\beta(u \vert_\beta)\)
+  for all \(\beta \in \alpha\).
+\end{theorem}
+
+This theorem too follows immediately from the corresponding statement
+for well-ordered sets (\Cref{thm:5kg5ewo1}).
+
+An ordinal \(\alpha\) is called a \firstterm{successor} of an ordinal
+\(\xi\) if \(\xi \in \alpha\) and there is no element \(\tau\) of
+\(\alpha\) such that \(\xi \in \tau\); by \Cref{thm:lebsg6gf}, this is
+equivalent to the condition that \(\xi\) is a proper subset of
+\(\alpha\), and for any ordinal \(\tau\) such that
+\(\xi \subset \tau \subset \alpha\), we have either \(\xi = \tau\) or
+\(\tau = \alpha\).  An ordinal is called a \firstterm{successor
+  ordinal} if it is a successor of some ordinal.  An ordinal is called
+a \firstterm{limit ordinal} if it is not a successor ordinal.  It is
+obvious that the empty set is a limit ordinal.
+
+For any ordinal \(\xi\), let \(\xi^+\) denote the set
+\(\xi \cup \{ \xi \}\); we have \(\xi \notin \xi\) by
+\Cref{thm:7cc2cckf}, so \(\xi\) is a proper subset of \(\xi^+\).  For
+any ordinal \(\alpha\), let \(\alpha^-\) denote the union of the
+elements of \(\alpha\); as \(\alpha\) is a transitive set, every
+element of \(\alpha\) is a subset of \(\alpha\), so \(\alpha^-\) is
+also a subset of \(\alpha\).
+
+\begin{theorem}
+  \label{thm:8odofa55}
+  \begin{enumerate}
+  \item For any ordinal \(\xi\), the set \(\xi^+\) is the unique
+    ordinal with the following properties:
+    \begin{enumerate}
+    \item \(\xi^+\) is a subset of every ordinal \(\nu\) such that
+      \(\xi \in \nu\), and
+    \item If \(\tau\) is an ordinal that is a subset of every ordinal
+      \(\nu\) such that \(\xi \in \nu\), then \(\tau\) is a subset of
+      \(\xi^+\).
+    \end{enumerate}
+  \item For any ordinal \(\alpha\), the set \(\alpha^-\) is the unique
+    ordinal with the following properties:
+    \begin{enumerate}
+    \item Every element of \(\alpha\) is a subset of \(\alpha^-\), and
+    \item If \(\tau\) is an ordinal such that every element of
+      \(\alpha\) is a subset of \(\tau\), then \(\alpha^-\) is a
+      subset of \(\tau\).
+    \end{enumerate}
+  \item For every ordinal \(\xi\), \(\xi^+\) is the unique successor
+    of \(\xi\).  On the other hand, an ordinal \(\alpha\) is a
+    successor ordinal if and only if \(\alpha^- \in \alpha\); in that
+    case, \(\alpha^-\) is the unique ordinal which has \(\alpha\) as a
+    successor. In particular, every ordinal has a unique successor,
+    and is the successor of at most one ordinal.
+  \item For all ordinals \(\xi\), we have \((\xi^+)^- = \xi\); for
+    every successor ordinal \(\alpha\), we have
+    \((\alpha^-)^+ = \alpha\).  Also, if \(\xi, \nu\) are ordinals,
+    then \(\xi \in \nu\) if and only if \(\xi^+ \in \nu^+\);
+    similarly, if \(\alpha, \beta\) are successor ordinals, then
+    \(\alpha \in \beta\) if and only if \(\alpha^- \in \beta^-\).
+  \item An ordinal \(\alpha\) is a limit ordinal if and only if
+    \(\alpha^- = \alpha\).  In particular, a limit ordinal is either
+    the empty set or an infinite set.
+  \end{enumerate}
+\end{theorem}
+
+Let \(\xi\) be an ordinal.  If \(\lambda\) is an element of \(\xi\),
+then either \(\lambda \in \xi\) or \(\lambda = \xi\); in the first
+case, \(\lambda\) is a subset of \(\xi\) because \(\xi\) is a
+transitive set, so \(\lambda\) is a subset of \(\xi^+\); in the second
+case, \(\lambda \subset \xi^+\) because \(\xi\) is a subset of
+\(\xi^+\); therefore, \(\xi^+\) is a transitive set.  By
+\Cref{thm:5qmhh3to}, every element of \(\xi^+\) is an ordinal.
+Therefore, by \Cref{thm:22wi7nhu}, \(\xi^+\) is an ordinal.  Suppose
+\(\nu\) is an ordinal such that \(\xi \in \nu\); let
+\(\sigma \in \xi^+\); then either \(\sigma \in \xi\) or
+\(\sigma = \xi\); if \(\sigma \in \xi\), then as \(\xi \in \nu\) and
+the ordinal \(\nu\) is a transitive set, \(\sigma \in \nu\); on the
+other hand, if \(\sigma = \xi\), then \(\sigma \in \nu\) because
+\(\xi \in \nu\); thus in both the cases, \(\sigma \in \nu\); it
+follows that \(\xi^+\) is a subset of \(\nu\).  Let \(\tau\) be an
+ordinal that is a subset of every ordinal \(\nu\) such that
+\(\xi \in \nu\); then as \(\xi \in \xi^+\), \(\tau\) is a subset of
+\(\xi^+\).  So \(\xi^+\) is an ordinal which has the two stated
+properties.  If \(\alpha\) is any ordinal which has these properties
+with \(\alpha\) in the place of \(\xi^+\), then it is obvious that
+\(\xi^+\) and \(\alpha\) are subsets of each other, and are hence
+equal.  So \(\xi^+\) is the unique ordinal which has these properties.
+This verifies the first part of the theorem.
+
+Let \(\alpha\) be an ordinal.  Then \(\alpha^-\) is the union of the
+elements of \(\alpha\), so by \Cref{thm:5qmhh3to} and
+\Cref{thm:9s24zgf9}, \(\alpha^-\) is an ordinal.  The definition of
+\(\alpha^-\) implies that every element of \(\alpha\) is a subset of
+\(\alpha^-\).  If \(\tau\) is an ordinal such that every element of
+\(\alpha\) is a subset of \(\tau\), then it is obvious that the union
+\(\alpha^-\) of the elements of \(\alpha\) is also a subset of
+\(\tau\).  So \(\alpha^-\) has the two stated properties.  If \(\xi\)
+is any ordinal which has these properties with \(\xi\) substituted for
+\(\alpha^-\), then it is obvious that \(\alpha^-\) and \(\xi\) are
+subsets of each other, and are hence equal.  Thus, \(\alpha^-\) is the
+unique ordinal with these properties.  The second part of the theorem
+is verified.
+
+We will now show that an ordinal \(\alpha\) is a successor of an
+ordinal \(\xi\) if and only if \(\xi^+ = \alpha\) if and only if
+\(\xi = \alpha^-\) and \(\alpha^- \in \alpha\).  Suppose \(\alpha\) is
+a successor of \(\xi\); then \(\xi \in \alpha\); by the first part of
+the theorem, \(\xi^+\) is a subset of \(\alpha\); therefore, by
+\Cref{thm:lebsg6gf}, either \(\xi^+ \in \alpha\) or
+\(\xi^+ = \alpha\); if \(\xi^+ \in \alpha\), then we have
+\(\xi \in \xi^+\) and \(\xi^+ \in \alpha\), which is a contradiction
+because \(\alpha\) is a successor of \(\xi\); so \(\xi^+ = \alpha\).
+Suppose \(\xi^+ = \alpha\); then as \(\xi \in \xi^+\),
+\(\xi \in \alpha\); therefore, \(\xi\) is a subset of the union
+\(\alpha^-\) of the elements of \(\alpha\); let \(\tau\) be any
+element of \(\alpha\); as \(\xi^+ = \alpha\), either \(\tau \in \xi\)
+or \(\tau = \xi\); by \Cref{thm:lebsg6gf}, this means that either
+\(\tau\) is a proper subset of \(\xi\), or \(\tau = \xi\), that is,
+\(\tau\) is a subset of \(\xi\); thus, every element of \(\alpha\) is
+a subset of \(\xi\), so \(\alpha^-\) is a subset of \(\xi\);
+therefore, \(\xi = \alpha^-\), and, as \(\xi \in \alpha\),
+\(\alpha^- \in \alpha\).  Suppose \(\xi = \alpha^-\) and
+\(\alpha^- \in \alpha\); then \(\xi \in \alpha\); suppose there is an
+ordinal \(\tau\) such that \(\xi \in \tau\) and \(\tau \in \alpha\);
+as \(\xi = \alpha^-\), \(\xi\) is the union of the elements of
+\(\alpha\); therefore, as \(\tau \in \alpha\), \(\tau\) is a subset of
+\(\xi\); by \Cref{thm:lebsg6gf}, either \(\tau \in \xi\) or
+\(\tau = \xi\); if \(\tau \in \xi\), then as \(\xi \in \tau\) and
+\(\tau\) is transitive, we get \(\tau \in \tau\); on the other hand,
+if \(\tau = \xi\), then as \(\xi \in \tau\), we again have
+\(\tau \in \tau\); thus, in both the cases we have the relation
+\(\tau \in \tau\) which contradicts \Cref{thm:7cc2cckf}; it follows
+that there is no ordinal \(\tau\) such that \(\xi \in \tau\) and
+\(\tau \in \alpha\); therefore, \(\alpha\) is a successor of \(\xi\).
+This verifies the equivalences stated at the beginning of this
+paragraph.
+
+For any ordinal \(\xi\), the equivalence
+\begin{displaymath}
+  \alpha ~ \text{is a successor of} ~ \xi
+  \Leftrightarrow
+  \xi^+ = \alpha,
+\end{displaymath}
+valid for any ordinal \(\alpha\), says that \(\alpha^+\) is the unique
+successor of \(\xi\).  Similarly, for any ordinal \(\alpha\), the
+equivalence
+\begin{displaymath}
+  \alpha ~ \text{is a successor of} ~ \xi
+  \Leftrightarrow
+  \xi = \alpha^- ~ \text{and} ~ \alpha^- \in \alpha,
+\end{displaymath}
+valid for any ordinal \(\xi\), says that \(\alpha\) is a successor
+ordinal if and only if \(\alpha^- \in \alpha\), and in that case
+\(\alpha^-\) is the unique ordinal which has \(\alpha\) as a
+successor.  This checks the third part of the theorem.
+
+If \(\xi\) is any ordinal, then \(\alpha = \xi^+\) is a successor
+ordinal because it is the successor of \(\xi\), so \(\alpha^-\) is the
+unique ordinal which has \(\alpha\) as its successor, hence
+\(\alpha^- = \xi\), that is, \((\xi^+)^- = \xi\).  On the other hand,
+if \(\alpha\) is any successor ordinal, then it is the successor of
+\(\xi = \alpha^-\), so by the uniqueness of successors,
+\(\xi^+ = \alpha\), that is, \((\alpha^-)^+ = \alpha\).  If
+\(\xi, \nu\) are ordinals such that \(\xi \in \nu\), then by the first
+part of the theorem, \(\xi^+\) is a subset of \(\nu\); as \(\nu\) is a
+proper subset of \(\nu^+\), it follows that \(\xi^+\) is a proper
+subset of \(\nu^+\); by \Cref{thm:lebsg6gf}, \(\xi^+ \in \nu^+\).
+Conversely, if \(\xi^+ \in \nu^+\), then \(\nu \notin \xi\) because by
+the previous sentence, if \(\nu \in \xi\), then \(\nu^+ \in \xi^+\),
+so by the transitivity of \(\nu^+\), \(\nu^+ \in \nu^+\),
+contradicting \Cref{thm:7cc2cckf}; also, \(\xi \neq \nu\), for if
+\(\xi = \nu\), then \(\xi^+ = \nu^+\), so we again get the
+contradiction \(\xi^+ \in \xi^+\); therefore, by \Cref{thm:xut6v700},
+\(\xi \in \nu\).  Thus, \(\xi \in \nu\) if and only if
+\(\xi^+ \in \nu^+\).  Similarly, if \(\alpha, \beta\) are successor
+ordinals, then \(\alpha = (\alpha^-)^+\) and \(\beta = (\beta^-)^+\),
+so by the previous sentence, \(\alpha \in \beta\) if and only if
+\(\alpha^- \in \beta^-\).  The fourth part of the theorem follows.
+
+By the third part of of the theorem, and \Cref{thm:lebsg6gf}, an
+ordinal \(\alpha\) is a successor ordinal if and only if \(\alpha^-\)
+is a proper subset of \(\alpha\).  As \(\alpha^-\) is a subset of
+\(\alpha\), this means hat \(\alpha\) is a limit ordinal if and only
+if \(\alpha^- = \alpha\).  If \(\alpha\) is a nonempty finite ordinal,
+then as the canonical order \(\leq\) on \(\alpha\) is total,
+\(\alpha\) has a maximum \(\beta\) with respect to \(\leq\); every
+element of \(\alpha\) is contained in \(\beta\) by
+\Cref{thm:86se6zr0}, so \(\beta\) is the union of the elements of
+\(\alpha\), that is, \(\beta = \alpha^-\); so \(\alpha^- \in \alpha\),
+hence \(\alpha\) is a successor ordinal.  Thus, every nonempty finite
+ordinal is a successor ordinal.  It follows that a limit ordinal is
+either empty or infinite.  This verifies the last part of the theorem.
+
 \subsection{Exercises}
 \label{sec:q1c2w2jy}
-
-\begin{exercise}
-  \label{exe:eydusvz3}
-  Show that taking the irreflexive kernel is a bijection from the set
-  of orders on any set \(X\) onto the set of all irreflexive and
-  transitive relations on \(X\).
-\end{exercise}
 
 \begin{exercise}
   \label{exe:swjbrepg}
@@ -681,11 +1638,11 @@ the \firstterm{lexicographic} order.  It is a total order if every
   transfinite recursion \parencite[Part~II, Chapter~14,
   Solution~1]{bib:uw2wsr3k}.  Let X be an ordered set in which every
   well-ordered subset is bounded above.  Zermelo's theorem gives a
-  well-ordered set \(\Lambda\) and a bijection from the set
+  well-ordered set \(\Lambda\) and a bijection \(h\) from the set
   \(\Lambda\) to the set \(X\).  Use transfinite recursion to define a
   subset \(M\) of \(X\) such that any element \(x\) of \(X\) belongs
-  to \(M\) if and only if \(y < x\) for all \(y \in M\) such that
-  \(h^{-1}(y) < h^{-1}(x)\).  Prove that \(M\) is totally ordered, and
+  to \(M\) if and only if \(w < x\) for all \(w \in M\) such that
+  \(h^{-1}(w) < h^{-1}(x)\).  Prove that \(M\) is totally ordered, and
   that any upper bound of \(M\) is a maximal element of \(X\).
 \end{exercise}
 
@@ -965,25 +1922,40 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \end{enumerate}
 \end{exercise}
 
+\begin{exercise}
+  \label{exe:ylp1zcc8}
+  Let \(X\) be a totally ordered set, \(w\) an element of \(X\) that
+  has a successor, and \(Y\) a subset of \(X\) such that
+  \(w^+ \in Y\).  Show that \(w^+\) is the minimum of the set of
+  elements \(t\) of \(Y\) such that \(w < t\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:ddc4bdfk}
+  Let \(\xi\) be an ordinal, and \(X\) a set of ordinals such that
+  \(\xi^+ \in X\).  Prove that \(\xi^+\) is the intersection of the
+  elements \(\tau\) of \(X\) such that \(\xi \in \tau\).
+\end{exercise}
+
+\begin{exercise}[Burali-Forti paradox]
+  \label{exe:9pk4eh7k}
+  Prove that there is no set \(X\) such that every ordinal is an
+  element of \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:7tvca54w}
+  Prove the following statements for any two ordinals \(\alpha\) and
+  \(\beta\).
+  \begin{enumerate}
+  \item If \(\alpha^- \in \beta^-\), then \(\alpha \in \beta\).
+  \item If \(\alpha \in \beta\), then either \(\alpha^- \in \beta^-\),
+    or \(\alpha\) is a limit ordinal and \(\beta = \alpha^+\).
+  \end{enumerate}
+\end{exercise}
+
 \subsection{Solutions}
 \label{sec:fzhm4l61}
-
-\begin{solution}[\ref{exe:eydusvz3}]
-  \label{sol:bxkmo56h}
-  The irreflexive kernel \(<\) of an order \(\leq\) on \(X\) is
-  obviously irreflexive; if \(x,y,z \in X\), and \(x < y\) and
-  \(y < z\), the transitivity of \(\leq\) implies that \(x \leq z\),
-  and because \(x \neq y\) the anti-symmetry of \(\leq\) implies that
-  \(x \neq z\), so \(<\) is transitive.  Conversely, if \(<\) is an
-  irreflexive and transitive relation on \(X\), its reflexive closure
-  \(\leq\) is obviously reflexive; if \(x \leq y\) and \(y \leq z\),
-  either of the equalities \(x = y\) and \(y = z\) implies that
-  \(x \leq z\), so \(\leq\) is transitive; lastly, if \(x \leq y\) and
-  \(y \leq x\), the transitivity of \(\leq\) and the irreflexivity of
-  \(<\) imply that \(x = y\); thus, \(\leq\) is an order.  It is
-  obvious that the maps \(\leq \mapsto <\) and \(< \mapsto \leq\) are
-  inverses of each other.
-\end{solution}
 
 \begin{solution}[\ref{exe:swjbrepg}]
   \label{sol:pcqde5hb}
@@ -1293,8 +2265,8 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \(M\) if and only if the element \(\lambda = h^{-1}(x)\) of
   \(\Lambda\) has the property that \(h(\mu) < h(\lambda)\) for all
   \(\mu < \lambda\) such that \(u(\mu) = 1\); equivalently,
-  \(x \in M\) if and only if \(y < x\) for all \(y \in M\) such that
-  \(h^{-1}(y) < h^{-1}(x)\).
+  \(x \in M\) if and only if \(w < x\) for all \(w \in M\) such that
+  \(h^{-1}(w) < h^{-1}(x)\).
 
   If \(\lambda,\mu \in h^{-1}(M)\) and \(\mu < \lambda\), then
   \(h(\lambda) \in M\) and \(u(\mu) = 1\), so \(h(\mu) < h(\lambda)\).
@@ -1380,13 +2352,13 @@ the \firstterm{lexicographic} order.  It is a total order if every
   we get a function \(g_x\) from \(F((-\infty,x))\) to
   \(F((-\infty, x])\) for every \(x \in X\) by setting
   \begin{displaymath}
-    g_x(s)(y) =
+    g_x(s)(w) =
     \begin{cases}
-      s(y) & \text{if} ~ y < x \\
-      f_x(s) & \text{if} ~ y = x
+      s(w) & \text{if} ~ w < x \\
+      f_x(s) & \text{if} ~ w = x
     \end{cases}
   \end{displaymath}
-  for all \(s \in F((-\infty, x))\) and \(y \leq x\).  It is obvious
+  for all \(s \in F((-\infty, x))\) and \(w \leq x\).  It is obvious
   that \(g_x(s) \vert_{(-\infty, x)} = s\) for all
   \(s \in F((-\infty, x))\).  Therefore, there exists a unique element
   \(u \in F(X)\) such that
@@ -1707,10 +2679,10 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \begin{displaymath}
     L = \{ l \in X \,\vert\, l \leq x ~ \text{for all} ~ x \in Y \}.
   \end{displaymath}
-  An infimum of \(Y\) is just a maximum of \(L\), so \(L\) does not
+  The infimum of \(Y\) is just the maximum of \(L\), so \(L\) does not
   have a maximum.  It follows that \(L \cap Y = \emptyset\); for, if
   \(x \in L \cap Y\), then \(x \in Y\), so \(l \leq x\) for all
-  \(l \in L\); as \(x \in L\), this means that \(x\) is a maximum of
+  \(l \in L\); as \(x \in L\), this means that \(x\) is the maximum of
   \(L\), a contradiction.  We will verify that \(L\) is superinductive
   for \((a, f)\).  As \(X\) is minimally superinductive for
   \((a, f)\), by \Cref{exe:8yw1mw3a}, \(a\) is the minimum of \(X\),
@@ -2079,8 +3051,8 @@ the \firstterm{lexicographic} order.  It is a total order if every
   \(x \in Y\).  By \Cref{exe:rw9lhmv9}, \(\leq_{\bar{Y}}\) is the
   unique order on \(\bar{Y}\) with this property, and is a well-order.
   Therefore, \(\bar{Y} \in \mathcal{S}\).  If \(x \in Y\) and
-  \(y \in \bar{Y}\) are such that \(y < x\), then \(y \neq a\) because
-  \(x < a\); therefore, \(y \in Y\), hence \(Y\) is a segment of
+  \(w \in \bar{Y}\) are such that \(w < x\), then \(w \neq a\) because
+  \(x < a\); therefore, \(w \in Y\), hence \(Y\) is a segment of
   \(\bar{Y}\).  Thus, \(Y \sqsubseteq \bar{Y}\).  As
   \(Y \neq \bar{Y}\), this implies that \(Y\) is not a maximal element
   of \(\mathcal{S}\).
@@ -2116,6 +3088,90 @@ the \firstterm{lexicographic} order.  It is a total order if every
   element of \(\mathcal{S}\).  The hypothesis on \(X\) gives an upper
   bound \(a\) of \(M\).  By part (\ref{item:41f56yw7}) of the
   exercise, \(a\) is a maximal element of \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:ylp1zcc8}]
+  \label{sol:6szduuuo}
+  Let \(Z\) be the set of elements \(t\) of \(Y\) such that \(w < t\).
+  If \(t \in Z\), then \(w < t\), so by \Cref{thm:q8h11s4b},
+  \(w^+ \leq t\); thus, \(w^+\) is a lower bound of \(Z\).  Let \(x\)
+  be any lower bound of \(Z\); as \(w\) has a successor, by the same
+  theorem, \(w < w^+\); since \(w^+ \in Y\), it follows that
+  \(w^+ \in Z\); therefore, \(x \leq w^+\).  This verifies that
+  \(w^+\) is the infimum of \(Z\).
+\end{solution}
+
+\begin{solution}[\ref{exe:ddc4bdfk}]
+  \label{sol:knjkxl0v}
+  Let \(Y\) be the set of elements \(\tau\) of \(X\) such that
+  \(\xi \in \beta\).  It is nonempty because \(\xi^+ \in Y\).  Let
+  \(\theta\) be the intersection of the elements of \(Y\).  We have to
+  show that \(\theta = \xi^+\).  As \(\xi^+ \in Y\), the definition of
+  \(\theta\) implies that \(\theta\) is a subset of \(\xi^+\).
+  Conversely, if \(\tau \in Y\), then \(\xi \in \tau\), hence by
+  \Cref{thm:8odofa55}, \(\xi^+ \subset \tau\); it follows that
+  \(\xi^+\) is a subset of \(\theta\).  This verifies that
+  \(\theta = \xi^+\).
+\end{solution}
+
+\begin{solution}[\ref{exe:9pk4eh7k}]
+  \label{sol:s4fkzn20}
+  Suppose there is a set \(X\) such that every ordinal is an element
+  of \(X\).  Let \(Y\) denote the set of all elements of \(X\) that
+  are ordinals.  If \(\alpha\) is an element of \(Y\), and
+  \(\beta \in \alpha\), then by \Cref{thm:5qmhh3to}, \(\beta\) is an
+  ordinal, so \(\beta \in Y\); therefore, \(Y\) is a transitive set.
+  By the definition of \(Y\), every element of \(Y\) is an ordinal.
+  Therefore, by \Cref{thm:22wi7nhu}, \(Y\) is itself an ordinal.  As
+  every ordinal is an element of \(Y\), it follows that \(Y \in Y\).
+  This contradicts the part of \Cref{thm:7cc2cckf} which says that
+  \(\alpha \notin \alpha\) for every ordinal \(\alpha\).  Therefore,
+  there is no set \(X\) such that every ordinal is an element of
+  \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:7tvca54w}]
+  \label{sol:45jmdyf7}
+  Suppose \(\alpha^- \in \beta^-\).  If \(\alpha\) is a limit ordinal,
+  then by \Cref{thm:8odofa55}, \(\alpha = \alpha^-\); so as
+  \(\alpha^- \in \beta^-\), we have \(\alpha \in \beta^-\); since
+  \(\beta^-\) is a subset of \(\beta\), it follows that
+  \(\alpha \in \beta\).  If both \(\alpha\) and \(\beta\) are
+  successor ordinals, then \(\alpha \in \beta\) by
+  \Cref{thm:8odofa55}.  If \(\alpha\) is a successor ordinal and
+  \(\beta\) a limit ordinal, then \(\alpha = (\alpha^-)^+\) and
+  \(\beta = \beta^-\); as \(\alpha^- \in \beta^-\),
+  \(\alpha^- \in \beta\); since \(\alpha = (\alpha^-)^+\), by
+  \Cref{thm:8odofa55}, \(\alpha\) is a subset of \(\beta\); as
+  \(\alpha\) is a successor ordinal and \(\beta\) a limit ordinal,
+  \(\alpha \neq \beta\); therefore, \(\alpha\) is a proper subset of
+  \(\beta\); so by \Cref{thm:lebsg6gf}, \(\alpha \in \beta\).  Thus,
+  in all the cases, \(\alpha \in \beta\).
+
+  Suppose \(\alpha \in \beta\).  If both \(\alpha\) and \(\beta\) are
+  successor ordinals, then by \Cref{thm:8odofa55},
+  \(\alpha^- \in \beta^-\).  If both \(\alpha\) and \(\beta\) are
+  limit ordinals, then by the same theorem, \(\alpha^- = \alpha\) and
+  \(\beta^- = \beta\), so as \(\alpha \in \beta\), we have
+  \(\alpha^- \in \beta^-\).  If \(\alpha\) is a successor ordinal and
+  \(\beta\) a limit ordinal, then by \Cref{thm:8odofa55},
+  \(\alpha = \xi^+\), where \(\xi = \alpha^-\), and
+  \(\beta = \beta^-\); as \(\alpha \in \beta\), we have
+  \(\xi^+ \in \beta\); since \(\xi \in \xi^+\) and \(\beta\) is a
+  transitive set, we get \(\xi \in \beta\); now since
+  \(\xi = \alpha^-\) and \(\beta = \beta^-\), this implies that
+  \(\alpha^- \in \beta^-\).  Lastly, if \(\alpha\) is a limit ordinal
+  and \(\beta\) a successor ordinal, then \(\alpha = \alpha^-\) and
+  \(\beta = \xi^+\), where \(\xi = \beta^-\); so the hypothesis that
+  \(\alpha \in \beta\) give \(\alpha \in \xi^+\); therefore, either
+  \(\alpha \in \xi\) or \(\alpha = \xi\); if \(\alpha \in \xi\), then
+  as \(\alpha = \alpha^-\) and \(\xi = \beta^-\), we get
+  \(\alpha^- \in \beta^-\); on the other hand, if \(\alpha = \xi\),
+  then we get \(\alpha^- = \beta^-\) and \(\beta = \xi^+ = \alpha^+\).
+  Thus in all the cases, either \(\alpha^- \in \beta^-\), or
+  \(\alpha\) is a limit ordinal and \(\beta = \alpha^+\).
+
+
 \end{solution}
 
 \bibsection
