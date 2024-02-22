@@ -945,7 +945,7 @@ This theorem can be deduced from \Cref{thm:83vd5knr} just as
 \begin{theorem}[Definition by transfinite recursion]
   \label{thm:e3bitdp0}
   Let \(X\) be a nonempty well-ordered set, and \(T\) any set.
-  Suppose that \(a\) is an element of \(T\), that for every successor
+  Suppose that \(e\) is an element of \(T\), that for every successor
   element \(x\) of \(X\), \(f_x\) is a function from \(T\) to \(T\),
   and that for every limit element \(x\) of \(X\) other than the
   minimum \(a\) of \(X\), \(g_x\) is a function from
@@ -1515,6 +1515,164 @@ hence \(\alpha\) is a successor ordinal.  Thus, every nonempty finite
 ordinal is a successor ordinal.  It follows that a limit ordinal is
 either empty or infinite.  This verifies the last part of the theorem.
 
+\begin{theorem}[Principle of transfinite induction]
+  \label{thm:a5jdoffh}
+  Let \(x\) be a well-ordered subset of an ordinal \(\alpha\)
+  satisfying the following conditions:
+  \begin{enumerate}
+  \item If \(\beta\) is an element of \(\alpha\) such that \(\beta\)
+    is a successor ordinal and \(\beta^-\) is a subset of \(x\), then
+    \(\beta \in x\).
+  \item If \(\beta\) is an element of \(\alpha\) such that \(\beta\)
+    is a limit ordinal and \(\beta\) is a subset of \(x\), then
+    \(\beta \in x\).
+  \end{enumerate}
+  Then \(x\) equals \(\alpha\).
+\end{theorem}
+
+Let \(\beta\) be an element of \(\alpha\) such that \(\beta\) is a
+subset of \(x\).  If \(\beta\) is a successor ordinal, then by
+\Cref{thm:8odofa55}, \(\beta^- \in \beta\); as \(\beta\) is a subset
+of \(x\), it follows that \(\beta^- \in x\); so the first hypothesis
+on \(x\) implies that \(\beta \in x\).  On the other hand, if
+\(\beta\) is a limit ordinal, then as \(\beta\) is a subset of \(x\),
+the second hypothesis on \(x\) implies that \(\beta \in x\).  Thus, in
+both the cases, \(\beta \in x\).  By \Cref{thm:6ehprsvw},
+\(x = \alpha\).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:7oq31ljz}
+  Let \(\alpha\) be an ordinal, and \(p : E \to \alpha\) a function
+  from a set \(E\) to \(\alpha\).  Suppose that:
+  \begin{enumerate}
+  \item For every element \(\beta\) of \(\alpha\) that is a successor
+    ordinal, \(f_\beta\) is a function from \(p^{-1}(\beta^-)\) to
+    \(p^{-1}(\beta)\).
+  \item For every element \(\beta\) of \(\alpha\) that is a limit
+    ordinal, \(g_\beta\) is a function from \(\Gamma(\beta, p)\) to
+    \(p^{-1}(\beta)\).
+  \end{enumerate}
+  Then there exists a unique section \(u\) of \(p\) on \(\alpha\) such
+  that:
+  \begin{enumerate}
+  \item \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\)
+    of \(\alpha\) that is a successor ordinal.
+  \item \(u(\beta) = g_\beta(u \vert_\beta)\) for every element
+    \(\beta\) of \(\alpha\) that is a limit ordinal.
+  \end{enumerate}
+\end{theorem}
+
+For every element \(\beta\) of \(\alpha\), define a function
+\(h_\beta\) from \(\Gamma(\beta, p)\) to \(p^{-1}(\beta)\) as follows:
+\begin{enumerate}
+\item If \(\beta\) is a successor ordinal, let
+  \(h_\beta(s) = f_\beta(s(\beta^-))\) for every section \(s\) of
+  \(p\) on \(\beta\).
+\item If \(\beta\) is a limit ordinal, let \(h_\beta = g_\beta\).
+\end{enumerate}
+Then transfinite recursion (\Cref{thm:fa9kx7s9}) gives a unique
+section \(u\) of \(p\) on \(\alpha\) such that
+\(u(\beta) = h_\beta(u \vert_\beta)\) for all \(\beta \in \alpha\).
+Thus, if \(\beta\) is an element of \(\alpha\) which is a successor
+ordinal, then
+\begin{displaymath}
+  u(\beta) =
+  h_\beta(u \vert_\beta) =
+  f_\beta(u \vert_\beta (\beta^-)) =
+  f_\beta(u(\beta^-)),
+\end{displaymath}
+and if \(\beta\) is an element of \(\alpha\) which is a limit
+ordinal, then
+\begin{displaymath}
+  u(\beta) = h_\beta(u \vert_\beta) = g_\beta(u \vert_\beta).
+\end{displaymath}
+Therefore, \(u\) has the required properties.
+
+Suppose \(u'\) is another section of \(p\) which has the required
+properties.  Then for every element \(\beta\) of \(\alpha\) which is a
+successor ordinal, we have
+\begin{displaymath}
+  u'(\beta) =
+  f_\beta(u'(\beta^-)) =
+  f_\beta(u' \vert_\beta(\beta^-)) =
+  h_\beta(u' \vert_\beta),
+\end{displaymath}
+while for every element \(\beta\) of \(\alpha\) which is a limit
+ordinal, we have
+\begin{displaymath}
+  u'(\beta) = g_\beta(u' \vert_\beta) = h_\beta(u' \vert_\beta).
+\end{displaymath}
+Thus, \(u'(\beta) = h_\beta(u' \vert_\beta)\) for all
+\(\beta \in \alpha\).  As \(u\) is the only section of \(p\) on
+\(\alpha\) with this property, we get \(u' = u\).
+
+It is convenient to expand \Cref{thm:7oq31ljz} as follows.
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:kfr9z94i}
+  Let \(\alpha\) be a nonempty ordinal, and \(p : E \to \alpha\) a
+  function from a set \(E\) to \(\alpha\).  Suppose that:
+  \begin{enumerate}
+  \item \(e\) is an element of \(p^{-1}(\emptyset)\).
+  \item For every element \(\beta\) of \(\alpha\) that is a successor
+    ordinal, \(f_\beta\) is a function from \(p^{-1}(\beta^-)\) to
+    \(p^{-1}(\beta)\).
+  \item For every element \(\beta\) of \(\alpha\) that is a nonempty
+    limit ordinal, \(g_\beta\) is a function from \(\Gamma(\beta, p)\)
+    to \(p^{-1}(\beta)\).
+  \end{enumerate}
+  Then there exists a unique section \(u\) of \(p\) on \(\alpha\) such
+  that:
+  \begin{enumerate}
+  \item \(u(\emptyset) = e\),
+  \item \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\)
+    of \(\alpha\) that is a successor ordinal, and
+  \item \(u(\beta) = g_\beta(u \vert_\beta)\) for every element
+    \(\beta\) of \(\alpha\) that is a nonempty limit ordinal.
+  \end{enumerate}
+\end{theorem}
+
+The set \(\Gamma(\emptyset, p)\) is a singleton consisting of the
+unique function from the empty set to \(E\).  So a function from
+\(\Gamma(\emptyset, p)\) to \(p^{-1}(\emptyset)\) is canonically
+identified with an element of \(p^{-1}(\emptyset)\).  Therefore, the
+theorem follows from \Cref{thm:7oq31ljz}.
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:fi9epz7i}
+  Let \(\alpha\) be an ordinal, and \(T\) any set.  Suppose that for
+  every element \(\beta\) of \(\alpha\) that is a successor ordinal,
+  \(f_\beta\) is a function from \(T\) to \(T\), and that for every
+  element \(\beta\) of \(\alpha\) that is a limit ordinal, \(g_\beta\)
+  is a function from \(T^\beta\) to \(T\).  Then there exists a unique
+  function \(u : \alpha \to T\) such that
+  \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\) of
+  \(\alpha\) that is a successor ordinal, and
+  \(u(\beta) = g_\beta(u \vert_\beta)\) for every element \(\beta\) of
+  \(\alpha\) that is a limit ordinal.
+\end{theorem}
+
+This theorem can be deduced from \Cref{thm:7oq31ljz} just as
+(\ref{thm:5kg5ewo1}) was deduced from (\ref{thm:srxrngd8}).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:u18qlc0t}
+  Let \(\alpha\) be a nonempty ordinal, and \(T\) any set.  Suppose
+  that \(e\) is an element of \(T\), that for every element \(\beta\)
+  of \(\alpha\) that is a successor ordinal, \(f_\beta\) is a function
+  from \(T\) to \(T\), and that for every element \(\beta\) of
+  \(\alpha\) that is a nonempty limit ordinal, \(g_\beta\) is a
+  function from \(T^\beta\) to \(T\).  Then there exists a unique
+  function \(u : \alpha \to T\) such that \(u(\emptyset) = e\),
+  \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\) of
+  \(\alpha\) that is a successor ordinal, and
+  \(u(\beta) = g_\beta(u \vert_\beta)\) for every element \(\beta\) of
+  \(\alpha\) that is a nonempty limit ordinal.
+\end{theorem}
+
+This theorem is an expansion of \Cref{thm:fi9epz7i} just as
+(\ref{thm:kfr9z94i}) was an expansion of (\ref{thm:7oq31ljz}).
+
 \subsection{Exercises}
 \label{sec:q1c2w2jy}
 
@@ -1920,6 +2078,19 @@ either empty or infinite.  This verifies the last part of the theorem.
     function on \(\mathcal{S}\) to deduce that \(X\) has a maximal
     element.
   \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:y5zl49rq}
+  Deduce the principle of transfinite induction (\Cref{thm:5vxgawq0})
+  from the Bourbaki-Witt fixed point theorem (\Cref{exe:al7fffh1}).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:ouafuvlu}
+  Deduce the statement on definition by transfinite recursion in
+  \Cref{exe:x9ewqbv6} from the Bourbaki-Witt fixed point theorem
+  (\Cref{exe:al7fffh1}).
 \end{exercise}
 
 \begin{exercise}
@@ -3090,6 +3261,66 @@ either empty or infinite.  This verifies the last part of the theorem.
   exercise, \(a\) is a maximal element of \(X\).
 \end{solution}
 
+\begin{solution}[\ref{exe:y5zl49rq}]
+  \label{sol:s7zkr9t5}
+  Let \(X\) be a well-ordered set, and \(A\) an inductive subset of
+  \(X\).  Let \(S\) be the set of segments \(Y\) of \(X\) such that
+  \(Y\) is a subset of \(A\).  Define an order \(\leq\) on \(S\) by
+  specifying that \(Y \leq Y'\), for any two elements \(Y, Y'\) of
+  \(S\), if \(Y\) is a subset of \(Y'\).  As a union of segments of
+  \(X\) is a segment (\Cref{exe:rpm18mof}), every totally ordered
+  subset \(T\) of \(S\) has a supremum, namely the union of the
+  elements of \(T\).  Define a function \(f : S \to S\) by setting
+  \(f(Y)\), for any element \(Y\) of \(S\), to be \(Y\) if \(Y = X\),
+  and to be \((-\infty, a]\) if \(Y\) is a proper segment of \(X\) and
+  \(a\) is the unique element of \(X\) such that \(Y = (-\infty, a)\)
+  (\Cref{thm:htdzbbwv}).  Then \(Y \leq f(Y)\) for all \(Y \in S\).
+  Therefore, by the Bourbaki-Witt fixed point theorem
+  (\Cref{exe:al7fffh1}), \(f\) has a fixed point \(M\) in \(S\).  As
+  \(f(Y) \neq Y\) for every proper segment \(Y\) of \(X\), we have
+  \(M = X\).  Therefore, \(X\) is a subset of \(A\), hence \(A = X\).
+\end{solution}
+
+\begin{solution}[\Cref{exe:ouafuvlu}]
+  \label{sol:uutctwo0}
+  Let \(X\) be a well-ordered set with the topology whose open sets
+  are the segments of \(X\).  Let \(F\) be a sheaf of sets on \(X\).
+  Suppose that for every point \(x \in X\), \(f_x\) is a function from
+  \(F((-\infty, x))\) to \(F((-\infty, x])\) such that
+  \(f_x(s) \vert_{(-\infty, x)} = s\) for all
+  \(s \in F((-\infty, x))\).  We have to show that there is a unique
+  element \(u\) of \(F(X)\) such that
+  \(u \vert_{(-\infty, x]} = f_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in X\).  For any segment \(Y\) of \(X\), call an element \(u\)
+  of \(F(Y)\) \firstterm{inductive} if
+  \(u \vert_{(-\infty, x]} = f_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in Y\).  Let \(S\) be the set of segments \(Y\) of \(X\) for
+  which there is a unique inductive section \(u_Y\) of \(F\) on \(Y\).
+  Define an order \(\leq\) on \(S\) by specifying that \(Y \leq Z\),
+  for elements \(Y, Z\) of \(S\), if \(Y\) is a subset of \(Z\) and
+  \(u_Y = u_Z \vert_Y\).  As \(F\) is a sheaf, for any totally ordered
+  subset \(T\) of \(S\), there is a unique section \(u_N\) of \(F\) on
+  the union \(N\) of the elements of \(T\) such that
+  \(u_N \vert_Y = u_Y\) for all \(Y \in T\); it is obvious that
+  \(u_N\) is the unique inductive section of \(F\) on \(N\);
+  therefore, \(N\) is an element of \(S\), and is obviously the
+  supremum of \(T\) in \(S\).  Thus every totally ordered subset of
+  \(S\) has a supremum in \(S\).  Define a function \(f : S \to S\) by
+  setting \(f(Y)\), for any element \(Y\) of \(S\), as follows: if
+  \(Y = X\), set \(f(Y) = X\); if \(Y\) is a proper segment of \(X\),
+  let \(a\) be the unique element of \(X\) such that
+  \(Y = (-\infty, a)\) (\Cref{thm:htdzbbwv}), and set \(f(Y) = Z\),
+  where \(Z = (-\infty, a]\) (the element \(f_Z = f_a(u_Y)\) is the
+  unique inductive section of \(F\) on \(Z\), so \(Z\) does belong to
+  \(S\)).  Then \(Y \leq f(Y)\) for all \(Y \in S\).  Therefore, by
+  the Bourbaki-Witt fixed point theorem (\Cref{exe:al7fffh1}), \(f\)
+  has a fixed point \(M\) in \(S\).  As \(f(Y) \neq Y\) for every
+  proper segment \(Y\) of \(X\), we have \(M = X\).  Therefore,
+  \(u = u_X\) is the unique section of \(F\) on \(X\) such that
+  \(u \vert_{(-\infty, x]} = f_x(u \vert_{(-\infty, x)})\) for all
+  \(x \in X\).
+\end{solution}
+
 \begin{solution}[\ref{exe:ylp1zcc8}]
   \label{sol:6szduuuo}
   Let \(Z\) be the set of elements \(t\) of \(Y\) such that \(w < t\).
@@ -3170,8 +3401,6 @@ either empty or infinite.  This verifies the last part of the theorem.
   then we get \(\alpha^- = \beta^-\) and \(\beta = \xi^+ = \alpha^+\).
   Thus in all the cases, either \(\alpha^- \in \beta^-\), or
   \(\alpha\) is a limit ordinal and \(\beta = \alpha^+\).
-
-
 \end{solution}
 
 \bibsection
