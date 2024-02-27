@@ -959,6 +959,50 @@ This theorem can be deduced from \Cref{thm:83vd5knr} just as
 This theorem is an expansion of \Cref{thm:a61v7g3m} just as
 (\ref{thm:hpleq0rr}) was an expansion of (\ref{thm:83vd5knr}).
 
+\begin{theorem}
+  \label{thm:4axgzui8}
+  Let \(X\) be a well-ordered set.  Suppose that every element \(x\)
+  of \(X\), \(F_x\) is an assignment that attaches to each family of
+  sets \(E = (E_y)_{y \in (-\infty, x)}\) a set \(F_x(E)\).  Then
+  there is a unique family of sets \(U = (U_x)_{x \in X}\) such that
+  \(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in X\).
+\end{theorem}
+
+For any segment \(Y\) of \(X\), call a family of sets
+\(U = (U_x)_{x \in Y}\) \emph{inductive} if
+\(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in Y\).  If
+\(U\) and \(V\) are two inductive families on \(Y\), then the set of
+elements \(x\) of \(Y\) such that \(U_x = V_x\) is inductive, and
+hence equals \(Y\) by transfinite induction \Cref{thm:5vxgawq0}.
+Therefore, there is at most one inductive family on any segment of
+\(X\).
+
+Let \(S\) be the set of segments of \(X\) that have an inductive
+family.  Suppose \((Y_i)_{i \in I}\) is a family of elements of \(S\);
+then for every \(i \in I\), there is an inductive family
+\(U^i = (U^i_x)_{x \in Y_i}\); by the uniqueness of inductive families
+on a segment, \(U^i_x = U^j_x\) for all \(i, j\) and
+\(x \in Y_i \cap Y_j\); therefore, there is a unique family \(U\) on
+the union \(Y\) of the \(Y_i\) such that \(U_x = U^i_x\) for all \(i\)
+and \(x \in Y_i\); it is obvious that \(U\) is inductive, hence \(Y\)
+belongs to \(S\).  Suppose \(a\) is an element of \(X\) such that
+\(Y = (-\infty, a)\) belongs to \(S\); then there is an inductive
+family \(U\) on \(Y\); define a family \(V\) on \(Z = (-\infty, a]\)
+by setting
+\begin{displaymath}
+  V_x =
+  \begin{cases}
+    U_x
+    & \text{if} ~ x < a \\
+    F_a(U)
+    & \text{if} ~ x = a
+  \end{cases}
+\end{displaymath}
+for all \(x \in Z\); it is obvious that \(V\) is inductive, so
+\(Z \in S\).  It follows from \Cref{thm:y3go6w2h} that every segment
+of \(X\) belongs to \(S\).  In particular, \(X \in S\), so there is an
+inductive family on \(X\).
+
 \subsection{Ordinals}
 \label{sec:t851d2lg}
 
@@ -1283,53 +1327,6 @@ of some element \(\beta'\) of \(X\); as \(\beta'\) is an ordinal, by
 of \(\alpha\) is an ordinal.  It follows from \Cref{thm:22wi7nhu} that
 \(\alpha\) is an ordinal.
 
-\begin{theorem}[Principle of transfinite induction]
-  \label{thm:6ehprsvw}
-  Let \(\alpha\) be an ordinal, and \(x\) a subset of \(\alpha\) with
-  the property that for every element \(\beta\) of \(\alpha\) such
-  that \(\beta\) is a subset of \(x\), we have \(\beta \in x\).  Then
-  \(x\) equals \(\alpha\).
-\end{theorem}
-
-Let \(\leq\) denote the canonical order on \(\alpha\) as usual.  Thus,
-the irreflexive kernel \(<\) of \(\leq\) is the same as the relation
-\(\in\) on \(\alpha\).  This means that \(\beta = (-\infty, \beta)\)
-for all \(\beta \in \alpha\).  Therefore, the hypothesis on \(x\) says
-just that \(x\) is an inductive subset of \(\alpha\) with respect to
-\(\leq\).  As \(\leq\) is a well-order on \(\alpha\)
-(\Cref{thm:7cc2cckf}), by transfinite induction for well-ordered sets
-(\Cref{thm:5vxgawq0}), \(x = \alpha\).
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:fa9kx7s9}
-  Let \(\alpha\) be an ordinal, and \(p : E \to \alpha\) a function
-  from a set \(E\) to \(\alpha\).  Suppose that for every element
-  \(\beta\) of \(\alpha\), \(f_\beta\) is a function from
-  \(\Gamma(\beta, p)\) to \(p^{-1}(\beta)\).  Then there is a unique
-  section \(u\) of \(p\) on \(\alpha\) such that
-  \(u(\beta) = f_\beta(u \vert_\beta)\) for all \(\beta \in \alpha\).
-\end{theorem}
-
-The notations \(\Gamma(\beta, p)\) and \(u \vert_\beta\), for an
-element \(\beta\) of \(\alpha\), in the statement of the theorem make
-sense because \(\beta\) is a subset of \(\alpha\) as the ordinal
-\(\alpha\) is a transitive set.  The statement itself follows from
-transfinite recursion for well-ordered sets (\Cref{thm:srxrngd8}),
-just as \Cref{thm:6ehprsvw} followed from transfinite induction for
-well-ordered sets.
-
-\begin{theorem}[Defintion by transfinite recursion]
-  \label{thm:3y2h6l46}
-  Let \(\alpha\) be an ordinal, and \(T\) any set.  Suppose that for
-  every element \(\beta\) of \(\alpha\), \(f_\beta\) is a function
-  from \(T^\beta\) to \(T\).  Then there exists a unique function
-  \(u : \alpha \to T\) such that \(u(\beta) = f_\beta(u \vert_\beta)\)
-  for all \(\beta \in \alpha\).
-\end{theorem}
-
-This theorem too follows immediately from the corresponding statement
-for well-ordered sets (\Cref{thm:5kg5ewo1}).
-
 An ordinal \(\alpha\) is called a \firstterm{successor} of an ordinal
 \(\xi\) if \(\xi \in \alpha\) and there is no element \(\tau\) of
 \(\alpha\) such that \(\xi \in \tau\); by \Cref{thm:lebsg6gf}, this is
@@ -1515,13 +1512,153 @@ hence \(\alpha\) is a successor ordinal.  Thus, every nonempty finite
 ordinal is a successor ordinal.  It follows that a limit ordinal is
 either empty or infinite.  This verifies the last part of the theorem.
 
+If \(\alpha\) is an ordinal and \(\beta\) is an element of \(\alpha\),
+then by \Cref{thm:5qmhh3to}, \(\beta\) also is an ordinal.  It follows
+from the above definitions that \(\beta\) is a successor ordinal if
+and only if it is a successor element of \(\alpha\); in that case,
+\(\beta^-\) is also an element of \(\alpha\), and \(\beta\) is the
+successor of \(\beta^-\) in \(\alpha\).  Therefore, \(\beta\) is a
+limit ordinal if and only if it is a limit element of \(\alpha\).
+
+\begin{theorem}
+  \label{thm:9v9g7x0t}
+  Let \(\alpha, \beta\) be two ordinals that are isomorphic as ordered
+  sets with respect to their canonical orders.  Then
+  \(\alpha = \beta\).
+\end{theorem}
+
+Let \(\leq\) denote the canonical order on \(\alpha\) and on
+\(\beta\).  By \Cref{thm:q14zcdkw}, \(\alpha\) is not isomorphic to
+any proper segment of \(\alpha\); on the other hand, by the definition
+of the canonical order on \(\alpha\), any element \(\gamma\) of
+\(\alpha\) is equal to the proper segment \((-\infty, \gamma)\) of
+\(\alpha\), and the canonical order on \(\gamma\) is induced by the
+canonical order on \(\alpha\); so \(\alpha\) is not isomorphic to any
+element of \(\alpha\); it follows that \(\beta \notin \alpha\).
+Similarly, \(\alpha \notin \beta\).  Therefore, by
+\Cref{thm:xut6v700}, \(\alpha = \beta\).
+
+\begin{theorem}
+  \label{thm:15ehsi36}
+  Every well-ordered set is isomorphic to an ordinal with its
+  canonical order.
+\end{theorem}
+
+Let \(X\) be a well-ordered set.  Denote by \(S\) the set of segments
+of \(X\) each of which is isomorphic to some ordinal.  We have to
+prove that \(X \in S\).
+
+We will first check that if \(f : Y \to \alpha\) is an isomorphism
+from a segment \(Y\) of \(X\) onto an ordinal \(\alpha\), then the
+image \(f(Z)\) of any segment \(Z\) of \(Y\) is an ordinal.  This is
+obvious if \(Z = Y\).  So suppose \(Z\) is a proper segment of \(Y\).
+Then by \Cref{thm:htdzbbwv}, there is an element \(a\) of \(Y\) such
+that \(Z = (-\infty, a)\).  As \(f\) is an isomorphism, it maps the
+interval \((-\infty, a)\) of \(Y\) onto the interval
+\((-\infty, \beta)\) of \(\alpha\), where \(\beta = f(a)\).  As
+\(\beta \in \alpha\), by \Cref{thm:5qmhh3to}, \(\beta\) is an ordinal.
+By the definition of the canonical order on \(\alpha\), \(\beta\)
+equals the interval \((-\infty, \beta)\) of \(\alpha\).  It follows
+that \(f(Z)\) equals the ordinal \(\beta\).
+
+Let \((Y_i)_{i \in I}\) be a family of elements of \(S\).  We will
+show that the union \(Y\) of the \(Y_i\) also belongs to \(S\).  For
+every \(i\), there is an isomorphism \(f_i\) from \(Y_i\) onto an
+ordinal \(\alpha_i\).  Let \(\alpha\) denote the union of the
+\(\alpha_i\).  By \Cref{thm:9s24zgf9}, \(\alpha\) is an ordinal.  For
+every \(i\), let \(g_i : Y_i \to \alpha\) be the composite of \(f_i\)
+and the inclusion map from \(\alpha_i\) to \(\alpha\).  By the
+statement in the previous paragraph, for all \(i, j\), the set
+\(\alpha_{ij} = f_i(Y_i \cap Y_j)\) is an ordinal; it is isomorphic to
+the ordinal \(\alpha_{ji} = f_j(Y_i \cap Y_j)\) through the function
+\(f_j\circ f_i^{-1}\); so by \Cref{thm:9v9g7x0t},
+\(\alpha_{ij} = \alpha_{ji}\), and by \Cref{thm:yvftewxp},
+\(f_i(x) = f_j(x)\) for all \(x \in Y_i \cap Y_j\).  Therefore, there
+is a unique function \(g : Y \to \alpha\) which restricts to \(g_i\)
+on every \(Y_i\).  It is obvious that \(g\) is surjective and strictly
+increasing, so it is an isomorphism.  This verifies that \(Y \in S\).
+
+Let \(a \in X\), and suppose \((-\infty, a)\) belongs to \(S\).  We
+will show that \((-\infty, a]\) also is an element of \(S\).  Let
+\(f : (-\infty, a) \to \alpha\) be an isomorphism onto an ordinal
+\(\alpha\).  Define a function \(g : (-\infty, a] \to \alpha^+\) by
+setting
+\begin{displaymath}
+  g(x) =
+  \begin{cases}
+    f(x) & \text{if} ~ x < a \\
+    \alpha & \text{if} ~ x = a
+  \end{cases}
+\end{displaymath}
+for every \(x \leq a\).  The function \(g\) is surjective and strictly
+increasing, and is hence an isomorphism onto the ordinal \(\alpha^+\)
+(\Cref{thm:8odofa55}).  Therefore, \((-\infty, a]\) belongs to \(S\).
+
+It now follows from \Cref{thm:y3go6w2h} that every segment of \(X\) is
+an element of \(S\).  In particular, \(X \in S\), so \(X\) is
+isomorphic to an ordinal.
+
+For every well-ordered set \(X\), by \Cref{thm:15ehsi36} and
+\Cref{thm:9v9g7x0t}, there is a unique ordinal \(\alpha\) which is
+isomorphic to \(X\); we will denote \(\alpha\) by
+\(\operatorname{Ord}(X)\), and call it the \firstterm{ordinal} of
+\(X\).  It follows from \Cref{thm:uvocd4lt} that there is a unique
+isomorphism from \(X\) onto \(\operatorname{Ord}(X)\).
+
+\begin{theorem}[Principle of transfinite induction]
+  \label{thm:6ehprsvw}
+  Let \(\alpha\) be an ordinal, and \(x\) a subset of \(\alpha\) with
+  the property that for every element \(\beta\) of \(\alpha\) such
+  that \(\beta\) is a subset of \(x\), we have \(\beta \in x\).  Then
+  \(x\) equals \(\alpha\).
+\end{theorem}
+
+Let \(\leq\) denote the canonical order on \(\alpha\) as usual.  Thus,
+the irreflexive kernel \(<\) of \(\leq\) is the same as the relation
+\(\in\) on \(\alpha\).  This means that \(\beta = (-\infty, \beta)\)
+for all \(\beta \in \alpha\).  Therefore, the hypothesis on \(x\) says
+just that \(x\) is an inductive subset of \(\alpha\) with respect to
+\(\leq\).  As \(\leq\) is a well-order on \(\alpha\)
+(\Cref{thm:7cc2cckf}), by transfinite induction for well-ordered sets
+(\Cref{thm:5vxgawq0}), \(x = \alpha\).
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:fa9kx7s9}
+  Let \(\alpha\) be an ordinal, and \(p : E \to \alpha\) a function
+  from a set \(E\) to \(\alpha\).  Suppose that for every element
+  \(\beta\) of \(\alpha\), \(f_\beta\) is a function from
+  \(\Gamma(\beta, p)\) to \(p^{-1}(\beta)\).  Then there is a unique
+  section \(u\) of \(p\) on \(\alpha\) such that
+  \(u(\beta) = f_\beta(u \vert_\beta)\) for all \(\beta \in \alpha\).
+\end{theorem}
+
+The notations \(\Gamma(\beta, p)\) and \(u \vert_\beta\), for an
+element \(\beta\) of \(\alpha\), in the statement of the theorem make
+sense because \(\beta\) is a subset of \(\alpha\) as the ordinal
+\(\alpha\) is a transitive set.  The statement itself follows from
+transfinite recursion for well-ordered sets (\Cref{thm:srxrngd8}),
+just as \Cref{thm:6ehprsvw} followed from transfinite induction for
+well-ordered sets.
+
+\begin{theorem}[Defintion by transfinite recursion]
+  \label{thm:3y2h6l46}
+  Let \(\alpha\) be an ordinal, and \(T\) any set.  Suppose that for
+  every element \(\beta\) of \(\alpha\), \(f_\beta\) is a function
+  from \(T^\beta\) to \(T\).  Then there exists a unique function
+  \(u : \alpha \to T\) such that \(u(\beta) = f_\beta(u \vert_\beta)\)
+  for all \(\beta \in \alpha\).
+\end{theorem}
+
+This theorem too follows immediately from the corresponding statement
+for well-ordered sets (\Cref{thm:5kg5ewo1}).
+
 \begin{theorem}[Principle of transfinite induction]
   \label{thm:a5jdoffh}
-  Let \(x\) be a well-ordered subset of an ordinal \(\alpha\)
-  satisfying the following conditions:
+  Let \(x\) be a subset of an ordinal \(\alpha\) satisfying the
+  following conditions:
   \begin{enumerate}
   \item If \(\beta\) is an element of \(\alpha\) such that \(\beta\)
-    is a successor ordinal and \(\beta^-\) is a subset of \(x\), then
+    is a successor ordinal and \(\beta^- \in x\), then
     \(\beta \in x\).
   \item If \(\beta\) is an element of \(\alpha\) such that \(\beta\)
     is a limit ordinal and \(\beta\) is a subset of \(x\), then
@@ -1672,6 +1809,92 @@ This theorem can be deduced from \Cref{thm:7oq31ljz} just as
 
 This theorem is an expansion of \Cref{thm:fi9epz7i} just as
 (\ref{thm:kfr9z94i}) was an expansion of (\ref{thm:7oq31ljz}).
+
+\begin{theorem}[Principle of transfinite induction]
+  \label{thm:jxzsy88l}
+  Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
+  a statement \(P(\alpha)\) about \(\alpha\).  Suppose that
+  \(P(\alpha)\) is true for an ordinal \(\alpha\) if \(P(\beta)\) is
+  true for every element \(\beta\) of \(\alpha\).  Then \(P(\alpha)\)
+  is true for every ordinal \(\alpha\).
+\end{theorem}
+
+Let \(\alpha\) be an ordinal, and \(x\) the set of the elements
+\(\beta\) of \(\alpha\) such that \(P(\beta)\) is true.  Suppose
+\(\beta\) is an element of \(\alpha\) such that \(\beta\) is a subset
+of \(x\).  Then \(P(\gamma)\) is true for every element \(\gamma\) of
+\(\beta\).  Therefore, by the hypothesis on \(P\), \(P(\beta)\) is
+true, so \(\beta \in x\).  By transfinite induction
+(\Cref{thm:6ehprsvw}), \(x = \alpha\), so \(P(\beta)\) is true for
+every element \(\beta\) of \(\alpha\).  Therefore, again by the
+hypothesis on \(P\), \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is
+true for every ordinal \(\alpha\).
+
+\begin{theorem}
+  \label{thm:fsekzo48}
+  Suppose that for every ordinal \(\alpha\), \(F_\alpha\) is an
+  assignment that attaches to each family of sets
+  \(E = (E_\beta)_{\beta \in \alpha}\) a set \(F_\alpha(E)\).  Then
+  there is an assignment \(U\) that attaches to every ordinal
+  \(\alpha\) a set \(U_\alpha\) so that
+  \(U_\alpha = F_\alpha((U_\beta)_{\beta \in \alpha})\) for every
+  ordinal \(\alpha\).  Moreover, if \(\alpha\) is any ordinal, and
+  \(V = (V_\beta)_{\beta \in \alpha}\) a family of sets such that
+  \(V_\beta = F_\beta((V_\gamma)_{\gamma \in \beta})\) for all
+  \(\beta \in \alpha\), then \(V_\beta = U_\beta\) for all
+  \(\beta \in \alpha\), and \(U_\alpha = F_\alpha(V)\).
+\end{theorem}
+
+\Cref{thm:4axgzui8} gives for every ordinal \(\alpha\) a unique family
+of sets \(U^\alpha = (U^\alpha_\beta)_{\beta \in \alpha}\) such that
+\(U^\alpha_\beta = F_\beta((U^\alpha_\gamma)_{\gamma \in \beta})\) for
+all \(\beta \in \alpha\).  If \(\alpha, \lambda\) are ordinals such
+that \(\alpha \in \lambda\), then every element \(\beta\) of
+\(\alpha\) is an element of the transitive set \(\lambda\), so
+\(U^\lambda_\beta = F_\beta((U^\lambda_\gamma)_{\gamma \in \beta})\);
+therefore, the uniqueness of \(U^\alpha\) implies that
+\(U^\alpha_\beta = U^\lambda_\beta\) for all \(\beta \in \alpha\).
+
+For every ordinal \(\alpha\), let \(U_\alpha = U^\lambda_\alpha\),
+where \(\lambda\) is an arbitrary ordinal such that
+\(\alpha \in \lambda\); we can take \(\lambda\) to be \(\alpha^+\),
+for example.  This definition of \(U_\alpha\) is independent of the
+choice of \(\lambda\): suppose \(\mu\) is an ordinal, distinct from
+\(\lambda\), such that \(\alpha \in \mu\); then by
+\Cref{thm:xut6v700}, either \(\lambda \in \mu\) or
+\(\mu \in \lambda\); we can assume without loss of generality that
+\(\lambda \in \mu\); then by the statement in the previous paragraph,
+\(U^\lambda_\alpha = U^\mu_\alpha\).  Moreover, every element
+\(\beta\) of \(\alpha\) is an element of the transitive set
+\(\lambda\), so \(U_\beta = U^\lambda_\beta\); therefore,
+\begin{displaymath}
+  U_\alpha = U^\lambda_\alpha =
+  F_\alpha((U^\lambda_\beta)_{\beta \in \alpha}) =
+  F_\alpha((U_\beta)_{\beta \in \alpha}).
+\end{displaymath}
+This proves the existence of the assignment \(U\) as in the statement
+of the theorem.
+
+Let \(\alpha\) be an ordinal, and \(V = (V_\beta)_{\beta \in \alpha}\)
+a family of sets such that
+\(V_\beta = F_\beta((V_\gamma)_{\gamma \in \beta})\) for all
+\(\beta \in \alpha\).  Let \(x\) denote the set of the elements
+\(\beta\) of \(\alpha\) such that \(V_\beta = U_\beta\).  Suppose
+\(\beta\) is an element of \(\alpha\) such that \(\beta\) is a subset
+of \(x\).  Then \(V_\gamma = U_\gamma\) for all \(\gamma \in \beta\).
+Therefore,
+\begin{displaymath}
+  V_\beta = F_\beta((V_\gamma)_{\gamma \in \beta}) =
+  F_\beta((U_\gamma)_{\gamma \in \beta}) = U_\beta,
+\end{displaymath}
+hence \(\beta \in x\).  By transfinite induction
+(\Cref{thm:6ehprsvw}), \(x = \alpha\), that is, \(V_\beta = U_\beta\)
+for all \(\beta \in \alpha\).  This implies also that
+\begin{displaymath}
+  U_\alpha = F_\alpha((U_\beta)_{\beta \in \alpha}) =
+  F_\alpha((V_\beta)_{\beta \in \alpha}) = F_\alpha(V).
+\end{displaymath}
+This verifies the stated uniqueness property of the assignment \(U\).
 
 \subsection{Exercises}
 \label{sec:q1c2w2jy}
