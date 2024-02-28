@@ -116,33 +116,16 @@ denoted by \(\nleq, \ngeq, \nless, \ngtr\), respectively.  The
 corresponding notations when another symbol is used instead of
 \(\leq\) are analogous to these notations.
 
-\begin{theorem}
-  \label{thm:ztywp662}
-  Taking the irreflexive kernel is a bijection from the set of orders
-  on \(X\) onto the set of all relations \(<\) on \(X\) which are:
-  \begin{enumerate}
-  \item \firstterm{irreflexive}: there is no element \(x\) of \(X\)
-    such that \(x < x\);
-  \item \emph{transitive}: if \(x,y,z \in X\), and \(x < y\) and
-    \(y < z\), then \(x < z\).
-  \end{enumerate}
-  The inverse of this bijection maps any relation with these two
-  properties to its reflexive closure.
-\end{theorem}
-
-The irreflexive kernel \(<\) of an order \(\leq\) on \(X\) is
-obviously irreflexive; if \(x,y,z \in X\), and \(x < y\) and
-\(y < z\), the transitivity of \(\leq\) implies that \(x \leq z\), and
-because \(x \neq y\) the anti-symmetry of \(\leq\) implies that
-\(x \neq z\), so \(<\) is transitive.  Conversely, if \(<\) is an
-irreflexive and transitive relation on \(X\), its reflexive closure
-\(\leq\) is obviously reflexive; if \(x \leq y\) and \(y \leq z\),
-either of the equalities \(x = y\) and \(y = z\) implies that
-\(x \leq z\), so \(\leq\) is transitive; lastly, if \(x \leq y\) and
-\(y \leq x\), the transitivity of \(\leq\) and the irreflexivity of
-\(<\) imply that \(x = y\); thus, \(\leq\) is an order.  It is obvious
-that the maps \(\leq \mapsto <\) and \(< \mapsto \leq\) are inverses
-of each other.
+Taking the irreflexive kernel is a bijection from the set of orders on
+any set \(X\) onto the set of all relations \(<\) on \(X\) which are:
+\begin{enumerate}
+\item \firstterm{irreflexive}: there is no element \(x\) of \(X\) such
+  that \(x < x\);
+\item \emph{transitive}: if \(x,y,z \in X\), and \(x < y\) and
+  \(y < z\), then \(x < z\).
+\end{enumerate}
+The inverse of this bijection maps any relation with these two
+properties to its reflexive closure.
 
 The restriction of an order \(\leq\) on \(X\) to any subset \(Y\) of
 \(X\) is an order on \(Y\), which is said to be \firstterm{induced} by
@@ -255,70 +238,17 @@ A \firstterm{well-ordered set} is an ordered set whose order is a
 well-order.  Every subset of a well-ordered set that is bounded above
 has a supremum.
 
-\begin{theorem}
-  \label{thm:3uwc4uyw}
-  Taking the irreflexive kernel is a bijection from the set of
-  well-orders on a set \(X\) onto the set of relations \(<\) on \(X\)
-  which have the following properties:
-  \begin{enumerate}
-  \item For any two distinct elements \(x, y\) of \(X\), either
-    \(x < y\) or \(y < x\).
-  \item Every nonempty subset \(Y\) of \(X\) has an element \(a\) such
-    that no element \(x\) of \(Y\) satisfies the condition \(x < a\).
-  \end{enumerate}
-  The inverse of this bijection maps any relation with these
-  properties to its reflexive closure.
-\end{theorem}
-
-Let \(\leq\) be a well-order on \(X\), and let \(<\) be its
-irreflexive kernel.  As \(\leq\) is a total order, it has the
-trichotomy property: for any two elements \(x, y\) of \(X\), exactly
-one of the conditions \(x < y\), \(x = y\), \(y < x\) is true.  In
-particular, for any two distinct elements \(x, y\) of \(X\), either
-\(x < y\) or \(y < x\).  If \(a\) is the minimum of a nonempty subset
-\(Y\) of \(X\), then for all \(x \in Y\), we have \(a \leq x\); the
-trichotomy of \(\leq\) implies that \(x \nless a\).
-
-Conversely, let \(<\) be a relation on \(X\) with the properties
-stated in the exercise.  We will first check that \(<\) is irreflexive
-and transitive.
-
-If \(x\) is any element of \(X\), the singleton \(Y = \{ x \}\) has an
-element \(a\) such that \(y \nless a\) for all \(y \in Y\).
-Necessarily, \(a = x\), so \(x \nless x\).  Therefore, \(<\) is
-irreflexive.
-
-We will now verify that for any \(x, y \in X\), exactly one of the
-conditions \(x < y\), \(x = y\), \(y < x\) holds.  The first
-hypothesis on \(<\) implies that at least one of these conditions is
-true.  If \(x = y\), then the irreflexivity of \(<\) implies that
-\(x \nless y\) and \(y \nless x\).  If \(x < y\), we have to rule out
-\(x = y\) and \(y < x\); the irreflexivity of \(<\) implies that
-\(x \neq y\); let \(a\) be an element of the set \(Y = \{ x, y \}\)
-such that \(t \nless a\) for all \(t \in Y\); as \(x < y\),
-\(a \neq y\), so \(a = x\); therefore, \(y \nless x\).  Similarly, if
-\(y < x\), then \(x \neq y\) and \(x \nless y\).  It follows that
-exactly one of the conditions \(x < y\), \(x = y\), \(y < x\) holds.
-
-Suppose \(x, y, z \in X\) are such that \(x < y\) and \(y < z\).  Let
-\(a\) be an element of the set \(Y = \{ x, y, z \}\) such that
-\(a \nless t\) for all \(t \in Y\).  As \(x < y\), \(a \neq y\), and
-as \(y < z\), \(a \neq z\), so \(a = x\).  Thus, \(z \nless x\).
-Also, \(x \neq z\), for otherwise the hypotheses \(x < y\) and
-\(y < z\) would imply that two of the conditions \(x < y\), \(x = y\),
-\(y < x\) hold.  Thus, \(x \neq z\) and \(z \nless x\).  It follows
-from the first hypothesis on \(<\) that \(x < z\).  Therefore, the
-relation \(<\) is transitive.
-
-As \(<\) is irreflexive and transitive, by \Cref{thm:3uwc4uyw}, its
-reflexive closure \(\leq\) is an order on \(X\).  It remains to check
-that every nonempty subset \(Y\) of \(X\) has a minimum with respect
-to \(\leq\).  Let \(a\) be an element of \(Y\) such that
-\(x \nless a\) for all \(x \in Y\).  Then the first hypothesis on
-\(<\) implies that for every \(x \in Y\), we have either \(x = a\) or
-\(a < x\), that is, \(a \leq x\).  Thus, \(a\) is the minimum of \(Y\)
-with respect to \(\leq\).  This verifies that \(\leq\) is a well-order
-on \(X\).
+Taking the irreflexive kernel is a bijection from the set of
+well-orders on a set \(X\) onto the set of relations \(<\) on \(X\)
+which have the following properties:
+\begin{enumerate}
+\item For any two distinct elements \(x, y\) of \(X\), either
+  \(x < y\) or \(y < x\).
+\item Every nonempty subset \(Y\) of \(X\) has an element \(a\) such
+  that no element \(x\) of \(Y\) satisfies the condition \(x < a\).
+\end{enumerate}
+The inverse of this bijection maps any relation with these properties
+to its reflexive closure.
 
 \begin{theorem}
   \label{thm:htdzbbwv}
@@ -500,6 +430,50 @@ canonically identified with \(T\), and a section of \(p\) on a subset
 \(Y\) of \(X\) is canonically identified with a function from \(Y\) to
 \(T\).  Therefore, the present statement follows from
 \Cref{thm:srxrngd8}.
+
+\begin{theorem}[Definition by transfinite recursion]
+  \label{thm:4axgzui8}
+  Let \(X\) be a well-ordered set.  Suppose that for every element
+  \(x\) of \(X\), \(F_x\) is an assignment that attaches to each
+  family of sets \(E = (E_y)_{y \in (-\infty, x)}\) a set \(F_x(E)\).
+  Then there is a unique family of sets \(U = (U_x)_{x \in X}\) such
+  that \(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in X\).
+\end{theorem}
+
+For any segment \(Y\) of \(X\), call a family of sets
+\(U = (U_x)_{x \in Y}\) \emph{inductive} if
+\(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in Y\).  If
+\(U\) and \(V\) are two inductive families on \(Y\), then the set of
+elements \(x\) of \(Y\) such that \(U_x = V_x\) is inductive, and
+hence equals \(Y\) by transfinite induction \Cref{thm:5vxgawq0}.
+Therefore, there is at most one inductive family on any segment of
+\(X\).
+
+Let \(S\) be the set of segments of \(X\) that have an inductive
+family.  Suppose \((Y_i)_{i \in I}\) is a family of elements of \(S\);
+then for every \(i \in I\), there is an inductive family
+\(U^i = (U^i_x)_{x \in Y_i}\); by the uniqueness of inductive families
+on a segment, \(U^i_x = U^j_x\) for all \(i, j\) and
+\(x \in Y_i \cap Y_j\); therefore, there is a unique family \(U\) on
+the union \(Y\) of the \(Y_i\) such that \(U_x = U^i_x\) for all \(i\)
+and \(x \in Y_i\); it is obvious that \(U\) is inductive, hence \(Y\)
+belongs to \(S\).  Suppose \(a\) is an element of \(X\) such that
+\(Y = (-\infty, a)\) belongs to \(S\); then there is an inductive
+family \(U\) on \(Y\); define a family \(V\) on \(Z = (-\infty, a]\)
+by setting
+\begin{displaymath}
+  V_x =
+  \begin{cases}
+    U_x
+    & \text{if} ~ x < a \\
+    F_a(U)
+    & \text{if} ~ x = a
+  \end{cases}
+\end{displaymath}
+for all \(x \in Z\); it is obvious that \(V\) is inductive, so
+\(Z \in S\).  It follows from \Cref{thm:y3go6w2h} that every segment
+of \(X\) belongs to \(S\).  In particular, \(X \in S\), so there is an
+inductive family on \(X\).
 
 \begin{theorem}
   \label{thm:hw1jxum0}
@@ -810,199 +784,6 @@ Lastly, if \(X\) is well-ordered and \(w \in X\), then the set
 if and only if \(w\) is not the maximum of \(X\) in case it exists.
 The last part of the theorem follows.
 
-\begin{theorem}[Principle of transfinite induction]
-  \label{thm:g5v2vli5}
-  Let \(A\) be a subset of a well-ordered set \(X\) satisfying the
-  following conditions:
-  \begin{enumerate}
-  \item If \(x\) is a successor element of \(X\), and \(x^- \in A\),
-    then \(x \in A\).
-  \item If \(x\) is a limit element of \(X\), and
-    \((-\infty, x) \subset A\), then \(x \in A\).
-  \end{enumerate}
-  Then \(A\) equals \(X\).
-\end{theorem}
-
-Suppose \(x\) is an element of \(X\) such that
-\((-\infty, x) \subset A\).  We will show that \(x \in A\).  If \(x\)
-is a successor element of \(X\), then by \Cref{thm:q8h11s4b},
-\(x^- < x\); as \((-\infty, x) \subset A\), it follows that
-\(x^- \in A\); so the first hypothesis on \(A\) implies that
-\(x \in A\).  On the other hand, if \(x\) is a limit element of \(X\),
-then as \((-\infty, x) \subset A\), the second hypothesis on \(A\)
-implies that \(x \in A\).  Thus, in both the cases, \(x \in A\).
-Therefore, \(A\) is an inductive subset of \(X\), so by
-\Cref{thm:5vxgawq0}, \(A = X\).
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:83vd5knr}
-  Let \(X\) be a well-ordered set, and \(p : E \to X\) a function from
-  a set \(E\) to \(X\).  Suppose that:
-  \begin{enumerate}
-  \item For every successor element \(x\) of \(X\), \(f_x\) is a
-    function from \(p^{-1}(x^-)\) to \(p^{-1}(x)\).
-  \item For every limit element \(x\) of \(X\), \(g_x\) is a function
-    from \(\Gamma((-\infty, x), p)\) to \(p^{-1}(x)\).
-  \end{enumerate}
-  Then there exists a unique section \(u\) of \(p\) on \(X\) such
-  that:
-  \begin{enumerate}
-  \item \(u(x) = f_x(u(x^-))\) for every successor element \(x\) of
-    \(X\), and
-  \item \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit element
-    \(x\) of \(X\).
-  \end{enumerate}
-\end{theorem}
-
-For every element \(x\) of \(X\), define a function \(h_x\) from
-\(\Gamma((-\infty, x), p)\) to \(p^{-1}(x)\) as follows:
-\begin{enumerate}
-\item If \(x\) is a successor element of \(X\), let
-  \(h_x(s) = f_x(s(x^-))\) for every section \(s\) of \(p\) on
-  \((-\infty, x)\).
-\item If \(x\) is a limit element of \(X\), let \(h_x = g_x\).
-\end{enumerate}
-Then transfinite recursion (\Cref{thm:srxrngd8}) gives a unique
-section \(u\) of \(p\) such that
-\(u(x) = h_x(u \vert_{(-\infty, x)})\) for all \(x \in X\).  Thus, if
-\(x\) is a successor element of \(X\), then
-\begin{displaymath}
-  u(x) =
-  h_x(u \vert_{(-\infty, x)}) =
-  f_x(u \vert_{(-\infty, x)} (x^-)) =
-  f_x(u(x^-)),
-\end{displaymath}
-and if \(x\) is a limit element of \(X\), then
-\begin{displaymath}
-  u(x) = h_x(u \vert_{(-\infty, x)}) = g_x(u \vert_{(-\infty, x)}).
-\end{displaymath}
-Therefore, \(u\) has the required properties.
-
-Suppose \(u'\) is another section of \(p\) which has the required
-properties.  Then for every successor element \(x\) of \(X\), we have
-\begin{displaymath}
-  u'(x) =
-  f_x(u'(x^-)) =
-  f_x(u' \vert_{(-\infty, x)}(x^-)) =
-  h_x(u' \vert_{(-\infty, x)}),
-\end{displaymath}
-while for every limit element \(x\) of \(X\), we have
-\begin{displaymath}
-  u'(x) = g_x(u' \vert_{(-\infty, x)}) = h_x(u' \vert_{(-\infty, x)}).
-\end{displaymath}
-Thus, \(u'(x) = h_x(u' \vert_{(-\infty, x)})\) for all \(x \in X\).
-As \(u\) is the only section of \(p\) on \(X\) with this property, we
-get \(u' = u\).
-
-It is convenient to expand \Cref{thm:83vd5knr} as follows.
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:hpleq0rr}
-  Let \(X\) be a nonempty well-ordered set, and \(p : E \to X\) a
-  function from a set \(E\) to \(X\).  Suppose that:
-  \begin{enumerate}
-  \item \(e\) is an element of \(p^{-1}(a)\), where \(a\) is the
-    minimum of \(X\).
-  \item For every successor element \(x\) of \(X\), \(f_x\) is a
-    function from \(p^{-1}(x^-)\) to \(p^{-1}(x)\).
-  \item For every limit element \(x\) of \(X\) other than the minimum
-    \(a\) of \(X\), \(g_x\) is a function from
-    \(\Gamma((-\infty, x), p)\) to \(p^{-1}(x)\).
-  \end{enumerate}
-  Then there exists a unique section \(u\) of \(p\) on \(X\) such
-  that:
-  \begin{enumerate}
-  \item \(u(a) = e\),
-  \item \(u(x) = f_x(u(x^-))\) for every successor element \(x\) of
-    \(X\), and
-  \item \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit element
-    \(x\) of \(X\) other than \(a\).
-  \end{enumerate}
-\end{theorem}
-
-As the set \((-\infty, a)\) is empty, \(\Gamma((-\infty, a), p)\) is a
-singleton consisting of the unique function from the empty set to
-\(E\).  So a function from \(\Gamma((-\infty, a), p)\) to
-\(p^{-1}(a)\) is canonically identified with an element of
-\(p^{-1}(a)\).  Therefore, the theorem follows from
-\Cref{thm:83vd5knr}.
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:a61v7g3m}
-  Let \(X\) be a well-ordered set, and \(T\) any set.  Suppose that
-  for every successor element \(x\) of \(X\), \(f_x\) is a function
-  from \(T\) to \(T\), and that for every limit element \(x\) of
-  \(X\), \(g_x\) is a function from \(T^{(-\infty, x)}\) to \(T\).
-  Then there exists a unique function \(u : X \to T\) such that
-  \(u(x) = f_x(u(x^-))\) for every successor element \(x\) of \(X\),
-  and \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit element
-  \(x\) of \(X\).
-\end{theorem}
-
-This theorem can be deduced from \Cref{thm:83vd5knr} just as
-(\ref{thm:5kg5ewo1}) was deduced from (\ref{thm:srxrngd8}).
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:e3bitdp0}
-  Let \(X\) be a nonempty well-ordered set, and \(T\) any set.
-  Suppose that \(e\) is an element of \(T\), that for every successor
-  element \(x\) of \(X\), \(f_x\) is a function from \(T\) to \(T\),
-  and that for every limit element \(x\) of \(X\) other than the
-  minimum \(a\) of \(X\), \(g_x\) is a function from
-  \(T^{(-\infty, x)}\) to \(T\).  Then there exists a unique function
-  \(u : X \to T\) such that \(u(a) = e\), where \(a\) is the minimum
-  of \(X\), \(u(x) = f_x(u(x^-))\) for every successor element \(x\)
-  of \(X\), and \(u(x) = g_x(u \vert_{(-\infty, x)})\) for every limit
-  element \(x\) of \(X\) other than \(a\).
-\end{theorem}
-
-This theorem is an expansion of \Cref{thm:a61v7g3m} just as
-(\ref{thm:hpleq0rr}) was an expansion of (\ref{thm:83vd5knr}).
-
-\begin{theorem}
-  \label{thm:4axgzui8}
-  Let \(X\) be a well-ordered set.  Suppose that every element \(x\)
-  of \(X\), \(F_x\) is an assignment that attaches to each family of
-  sets \(E = (E_y)_{y \in (-\infty, x)}\) a set \(F_x(E)\).  Then
-  there is a unique family of sets \(U = (U_x)_{x \in X}\) such that
-  \(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in X\).
-\end{theorem}
-
-For any segment \(Y\) of \(X\), call a family of sets
-\(U = (U_x)_{x \in Y}\) \emph{inductive} if
-\(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in Y\).  If
-\(U\) and \(V\) are two inductive families on \(Y\), then the set of
-elements \(x\) of \(Y\) such that \(U_x = V_x\) is inductive, and
-hence equals \(Y\) by transfinite induction \Cref{thm:5vxgawq0}.
-Therefore, there is at most one inductive family on any segment of
-\(X\).
-
-Let \(S\) be the set of segments of \(X\) that have an inductive
-family.  Suppose \((Y_i)_{i \in I}\) is a family of elements of \(S\);
-then for every \(i \in I\), there is an inductive family
-\(U^i = (U^i_x)_{x \in Y_i}\); by the uniqueness of inductive families
-on a segment, \(U^i_x = U^j_x\) for all \(i, j\) and
-\(x \in Y_i \cap Y_j\); therefore, there is a unique family \(U\) on
-the union \(Y\) of the \(Y_i\) such that \(U_x = U^i_x\) for all \(i\)
-and \(x \in Y_i\); it is obvious that \(U\) is inductive, hence \(Y\)
-belongs to \(S\).  Suppose \(a\) is an element of \(X\) such that
-\(Y = (-\infty, a)\) belongs to \(S\); then there is an inductive
-family \(U\) on \(Y\); define a family \(V\) on \(Z = (-\infty, a]\)
-by setting
-\begin{displaymath}
-  V_x =
-  \begin{cases}
-    U_x
-    & \text{if} ~ x < a \\
-    F_a(U)
-    & \text{if} ~ x = a
-  \end{cases}
-\end{displaymath}
-for all \(x \in Z\); it is obvious that \(V\) is inductive, so
-\(Z \in S\).  It follows from \Cref{thm:y3go6w2h} that every segment
-of \(X\) belongs to \(S\).  In particular, \(X \in S\), so there is an
-inductive family on \(X\).
-
 \subsection{Ordinals}
 \label{sec:t851d2lg}
 
@@ -1076,9 +857,9 @@ following properties:
   \(\beta\) such that no element \(\gamma\) of \(x\) satisfies the
   condition \(\gamma \in \beta\).
 \end{enumerate}
-By \Cref{thm:3uwc4uyw}, the reflexive closure \(\leq\) of \(\in\) is a
+By \Cref{exe:4q4vnvbc}, the reflexive closure \(\leq\) of \(\in\) is a
 well-order on \(\alpha\).  As \(\in\) is the irreflexive kernel of the
-order \(\leq\) on \(\alpha\), by \Cref{thm:ztywp662} it is irreflexive
+order \(\leq\) on \(\alpha\), by \Cref{exe:eydusvz3} it is irreflexive
 and transitive.  The irreflexivity of \(\in\) on \(\alpha\) means that
 \(\beta \notin \beta\) for all \(\beta \in \alpha\).  In particular,
 if \(\alpha \in \alpha\), then substituting \(\alpha\) for \(\beta\)
@@ -1652,185 +1433,7 @@ well-ordered sets.
 This theorem too follows immediately from the corresponding statement
 for well-ordered sets (\Cref{thm:5kg5ewo1}).
 
-\begin{theorem}[Principle of transfinite induction]
-  \label{thm:a5jdoffh}
-  Let \(x\) be a subset of an ordinal \(\alpha\) satisfying the
-  following conditions:
-  \begin{enumerate}
-  \item If \(\beta\) is an element of \(\alpha\) such that \(\beta\)
-    is a successor ordinal and \(\beta^- \in x\), then
-    \(\beta \in x\).
-  \item If \(\beta\) is an element of \(\alpha\) such that \(\beta\)
-    is a limit ordinal and \(\beta\) is a subset of \(x\), then
-    \(\beta \in x\).
-  \end{enumerate}
-  Then \(x\) equals \(\alpha\).
-\end{theorem}
-
-Let \(\beta\) be an element of \(\alpha\) such that \(\beta\) is a
-subset of \(x\).  If \(\beta\) is a successor ordinal, then by
-\Cref{thm:8odofa55}, \(\beta^- \in \beta\); as \(\beta\) is a subset
-of \(x\), it follows that \(\beta^- \in x\); so the first hypothesis
-on \(x\) implies that \(\beta \in x\).  On the other hand, if
-\(\beta\) is a limit ordinal, then as \(\beta\) is a subset of \(x\),
-the second hypothesis on \(x\) implies that \(\beta \in x\).  Thus, in
-both the cases, \(\beta \in x\).  By \Cref{thm:6ehprsvw},
-\(x = \alpha\).
-
 \begin{theorem}[Definition by transfinite recursion]
-  \label{thm:7oq31ljz}
-  Let \(\alpha\) be an ordinal, and \(p : E \to \alpha\) a function
-  from a set \(E\) to \(\alpha\).  Suppose that:
-  \begin{enumerate}
-  \item For every element \(\beta\) of \(\alpha\) that is a successor
-    ordinal, \(f_\beta\) is a function from \(p^{-1}(\beta^-)\) to
-    \(p^{-1}(\beta)\).
-  \item For every element \(\beta\) of \(\alpha\) that is a limit
-    ordinal, \(g_\beta\) is a function from \(\Gamma(\beta, p)\) to
-    \(p^{-1}(\beta)\).
-  \end{enumerate}
-  Then there exists a unique section \(u\) of \(p\) on \(\alpha\) such
-  that:
-  \begin{enumerate}
-  \item \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\)
-    of \(\alpha\) that is a successor ordinal.
-  \item \(u(\beta) = g_\beta(u \vert_\beta)\) for every element
-    \(\beta\) of \(\alpha\) that is a limit ordinal.
-  \end{enumerate}
-\end{theorem}
-
-For every element \(\beta\) of \(\alpha\), define a function
-\(h_\beta\) from \(\Gamma(\beta, p)\) to \(p^{-1}(\beta)\) as follows:
-\begin{enumerate}
-\item If \(\beta\) is a successor ordinal, let
-  \(h_\beta(s) = f_\beta(s(\beta^-))\) for every section \(s\) of
-  \(p\) on \(\beta\).
-\item If \(\beta\) is a limit ordinal, let \(h_\beta = g_\beta\).
-\end{enumerate}
-Then transfinite recursion (\Cref{thm:fa9kx7s9}) gives a unique
-section \(u\) of \(p\) on \(\alpha\) such that
-\(u(\beta) = h_\beta(u \vert_\beta)\) for all \(\beta \in \alpha\).
-Thus, if \(\beta\) is an element of \(\alpha\) which is a successor
-ordinal, then
-\begin{displaymath}
-  u(\beta) =
-  h_\beta(u \vert_\beta) =
-  f_\beta(u \vert_\beta (\beta^-)) =
-  f_\beta(u(\beta^-)),
-\end{displaymath}
-and if \(\beta\) is an element of \(\alpha\) which is a limit
-ordinal, then
-\begin{displaymath}
-  u(\beta) = h_\beta(u \vert_\beta) = g_\beta(u \vert_\beta).
-\end{displaymath}
-Therefore, \(u\) has the required properties.
-
-Suppose \(u'\) is another section of \(p\) which has the required
-properties.  Then for every element \(\beta\) of \(\alpha\) which is a
-successor ordinal, we have
-\begin{displaymath}
-  u'(\beta) =
-  f_\beta(u'(\beta^-)) =
-  f_\beta(u' \vert_\beta(\beta^-)) =
-  h_\beta(u' \vert_\beta),
-\end{displaymath}
-while for every element \(\beta\) of \(\alpha\) which is a limit
-ordinal, we have
-\begin{displaymath}
-  u'(\beta) = g_\beta(u' \vert_\beta) = h_\beta(u' \vert_\beta).
-\end{displaymath}
-Thus, \(u'(\beta) = h_\beta(u' \vert_\beta)\) for all
-\(\beta \in \alpha\).  As \(u\) is the only section of \(p\) on
-\(\alpha\) with this property, we get \(u' = u\).
-
-It is convenient to expand \Cref{thm:7oq31ljz} as follows.
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:kfr9z94i}
-  Let \(\alpha\) be a nonempty ordinal, and \(p : E \to \alpha\) a
-  function from a set \(E\) to \(\alpha\).  Suppose that:
-  \begin{enumerate}
-  \item \(e\) is an element of \(p^{-1}(\emptyset)\).
-  \item For every element \(\beta\) of \(\alpha\) that is a successor
-    ordinal, \(f_\beta\) is a function from \(p^{-1}(\beta^-)\) to
-    \(p^{-1}(\beta)\).
-  \item For every element \(\beta\) of \(\alpha\) that is a nonempty
-    limit ordinal, \(g_\beta\) is a function from \(\Gamma(\beta, p)\)
-    to \(p^{-1}(\beta)\).
-  \end{enumerate}
-  Then there exists a unique section \(u\) of \(p\) on \(\alpha\) such
-  that:
-  \begin{enumerate}
-  \item \(u(\emptyset) = e\),
-  \item \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\)
-    of \(\alpha\) that is a successor ordinal, and
-  \item \(u(\beta) = g_\beta(u \vert_\beta)\) for every element
-    \(\beta\) of \(\alpha\) that is a nonempty limit ordinal.
-  \end{enumerate}
-\end{theorem}
-
-The set \(\Gamma(\emptyset, p)\) is a singleton consisting of the
-unique function from the empty set to \(E\).  So a function from
-\(\Gamma(\emptyset, p)\) to \(p^{-1}(\emptyset)\) is canonically
-identified with an element of \(p^{-1}(\emptyset)\).  Therefore, the
-theorem follows from \Cref{thm:7oq31ljz}.
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:fi9epz7i}
-  Let \(\alpha\) be an ordinal, and \(T\) any set.  Suppose that for
-  every element \(\beta\) of \(\alpha\) that is a successor ordinal,
-  \(f_\beta\) is a function from \(T\) to \(T\), and that for every
-  element \(\beta\) of \(\alpha\) that is a limit ordinal, \(g_\beta\)
-  is a function from \(T^\beta\) to \(T\).  Then there exists a unique
-  function \(u : \alpha \to T\) such that
-  \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\) of
-  \(\alpha\) that is a successor ordinal, and
-  \(u(\beta) = g_\beta(u \vert_\beta)\) for every element \(\beta\) of
-  \(\alpha\) that is a limit ordinal.
-\end{theorem}
-
-This theorem can be deduced from \Cref{thm:7oq31ljz} just as
-(\ref{thm:5kg5ewo1}) was deduced from (\ref{thm:srxrngd8}).
-
-\begin{theorem}[Definition by transfinite recursion]
-  \label{thm:u18qlc0t}
-  Let \(\alpha\) be a nonempty ordinal, and \(T\) any set.  Suppose
-  that \(e\) is an element of \(T\), that for every element \(\beta\)
-  of \(\alpha\) that is a successor ordinal, \(f_\beta\) is a function
-  from \(T\) to \(T\), and that for every element \(\beta\) of
-  \(\alpha\) that is a nonempty limit ordinal, \(g_\beta\) is a
-  function from \(T^\beta\) to \(T\).  Then there exists a unique
-  function \(u : \alpha \to T\) such that \(u(\emptyset) = e\),
-  \(u(\beta) = f_\beta(u(\beta^-))\) for every element \(\beta\) of
-  \(\alpha\) that is a successor ordinal, and
-  \(u(\beta) = g_\beta(u \vert_\beta)\) for every element \(\beta\) of
-  \(\alpha\) that is a nonempty limit ordinal.
-\end{theorem}
-
-This theorem is an expansion of \Cref{thm:fi9epz7i} just as
-(\ref{thm:kfr9z94i}) was an expansion of (\ref{thm:7oq31ljz}).
-
-\begin{theorem}[Principle of transfinite induction]
-  \label{thm:jxzsy88l}
-  Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
-  a statement \(P(\alpha)\) about \(\alpha\).  Suppose that
-  \(P(\alpha)\) is true for an ordinal \(\alpha\) if \(P(\beta)\) is
-  true for every element \(\beta\) of \(\alpha\).  Then \(P(\alpha)\)
-  is true for every ordinal \(\alpha\).
-\end{theorem}
-
-Let \(\alpha\) be an ordinal, and \(x\) the set of the elements
-\(\beta\) of \(\alpha\) such that \(P(\beta)\) is true.  Suppose
-\(\beta\) is an element of \(\alpha\) such that \(\beta\) is a subset
-of \(x\).  Then \(P(\gamma)\) is true for every element \(\gamma\) of
-\(\beta\).  Therefore, by the hypothesis on \(P\), \(P(\beta)\) is
-true, so \(\beta \in x\).  By transfinite induction
-(\Cref{thm:6ehprsvw}), \(x = \alpha\), so \(P(\beta)\) is true for
-every element \(\beta\) of \(\alpha\).  Therefore, again by the
-hypothesis on \(P\), \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is
-true for every ordinal \(\alpha\).
-
-\begin{theorem}
   \label{thm:fsekzo48}
   Suppose that for every ordinal \(\alpha\), \(F_\alpha\) is an
   assignment that attaches to each family of sets
@@ -1900,6 +1503,15 @@ This verifies the stated uniqueness property of the assignment \(U\).
 \label{sec:q1c2w2jy}
 
 \begin{exercise}
+  \label{exe:eydusvz3}
+  Show that taking the irreflexive kernel is a bijection from the set
+  of orders on any set \(X\) onto the set of all irreflexive and
+  transitive relations on \(X\), and that the inverse of this
+  bijection maps any relation with these two properties to its
+  reflexive closure.
+\end{exercise}
+
+\begin{exercise}
   \label{exe:swjbrepg}
   Verify that a maximal element of a directed set is its maximum, and
   a minimal element of a codirected set is its minimum.
@@ -1922,6 +1534,21 @@ This verifies the stated uniqueness property of the assignment \(U\).
   ordered set \(X\) onto any ordered set \(Y\) is an isomorphism, and
   that any increasing bijection from \(X\) onto \(Y\) is an
   isomorphism.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:4q4vnvbc}
+  Prove that taking the irreflexive kernel is a bijection from the set
+  of well-orders on a set \(X\) onto the set of relations \(<\) on
+  \(X\) which have the following properties:
+  \begin{enumerate}
+  \item For any two distinct elements \(x, y\) of \(X\), either
+    \(x < y\) or \(y < x\).
+  \item Every nonempty subset \(Y\) of \(X\) has an element \(a\) such
+    that no element \(x\) of \(Y\) satisfies the condition \(x < a\).
+  \end{enumerate}
+  Verify that the inverse of this bijection maps any relation with
+  these properties to its reflexive closure.
 \end{exercise}
 
 \begin{exercise}
@@ -2316,6 +1943,15 @@ This verifies the stated uniqueness property of the assignment \(U\).
   (\Cref{exe:al7fffh1}).
 \end{exercise}
 
+\begin{exercise}[Principle of transfinite induction]
+  \label{exe:wtzok6gt}
+  Let \(P\) be an assignment that attaches to every well-ordered set
+  \(X\) a statement \(P(X)\) about \(X\).  Suppose that \(P(X)\) is
+  true for a well-ordered set \(X\) if \(P((-\infty, x))\) is true for
+  every element \(x\) of \(X\).  Prove that \(P(X)\) is true for every
+  well-ordered set \(X\).
+\end{exercise}
+
 \begin{exercise}
   \label{exe:ylp1zcc8}
   Let \(X\) be a totally ordered set, \(w\) an element of \(X\) that
@@ -2348,8 +1984,34 @@ This verifies the stated uniqueness property of the assignment \(U\).
   \end{enumerate}
 \end{exercise}
 
+\begin{exercise}[Principle of transfinite induction]
+  \label{exe:jxzsy88l}
+  Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
+  a statement \(P(\alpha)\) about \(\alpha\).  Suppose that
+  \(P(\alpha)\) is true for an ordinal \(\alpha\) if \(P(\beta)\) is
+  true for every element \(\beta\) of \(\alpha\).  Prove that
+  \(P(\alpha)\) is true for every ordinal \(\alpha\).
+\end{exercise}
+
 \subsection{Solutions}
 \label{sec:fzhm4l61}
+
+\begin{solution}[\ref{exe:eydusvz3}]
+  \label{sol:bxkmo56h}
+  The irreflexive kernel \(<\) of an order \(\leq\) on \(X\) is
+  obviously irreflexive; if \(x,y,z \in X\), and \(x < y\) and
+  \(y < z\), the transitivity of \(\leq\) implies that \(x \leq z\),
+  and because \(x \neq y\) the anti-symmetry of \(\leq\) implies that
+  \(x \neq z\), so \(<\) is transitive.  Conversely, if \(<\) is an
+  irreflexive and transitive relation on \(X\), its reflexive closure
+  \(\leq\) is obviously reflexive; if \(x \leq y\) and \(y \leq z\),
+  either of the equalities \(x = y\) and \(y = z\) implies that
+  \(x \leq z\), so \(\leq\) is transitive; lastly, if \(x \leq y\) and
+  \(y \leq x\), the transitivity of \(\leq\) and the irreflexivity of
+  \(<\) imply that \(x = y\); thus, \(\leq\) is an order.  It is
+  obvious that the maps \(\leq \mapsto <\) and \(< \mapsto \leq\) are
+  inverses of each other.
+\end{solution}
 
 \begin{solution}[\ref{exe:swjbrepg}]
   \label{sol:pcqde5hb}
@@ -2402,6 +2064,60 @@ This verifies the stated uniqueness property of the assignment \(U\).
   increasing bijection from \(X\) to \(Y\) is strictly increasing
   because it is injective, so it is an isomorphism by the first
   statement.
+\end{solution}
+
+\begin{solution}
+  \label{sol:yuziburm}
+  Let \(\leq\) be a well-order on \(X\), and let \(<\) be its
+  irreflexive kernel.  As \(\leq\) is a total order, it has the
+  trichotomy property: for any two elements \(x, y\) of \(X\), exactly
+  one of the conditions \(x < y\), \(x = y\), \(y < x\) is true.  In
+  particular, for any two distinct elements \(x, y\) of \(X\), either
+  \(x < y\) or \(y < x\).  If \(a\) is the minimum of a nonempty
+  subset \(Y\) of \(X\), then for all \(x \in Y\), we have
+  \(a \leq x\); the trichotomy of \(\leq\) implies that
+  \(x \nless a\).
+
+  Conversely, let \(<\) be a relation on \(X\) with the properties
+  stated in the exercise.  We will first check that \(<\) is
+  irreflexive and transitive.
+
+  If \(x\) is any element of \(X\), the singleton \(Y = \{ x \}\) has
+  an element \(a\) such that \(y \nless a\) for all \(y \in Y\).
+  Necessarily, \(a = x\), so \(x \nless x\).  Therefore, \(<\) is
+  irreflexive.
+
+  We will now verify that for any \(x, y \in X\), exactly one of the
+  conditions \(x < y\), \(x = y\), \(y < x\) holds.  The first
+  hypothesis on \(<\) implies that at least one of these conditions is
+  true.  If \(x = y\), then the irreflexivity of \(<\) implies that
+  \(x \nless y\) and \(y \nless x\).  If \(x < y\), we have to rule
+  out \(x = y\) and \(y < x\); the irreflexivity of \(<\) implies that
+  \(x \neq y\); let \(a\) be an element of the set \(Y = \{ x, y \}\)
+  such that \(t \nless a\) for all \(t \in Y\); as \(x < y\),
+  \(a \neq y\), so \(a = x\); therefore, \(y \nless x\).  Similarly,
+  if \(y < x\), then \(x \neq y\) and \(x \nless y\).  It follows that
+  exactly one of the conditions \(x < y\), \(x = y\), \(y < x\) holds.
+
+  Suppose \(x, y, z \in X\) are such that \(x < y\) and \(y < z\).
+  Let \(a\) be an element of the set \(Y = \{ x, y, z \}\) such that
+  \(a \nless t\) for all \(t \in Y\).  As \(x < y\), \(a \neq y\), and
+  as \(y < z\), \(a \neq z\), so \(a = x\).  Thus, \(z \nless x\).
+  Also, \(x \neq z\), for otherwise the hypotheses \(x < y\) and
+  \(y < z\) would imply that two of the conditions \(x < y\),
+  \(x = y\), \(y < x\) hold.  Thus, \(x \neq z\) and \(z \nless x\).
+  It follows from the first hypothesis on \(<\) that \(x < z\).
+  Therefore, the relation \(<\) is transitive.
+
+  As \(<\) is irreflexive and transitive, by \Cref{exe:eydusvz3}, its
+  reflexive closure \(\leq\) is an order on \(X\).  It remains to
+  check that every nonempty subset \(Y\) of \(X\) has a minimum with
+  respect to \(\leq\).  Let \(a\) be an element of \(Y\) such that
+  \(x \nless a\) for all \(x \in Y\).  Then the first hypothesis on
+  \(<\) implies that for every \(x \in Y\), we have either \(x = a\)
+  or \(a < x\), that is, \(a \leq x\).  Thus, \(a\) is the minimum of
+  \(Y\) with respect to \(\leq\).  This verifies that \(\leq\) is a
+  well-order on \(X\).
 \end{solution}
 
 \begin{solution}[\ref{exe:gsdhavsp}]
@@ -3544,6 +3260,21 @@ This verifies the stated uniqueness property of the assignment \(U\).
   \(x \in X\).
 \end{solution}
 
+\begin{solution}[\ref{exe:wtzok6gt}]
+  \label{sol:649nfcfb}
+  Let \(X\) be a well-ordered set, and \(Y\) the set of the elements
+  \(x\) of \(X\) such that \(P((-\infty, x))\) is true.  Suppose \(x\)
+  is an element of \(X\) such that \((-\infty, x)\) is a subset of
+  \(Y\).  Then \(P((-\infty, y))\) is true for every element \(y\) of
+  \((-\infty, x)\).  Therefore, by the hypothesis on \(P\),
+  \(P((-\infty, x))\) is true, so \(x \in Y\).  Thus, the set \(Y\) is
+  an inductive subset of \(X\).  By transfinite induction
+  (\Cref{thm:5vxgawq0}), \(Y = X\), so \(P((-\infty, x))\) is true for
+  every element \(x\) of \(X\).  Therefore, again by the hypothesis on
+  \(P\), \(P(X)\) is true.  Thus, \(P(X)\) is true for every
+  well-ordered set \(X\).
+\end{solution}
+
 \begin{solution}[\ref{exe:ylp1zcc8}]
   \label{sol:6szduuuo}
   Let \(Z\) be the set of elements \(t\) of \(Y\) such that \(w < t\).
@@ -3624,6 +3355,20 @@ This verifies the stated uniqueness property of the assignment \(U\).
   then we get \(\alpha^- = \beta^-\) and \(\beta = \xi^+ = \alpha^+\).
   Thus in all the cases, either \(\alpha^- \in \beta^-\), or
   \(\alpha\) is a limit ordinal and \(\beta = \alpha^+\).
+\end{solution}
+
+\begin{solution}[\ref{exe:jxzsy88l}]
+  \label{sol:y7n1wugx}
+  Let \(\alpha\) be an ordinal, and \(x\) the set of the elements
+  \(\beta\) of \(\alpha\) such that \(P(\beta)\) is true.  Suppose
+  \(\beta\) is an element of \(\alpha\) such that \(\beta\) is a
+  subset of \(x\).  Then \(P(\gamma)\) is true for every element
+  \(\gamma\) of \(\beta\).  Therefore, by the hypothesis on \(P\),
+  \(P(\beta)\) is true, so \(\beta \in x\).  By transfinite induction
+  (\Cref{thm:6ehprsvw}), \(x = \alpha\), so \(P(\beta)\) is true for
+  every element \(\beta\) of \(\alpha\).  Therefore, again by the
+  hypothesis on \(P\), \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is
+  true for every ordinal \(\alpha\).
 \end{solution}
 
 \bibsection
