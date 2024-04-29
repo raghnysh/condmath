@@ -321,7 +321,7 @@ there is an element \(y\) of \(Y\) such that \(y > t\), and because
 \end{theorem}
 
 If the set \(T\) of segments of \(X\) that do not belong to \(S\) is
-non-empty, then \Cref{thm:b4yv5x3a} implies that \(T\) has a minimum
+nonempty, then \Cref{thm:b4yv5x3a} implies that \(T\) has a minimum
 \(Y\) under inclusion.  By \Cref{thm:36vndfrs}, this segment \(Y\) is
 either \((-\infty, a]\) for some \(a \in X\), or the union of the
 segments \((-\infty, y)\) as \(y\) runs over \(Y\).  In the first
@@ -481,7 +481,7 @@ inductive family on \(X\).
   \(X\) to itself, then \(x \leq f(x)\) for all \(x \in X\).
 \end{theorem}
 
-If the set \(M\) of \(x \in X\) such that \(x > f(x)\) is non-empty,
+If the set \(M\) of \(x \in X\) such that \(x > f(x)\) is nonempty,
 it has a minimum \(a\).  Let \(b = f(a)\).  As \(a \in M\), \(a > b\);
 as \(f\) is strictly increasing, \(f(a) > f(b)\), that is,
 \(b > f(b)\).  Thus, \(b \in M\) and \(b < a\), a contradiction.
@@ -547,7 +547,7 @@ Let \(X_0\) be the set of elements \(x\) of \(X\) for which there
 exists an element \(y\) of \(Y\) such that the interval
 \((-\infty, x)\) of \(X\) is isomorphic to the interval
 \((-\infty, y)\) of \(Y\).  If \(y, y' \in Y\) and \((-\infty, y)\) is
-isomorphic to \((-\infty, y'\), then \(y = y'\); for if, for instance,
+isomorphic to \((-\infty, y')\), then \(y = y'\); for if, for instance,
 \(y < y'\), then \((-\infty, y')\) is isomorphic to its segment
 \((-\infty, y)\), so by \Cref{thm:q14zcdkw},
 \((-\infty, y) = (-\infty, y')\), a contradiction.  Thus, for every
@@ -1499,6 +1499,236 @@ for all \(\beta \in \alpha\).  This implies also that
 \end{displaymath}
 This verifies the stated uniqueness property of the assignment \(U\).
 
+\subsection{Rank of a set}
+\label{sec:m3r76vpb}
+
+For every ordinal \(\alpha\), let \(F_\alpha\) be the assignment that
+attaches to every family of sets \(E = (E_\beta)_{\beta \in \alpha}\)
+the set
+\(F_\alpha(E) = \cup_{\beta \in \alpha} \mathcal{P}(E_\beta)\), where
+\(\mathcal{P}(X)\) denotes the power set of the set \(X\).  By
+transfinite recursion (\Cref{thm:fsekzo48}), there is an assignment
+\(\mathbb{V}\) that attaches to every ordinal \(\alpha\) a set
+\(\mathbb{V}_\alpha\) so that
+\begin{displaymath}
+  \mathbb{V}_\alpha =
+  F_\alpha ((\mathbb{V}_\beta)_{\beta \in \alpha}) =
+  \cup_{\beta \in \alpha} \mathcal{P}(\mathbb{V}_\beta)
+\end{displaymath}
+for every ordinal \(\alpha\).  Moreover, if \(\alpha\) is any ordinal,
+and \(W = (W_\beta)_{\beta \in \alpha}\) a family of sets such that
+\(W_\beta = F_\beta ((W_\gamma)_{\gamma \in \beta})\) for all
+\(\beta \in \alpha\), then \(W_\beta = \mathbb{V}_\beta\) for all
+\(\beta \in \alpha\), and \(\mathbb{V}_\alpha = F_\alpha(W) =
+\cup_{\beta \in \alpha}\mathcal{P}(W_\beta)\).
+
+\begin{theorem}
+  \label{thm:xijkf7v0}
+  \begin{enumerate}
+  \item For every ordinal \(\alpha\), \(\mathbb{V}_\alpha\) is a
+    transitive set, and
+    \(\mathbb{V}_\alpha \notin \mathbb{V}_\alpha\).
+  \item For any two ordinals \(\alpha, \beta\), \(\beta \in \alpha\)
+    if and only if \(\mathbb{V}_\beta \in \mathbb{V}_\alpha\), and
+    \(\beta = \alpha\) if and only if
+    \(\mathbb{V}_\beta = \mathbb{V}_\alpha\).
+  \item \(\mathbb{V}_0 = \emptyset\).
+  \item For every ordinal \(\alpha\),
+    \(\mathbb{V}_{\alpha^+} = \mathcal{P}(\mathbb{V}_\alpha)\).
+  \item For every limit ordinal \(\alpha\),
+    \(\mathbb{V}_\alpha = \cup_{\beta \in \alpha}\mathbb{V}_\beta\).
+  \end{enumerate}
+\end{theorem}
+
+For every ordinal \(\alpha\), let \(P(\alpha)\) be the statement that
+\(\mathbb{V}_\alpha\) is a transitive set.  Suppose \(\alpha\) is an
+ordinal such that \(P(\beta)\) is true for every element \(\beta\) of
+\(\alpha\); this means that \(\mathbb{V}_\beta\) is transitive for
+every element \(\beta\) of \(\alpha\); therefore, by
+\Cref{exe:565zdnmj}, \(\mathbb{V}_\alpha\) is also transitive, hence
+\(P(\alpha)\) is true.  By transfinite induction
+(\Cref{exe:jxzsy88l}), for every ordinal \(\alpha\), \(P(\alpha)\) is
+true, that is, \(\mathbb{V}_\alpha\) is a transitive set.
+
+Suppose \(\alpha, \beta\) are two ordinals such that
+\(\beta \in \alpha\).  Then the equation defining
+\(\mathbb{V}_\alpha\) implies that \(\mathcal{P}(\mathbb{V}_\beta)\)
+is a subset of \(\mathbb{V}_\alpha\).  As \(\mathbb{V}_\beta\) is an
+element of \(\mathcal{P}(\mathbb{V}_\beta)\), it follows that
+\(\mathbb{V}_\beta\) is an element of \(\mathbb{V}_\alpha\) too.
+
+For every ordinal \(\alpha\), let \(P(\alpha)\) be the statement that
+\(\mathbb{V}_\alpha\) is not an element of \(\mathbb{V}_\alpha\).
+Suppose \(\alpha\) is an ordinal such that \(P(\beta)\) is true for
+every element \(\beta\) of \(\alpha\); then by the statement proved in
+the previous paragraph, for every \(\beta \in \alpha\),
+\(\mathbb{V}_\beta\) is an element of
+\(\mathbb{V}_\alpha \setminus \mathbb{V}_\beta\), so
+\(\mathbb{V}_\alpha\) is not a subset of \(\mathbb{V}_\beta\), that
+is, \(\mathbb{V}_\alpha\) is not an element of
+\(\mathcal{P}(\mathbb{V}_\beta)\); therefore, \(\mathbb{V}_\alpha\) is
+not an element of
+\(\cup_{\beta \in \alpha} \mathcal{P}(\mathbb{V}_\beta)\); this is the
+same as saying that \(V_\alpha\) is not an element of
+\(\mathbb{V}_\alpha\), so \(P(\alpha)\) is true.  By transfinite
+induction (\Cref{exe:jxzsy88l}), for every ordinal \(\alpha\),
+\(P(\alpha)\) is true, that is,
+\(\mathbb{V}_\alpha \notin \mathbb{V}_\alpha\).
+
+Again, let \(\alpha, \beta\) be two ordinals.  If
+\(\mathbb{V}_\beta \in \mathbb{V}_\alpha\), then by the statement
+proved in the previous paragraph, \(\alpha \neq \beta\); therefore, by
+\Cref{thm:xut6v700}, either \(\alpha \in \beta\) or
+\(\beta \in \alpha\); if \(\alpha \in \beta\), then
+\(\mathbb{V}_\alpha \in \mathbb{V}_\beta\) by what we have already
+proved, so by the transitivity of \(\mathbb{V}_\alpha\) and the
+hypothesis \(\mathbb{V}_\beta \in \mathbb{V}_\alpha\), we get
+\(\mathbb{V}_\beta \in \mathbb{V}_\beta\), a contradiction; therefore,
+\(\beta \in \alpha\).  If \(\mathbb{V}_\beta = \mathbb{V}_\alpha\),
+then as \(\mathbb{V}_\alpha \notin \mathbb{V}_\alpha\),
+\(\alpha \notin \beta\) and \(\beta \notin \alpha\); therefore, by
+\Cref{thm:xut6v700}, \(\beta = \alpha\).  This verifies the first two
+parts of the theorem.
+
+The set \(\mathbb{V}_0\) is the empty union since \(0 = \emptyset\)
+under our identification of the natural numbers with their ordinals.
+This is the third part of the theorem.
+
+By definition, for any ordinal \(\alpha\),
+\(\alpha^+ = \alpha \cup \{ \alpha \}\).  Therefore,
+\begin{displaymath}
+  \mathbb{V}_{\alpha^+} =
+  \cup_{\beta \in \alpha^+} \mathcal{P}(\mathbb{V}_\beta) =
+  (\cup_{\beta \in \alpha} \mathcal{P}(\mathbb{V}_\beta)) \cup
+  \mathcal{P}(\mathbb{V}_\alpha).
+\end{displaymath}
+Now if \(\beta \in \alpha\), then by the first two parts of the
+theorem, \(\mathbb{V}_\beta\) is an element of the transitive set
+\(\mathbb{V}_\alpha\), so \(\mathbb{V}_\beta\) is a subset of
+\(\mathbb{V}_\alpha\), hence \(\mathcal{P}(\mathbb{V}_\beta)\) is a
+subset of \(\mathcal{P}(\mathbb{V}_\alpha)\).  Therefore, the union of
+the \(\mathcal{P}(\mathbb{V}_\beta)\) as \(\beta\) runs over
+\(\alpha\) is a subset of \(\mathcal{P}(\mathbb{V}_\alpha)\).  It
+follows that \(\mathbb{V}_{\alpha^+}\) equals
+\(\mathcal{P}(\mathbb{V}_\alpha)\).  This verifies the fourth part of
+the theorem.
+
+Suppose \(\alpha\) is a limit ordinal.  Then by \Cref{thm:8odofa55},
+\begin{displaymath}
+  \alpha = \alpha^- = \cup_{\beta \in \alpha} \beta.
+\end{displaymath}
+Therefore, for every element \(\gamma\) of \(\alpha\), there is an
+element \(\beta\) of \(\alpha\) such that \(\gamma \in \beta\); the
+definition of \(\mathbb{V}_\beta\) implies that
+\(\mathcal{P}(\mathbb{V}_\gamma)\) is a subset of
+\(\mathbb{V}_\beta\); as \(\mathbb{V}_\alpha\) is the union of
+\(\mathcal{P}(\mathbb{V}_\gamma)\) as \(\gamma\) runs over \(\alpha\),
+it follows that \(\mathbb{V}_\alpha\) is a subset of the union of
+\(\mathbb{V}_\beta\) as \(\beta\) runs over \(\alpha\).  Conversely,
+if \(\beta\) is an element of \(\alpha\), then by the first two parts
+of the theorem, \(\mathbb{V}_\beta\) is an element of the transitive
+set \(\mathbb{V}_\alpha\), hence a subset of \(\mathbb{V}_\alpha\);
+therefore, the union of \(\mathbb{V}_\beta\) as \(\beta\) runs over
+\(\alpha\) is a subset of \(\mathbb{V}_\alpha\).  It follows that
+\(\mathbb{V}_\alpha\) equals the union of \(\mathbb{V}_\beta\) as
+\(\beta\) runs over \(\alpha\).  This proves the last part of the
+theorem.
+
+\begin{theorem}
+  \label{thm:3e5kymup}
+  The following statements are equivalent:
+  \begin{enumerate}
+  \item (\firstterm{Axiom of foundation}).  Every nonempty set \(X\)
+    has an element \(a\) such that \(a \cap X = \emptyset\).
+  \item There is no sequence of sets \((x_n)_{n \in \mathbb{N}}\) such
+    that \(x_n \in x_{n - 1}\) for all \(n > 0\).  In particular,
+    there is no set \(x\) such that \(x \in x\).
+  \item (\firstterm{Principle of epsilon-induction}). For any set
+    \(X\), if \(Y\) is a subset of \(X\) with the property that any
+    element \(x\) of \(X\) such that \(x \cap X \subset Y\) belongs to
+    \(Y\), then \(Y = X\).
+  \item (\firstterm{Principle of epsilon-induction}). For any
+    transitive set \(X\), if \(Y\) is a subset of \(X\) with the
+    property that any element \(x\) of \(X\) such that \(x \subset Y\)
+    belongs to \(Y\), then \(Y = X\).
+  \item (\firstterm{Principle of epsilon-induction}). If \(P\) is an
+    assignment that attaches to every set \(X\) a statement \(P(X)\)
+    about \(X\), and if \(P(T)\) is true for a set \(T\) whenever
+    \(P(t)\) is true for every element \(t\) of \(T\), then \(P(X)\)
+    is true for every set \(X\).
+  \end{enumerate}
+\end{theorem}
+
+Assume the axiom of foundation.  Let \((x_n)_{n \in \mathbb{N}}\) be a
+sequence of sets.  Denote by \(X\) the set whose elements are the
+members \(x_n\) of the sequence.  It is obviously nonempty, so it has
+an element \(a\) such that \(a \cap X = \emptyset\).  Since \(a\) is
+an element of \(X\), it equals \(x_{n - 1}\) for some natural number
+\(n > 0\).  Now as \(x_n \in A\) and \(a \cap X = \emptyset\), we have
+\(x_n \notin a\), that is, \(x_n \notin x_{n - 1}\).  Thus, the first
+statement implies the second.
+
+Suppose that the second statement is true.  Let \(X\) be a set, and
+\(Y\) a subset of \(X\) with the property that any element \(x\) of
+\(X\) such that \(x \cap X \subset Y\) belongs to \(Y\).  Suppose
+\(Y \neq X\).  We inductively define a sequence
+\((x_n)_{n \in \mathbb{N}}\) of elements of \(X \setminus Y\) as
+follows.  Since \(Y\) is a proper subset of \(X\), there is an element
+\(x_0\) of \(X\) which lies outside \(Y\).  Suppose that \(n > 0\) and
+that we have specified an element \(x_{n - 1}\) of \(X \setminus Y\);
+then the hypothesis on \(Y\) implies that \(x_{n - 1} \cap X\) is not
+a subset of \(Y\), so there is an element \(x_n\) of
+\(x_{n - 1} \cap X\) that does not belong to \(Y\); this completes the
+inductive definition of the sequence.  It follows from this definition
+that \(x_n \in x_{n - 1}\) for all \(n > 0\), which contradicts the
+second statement of the theorem.  Therefore, \(Y = X\).  So the second
+statement implies the third.
+
+Suppose the third statement of the theorem holds.  Let \(X\) be a
+transitive set, and \(Y\) a subset of \(X\) with the property that any
+element \(x\) of \(X\) such that \(x \cap X \subset Y\) belongs to
+\(Y\).  As \(X\) is transitive, \(x \cap X = x\) for every element
+\(x\) of \(X\).  So the hypothesis on \(X, Y\) implies that every
+element \(x\) of \(X\) such that \(x \cap X \subset Y\) belongs to
+\(Y\).  Therefore, by the third statement, \(Y = X\).  Thus, the third
+statement implies the fourth.
+
+Now assume that the fourth statement holds.  Let \(P\) be an
+assignment that attaches to every set \(X\) a statement \(P(X)\) about
+\(X\), and assume that \(P(T)\) is true for a set \(T\) whenever
+\(P(t)\) is true for every element \(t\) of \(T\).  Let \(X\) be any
+set.  Denote by \(T\) the transitive closure \(X^{\mathrm{tc}}\) of
+\(X\) (\Cref{exe:v7uvzogi}).  Let \(U\) be the set of all elements
+\(t\) of \(T\) such that \(P(t)\) is true.  Suppose \(t\) is an
+element of \(T\) such that \(t \subset U\); then for every element
+\(u\) of \(t\), \(u\) belongs to \(U\), hence \(P(u)\) is true;
+therefore, by the hypothesis on \(P\), \(P(t)\) is true, so
+\(t \in U\).  As \(T\) is transitive, the fourth statement implies
+that \(U = T\).  In particular, the subset \(X\) of \(T\) is contained
+in \(U\).  This means that \(P(x)\) is true for every element \(x\) of
+\(X\).  Using the hypothesis on \(P\) once more, we deduce that
+\(P(X)\) is true.  Thus, the fourth statement implies the fifth.
+
+Lastly for the theorem, suppose that the fifth statement is true.
+Suppose \(X\) is a set such that \(a \cap X\) is nonempty for every
+element \(a\) of \(X\).  Let \(P\) be the assignment that attaches to
+every set \(Y\) the statement \(P(Y)\) that \(Y\) is not an element of
+\(X\).  Suppose \(T\) is a set such that \(P(t)\) is true for every
+element \(t\) of \(T\); if \(P(T)\) is false, then \(T\) is an element
+of \(X\); by the hypothesis on \(X\), \(T \cap X\) is nonempty, so
+there is an element \(t\) of \(T\) such that \(t \in X\), a
+contradiction because \(P(t)\) is true for every element \(t\) of
+\(T\); therefore, \(P(T)\) is true.  The fifth statement implies that
+\(P(Y)\) is true for every set \(Y\).  It follows that \(X\) is the
+empty set.  Thus, the fifth statement implies the first.  This
+verifies that all the five statements of the theorem are equivalent.
+
+We now adopt the \firstterm{axiom of foundation}: every nonempty set
+\(X\) has an element \(a\) such that \(a \cap X = \emptyset\).  This
+means that the other four statements of \Cref{thm:3e5kymup} also hold.
+In particular, we have the various forms of epsilon-induction that are
+stated in that theorem.
+
 \subsection{Exercises}
 \label{sec:q1c2w2jy}
 
@@ -1993,6 +2223,31 @@ This verifies the stated uniqueness property of the assignment \(U\).
   \(P(\alpha)\) is true for every ordinal \(\alpha\).
 \end{exercise}
 
+\begin{exercise}[Principle of transfinite induction]
+  \label{exe:h8nv276e}
+  Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
+  a statement \(P(\alpha)\) about \(\alpha\).  Suppose that for any
+  ordinal \(\alpha\), \(P(\alpha^+)\) is true if \(P(\alpha)\) is
+  true, and \(P(\alpha^-)\) is true if \(P(\beta)\) is true for every
+  element \(\beta\) of \(\alpha\).  Prove that \(P(\alpha)\) is true
+  for every ordinal \(\alpha\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:565zdnmj}
+  Prove that a set \(X\) is transitive if and only if its power set
+  \(\mathcal{P}(X)\) is transitive.  Verify also that the union of a
+  family of transitive sets is transitive.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:v7uvzogi}
+  Show that for every set \(X\), there is a smallest transitive set
+  \(X^{\mathrm{tc}}\) that contains \(X\).  (The set
+  \(X^{\mathrm{tc}}\) is called the \firstterm{transitive closure} of
+  \(X\).)
+\end{exercise}
+
 \subsection{Solutions}
 \label{sec:fzhm4l61}
 
@@ -2123,7 +2378,7 @@ This verifies the stated uniqueness property of the assignment \(U\).
 \begin{solution}[\ref{exe:gsdhavsp}]
   \label{sol:ja6mjzt3}
   If the set \(M\) of \(x \in X\) such that \(f(x) > g(x)\) is
-  non-empty, it has a minimum \(a\).  The segment \(f(X)\) of \(Y\)
+  nonempty, it has a minimum \(a\).  The segment \(f(X)\) of \(Y\)
   contains \(f(a)\), hence it contains the interval
   \((-\infty, f(a)]\).  Therefore, the element \(g(a)\) of this
   interval belongs to \(f(X)\): \(g(a) = f(z)\) for some \(z \in X\).
@@ -2329,14 +2584,14 @@ This verifies the stated uniqueness property of the assignment \(U\).
   \(\lambda \in \Lambda\), \(M_\lambda\) equals
   \((\cup_{\mu < \lambda} M_\mu) \cup \{ h(\lambda) \}\) if this
   subset of \(X\) is totally ordered, and is empty otherwise; in
-  particular, if \(M_\lambda\) is non-empty, it contains \(M_\mu\) for
+  particular, if \(M_\lambda\) is nonempty, it contains \(M_\mu\) for
   all \(\mu \leq \lambda\).
 
   If \(x, y \in M\), there are elements \(\lambda, \mu\) of
   \(\Lambda\) such that \(x \in M_\lambda\) and \(y \in M_\mu\); as
   \(\Lambda\) is totally ordered, we can assume that
   \(\mu \leq \lambda\); as \(M_\lambda\) contains \(x\), it is
-  non-empty, and hence contains \(M_\nu\) for all
+  nonempty, and hence contains \(M_\nu\) for all
   \(\nu \leq \lambda\); in particular, \(M_\mu \subset M_\lambda\), so
   \(x, y \in M_\lambda\); as \(M_\lambda\) is totally ordered, either
   \(x \leq y\) or \(y \leq x\); it follows that \(M\) is a totally
@@ -2487,8 +2742,8 @@ This verifies the stated uniqueness property of the assignment \(U\).
   upper bound of \(A\).
 
   For every well-ordered subset \(A\) of \(X\), the set \(A^*\) of
-  strict upper bounds of \(A\) is a non-empty subset of \(X\), hence
-  \(h^{-1}(A^*)\) is a non-empty subset of \(\Lambda\); as \(\Lambda\)
+  strict upper bounds of \(A\) is a nonempty subset of \(X\), hence
+  \(h^{-1}(A^*)\) is a nonempty subset of \(\Lambda\); as \(\Lambda\)
   is well-ordered, \(h^{-1}(A^*)\) has a minimum \(\varphi(A)\); thus,
   \(\varphi(A)\) is the unique element of \(\Lambda\) such that
   \(h(\varphi(A)) \in A^*\) and \(\varphi(A) \leq h^{-1}(b)\) for all
@@ -2563,7 +2818,7 @@ This verifies the stated uniqueness property of the assignment \(U\).
   An alternative definition of \(u\), using \Cref{thm:5kg5ewo1}
   instead of \Cref{exe:x9ewqbv6}, is as follows.  As the well-ordered
   subset \(\emptyset\) of \(X\) has an upper bound in \(X\), the set
-  \(X\) is non-empty; fix an element \(x_0 \in X\).  For every
+  \(X\) is nonempty; fix an element \(x_0 \in X\).  For every
   \(\lambda \in \Lambda\), define a function
   \(f_\lambda : X^{(-\infty, \lambda)} \to X\) by setting
   \begin{displaymath}
@@ -3369,6 +3624,70 @@ This verifies the stated uniqueness property of the assignment \(U\).
   every element \(\beta\) of \(\alpha\).  Therefore, again by the
   hypothesis on \(P\), \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is
   true for every ordinal \(\alpha\).
+\end{solution}
+
+\begin{solution}[\ref{exe:h8nv276e}]
+  \label{sol:ry94ppvi}
+  Suppose \(\alpha\) is an ordinal such \(P(\beta)\) is true for every
+  element \(\beta\) of \(\alpha\).  We will check that \(P(\alpha)\)
+  is also true.  If \(\alpha\) is a successor ordinal, then by
+  \Cref{thm:8odofa55}, \(\alpha^- \in \alpha\) and
+  \(\alpha = (\alpha^-)^+\); as \(P(\beta)\) is true for every element
+  \(\beta\) of \(\alpha\), it follows that \(P(\alpha^-)\) is true; so
+  the hypothesis on \(P\) implies that \(P(\alpha)\) is true.  On the
+  other hand, if \(\alpha\) is a limit ordinal, then by
+  \Cref{thm:8odofa55}, \(\alpha^- = \alpha\); as \(P(\beta)\) is true
+  for every element \(\beta\) of \(\alpha\), the hypothesis on \(P\)
+  implies that \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is true in
+  both the cases.  By \Cref{exe:jxzsy88l}, \(P(\alpha)\) is true for
+  every ordinal \(\alpha\).
+\end{solution}
+
+\begin{solution}[\ref{exe:565zdnmj}]
+  \label{sol:cs5k5l1y}
+  Suppose \(X\) is a transitive set, and let \(Y \in \mathcal{P}(X)\);
+  we will check that \(Y \subset \mathcal{P}(X)\); let \(y \in Y\); as
+  \(Y \in \mathcal{P}(X)\), \(Y \subset X\), hence \(y \in X\); as
+  \(X\) is transitive, this means that \(y \subset X\), so
+  \(y \in \mathcal{P}(X)\); therefore, \(Y \subset \mathcal{P}(X)\);
+  it follows that \(\mathcal{P}(X)\) is a transitive set.  Conversely,
+  suppose that \(\mathcal{P}(X)\) is transitive, and let \(x \in X\);
+  then the singleton \(\{ x \}\) is an element of \(\mathcal{P}(X)\);
+  as \(\mathcal{P}(X)\) is transitive, this means that
+  \(\{ x \} \subset \mathcal{P}(X)\); therefore,
+  \(x \in \mathcal{P}(X)\), that is, \(x \subset X\); it follows that
+  \(X\) is a transitive set.
+
+  Let \((X_i)_{i \in I}\) be a family of transitive sets, and let
+  \(X\) be the union of the \(X_i\).  Let \(x \in X\).  Then there is
+  an element \(i\) of \(I\) such that \(x \in X_i\).  As \(X_i\) is
+  transitive, \(x \subset X_i\).  So \(x \subset X\).  It follows that
+  \(X\) is a transitive set.
+\end{solution}
+
+\begin{solution}[\ref{exe:v7uvzogi}]
+  \label{sol:qx891m3c}
+  For any set \(X\), define a sequence of sets
+  \((X_n)_{n \in \mathbb{N}}\) inductively by setting \(X_0 = X\), and
+  \(X_n\) to be the union of the elements of \(X_{n - 1}\) for every
+  natural number \(n > 0\).  Let \(X^{\mathrm{tc}}\) denote the union
+  of the \(X_n\) as \(n\) runs over the natural numbers.  Then \(X\)
+  is the subset \(X_0\) of \(X\).  Suppose \(y\) is an element of
+  \(X^{\mathrm{tc}}\); then \(y \in X_n\) for some
+  \(n \in \mathbb{N}\); now \(X_{n + 1}\) is the union of the elements
+  of \(X_n\), so \(y \subset X_{n + 1}\); as every \(X_k\) is a subset
+  of \(X^{\mathrm{tc}}\), this means that
+  \(y \subset X^{\mathrm{tc}}\); it follow that \(X^{\mathrm{tc}}\) is
+  a transitive set.  Let \(Y\) be any transitive set that contains
+  \(X\); then \(X_0\) is the subset \(X\) of \(Y\); suppose
+  inductively that \(n > 0\) and \(X_{n - 1} \subset Y\); then every
+  element \(x\) of \(X_{n - 1}\) is an element of the transitive set
+  \(Y\), and is hence a subset of \(Y\); therefore, the union \(X_n\)
+  of the elements of \(X\) is a subset of \(Y\); it follows by
+  induction that \(X_k \subset Y\) for every \(k \in \mathbb{N}\),
+  hence the union \(X^{\mathrm{tc}}\) of the \(X_k\) is also a subset
+  of \(Y\).  Thus, \(X^{\mathrm{tc}}\) is the smallest transitive set
+  containing \(X\).
 \end{solution}
 
 \bibsection
