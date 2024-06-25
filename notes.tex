@@ -1651,11 +1651,11 @@ theorem.
     transitive set \(X\), if \(Y\) is a subset of \(X\) with the
     property that any element \(x\) of \(X\) such that \(x \subset Y\)
     belongs to \(Y\), then \(Y = X\).
-  \item (\firstterm{Principle of epsilon-induction}). If \(P\) is an
-    assignment that attaches to every set \(X\) a statement \(P(X)\)
-    about \(X\), and if \(P(T)\) is true for a set \(T\) whenever
-    \(P(t)\) is true for every element \(t\) of \(T\), then \(P(X)\)
-    is true for every set \(X\).
+  \item \label{item:d0wtwe3c} (\firstterm{Principle of
+      epsilon-induction}). If \(P\) is an assignment that attaches to
+    every set \(X\) a statement \(P(X)\) about \(X\), and if \(P(T)\)
+    is true for a set \(T\) whenever \(P(t)\) is true for every
+    element \(t\) of \(T\), then \(P(X)\) is true for every set \(X\).
   \end{enumerate}
 \end{theorem}
 
@@ -1728,6 +1728,139 @@ We now adopt the \firstterm{axiom of foundation}: every nonempty set
 means that the other four statements of \Cref{thm:3e5kymup} also hold.
 In particular, we have the various forms of epsilon-induction that are
 stated in that theorem.
+
+\begin{theorem}
+  \label{thm:qnvo8xw3}
+  Let \(X\) be a set.  Suppose that for every element \(x\) of \(X\),
+  \(\alpha_x\) is an ordinal such that \(x\) is a subset of
+  \(\mathbb{V}_{\alpha_x}\).  Suppose also that \(\alpha\) is an
+  ordinal such that \(\alpha_x\) is an element of \(\alpha\) for every
+  element \(x\) of \(X\).  Then \(X\) is a subset of
+  \(\mathbb{V}_\alpha\).  In particular, \(X\) is a subset of
+  \(\mathbb{V}_\theta\), where \(\theta\) is the union of the sets
+  \(\alpha_x^+\) as \(x\) runs over \(X\).
+\end{theorem}
+
+For every element \(x\) of \(X\), \(\alpha_x\) is an element of
+\(\alpha\), and \(x\) is a subset of \(\mathbb{V}_{\alpha_x}\), that
+is, an element of the power set \(\mathcal{P}(\mathbb{V}_{\alpha_x})\)
+of \(\mathbb{V}_{\alpha_x}\).  The definition of \(\mathbb{V}_\alpha\)
+implies that \(\mathcal{P}(\mathbb{V}_\beta)\) is a subset of
+\(\mathbb{V}_\alpha\) for every element \(\beta\) of \(\alpha\).
+Therefore, for every element \(x\) of \(X\),
+\(\mathcal{P}(\mathbb{V}_{\alpha_x})\) is a subset of
+\(\mathbb{V}_\alpha\), hence the element \(x\) of
+\(\mathcal{P}(\mathbb{V}_{\alpha_x})\) is is an element of
+\(\mathbb{V}_\alpha\) also.  Thus every element of \(X\) is an element
+of \(\mathbb{V}_\alpha\), which is the same as saying that \(X\) is a
+subset of \(\mathbb{V}_\alpha\).  The union \(\theta\) of the family
+of ordinals \((\alpha_x^+)_{x \in X}\) is an ordinal by
+\Cref{thm:9s24zgf9}.  Every \(\alpha_x\), being an element of
+\(\alpha_x^+\), is also an element of \(\theta\).  Therefore, \(X\) is
+a subset of \(\mathbb{V}_\theta\) by the first statement of the
+theorem.
+
+\begin{theorem}
+  \label{thm:clbnmlzc}
+  For every set \(X\), there is an ordinal \(\alpha\) such that \(X\)
+  is a subset of \(\mathbb{V}_\alpha\).
+\end{theorem}
+
+Let \(P\) be the assignment that attaches to every set \(X\) the
+statement \(P(X)\) that there is an ordinal \(\alpha\) such that \(X\)
+is a subset of \(\mathbb{V}_\alpha\).  Suppose \(T\) is a set with the
+property that \(P(t)\) is true for every element \(t\) of \(T\).  This
+means that for every \(t \in T\), there is an ordinal \(\alpha_t\)
+such that \(t \subset \mathbb{V}_{\alpha_t}\).  By
+\Cref{thm:qnvo8xw3}, \(T\) is a subset of \(\mathbb{V}_\theta\), where
+\(\theta\) is the union of the ordinals \(\alpha_t\) as \(t\) runs
+over \(T\).  The statement \(P(T)\) is thus true.  It follows from the
+principle of epsilon-induction
+(\Cref{thm:3e5kymup}(\ref{item:d0wtwe3c})) that \(P(X)\) is true for
+every set \(X\).  In other words, for every set \(X\), there is an
+ordinal \(\alpha\) such that \(X\) is a subset of
+\(\mathbb{V}_\alpha\).
+
+\begin{theorem}
+  \label{thm:l7vz19h3}
+  Let \(X\) be any set.  Then there exists a unique ordinal \(\theta\)
+  such that \(X \subset \mathbb{V}_\theta\) and
+  \(\theta \subset \alpha\) for every ordinal \(\alpha\) with the
+  property that \(X \subset \mathbb{V}_\alpha\).
+\end{theorem}
+
+Let \(P\) be the assignment that attaches to every ordinal \(\alpha\)
+the statement \(P((\alpha)\) that \(X\) is a subset of
+\(\mathbb{V}_\alpha\).  \Cref{thm:clbnmlzc} says that there is an
+ordinal \(\beta\) such that \(P(\beta)\) is true.  By
+\Cref{exe:zgqzqjo2}, there is a unique ordinal \(\theta\) such that
+\(P(\theta)\) is true, and such that \(\theta\) is a subset of every
+ordinal \(\alpha\) with the property that \(P(\alpha)\) is true.
+Thus, \(\theta\) is the unique ordinal such that
+\(X \subset \mathbb{V}_\theta\) and \(\theta \subset \alpha\) for
+every ordinal \(\alpha\) with the property that
+\(X \subset \mathbb{V}_\alpha\).
+
+For any set \(X\), the unique ordinal \(\theta\) such that
+\(X \subset \mathbb{V}_\theta\) and \(\theta \subset \alpha\) for
+every ordinal \(\alpha\) with the property that
+\(X \subset \mathbb{V}_\alpha\) (\Cref{thm:l7vz19h3}) is called the
+\firstterm{rank} of \(X\), and is denoted by \(\operatorname{rk}(X)\).
+
+\begin{theorem}
+  \label{thm:ok93sv3f}
+  The rank of any set \(X\) equals the union of the ordinals
+  \(\operatorname{rk}(x)^+\) as \(x\) runs over the elements of \(X\).
+  In particular, \(\operatorname{rk}(x)\) is an element of
+  \(\operatorname{rk}(X)\) for every element \(x\) of \(X\).
+\end{theorem}
+
+For every element \(x\) of \(X\), let \(\theta_x\) denote the rank of
+\(x\).  Let \(\theta\) denote the union of the ordinals \(\theta_x^+\)
+as \(x\) runs over \(X\).  Then every element \(x\) of \(X\) is a
+subset of \(\mathbb{V}_{\theta_x}\), so by \Cref{thm:qnvo8xw3}, \(X\)
+is a subset of \(\mathbb{V}_\theta\).  Let \(\alpha\) be any ordinal
+such that \(X\) is a subset of \(\mathbb{V}_\alpha\).  Then every
+element \(x\) of \(X\) is an element of \(\mathbb{V}_\alpha\); by the
+definition of \(\mathbb{V}_\alpha\), this means that there is an
+element \(\alpha_x\) of \(\alpha\) such that
+\(x \in \mathcal{P}(\mathbb{V}_{\alpha_x})\); thus,
+\(x \subset \mathbb{V}_{\alpha_x}\); the definition of the rank
+implies that \(\theta_x \subset \alpha_x\); by \Cref{thm:lebsg6gf},
+this means that either \(\theta_x = \alpha_x\), or
+\(\theta_x \in \alpha_x\); if \(\theta_x = \alpha_x\), then, as
+\(\alpha_x \in \alpha\), \(\theta_x \in \alpha\); on the other hand,
+if \(\theta_x \in \alpha_x\), then, as \(\alpha_x \in \alpha\) and
+\(\alpha\) is transitive, \(\theta_x \in \alpha\); so in both the
+cases, \(\theta_x \in \alpha\); by \Cref{thm:8odofa55},
+\(\theta_x^+ \subset \alpha\).  It follows that the union \(\theta\)
+of the sets \(\theta_x^+\) is a subset of \(\alpha\).  Therefore,
+\(\theta\) is the smallest ordinal such that \(X\) is a subset of
+\(\mathbb{V}_\theta\).  This is the same as saying that \(\theta\) is
+the rank of \(X\).  This proves the first statement of the theorem.
+For every element \(x\) of \(X\), \(\theta_x\) is an element of
+\(\theta_x^+\), and hence of the union \(\theta\) of the sets
+\(\theta_y\) as \(y\) runs over the elements of \(X\).  This verifies
+the second statement of the theorem.
+
+\begin{theorem}
+  \label{thm:dqbi8lx3}
+  Every ordinal is its own rank.
+\end{theorem}
+
+Let \(P\) be the statement that attaches to every ordinal \(\alpha\)
+the statement \(P(\alpha)\) that
+\(\alpha = \operatorname{rk}(\alpha)\).  Suppose \(\alpha\) is an
+ordinal such that \(P(\beta)\) is true for every element \(\beta\) of
+\(\alpha\).  This means that the rank of any element \(\beta\) of
+\(\alpha\) is \(\beta\) itself.  By \Cref{thm:ok93sv3f}, the rank of
+\(\alpha\) equals the union of \(\beta^+\) as \(\beta\) runs over the
+elements of \(\alpha\).  This union equals \(\alpha\) itself by
+\Cref{exe:qgdrw0j7}.  It follows that \(\alpha\) is its own rank.
+Thus, \(P(\alpha)\) is true.  Therefore, by the principle of
+transfinite induction (\Cref{exe:jxzsy88l}), \(P(\alpha)\) is true for
+every ordinal \(\alpha\).  This is the same as the statement that
+every ordinal is its own rank.
 
 \subsection{Exercises}
 \label{sec:q1c2w2jy}
@@ -2246,6 +2379,24 @@ stated in that theorem.
   \(X^{\mathrm{tc}}\) that contains \(X\).  (The set
   \(X^{\mathrm{tc}}\) is called the \firstterm{transitive closure} of
   \(X\).)
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:zgqzqjo2}
+  Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
+  a statement \(P(\alpha)\) about \(\alpha\).  Suppose there is an
+  ordinal \(\beta\) such that the statement \(P(\beta)\) is true.
+  Then there is a unique ordinal \(\theta\) such that \(P(\theta)\) is
+  true, and such that \(\theta\) is a subset of every ordinal
+  \(\alpha\) with the property that \(P(\alpha)\) is true.  (The
+  ordinal \(\theta\) is called the \firstterm{smallest ordinal}
+  \(\alpha\) such that \(P(\alpha)\) is true.)
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:qgdrw0j7}
+  Show that every ordinal \(\alpha\) equals the union of the ordinals
+  \(\beta^+\) as \(\beta\) runs over the elements of \(\alpha\).
 \end{exercise}
 
 \subsection{Solutions}
@@ -3688,6 +3839,51 @@ stated in that theorem.
   hence the union \(X^{\mathrm{tc}}\) of the \(X_k\) is also a subset
   of \(Y\).  Thus, \(X^{\mathrm{tc}}\) is the smallest transitive set
   containing \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:zgqzqjo2}]
+  \label{sol:5my94p9w}
+  Let \(x\) be the set of elements \(\delta\) of \(\beta^+\) such that
+  \(P(\delta)\) is true.  Then \(\beta\) is an element of \(x\), so
+  \(x\) is not empty.  As \(\beta^+\) is an ordinal, this implies that
+  \(x\) has an element \(\theta\) such that
+  \(\theta \cap x = \emptyset\).  The statement \(P(\theta)\) is true
+  because \(\theta\) is an element of \(x\).
+
+  Suppose \(\alpha\) is any ordinal such that \(P(\alpha)\) is true.
+  If \(\alpha \in \theta\), then \(\alpha \in \beta^+\) since the
+  ordinal \(\beta^+\) is a transitive set and \(\theta \in \beta^+\);
+  therefore, \(\alpha \in x\); thus, \(\alpha\) is an element of the
+  empty set \(\theta \cap x\), a contradiction.  Therefore,
+  \(\alpha \notin \theta\).  By the trichotomy property of ordinals
+  \Cref{thm:xut6v700}, either \(\theta \in \alpha\) or
+  \(\theta = \alpha\).  \Cref{thm:lebsg6gf} implies that the condition
+  \(\theta \in \alpha\) is equivalent to the condition that \(\theta\)
+  is a proper subset of \(\alpha\).  It follows that \(\theta\) is a
+  subset of \(\alpha\).
+
+  Lastly, suppose \(\theta'\) is another ordinal with the property
+  that \(P(\theta')\) is true and \(\theta'\) is a subset of every
+  ordinal \(\alpha\) such that \(P(\alpha)\) is true.  Then \(\theta\)
+  and \(\theta'\) are subsets of each other, and are hence equal.
+  Thus, \(\theta\) is the unique ordinal with the stated property.
+\end{solution}
+
+\begin{solution}[\ref{exe:qgdrw0j7}]
+  \label{sol:pfhq76oe}
+  By the definition of the successor of an ordinal, every ordinal
+  \(\beta\) is an element of \(\beta^+\).  Therefore, \(\alpha\) is a
+  subset of the union of \(\beta^+\) as \(\beta\) runs over the
+  elements of \(\alpha\).  Conversely, let \(\delta\) be an element of
+  \(\beta^+\) for some element \(\beta\) of \(\alpha\).  Then
+  \(\delta\) is either \(\beta\) or an element of \(\beta\).  If
+  \(\delta = \beta\), then, as \(\beta\) is an element of \(\alpha\),
+  \(\delta \in \alpha\).  On the other hand, if \(\delta \in \beta\),
+  then, as \(\beta\) is an element of \(\alpha\), and \(\alpha\) is
+  transitive, \(\delta \in \alpha\).  Thus, in both the cases,
+  \(\delta \in \alpha\).  It follows that \(\alpha\) is a superset of
+  the union of \(\beta^+\) as \(\beta\) runs over \(\alpha\).  It
+  follows that \(\alpha = \cup_{\beta \in \alpha}\beta^+\).
 \end{solution}
 
 \bibsection
