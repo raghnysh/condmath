@@ -21,7 +21,7 @@
 
 \hypersetup{pdfauthor={Raghavendra Nyshadham (rn@raghnysh.com)}}
 
-\date{2024-01-14}
+\date{2024-08-02}
 
 \begin{document}
 
@@ -1384,7 +1384,9 @@ For every well-ordered set \(X\), by \Cref{thm:15ehsi36} and
 isomorphic to \(X\); we will denote \(\alpha\) by
 \(\operatorname{Ord}(X)\), and call it the \firstterm{ordinal} of
 \(X\).  It follows from \Cref{thm:uvocd4lt} that there is a unique
-isomorphism from \(X\) onto \(\operatorname{Ord}(X)\).
+isomorphism from \(X\) onto \(\operatorname{Ord}(X)\).  It is obvious
+from this definition that \(\operatorname{Ord}(\alpha) = \alpha\) for
+every ordinal \(\alpha\).
 
 \begin{theorem}[Principle of transfinite induction]
   \label{thm:6ehprsvw}
@@ -1861,6 +1863,337 @@ Thus, \(P(\alpha)\) is true.  Therefore, by the principle of
 transfinite induction (\Cref{exe:jxzsy88l}), \(P(\alpha)\) is true for
 every ordinal \(\alpha\).  This is the same as the statement that
 every ordinal is its own rank.
+
+\subsection{Ordinal arithmetic}
+\label{sec:o0i16s30}
+
+We have seen in \Cref{sec:t851d2lg} that for every well-ordered set
+\(X\), there is a unique ordinal \(\operatorname{Ord}(X)\) which is
+isomorphic to \(X\), and that there is a unique isomorphism from \(X\)
+onto \(\operatorname{Ord}(X)\).  It is obvious from these properties
+that \(\operatorname{Ord}(\alpha) = \alpha\) for every ordinal
+\(\alpha\).
+
+Suppose \(X\) and \(Y\) are two ordered sets.  Let \(Z\) denote their
+disjoint union \(X \sqcup Y\), and identify \(X\) and \(Y\) with their
+canonical images in \(Z\).  We define an order on their disjoint union
+\(Z\) by setting \(a \leq b\), for any two elements \(a\) and \(b\) of
+\(Z\), if \(a, b \in X\) and \(a \leq b\), or if \(a, b \in Y\) and
+\(a \leq b\), or if \(a \in X\) and \(b \in Y\).  This is the unique
+order on \(Z\) which induces the given orders on \(X\) and \(Y\), and
+has the property that every element of \(X\) precedes every element of
+\(Y\).  If \(X\) and \(Y\) are well-ordered, and if \(A\) is a
+nonempty subset of \(Z\), then either \(A \cap X \neq \emptyset\) or
+\(A \subset Y\); in the former case, \(A \cap X\) has a minimum \(a\)
+in \(X\) because \(X\) is well-ordered, and in the latter case, \(A\)
+has a minimum \(a\) in \(Y\) because \(Y\) is well-ordered; in both
+the cases, the element \(a\) is a minimum of \(A\) in \(Z\).  Thus, if
+\(X\) and \(Y\) are well-ordered, then \(Z\) is also well-ordered.
+
+We define the \firstterm{sum} of any two ordinals \(\alpha\) and
+\(\beta\) to be the ordinal of the well-ordered set
+\(\alpha \sqcup \beta\):
+\begin{displaymath}
+  \alpha + \beta = \operatorname{Ord}(\alpha \sqcup \beta).
+\end{displaymath}
+This sum is often defined using transfinite recursion; the following
+theorem says that that definition agrees with the one above.
+
+\begin{theorem}
+  \label{thm:8e0yiygg}
+  Let \(\alpha\) and \(\beta\) be ordinals.  Then:
+  \begin{enumerate}
+  \item After identifying the natural number \(0\) with the ordinal
+    \(\emptyset\) as in \Cref{sec:t851d2lg}, we have
+    \(\alpha + 0 = 0 + \alpha = \alpha\).
+  \item \(\alpha + \beta^+ = (\alpha + \beta)^+\).
+  \item If \(\beta\) is a nonempty limit ordinal, then
+    \begin{displaymath}
+      \alpha + \beta = \cup_{\gamma \in \beta} (\alpha + \gamma).
+    \end{displaymath}
+  \end{enumerate}
+\end{theorem}
+
+It is obvious that
+\(\alpha \sqcup \emptyset = \emptyset \sqcup \alpha = \alpha\), and
+that the orders on \(\alpha \sqcup \emptyset\) and
+\(\emptyset \sqcup \alpha\) that are induced by the canonical order on
+\(\alpha\) and the empty order on \(\emptyset\) are the same as the
+canonical order on \(\alpha\).  Thus,
+\(\alpha \sqcup \emptyset = \emptyset \sqcup \alpha = \alpha\) as
+ordered sets.  Therefore,
+\begin{displaymath}
+  \alpha + 0 =
+  \alpha + \emptyset =
+  \operatorname{Ord}(\alpha \sqcup \emptyset) =
+  \operatorname{Ord}(\alpha) =
+  \alpha,
+\end{displaymath}
+and similarly for \(0 + \alpha\).  This verifies the first part of the
+theorem.
+
+Let \(\theta = \alpha + \beta\).  By definition, this means that
+\(\theta\) is the ordinal of \(\alpha \sqcup \beta\).  Denote by \(f\)
+the unique isomorphism from \(\alpha \sqcup \beta\) to \(\theta\).
+Now, \(\alpha + \beta^+\) is the ordinal of \(\alpha \sqcup \beta^+\).
+Since \(\beta \notin \beta\) (\Cref{thm:7cc2cckf}), the sets \(\beta\)
+and \(\{\beta\}\) are disjoint, so
+\(\beta^+ = \beta \sqcup \{\beta\}\).  Thus,
+\(\alpha \sqcup \beta^+ = \alpha \sqcup \beta \sqcup \{\beta\}\).
+Similarly, \(\theta^+ = \theta \sqcup \{\theta\}\).  Define a function
+\(g\) from \(\alpha \sqcup \beta \sqcup \{\beta\}\) to
+\(\theta \sqcup \{\theta\}\) by
+\begin{displaymath}
+  g(\lambda) =
+  \begin{cases}
+    f(\lambda) & \text{if} ~ \lambda \in \alpha \sqcup \beta \\
+    \theta & \text{if} ~ \lambda = \beta
+  \end{cases}
+\end{displaymath}
+for every element \(\lambda\) of
+\(\alpha \sqcup \beta \sqcup \{\beta\}\).  The order induced on
+\(\alpha \sqcup \beta^+\) by the canonical orders on \(\alpha\) and
+\(\beta^+\), restricts to the canonical orders on \(\alpha\) and
+\(\beta\), and has the property that every element of \(\alpha\)
+precedes every element of \(\beta\) and every element of \(\beta\)
+precedes \(\beta\).  As \(f\) is an increasing function, this means
+that the function \(g\) is increasing.  Also, as
+\(\theta \notin \theta\) (\Cref{thm:7cc2cckf}) and \(f\) is a
+bijection, so is \(g\).  Therefore, by \Cref{exe:v1tw1ijd}, \(g\) is
+an isomorphism from \(\alpha \sqcup \beta^+\) to \(\theta^+\).  This
+is the same as saying that \(\theta^+\) is the ordinal of
+\(\alpha \sqcup \beta^+\).  It follows that
+\(\alpha + \beta^+ = \theta^+\).  This is the second part of the
+theorem.
+
+Suppose now that \(\beta\) is a nonempty limit ordinal.  Identify
+\(\alpha\) and \(\beta\) with their images in \(\alpha \sqcup \beta\);
+so \(\alpha\) and \(\beta\) form a partition of
+\(\alpha \sqcup \beta\).  As every limit ordinal is the union of its
+elements, and
+\(X \cup (\cup_{i \in I} Y_i) = \cup_{i \in I} (X \cup Y_i)\) for
+every set \(X\) and every nonempty family of sets \((Y_i)_{i \in I}\),
+\begin{displaymath}
+  \alpha \sqcup \beta = \alpha \cup \beta =
+  \alpha \cup (\cup_{\gamma \in \beta} \gamma) =
+  \cup_{\gamma \in \beta} (\alpha \cup \gamma).
+\end{displaymath}
+Every element \(\gamma\) of the transitive set \(\beta\) is a subset
+of \(\beta\); as \(\beta\) is disjoint from \(\alpha\), so is
+\(\gamma\); thus, \(\alpha \cup \gamma\) is the disjoint union of
+\(\alpha\) and \(\gamma\); therefore, \(\alpha + \gamma\) is the
+ordinal of \(\alpha \cup \gamma\); also, by \Cref{thm:9hac1s0p},
+\(\gamma\) is a segment of \(\beta\), so by \Cref{exe:5b354opw},
+\(\alpha \cup \gamma\) is a segment of \(\alpha \sqcup \beta\).  It
+follows from \Cref{exe:e0x1yv2c} that the ordinal \(\alpha + \beta\)
+of \(\alpha \sqcup \beta\) equals the union of \(\alpha + \gamma\) as
+\(\gamma\) runs over the elements of \(\beta\).  This proves the
+theorem.
+
+\begin{theorem}
+  \label{thm:506mms8z}
+  Let \(\alpha, \alpha', \beta, \beta', \gamma\) be ordinals.  Then:
+  \begin{enumerate}
+  \item After identifying the natural number \(1\) with the ordinal
+    \(\{0\}\) as in \Cref{sec:t851d2lg}, we have
+    \(\alpha + 1 = \alpha^+\).
+  \item (Associativity).
+    \((\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)\).
+  \item \label{item:n6u00qz2} If \(\alpha \subset \alpha'\), then
+    \(\alpha + \beta \subset \alpha' + \beta\).  On the other hand, if
+    \(\alpha + \beta \in \alpha' + \beta\), then
+    \(\alpha \in \alpha'\).
+  \item \label{item:bhc8ls0b} \(\beta \in \beta'\) if and only if
+    \(\alpha + \beta \in \alpha + \beta'\).
+  \item (Left cancellation).  If
+    \(\alpha + \beta = \alpha + \beta'\), then \(\beta = \beta'\).
+  \end{enumerate}
+\end{theorem}
+
+By definition, \(\alpha + 1\) is the ordinal of the well-ordered set
+\(\alpha \sqcup \{0\}\), and \(\alpha^+\) is the ordinal
+\(\alpha \cup \{\alpha\}\).  The canonical function from \(\alpha\) to
+\(\alpha \sqcup \{0\}\) is strictly increasing, and \(x < \alpha\) in
+\(\alpha \sqcup \{0\}\) for all \(x \in \alpha\).  Therefore, the
+function \(f\) from \(\alpha \sqcup \{0\}\) to \(\alpha^+\) that is
+defined by
+\begin{displaymath}
+  f(x) =
+  \begin{cases}
+    x & \text{if} ~ x \in \alpha \\
+    \alpha & \text{if} ~ x = 0
+  \end{cases}
+\end{displaymath}
+is an isomorphism.  It follows that \(\alpha + 1 = \alpha^+\).
+
+Let \(U\) denote the ordered set
+\((\alpha \sqcup \beta) \sqcup \gamma\), and \(V\) the ordered set
+\(\alpha \sqcup (\beta \sqcup \gamma)\).  When \(\alpha\), \(\beta\),
+and \(\gamma\) are identified with their canonical images in \(U\) and
+\(V\), they form a partition of \(U\) and of \(V\); in particular, the
+underlying sets of \(U\) and \(V\) are equal.  The canonical functions
+from \(\alpha\), \(\beta\), and \(\gamma\) to \(U\) and \(V\) are
+strictly increasing, and \(x < y < z\) in both \(U\) and \(V\) for all
+\(x \in \alpha\), \(y \in \beta\), and \(z \in \gamma\).  Therefore,
+the orders on \(U\) and \(V\) are equal, so \(U\) and \(V\) are the
+same ordered set.  Now, since the ordinal of the disjoint union of two
+sets is the sum of their ordinals (\Cref{exe:747n2vsf}), and the
+ordinal of any ordinal is itself,
+\begin{displaymath}
+  \operatorname{Ord}(U)
+  =
+  \operatorname{Ord}(\alpha \sqcup \beta) + \operatorname{Ord}(\gamma)
+  =
+  (\alpha + \beta) + \gamma,
+\end{displaymath}
+and
+\begin{displaymath}
+  \operatorname{Ord}(V)
+  =
+  \operatorname{Ord}(\alpha) + \operatorname{Ord}(\beta \sqcup \gamma)
+  =
+  \alpha + (\beta + \gamma).
+\end{displaymath}
+It follows that \((\alpha + \beta) + \gamma\) equals
+\(\alpha + (\beta + \gamma)\).
+
+If \(\alpha\) is a subset of \(\alpha'\), then the disjoint union
+\(Z\) of \(\alpha\) and \(\beta\) is a subset of the disjoint union
+\(Z'\) of \(\alpha'\) and \(\beta\); the order on \(Z\) induced by the
+order on \(Z'\) is the same as the order induced on it by the orders
+on \(\alpha\) and \(\beta\); this means that the inclusion from \(Z\)
+to \(Z'\) is a strictly increasing function; therefore, by
+\Cref{exe:azb90ixm}, the ordinal \(\alpha + \beta\) of \(Z\) is a
+subset of the ordinal \(\alpha' + \beta\) of \(Z\).  On the other
+hand, if \(\alpha + \beta\) is an element of \(\alpha' + \beta\), then
+by \Cref{thm:xut6v700}, \(\alpha + \beta \neq \alpha' + \beta\) and
+\(\alpha' + \beta \notin \alpha + \beta\); by \Cref{thm:lebsg6gf},
+this is the same as saying that \(\alpha' + \beta\) is not a subset of
+\(\alpha + \beta\); therefore, by the first part of this item,
+\(\alpha'\) is not a subset of \(\alpha\), so
+\(\alpha' \notin \alpha\) and \(\alpha' \neq \alpha\); it follows that
+\(\alpha \in \alpha'\).
+
+If \(\beta\) is an element of \(\beta'\), then \(\beta\) is a proper
+segment of \(\beta'\) by \Cref{thm:9hac1s0p}; \Cref{exe:5b354opw}
+implies that the set \(Z = \alpha \sqcup \beta\) is a segment of the
+well-ordered set \(Z' = \alpha \sqcup \beta'\); the complement of
+\(Z\) in \(Z'\) equals that of \(\beta\) in \(\beta'\); therefore,
+\(Z\) is a proper segment of \(Z'\); it follows from
+\Cref{exe:azb90ixm} that the ordinal \(\alpha + \beta\) of \(Z\) is an
+element of the ordinal \(\alpha + \beta'\) of \(Z'\).  Conversely, if
+\(\alpha + \beta \in \alpha + \beta'\), then by \Cref{thm:xut6v700},
+\(\alpha + \beta \neq \alpha + \beta'\) and
+\(\alpha + \beta' \notin \alpha + \beta\); the first of these two
+relations implies that \(\beta \neq \beta'\), while the second
+implies, by the already proved ``only if'' part of this item, that
+\(\beta' \notin \beta\); therefore, again by \Cref{thm:xut6v700},
+\(\beta \in \beta'\).
+
+If \(\beta \neq \beta'\), then by \Cref{thm:xut6v700}, either
+\(\beta \in \beta'\) or \(\beta' \in \beta\); accordingly, by
+\cref{item:bhc8ls0b} of this theorem, either
+\(\alpha + \beta \in \alpha + \beta'\) or
+\(\alpha + \beta' \in \alpha + \beta\), hence
+\(\alpha + \beta \neq \alpha + \beta'\).  It follows that if
+\(\alpha + \beta = \alpha + \beta'\), then \(\beta = \beta'\).
+
+\begin{theorem}
+  \label{thm:udacgei9}
+  \begin{enumerate}
+  \item The natural numbers are the only finite ordinals.
+  \item The ordinal sum of two natural numbers is the same as their
+    sum as natural numbers.
+  \item If \(\alpha\) is an infinite ordinal, then
+    \(n + \alpha = \alpha\) for every natural number \(n\).
+  \end{enumerate}
+\end{theorem}
+
+Suppose \(\alpha\) is a finite ordinal.  Then there is a bijection
+\(u\) from \(\alpha\) onto some natural number \(n\).  Define a
+function \(f : n \to \alpha\) by setting
+\begin{displaymath}
+  f(k) =
+  \begin{cases}
+    \min(\alpha)
+    & \text{if} ~ k = 0 \\
+    \min(\alpha \setminus \{f(0), \dotsc, f(k-1)\})
+    & \text{if} ~ 0 < k < n
+  \end{cases}
+\end{displaymath}
+for all \(k \in n\).  The function \(f\) is strictly increasing, and
+hence injective.  Therefore, the composite
+\(f \circ u : \alpha \to \alpha\) is injective.  As \(\alpha\) is
+finite, this implies that \(f \circ u\) is a bijection.  The
+bijectivity of \(u\) now implies that \(f\) is a bijection, and hence
+an isomorphism from \(\alpha\) to \(n\).
+
+For any two natural numbers \(m\) and \(n\), the function \(f\) from
+\(m \sqcup n\) to \(m + n\) that is defined by
+\begin{displaymath}
+  f(x) =
+  \begin{cases}
+    x & \text{if} ~ x \in m \\
+    m + x & \text{if} ~ x \in n
+  \end{cases}
+\end{displaymath}
+is an isomorphism.  As \(m + n\) is an ordinal, it follows that the
+ordinal sum of \(m\) and \(n\) equals \(m + n\).  Thus, the ordinal
+sum of two natural numbers is the same as their sum as natural
+numbers.
+
+Suppose now that \(\alpha\) is an infinite ordinal.  We will show by
+induction on \(n\) that \(n + \alpha = \alpha\) for every natural
+number \(n\).  The equality \(0 + \alpha = \alpha\) was verified in
+\Cref{thm:8e0yiygg}.  Assume that \(n > 0\), and that
+\((n-1) + \alpha = \alpha\).  The associativity of ordinal addition
+(\Cref{thm:506mms8z}) implies then that
+\begin{displaymath}
+  n + \alpha =
+  (1 + (n-1)) + \alpha =
+  1 + ((n-1) + \alpha) =
+  1 + \alpha.
+\end{displaymath}
+So it is enough to verify that \(1 + \alpha = \alpha\).  As \(\alpha\)
+is an infinite set, we can inductively define a sequence
+\((\beta_i)_{i \in \mathbb{N}}\) in \(\alpha\) by setting
+\begin{displaymath}
+  \beta_i =
+  \min (\alpha \setminus \{\beta_j \,\vert\, 0 \leq j < i\})
+\end{displaymath}
+for every natural number \(i\).  Thus, \(\beta_0\) is the minimum of
+\(\alpha\), the sequence \((\beta_i)\) is strictly increasing, and
+\(\beta_i < \beta\) for every natural number \(i\) and for every
+element \(\beta\) of \(\alpha\) that is distinct from all the
+\(\beta_j\).  Now, the function \(f : 1 \sqcup \alpha \to \alpha\)
+that is defined by
+\begin{displaymath}
+  f(x) =
+  \begin{cases}
+    \beta_0
+    & \text{if} ~ x = 0 \\
+    \beta_{i+1}
+    & \text{if} ~ x = \beta_i ~ \text{for some} ~ i \geq 0 \\
+    x
+    & \text{if} ~ x \in \alpha \setminus \{\beta_0, \beta_1, \dotsc\}
+  \end{cases}
+\end{displaymath}
+is an isomorphism.  It follows that the ordinal \(1 + \alpha\) of
+\(1 \sqcup \alpha\) equals \(\alpha\).  This proves the last item of
+the theorem.
+
+A consequence of \Cref{thm:udacgei9} is that
+\(0 + \omega = 1 + \omega = \omega\), where \(\omega\) is the set of
+natural numbers considered as an ordinal as in \Cref{sec:t851d2lg}.
+As \(1 \nsubset 0\), \(0 \in 1\), and \(\omega \notin \omega\), the
+converses of both the statements in \cref{item:n6u00qz2} of
+\Cref{thm:506mms8z} are false in general.  The right cancellation law
+is also false for the addition of ordinals because
+\(0 + \omega = 1 + \omega\) and \(0 \neq 1\).  Similarly,
+\(\omega \neq \omega^+\) because \(\omega \in \omega^+\) and
+\(\omega \notin \omega\); therefore, \(1 + \omega = \omega\) and
+\(\omega + 1 = \omega^+\) are distinct ordinals; thus, the addition of
+ordinals is not commutative.
 
 \subsection{Exercises}
 \label{sec:q1c2w2jy}
@@ -2397,6 +2730,179 @@ every ordinal is its own rank.
   \label{exe:qgdrw0j7}
   Show that every ordinal \(\alpha\) equals the union of the ordinals
   \(\beta^+\) as \(\beta\) runs over the elements of \(\alpha\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:owfnmkbo}
+  Let \(f\) and \(g\) be strictly increasing functions from a
+  well-ordered set \(X\) to a well-ordered set \(Y\).  Suppose that
+  \(f(X)\) and \(g(X)\) are segments of \(Y\).  Then \(f = g\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:mybmksm1}
+  Let \(X\) and \(Y\) be well-ordered sets, \((X_i)_{i \in I}\) a
+  family of segments of \(X\) whose union is \(X\), and
+  \((Y_i)_{i \in I}\) a family of segments of \(Y\) whose union is
+  \(Y\).  For each \(i \in I\), let \(f_i : X_i \to Y_i\) be an
+  isomorphism.  Then there is a unique function \(f : X \to Y\) such
+  that \(f(x) = f_i(x)\) for all \(i \in I\) and \(x \in X_i\).  The
+  function \(f\) is an isomorphism from \(X\) to \(Y\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:e0x1yv2c}
+  Let \(X\) be a well-ordered set, and \((X_i)_{i \in I}\) a family of
+  segments of \(X\) whose union is \(X\).  Then
+  \(\operatorname{Ord}(X)\) equals the union of the sets
+  \(\operatorname{Ord}(X_i)\) as \(i\) runs over \(I\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:5b354opw}
+  Let \(X\) and \(Y\) be ordered sets, and \(Y'\) a segment of \(Y\).
+  Then \(X \sqcup Y'\) is a segment of \(X \sqcup Y\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:747n2vsf}
+  Prove that the ordinal of the disjoint union of any two well-ordered
+  sets \(X\) and \(Y\) equals the sum of the ordinals of \(X\) and
+  \(Y\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:azb90ixm}
+  Show that a well-ordered set \(X\) is isomorphic to a proper segment
+  of a well-ordered set \(Y\) if and only if the ordinal of \(X\) is
+  an element of the ordinal of \(Y\).  Conclude that there is a
+  strictly increasing function from \(X\) to \(Y\) if and only if the
+  ordinal of \(X\) is a subset of the ordinal of \(Y\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:ag2uw6ck}
+  Let \(\alpha\) and \(\beta\) be ordinals such that \(\alpha\) is a
+  subset of \(\beta\).  Then there is a unique ordinal \(\gamma\) such
+  that \(\beta = \alpha + \gamma\).  (The ordinal \(\gamma\) is
+  denoted by \(\beta - \alpha\).)
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:nu1k66wl}
+  An ordinal \(\alpha\) is called \firstterm{decomposable} if it is
+  either empty, or has elements \(\beta\) and \(\gamma\) such that
+  \(\alpha = \beta + \gamma\).  It is called
+  \firstterm{indecomposable} if it is not decomposable.  Prove that
+  the following statements are equivalent for any nonempty ordinal
+  \(\alpha\):
+  \begin{enumerate}
+  \item \(\alpha\) is indecomposable.
+  \item If \(\beta\) and \(\gamma\) are ordinals such that
+    \(\alpha = \beta + \gamma\), then either \(\beta = \alpha\) and
+    \(\gamma = 0\), or \(\beta \in \alpha\) and \(\gamma = \alpha\).
+  \item \(\alpha = \beta + \alpha\) for every element \(\beta\) of
+    \(\alpha\).
+  \item If \(\beta\) and \(\gamma\) are ordinals such that
+    \(\alpha \subset \beta + \gamma\), then either
+    \(\alpha \subset \beta\) or \(\alpha \subset \gamma\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:v5ldoxkc}
+  Let \(\alpha, \beta, \gamma\) be ordinals such that
+  \(\alpha = \beta + \gamma\).  Verify that \(\beta\) and \(\gamma\)
+  are subsets of \(\alpha\), and that \(\beta\) is an element of
+  \(\alpha\) if \(\gamma\) is nonempty.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vwz0bksh}
+  Let \(\alpha, \beta, \beta', \gamma, \gamma'\) be ordinals.  Suppose
+  that \(\alpha = \beta + \gamma = \beta' + \gamma'\).  Prove that
+  \(\gamma'\) is a subset of \(\gamma\) if \(\beta\) is a subset of
+  \(\beta'\), and that \(\beta'\) is an element of \(\beta\) if
+  \(\gamma\) is an element of \(\gamma'\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:6bo4uirh}
+  Let \(X\) be a nonempty set of indecomposable ordinals.  Prove that
+  the union of the elements of \(X\) is also an indecomposable
+  ordinal.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vmlhobjb}
+  Let \(\alpha\) be a nonempty ordinal, \(\lambda\) the smallest
+  nonempty ordinal for which there is an ordinal \(\gamma\) such that
+  \(\alpha = \lambda + \gamma\), and \(\mu\) the smallest nonempty
+  ordinal for which there is an ordinal \(\beta\) such that
+  \(\alpha = \beta + \mu\).  Prove that \(\lambda\) and \(\mu\) are
+  indecomposable ordinals that are subsets of \(\alpha\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:726wa6d5}
+  Let \(\alpha\) be a nonempty ordinal.  Show that there is a unique
+  ordinal \(\theta\) which is indecomposable and a subset of
+  \(\alpha\), and has the property that every indecomposable ordinal
+  that is a subset of \(\alpha\) is a subset of \(\theta\).  Show also
+  that \(\alpha - \theta\) is the smallest ordinal \(\mu\) for which
+  there is an indecomposable ordinal \(\beta\) such that
+  \(\alpha = \beta + \mu\) (\Cref{exe:ag2uw6ck,exe:vmlhobjb}).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:fdb94svq}
+  This exercise is about the decomposition of an arbitrary ordinal
+  into the sum of finitely many indecomposable ordinals
+  \parencite[Chapter~XVI, Section~6, Theorem~2]{bib:embpmrus}.
+  \begin{enumerate}
+  \item Let \(\alpha\) be a nonempty ordinal, and
+    \begin{displaymath}
+      (\alpha_1, \dotsc, \alpha_n)
+    \end{displaymath}
+    a finite sequence of indecomposable ordinals such that
+    \begin{displaymath}
+      \alpha = \alpha_1 + \dotsb + \alpha_n
+      \quad \text{and} \quad
+      \alpha_1 \supset \dotsb \supset \alpha_n.
+    \end{displaymath}
+    (Parentheses are unnecessary in this sum because of the
+    associativity of ordinal addition that was verified in
+    \Cref{thm:506mms8z}.)  Verify that \(\alpha_1\) is the largest
+    indecomposable ordinal that is a subset of \(\alpha\)
+    (\Cref{exe:726wa6d5}).
+  \item Let
+    \begin{displaymath}
+      (\alpha_1, \dotsc, \alpha_n),
+      \quad
+      (\alpha'_1, \dotsc, \alpha'_m)
+    \end{displaymath}
+    be two finite sequences of indecomposable ordinals such that
+    \begin{displaymath}
+      \alpha_1 + \dotsb + \alpha_n = \alpha'_1 + \dotsb + \alpha'_m,
+      \;
+      \alpha_1 \supset \dotsb \supset \alpha_n,
+      \;
+      \alpha'_1 \supset \dotsb \supset \alpha'_m.
+    \end{displaymath}
+    Show that \(n = m\) and \(\alpha_i = \alpha'_i\) for
+    \(1 \leq i \leq n\).
+  \item Prove that for every ordinal \(\alpha\), there is a unique
+    finite sequence
+    \begin{displaymath}
+      (\alpha_1, \dotsc, \alpha_n)
+    \end{displaymath}
+    of indecomposable ordinals such that
+    \begin{displaymath}
+      \alpha = \alpha_1 + \dotsb + \alpha_n
+      \quad \text{and} \quad
+      \alpha_1 \supset \dotsb \supset \alpha_n.
+    \end{displaymath}
+  \end{enumerate}
 \end{exercise}
 
 \subsection{Solutions}
@@ -3884,6 +4390,522 @@ every ordinal is its own rank.
   \(\delta \in \alpha\).  It follows that \(\alpha\) is a superset of
   the union of \(\beta^+\) as \(\beta\) runs over \(\alpha\).  It
   follows that \(\alpha = \cup_{\beta \in \alpha}\beta^+\).
+\end{solution}
+
+\begin{solution}[\ref{exe:owfnmkbo}]
+  \label{sol:wcch8wta}
+  Let \(A\) be the set of elements \(x\) of \(X\) such that
+  \(f(x) = g(x)\).  Suppose \(a\) is an element of \(X\) such that
+  \((-\infty, a)\) is a subset of \(A\).  If \(f(a) < g(a)\), then as
+  \(g(X)\) is a segment of \(Y\), and \(g(a) \in g(X)\),
+  \(f(a) \in g(X)\); therefore, \(f(a) = g(x)\) for some \(x \in X\);
+  thus, \(g(x) < g(a)\); as \(g\) is an isomorphism from \(X\) to
+  \(g(X)\), we get \(x < a\); now, as \(f\) is strictly increasing,
+  this implies that \(f(x) < f(a)\); on the other hand, as
+  \((-\infty, a) \subset A\), \(f(x) = g(x) = f(a)\); we thus arrive
+  at a contradiction; it follows that \(f(a) \nless g(a)\).
+  Similarly, \(g(a) \nless f(a)\).  Therefore, by the trichotomy of
+  \(Y\), \(f(a) = g(a)\).  Transfinite induction \Cref{thm:5vxgawq0}
+  now implies that \(A = X\), so \(f = g\).
+\end{solution}
+
+\begin{solution}[\ref{exe:mybmksm1}]
+  \label{sol:yxq37p1c}
+  Suppose \(i,j\) are two elements of \(I\).  As \(X_i\) and \(X_j\)
+  are segments of \(X\), by \Cref{exe:rpm18mof}, their intersection
+  \(X_{ij}\) is also a segment of \(X\).  Its image \(f_i(X_{ij})\) is
+  a segment of \(Y_i\) because \(f_i\) is an isomorphism from \(X_i\)
+  to \(Y_i\); as \(Y_i\) is a segment of \(Y\), this implies that
+  \(f_i(X_{ij})\) is a segment of \(Y\).  Similarly, \(f_j(X_{ij})\)
+  is also a segment of \(Y\).  As the functions \(f_i : X_{ij} \to Y\)
+  and \(f_j : X_{ij} \to Y\) are strictly increasing, it follows from
+  \Cref{exe:mybmksm1} that \(f_i(x) = f_j(x)\) for all
+  \(x \in X_{ij}\).  Therefore, there is a unique function
+  \(f : X \to Y\) such that \(f(x) = f_i(x)\) for all \(i \in I\) and
+  \(x \in X_i\).  Suppose \(x, x' \in X\) and \(x < x'\); as the
+  \(X_i\) cover \(X\), there is an index \(i\) such that
+  \(x' \in X_i\); as \(X_i\) is a segment, \(x \in X_i\); now, because
+  \(f_i\) is strictly increasing on \(X_i\), we get
+  \(f(x) = f_i(x) < f_i(x') = f(x')\).  Therefore, \(f\) is strictly
+  increasing.  As the sets \(Y_i = f_i(X_i)\) cover \(Y\), \(f\) is
+  surjective.  It follows from \Cref{exe:v1tw1ijd} that \(f\) is an
+  isomorphism from \(X\) to \(Y\).
+\end{solution}
+
+\begin{solution}[\ref{exe:e0x1yv2c}]
+  \label{sol:2a9apl7w}
+  Let \(\alpha_i = \operatorname{Ord}(X_i)\) for every \(i \in I\),
+  and let \(\alpha\) denote the union of the \(\alpha_i\) as \(i\)
+  runs over \(I\).  The set \(\alpha\) is an ordinal by
+  \Cref{thm:9s24zgf9}.  For every \(i\), let \(f_i\) denote the unique
+  isomorphism from \(X_i\) to \(\alpha_i\).  If \(\leq\) denotes the
+  canonical order on \(\alpha\), \(i \in I\), \(\beta \in \alpha_i\),
+  \(\beta' \in \alpha\), and \(\beta' < \beta\), then
+  \(\beta' \in \beta\) by the definition of \(\leq\); as the ordinal
+  \(\alpha_i\) is a transitive set, \(\beta' \in \alpha_i\);
+  therefore, \(\alpha_i\) is a segment of \(\alpha\) for every \(i\).
+  By \Cref{exe:mybmksm1}, there is a unique isomorphism
+  \(f : X \to \alpha\) such that \(f(x) = f_i(x)\) for all
+  \(x \in X\).  It follows that \(\operatorname{Ord}(X) = \alpha\).
+\end{solution}
+
+\begin{solution}[\ref{exe:5b354opw}]
+  \label{sol:suyilrlv}
+  Let \(Z = X \sqcup Y\) and \(Z' = X \sqcup Y'\).  Identify \(X\) and
+  \(Y\) with their canonical images in \(Z\); then \(X\) and \(Y\)
+  form a partition of \(Z\), and \(Z' = X \cup Y'\).  Let \(z_1\) be
+  an element of \(Z\) that belongs to \(Z'\), and let \(z_2\) be an
+  element of \(Z\) such that \(z_2 < z_1\).  Then either
+  \(z_2 \in X\), \(z_1 \in X\), and \(z_2 < z_1\); or \(z_2 \in X\)
+  and \(z_1 \in Y'\); or \(z_2 \in Y\), \(z_1 \in Y'\), and
+  \(z_2 < z_1\).  In the first two cases, \(z_2 \in X\); in the last
+  case, \(z_2 \in Y'\) because \(Y'\) is a segment of \(Y\).
+  Therefore, \(z_2\) is an element of \(Z'\) in all the cases.  It
+  follows that \(Z'\) is a segment of \(Z\).
+\end{solution}
+
+\begin{solution}[\ref{exe:747n2vsf}]
+  \label{sol:2jc3f0e5}
+  Let \(\alpha\) denote the ordinal of \(X\), and \(\beta\) that of
+  \(Y\).  Then there are unique isomorphisms \(f : X \to \alpha\),
+  \(g : Y \to \beta\), and
+  \(h : \alpha \sqcup \beta \to \alpha + \beta\).  Let \(f \sqcup g\)
+  be the function from \(X \sqcup Y\) to \(\alpha \sqcup \beta\) that
+  is induced by \(f\) and \(g\).  It is obviously an isomorphism.
+  Therefore, the composite \(h \circ (f \sqcup g)\) is an isomorphism
+  from \(X \sqcup Y\) to \(\alpha + \beta\).  It follows that
+  \(\alpha + \beta\) is the ordinal of \(X \sqcup Y\).
+\end{solution}
+
+\begin{solution}[\Cref{exe:azb90ixm}]
+  \label{sol:87purs68}
+  Denote the ordinal of \(X\) by \(\alpha\), and that of \(Y\) by
+  \(\beta\).  Let \(f : X \to \alpha\) and \(g : Y \to \beta\) be the
+  canonical isomorphisms.
+  
+  Suppose \(u : X \to Y\) is a strictly increasing function whose
+  image is a proper segment of \(Y\).  Then the composite
+  \(v = g \circ u \circ f^{-1}\) is a strictly increasing function
+  from \(\alpha\) to \(\beta\), and its image is a proper segment
+  \(\gamma\) of \(\beta\).  By \Cref{thm:htdzbbwv} \(\gamma\) is of
+  the form \((-\infty, \delta)\) for some \(\delta \in \beta\), and by
+  \Cref{thm:9hac1s0p} \((-\infty, \delta)\) equals \(\delta\).
+  Therefore, \(\gamma\) equals \(\delta\), and is hence an element of
+  \(\beta\).  In particular, \(\gamma\) is an ordinal by
+  \Cref{thm:5qmhh3to}.  As \(v\) induces an isomorphism from
+  \(\alpha\) to \(\gamma\), by \Cref{thm:9v9g7x0t}
+  \(\alpha = \gamma\).  It follows that \(\alpha \in \beta\).
+
+  Conversely, suppose \(\alpha \in \beta\).  Then \(\alpha\) is a
+  proper segment of \(\beta\) by \Cref{thm:9hac1s0p}.  Thus, the
+  function \(g^{-1} \circ i \circ f\), where \(i\) is the inclusion
+  from \(\alpha\) to \(\beta\), is a strictly increasing function from
+  \(X\) to \(Y\) whose image is a proper segment \(Z\) of \(Y\).
+  Therefore, it induces an isomorphism from \(X\) onto \(Z\).
+
+  Now, suppose there is a strictly increasing function from \(X\) to
+  \(Y\).  Then \(X\) is isomorphic to a subset of \(Y\).  So by
+  \Cref{thm:xhbclgwz}, \(X\) is isomorphic to a segment of \(Y\).
+  Thus, there is a strictly increasing function \(u : X \to Y\) whose
+  image is a segment of \(Y\).  If \(u(X) = Y\), then \(u\) is an
+  isomorphism from \(X\) to \(Y\), so \(\alpha = \beta\).  On the
+  other hand, if \(u(X) \neq Y\), then \(X\) is isomorphic to the
+  proper segment \(u(X)\) of \(Y\); therefore, \(\alpha \in \beta\) by
+  the first part of this exercise.  We thus have
+  \(\alpha \subset \beta\) because \(\beta\) is a transitive set.
+
+  Conversely, if \(\alpha \subset \beta\), then the function
+  \(g^{-1} \circ i \circ f\), where \(i\) is the inclusion from
+  \(\alpha\) to \(\beta\), is a strictly increasing function from
+  \(X\) to \(Y\).
+\end{solution}
+
+\begin{solution}[\Cref{exe:ag2uw6ck}]
+  \label{sol:uehkw7vd}
+  Let \(X\) denote the complement of \(\alpha\) in \(\beta\).  The
+  order on \(X\) induced by that on \(\beta\) makes \(X\) a
+  well-ordered set.  Let \(\gamma\) denote the ordinal of \(X\).  As
+  \(\alpha\) and \(X\) form a partition of \(\beta\),
+  \(\beta = \alpha \sqcup X\) as sets.  As \(\alpha\) is a subset of
+  \(\beta\), by \Cref{thm:9hac1s0p,thm:lebsg6gf}, \(\alpha\) is a
+  segment of \(\beta\).  Since \(\alpha\) and \(X\) are disjoint
+  subsets of \(\beta\), this implies that \(\theta < x\) in the
+  canonical order on \(\beta\) for all \(\theta \in \alpha\) and
+  \(x \in X\).  It follows that the canonical order on \(\beta\) is
+  the disjoint union order on \(\alpha \sqcup X\).  Thus,
+  \(\beta = \alpha \sqcup X\) as ordered sets.  As \(X\) is isomorphic
+  to \(\gamma\), we get an isomorphism from \(\beta\) to
+  \(\alpha \sqcup \gamma\).  Therefore, \(\beta\) equals the ordinal
+  \(\alpha + \gamma\) of \(\alpha \sqcup \gamma\).  This verifies the
+  existence part of the exercise.  As for the uniqueness, if
+  \(\gamma\) and \(\gamma'\) are two ordinals such that
+  \(\alpha + \gamma = \beta = \alpha + \gamma'\), then the left
+  cancellation property from \Cref{thm:506mms8z} implies that
+  \(\gamma = \gamma'\).
+\end{solution}
+
+\begin{solution}[\Cref{exe:nu1k66wl}]
+  \label{sol:lodny8ys}
+  Suppose \(\alpha\) is indecomposable.  This means that \(\alpha\) is
+  nonempty and not the sum of any two of its elements.  Let \(\beta\)
+  and \(\gamma\) be ordinals such that \(\alpha = \beta + \gamma\).
+  If \(\beta = \alpha\), then \(\beta + \gamma = \beta + 0\), so by
+  the left cancellation property in \Cref{thm:506mms8z},
+  \(\gamma = 0\).  On the other hand, if \(\beta \neq \alpha\), then
+  \(\gamma \neq 0\) because \(\beta + 0 = \beta \neq \alpha\), so
+  \(0\) is a proper subset of \(\gamma\); by \Cref{thm:lebsg6gf},
+  \(0 \in \gamma\); therefore, by \Cref{thm:506mms8z},
+  \(\beta = \beta + 0\) is an element of \(\alpha = \beta + \gamma\);
+  so the indecomposability of \(\alpha\) implies that \(\gamma\) is
+  not an element of \(\alpha\); thus, \(\gamma\) is not a proper
+  subset of \(\alpha\).  On the other hand, \(0\) is a subset of
+  \(\beta\); therefore, \(\gamma = 0 + \gamma\) is a subset of
+  \(\alpha = \beta + \gamma\); it follows that \(\gamma = \alpha\).
+  This proves that the first statement implies the second.
+
+  Suppose that the second statement in the exercise is true.  Let
+  \(\beta\) be any element of \(\alpha\).  The transitivity of
+  \(\alpha\) implies that \(\beta\) is a subset of \(\alpha\), so by
+  \Cref{exe:ag2uw6ck}, there is a unique ordinal
+  \(\gamma = \alpha - \beta\) such that \(\alpha = \beta + \gamma\).
+  As \(\alpha \notin \alpha\), the element \(\beta\) of \(\alpha\) is
+  distinct from \(\alpha\).  Therefore, the first alternative of the
+  hypothesis is false, hence the second is true.  In particular,
+  \(\gamma = \alpha\).  Therefore, \(\alpha = \beta + \alpha\).  The
+  second statement thus implies the third.
+
+  Assume the third statement now.  Suppose \(\beta\) and \(\gamma\)
+  are ordinals such that \(\alpha = \beta + \gamma\) and
+  \(\alpha \nsubset \beta\).  By \Cref{thm:lebsg6gf,thm:xut6v700}, the
+  relations \(\alpha \nsubset \beta\) and \(\beta \in \alpha\) are
+  equivalent.  So by the hypothesis, \(\alpha = \beta + \alpha\).
+  Thus, \(\beta + \alpha \subset \beta + \gamma\).  If this inclusion
+  is an equality, then \Cref{thm:506mms8z} implies that \(\alpha\)
+  equals \(\gamma\); on the other hand, if the inclusion is proper,
+  then \(\beta + \alpha \in \beta + \gamma\), and it follows from the
+  same theorem that \(\alpha \in \gamma\).  Therefore, \(\alpha\) is a
+  subset of \(\gamma\) in both the cases.  So the third statement
+  implies the fourth.
+
+  Suppose now that the fourth statement is true.  To prove that
+  \(\alpha\) is indecomposable, we have to show that if \(\beta\) and
+  \(\gamma\) are ordinals such that \(\alpha = \beta + \gamma\) and
+  \(\beta \in \alpha\), then \(\gamma \notin \alpha\).  By
+  \Cref{thm:lebsg6gf,thm:xut6v700}, \(\beta \in \alpha\) if and only
+  if \(\alpha \nsubset \beta\).  The fourth statement implies that
+  \(\alpha \subset \gamma\).  Again by the same theorem,
+  \(\gamma \notin \alpha\).  Therefore, \(\alpha\) is indecomposable.
+  Thus, all the four statements in the exercise are equivalent.
+\end{solution}
+
+\begin{solution}[\ref{exe:v5ldoxkc}]
+  \label{sol:2pzkfvo2}
+  If \(\gamma\) is empty, then \(\alpha = \beta + 0 = \beta\); on the
+  other hand, if \(\gamma\) is nonempty, then the proper subset \(0\)
+  of \(\gamma\) is an element of \(\gamma\) by \Cref{thm:lebsg6gf},
+  hence \(\beta = \beta + 0\) is an element of the transitive set
+  \(\alpha = \beta + \gamma\) by \Cref{thm:506mms8z}; therefore, in
+  both the cases, \(\beta\) is a subset of \(\alpha\).  As
+  \(0 \subset \beta\), by the same theorem, \(\gamma = 0 + \gamma\) is
+  a subset of \(\alpha = \beta + \gamma\).
+\end{solution}
+
+\begin{solution}[\ref{exe:vwz0bksh}]
+  \label{sol:27wcstr7}
+  Suppose \(\beta\) is a subset of \(\beta'\).  If \(\gamma'\) is not
+  a subset of \(\gamma\), then by \Cref{thm:lebsg6gf,thm:xut6v700},
+  \(\gamma'\) is an element of \(\gamma\), hence
+  \(\beta' + \gamma' = \alpha\) is an element of
+  \(\beta + \gamma = \alpha\) by \Cref{thm:506mms8z}; this contradicts
+  \Cref{thm:7cc2cckf}.  Therefore, \(\gamma'\) is a subset of
+  \(\gamma\).  This proves the first part of the exercise.
+
+  The second part of the exercise follows from the first by taking
+  negations.
+\end{solution}
+
+\begin{solution}[\ref{exe:6bo4uirh}]
+  \label{sol:30t76fdi}
+  The union \(\alpha\) of the elements of \(X\) is an ordinal by
+  \Cref{thm:9s24zgf9}.  It is nonempty because \(X\) is nonempty.  To
+  prove that \(\alpha\) is indecomposable, suppose
+  \(\alpha = \alpha_1 + \alpha_2\), where \(\alpha_1\) and
+  \(\alpha_2\) are ordinals such that \(\alpha_1 \in \alpha\); we have
+  to show that \(\alpha_2 \notin \alpha\).  The element \(\alpha_1\)
+  of \(\alpha\) is an element of some element \(\beta_1\) of \(X\); by
+  \Cref{thm:lebsg6gf,thm:xut6v700}, \(\beta_1\) is not a subset of
+  \(\alpha_1\).  On the other hand, as \(\beta_1\) is an
+  indecomposable ordinal and a subset of
+  \(\alpha = \alpha_1 + \alpha_2\), by \Cref{exe:nu1k66wl}, it is
+  either a subset of \(\alpha_1\) or a subset of \(\alpha_2\).
+  Therefore, \(\beta_1\) is a subset of \(\alpha_2\).  The element
+  \(\alpha_1\) of the transitive set \(\beta_1\) is a subset of
+  \(\beta_1\).  Thus, \(\alpha_1\) is a subset of \(\alpha_2\).  Now
+  any element \(\beta\) of \(X\) is an indecomposable ordinal, and is
+  a subset of \(\alpha = \alpha_1 + \alpha_2\), so it is either a
+  subset of \(\alpha_1\) or \(\alpha_2\); since \(\alpha_1\) is a
+  subset of \(\alpha_2\), it follows that \(\beta\) is a subset of
+  \(\alpha_2\).  Therefore, \(\alpha\) is a subset of \(\alpha_2\),
+  hence \(\alpha_2\) is not an element of \(\alpha\) by
+  \Cref{thm:lebsg6gf,thm:xut6v700}.  This verifies that \(\alpha\) is
+  an indecomposable ordinal.
+\end{solution}
+
+\begin{solution}[\ref{exe:vmlhobjb}]
+  \label{sol:cec8sl16}
+  Let \(P\) be the assignment that attaches to every ordinal \(\beta\)
+  the statement that \(\beta\) is nonempty and
+  \(\alpha = \beta + \gamma\) for some ordinal \(\gamma\).  Since
+  \(\alpha\) is nonempty and \(\alpha = \alpha + 0\), the statement
+  \(P(\alpha)\) is true.  Therefore, by \Cref{exe:zgqzqjo2}, there is
+  a smallest ordinal \(\lambda\) such that \(P(\lambda)\) is true.
+  The truth of \(P(\lambda)\) means that \(\lambda\) is nonempty, and
+  \(\alpha = \lambda + \gamma\) for some ordinal \(\gamma\).
+  Suppose \(\lambda_1\) and \(\lambda_2\) are ordinals such that
+  \(\lambda = \lambda_1 + \lambda_2\) and \(\lambda_1 \in \lambda\).
+  Then \(\lambda_1\) is a proper subset of \(\lambda\) by
+  \Cref{thm:lebsg6gf}.  The minimality of \(\lambda\) implies that the
+  statement \(P(\lambda_1)\) is false.  The associativity of ordinal
+  addition implies that
+  \begin{displaymath}
+    \lambda_1 + (\lambda_2 + \gamma) =
+    (\lambda_1 + \lambda_2) + \gamma =
+    \lambda + \gamma = \alpha.
+  \end{displaymath}
+  As \(P(\lambda_1)\) is false, this implies that \(\lambda_1\) is
+  empty.  Thus,
+  \begin{displaymath}
+    \lambda_2 = 0 + \lambda_2 = \lambda_1 + \lambda_2 = \lambda,
+  \end{displaymath}
+  hence \(\lambda_2\) is not an element of \(\lambda\) by
+  \Cref{thm:7cc2cckf}.  This shows that \(\lambda\) is indecomposable.
+  
+  Let \(Q\) be the assignment that attaches to every ordinal
+  \(\gamma\) the statement that \(\gamma\) is nonempty and
+  \(\alpha = \beta + \gamma\) for some ordinal \(\beta\).  Since
+  \(\alpha\) is nonempty and \(\alpha = 0 + \alpha\), the statement
+  \(Q(\alpha)\) is true.  Therefore, by \Cref{exe:zgqzqjo2}, there is
+  a smallest ordinal \(\mu\) such that \(Q(\mu)\) is true.  The truth
+  of \(Q(\mu)\) means that \(\mu\) is nonempty, and
+  \(\alpha = \beta + \mu\) for some ordinal \(\beta\).  Suppose
+  \(\mu_1\) and \(\mu_2\) are ordinals such that
+  \(\mu = \mu_1 + \mu_2\) and \(\mu_2 \in \mu\).  Then \(\mu_2\) is a
+  proper subset of \(\mu\) by \Cref{thm:lebsg6gf}.  The minimality of
+  \(\mu\) implies that the statement \(Q(\mu_2)\) is false.  The
+  associativity of ordinal addition implies that
+  \begin{displaymath}
+    (\beta + \mu_1) + \mu_2 =
+    \beta + (\mu_1 + \mu_2) =
+    \beta + \mu = \alpha.
+  \end{displaymath}
+  As \(P(\mu_2)\) is false, this implies that \(\mu_2\) is empty.
+  Thus,
+  \begin{displaymath}
+    \mu_1 = \mu_1 + 0 = \mu_1 + \mu_2 = \mu,
+  \end{displaymath}
+  hence \(\mu_1\) is not an element of \(\mu\) by \Cref{thm:7cc2cckf}.
+  This shows that \(\mu\) is indecomposable.
+
+  By \Cref{exe:v5ldoxkc}, \(\lambda\) and \(\mu\) are subsets of
+  \(\alpha\).
+\end{solution}
+
+\begin{solution}[\ref{exe:726wa6d5}]
+  \label{sol:a6k309qx}
+  Let \(X\) be the set of all the subsets of \(\alpha\) that are
+  indecomposable ordinals.  It is nonempty because the ordinals
+  \(\lambda\) and \(\mu\) of \Cref{exe:vmlhobjb} are elements of it.
+  Therefore, by \Cref{exe:6bo4uirh}, the union \(\theta\) of the
+  elements of \(X\) is an indecomposable ordinal.  It is clearly a
+  subset of \(\alpha\).  If an indecomposable ordinal \(\beta\) is a
+  subset of \(X\), then \(\beta\) is an element of \(X\), and is hence
+  a subset of the union \(\theta\) of all the elements of \(X\).
+  Thus, \(\theta\) satisfies the conditions of the exercise.  It is
+  unique because if \(\theta'\) is another ordinal that satisfies the
+  conditions of the exercise, then both \(\theta\) and \(\theta'\) are
+  indecomposable ordinals that are subsets of \(\alpha\), and hence
+  are subsets of each other.
+
+  For the second part of the exercise, let \(\mu = \alpha - \theta\).
+  This means that \(\alpha = \theta + \mu\).  Suppose \(\gamma\) is an
+  ordinal such that \(\alpha = \beta + \gamma\) for some
+  indecomposable ordinal \(\beta\).  Then \(\beta\) is a subset of
+  \(\alpha\) by \Cref{exe:v5ldoxkc}.  The indecomposability of
+  \(\beta\) and the maximality of \(\theta\) therefore imply that
+  \(\beta \subset \theta\).  As
+  \(\alpha = \beta + \gamma = \theta + \mu\), it follows from
+  \Cref{exe:vwz0bksh} that \(\mu \subset \gamma\).  This verifies that
+  \(\mu\) is the smallest ordinal for which there is an indecomposable
+  ordinal \(\beta\) such that \(\alpha = \beta + \mu\).
+\end{solution}
+
+\begin{solution}[\Cref{exe:fdb94svq}]
+  \label{sol:mb1t9epx}
+  Let \(\alpha\) be a nonempty ordinal, and
+  \begin{displaymath}
+    (\alpha_1, \dotsc, \alpha_n)
+  \end{displaymath}
+  a finite sequence of indecomposable ordinals such that
+  \begin{displaymath}
+    \alpha = \alpha_1 + \dotsb + \alpha_n
+    \quad \text{and} \quad
+    \alpha_1 \supset \dotsb \supset \alpha_n.
+  \end{displaymath}
+  Since the empty sum of ordinals is \(0\), and as \(\alpha\) is
+  nonempty, \(n > 0\).  The indecomposable ordinal \(\alpha_1\) is a
+  subset of \(\alpha\) by \Cref{exe:v5ldoxkc}.  Suppose \(\beta\) is
+  an indecomposable ordinal that is a subset of \(\alpha\).  Then
+  \begin{displaymath}
+    \beta \subset \alpha_1 + \dotsb + \alpha_n,
+  \end{displaymath}
+  so \Cref{exe:nu1k66wl} implies that \(\beta \subset \alpha_i\) for
+  some \(i\).  As
+  \begin{displaymath}
+    \alpha_1 \supset \dotsb \supset \alpha_n,
+  \end{displaymath}
+  it follows that \(\beta \subset \alpha_1\).  Therefore, \(\alpha_1\)
+  is the largest indecomposable ordinal that is a subset of
+  \(\alpha\).  This solves the first item of the exercise.
+
+  For the second item of the exercise, let
+  \begin{displaymath}
+    (\alpha_1, \dotsc, \alpha_n),
+    \quad
+    (\alpha'_1, \dotsc, \alpha'_m)
+  \end{displaymath}
+  be two finite sequences of indecomposable ordinals such that
+  \begin{displaymath}
+    \alpha_1 + \dotsb + \alpha_n = \alpha'_1 + \dotsb + \alpha'_m,
+    \quad
+    \alpha_1 \supset \dotsb \supset \alpha_n,
+    \quad
+    \alpha'_1 \supset \dotsb \supset \alpha'_m.
+  \end{displaymath}
+  We have to show that \(n = m\) and \(\alpha_i = \alpha'_i\) for
+  \(1 \leq i \leq n\).  We will do so by induction on \(n\).  In the
+  course of the proof, we will use the notation
+  \(\alpha = \alpha_1 + \dotsb + \alpha_n\).
+
+  If \(n = 0\), then \(\alpha\) is the empty ordinal \(0\).  As the
+  nonempty ordinals \(\alpha'_i\) for \(1 \leq i \leq m\) are subsets
+  of \(\alpha\) by \Cref{exe:v5ldoxkc}, we have \(m = 0\).  This
+  verifies the base case of the induction.
+
+  Suppose \(n > 0\) and that if
+  \begin{displaymath}
+    (\sigma_1, \dotsc, \sigma_p),
+    \quad
+    (\sigma'_1, \dotsc, \sigma'_q)
+  \end{displaymath}
+  are two finite sequences of indecomposable ordinals such that
+  \(p < n\),
+  \begin{displaymath}
+    \sigma_1 + \dotsb + \sigma_p = \sigma'_1 + \dotsb + \sigma'_q,
+    \quad
+    \sigma_1 \supset \dotsb \supset \sigma_p,
+    \quad
+    \sigma'_1 \supset \dotsb \supset \sigma'_q,
+  \end{displaymath}
+  then \(p = q\) and \(\sigma_i = \sigma'_i\) for \(1 \leq i \leq p\).
+  
+  As \(n > 0\), \(\alpha_1\) is defined, and as
+  \(\alpha = \alpha_1 + \dotsb + \alpha_n\), the nonempty ordinal
+  \(\alpha_1\) is a subset of \(\alpha\) by \Cref{exe:v5ldoxkc};
+  therefore, \(\alpha\) is nonempty; the first item of the exercise
+  therefore says that \(\alpha_1\) is the largest indecomposable
+  ordinal that is a subset of \(\alpha\).  By the same reasoning, as
+  \(\alpha\) is nonempty and equals
+  \(\alpha'_1 + \dotsb + \alpha'_m\), \(\alpha'_1\) also is the
+  largest indecomposable ordinal that is a subset of \(\alpha\).
+  Therefore, \(\alpha_1 = \alpha'_1\).  Thus
+  \begin{displaymath}
+    \alpha_1 + (\alpha_2 + \dotsb + \alpha_n) =
+    \alpha'_1 + (\alpha'_2 + \dotsb + \alpha'_m) =
+    \alpha_1 + (\alpha'_2 + \dotsb + \alpha'_m).
+  \end{displaymath}
+  The left cancellation property of ordinal addition
+  (\Cref{thm:506mms8z}) implies that
+  \begin{displaymath}
+    \alpha_2 + \dotsb + \alpha_n =
+    \alpha'_2 + \dotsb + \alpha'_m.
+  \end{displaymath}
+  As the sequence \((\alpha_2, \dotsc, \alpha_n)\) has \(n-1\) terms,
+  the induction hypothesis implies that \(n-1 = m-1\) and
+  \(\alpha_i = \alpha'_i\) for \(2 \leq i \leq n\).  Thus, \(n = m\)
+  and \(\alpha_i = \alpha'_i\) for \(1 \leq i \leq n\).  This answers
+  the second item of the exercise.
+
+  The uniqueness part in the third item of the exercise is a direct
+  consequence of the second item of the exercise.  For the existence
+  part, let \(P\) be the assignment that attaches to every ordinal
+  \(\alpha\) the statement that there is a finite sequence
+  \begin{displaymath}
+    (\alpha_1, \dotsc, \alpha_n)
+  \end{displaymath}
+  of indecomposable ordinals such that
+  \begin{displaymath}
+    \alpha = \alpha_1 + \dotsb + \alpha_n
+    \quad \text{and} \quad
+    \alpha_1 \supset \dotsb \supset \alpha_n.
+  \end{displaymath}
+  Let \(\alpha\) be an ordinal such that \(P(\beta)\) is true for
+  every element \(\beta\) of \(\alpha\).  By the principle of
+  transfinite induction (\Cref{exe:jxzsy88l}), proving the existence
+  part of the third item of the exercise amounts to showing that
+  \(P(\alpha)\) is true.  If \(\alpha\) is empty, then the empty
+  sequence is a finite sequence that satisfies the desired conditions.
+  So suppose that \(\alpha\) is nonempty.
+
+  Denote by \(\mu\) the smallest nonempty ordinal such that
+  \(\alpha = \beta + \mu\) for some ordinal \(\beta\); the ordinal
+  \(\mu\) exists and is indecomposable by \Cref{exe:vmlhobjb}.  Let
+  \(Q\) be the assignment that attaches to every ordinal \(\beta\) the
+  statement that \(\alpha = \beta + \mu\).  By \Cref{exe:zgqzqjo2},
+  there is a smallest ordinal \(\beta_0\) such that \(Q(\beta_0)\) is
+  true.
+
+  As \(\alpha = \beta_0 + \mu\) and \(\mu\) is nonempty, the ordinal
+  \(\beta_0\) is an element of \(\alpha\) by \Cref{exe:v5ldoxkc}.
+  Therefore, the induction hypothesis on \(P\) implies that the
+  statement \(P(\beta_0)\) is true.  This means that there is a finite
+  sequence
+  \begin{displaymath}
+    (\beta_1, \dotsc, \beta_m)
+  \end{displaymath}
+  of indecomposable ordinals such that
+  \begin{displaymath}
+    \beta_0 = \beta_1 + \dotsb + \beta_m
+    \quad \text{and} \quad
+    \beta_1 \supset \dotsb \supset \beta_m.
+  \end{displaymath}
+
+  Suppose \(\mu\) is not a subset of \(\beta_m\).  Then \(\beta_m\) is
+  an element of \(\mu\) by \Cref{thm:lebsg6gf,thm:xut6v700}.  As
+  \(\mu\) is indecomposable, it follows from \Cref{exe:nu1k66wl} that
+  \(\mu = \beta_m + \mu\).  Therefore,
+  \begin{displaymath}
+    \alpha = \beta_0 + \mu = \beta_1 + \dotsb + \beta_m + \mu =
+    \beta' + \mu,
+  \end{displaymath}
+  where \(\beta' = \beta_1 + \dotsb + \beta_{m-1}\).  As
+  \(\beta_0 = \beta' + \beta_m\) and the indecomposable \(\beta_m\) is
+  nonempty, by \Cref{exe:v5ldoxkc}, \(\beta' \in \beta_0\).  Thus,
+  \(\beta' < \beta_0\) and \(Q(\beta')\) is true.  This contradicts
+  the minimality of \(\beta_0\).  Therefore, \(\mu \subset \beta_m\).
+
+  Define \(n = m+1\), \(\alpha_i = \beta_i\) for \(1 \leq i \leq m\)
+  and \(\alpha_n = \mu\).  Then the sequence
+  \begin{displaymath}
+    (\alpha_1, \dotsc, \alpha_n)
+  \end{displaymath}
+  of indecomposable ordinals satisfies the conditions
+  \begin{displaymath}
+    \alpha = \alpha_1 + \dotsb + \alpha_n
+    \quad \text{and} \quad
+    \alpha_1 \supset \dotsb \supset \alpha_n.
+  \end{displaymath}
+  Therefore, the statement \(P(\alpha)\) is true.  This proves the
+  existence part of the third item of the exercise.
 \end{solution}
 
 \bibsection
