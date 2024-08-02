@@ -101,7 +101,7 @@ An \firstterm{order} on \(X\) is a relation \(R\) on it which is:
 \item \firstterm{reflexive}: \(x R x\) for every element \(x\) of
   \(X\);
 \item \firstterm{anti-symmetric}: if \(x, y \in X\), and \(x R y\) and
-\(y R x\), then \(x = y\); and
+  \(y R x\), then \(x = y\); and
 \item \firstterm{transitive}: if \(x, y, z \in X\), and \(x R y\) and
   \(y R z\), then \(x R z\).
 \end{enumerate}
@@ -208,7 +208,7 @@ For any two elements \(a, b\) of an ordered set \(X\), any of the sets
 \end{align*}
 or the sets
 \begin{align*}
-    [a, \infty)& = \{ x \in X \,\vert\, a \leq x \},&
+  [a, \infty)& = \{ x \in X \,\vert\, a \leq x \},&
   (a, \infty)& = \{ x \in X \,\vert\, a < x \}, \\
   (-\infty, b]& = \{ x \in X \,\vert\, x \leq b \},&
   (-\infty, b)& = \{ x \in X \,\vert\, x < b \},
@@ -481,10 +481,10 @@ inductive family on \(X\).
   \(X\) to itself, then \(x \leq f(x)\) for all \(x \in X\).
 \end{theorem}
 
-If the set \(M\) of \(x \in X\) such that \(x > f(x)\) is nonempty,
-it has a minimum \(a\).  Let \(b = f(a)\).  As \(a \in M\), \(a > b\);
-as \(f\) is strictly increasing, \(f(a) > f(b)\), that is,
-\(b > f(b)\).  Thus, \(b \in M\) and \(b < a\), a contradiction.
+If the set \(M\) of \(x \in X\) such that \(x > f(x)\) is nonempty, it
+has a minimum \(a\).  Let \(b = f(a)\).  As \(a \in M\), \(a > b\); as
+\(f\) is strictly increasing, \(f(a) > f(b)\), that is, \(b > f(b)\).
+Thus, \(b \in M\) and \(b < a\), a contradiction.
 
 \begin{theorem}
   \label{thm:yvftewxp}
@@ -547,9 +547,9 @@ Let \(X_0\) be the set of elements \(x\) of \(X\) for which there
 exists an element \(y\) of \(Y\) such that the interval
 \((-\infty, x)\) of \(X\) is isomorphic to the interval
 \((-\infty, y)\) of \(Y\).  If \(y, y' \in Y\) and \((-\infty, y)\) is
-isomorphic to \((-\infty, y')\), then \(y = y'\); for if, for instance,
-\(y < y'\), then \((-\infty, y')\) is isomorphic to its segment
-\((-\infty, y)\), so by \Cref{thm:q14zcdkw},
+isomorphic to \((-\infty, y')\), then \(y = y'\); for if, for
+instance, \(y < y'\), then \((-\infty, y')\) is isomorphic to its
+segment \((-\infty, y)\), so by \Cref{thm:q14zcdkw},
 \((-\infty, y) = (-\infty, y')\), a contradiction.  Thus, for every
 \(x \in X_0\), there is a unique element \(y\) of \(Y\) such that
 \((-\infty, x)\) is isomorphic to \((-\infty, y)\).  We thus have a
@@ -934,17 +934,18 @@ nonempty subset \(x\) of \(\alpha\) has a minimum \(\beta\) with
 respect to the well-order \(\sqsubseteq\); thus,
 \(\beta \sqsubseteq \gamma\) for all \(\gamma \in x\); the totality of
 \(\sqsubseteq\) implies that for all \(\gamma \in x\), we have
-\(\gamma \nsqsubset \beta\), so \(\gamma \notin (-\infty, \beta) =
-\beta\); therefore, \(\beta \cap x = \emptyset\).  It follows that
-\(\alpha\) is an ordinal.  Now, for any two elements \(\beta, \gamma\)
-of \(\alpha\), we have \(\beta \sqsubset \gamma\) if and only if
+\(\gamma \nsqsubset \beta\), so
+\(\gamma \notin (-\infty, \beta) = \beta\); therefore,
+\(\beta \cap x = \emptyset\).  It follows that \(\alpha\) is an
+ordinal.  Now, for any two elements \(\beta, \gamma\) of \(\alpha\),
+we have \(\beta \sqsubset \gamma\) if and only if
 \(\beta \in (-\infty, \gamma)\); as \((-\infty, \gamma) = \gamma\),
-this means that \(\beta \sqsubset \gamma\) if and only if \(\beta \in
-\gamma\); therefore, \(\beta \sqsubseteq \gamma\) if and only if
-\(\beta \in \gamma\) or \(\beta = \gamma\), that is, if and only if
-\(\beta \leq \gamma\), where \(\leq\) is the canonical order on the
-ordinal \(\alpha\).  Therefore, \(\sqsubseteq\) coincides with the
-canonical order on the ordinal \(\alpha\).
+this means that \(\beta \sqsubset \gamma\) if and only if
+\(\beta \in \gamma\); therefore, \(\beta \sqsubseteq \gamma\) if and
+only if \(\beta \in \gamma\) or \(\beta = \gamma\), that is, if and
+only if \(\beta \leq \gamma\), where \(\leq\) is the canonical order
+on the ordinal \(\alpha\).  Therefore, \(\sqsubseteq\) coincides with
+the canonical order on the ordinal \(\alpha\).
 
 Conversely, suppose that \(\alpha\) is an ordinal, and let \(\leq\)
 denote its canonical order.  By \Cref{thm:7cc2cckf}, \(\leq\) is a
@@ -1521,8 +1522,9 @@ for every ordinal \(\alpha\).  Moreover, if \(\alpha\) is any ordinal,
 and \(W = (W_\beta)_{\beta \in \alpha}\) a family of sets such that
 \(W_\beta = F_\beta ((W_\gamma)_{\gamma \in \beta})\) for all
 \(\beta \in \alpha\), then \(W_\beta = \mathbb{V}_\beta\) for all
-\(\beta \in \alpha\), and \(\mathbb{V}_\alpha = F_\alpha(W) =
-\cup_{\beta \in \alpha}\mathcal{P}(W_\beta)\).
+\(\beta \in \alpha\), and
+\(\mathbb{V}_\alpha = F_\alpha(W) = \cup_{\beta \in
+  \alpha}\mathcal{P}(W_\beta)\).
 
 \begin{theorem}
   \label{thm:xijkf7v0}
@@ -2005,8 +2007,8 @@ theorem.
     \(\alpha \in \alpha'\).
   \item \label{item:bhc8ls0b} \(\beta \in \beta'\) if and only if
     \(\alpha + \beta \in \alpha + \beta'\).
-  \item (Left cancellation).  If
-    \(\alpha + \beta = \alpha + \beta'\), then \(\beta = \beta'\).
+  \item (Left cancellation).  If \(\alpha + \beta = \alpha + \beta'\),
+    then \(\beta = \beta'\).
   \end{enumerate}
 \end{theorem}
 
@@ -2293,8 +2295,8 @@ ordinals is not commutative.
   \label{exe:eghnwow2}
   Here is a proof of \Cref{thm:vy95iuyi} using transfinite recursion.
   Suppose \(X\) and \(Y\) are well-ordered sets such that \(Y\) is not
-  isomorphic to any segment of \(X\).  Use \Cref{thm:5kg5ewo1} to
-  get a function \(u : X \to Y\) such that \(u(x)\) is the minimum of
+  isomorphic to any segment of \(X\).  Use \Cref{thm:5kg5ewo1} to get
+  a function \(u : X \to Y\) such that \(u(x)\) is the minimum of
   \(Y \setminus u((-\infty, x))\) for all \(x \in X\).  Prove that
   \(u\) is an isomorphism from \(X\) onto a segment of \(Y\).
 \end{exercise}
@@ -2457,7 +2459,8 @@ ordinals is not commutative.
   \end{enumerate}
 \end{exercise}
 
-\begin{exercise}[{\textcite[Corollaire~1 of Th\'eor\`eme~1]{bib:je0dhslq}}]
+\begin{exercise}[{\textcite[Corollaire~1 of
+    Th\'eor\`eme~1]{bib:je0dhslq}}]
   \label{exe:ycuba4tr}
   Let \(X\) be an ordered set, \(a\) an element of \(X\), and \(f\) a
   function from \(X\) to itself.  Suppose that \(x \leq f(x)\) for all
@@ -3248,8 +3251,8 @@ ordinals is not commutative.
   \(\Lambda\) such that \(x \in M_\lambda\) and \(y \in M_\mu\); as
   \(\Lambda\) is totally ordered, we can assume that
   \(\mu \leq \lambda\); as \(M_\lambda\) contains \(x\), it is
-  nonempty, and hence contains \(M_\nu\) for all
-  \(\nu \leq \lambda\); in particular, \(M_\mu \subset M_\lambda\), so
+  nonempty, and hence contains \(M_\nu\) for all \(\nu \leq \lambda\);
+  in particular, \(M_\mu \subset M_\lambda\), so
   \(x, y \in M_\lambda\); as \(M_\lambda\) is totally ordered, either
   \(x \leq y\) or \(y \leq x\); it follows that \(M\) is a totally
   ordered subset of \(X\).  Suppose \(N\) is a totally ordered subset
@@ -3299,14 +3302,14 @@ ordinals is not commutative.
   of \(\Lambda\), it follows that \(M\) is a well-ordered subset of
   \(X\).  The hypothesis of the exercise implies that \(M\) is bounded
   above in \(X\).  If \(a\) is any upper bound of \(M\) in \(X\), and
-  \(\lambda = h^{-1}(a)\), then for all
-  \(\mu < \lambda\) such that \(u(\mu) = 1\), \(h(\mu) \in M\), so
-  \(h(\mu) \leq a = h(\lambda)\); as \(\mu \neq \lambda\),
-  \(h(\mu) \neq h(\lambda)\), so \(h(\mu) < h(\lambda)\); it follows
-  that \(a = h(\lambda) \in M\); thus, \(a\) is the maximum of \(M\),
-  and is also the unique upper bound of \(M\) in \(X\); if \(b \in X\)
-  and \(a \leq b\), then \(b\) is an upper bound of \(M\) in \(X\), so
-  \(b = a\); therefore, \(a\) is a maximal element of \(X\).
+  \(\lambda = h^{-1}(a)\), then for all \(\mu < \lambda\) such that
+  \(u(\mu) = 1\), \(h(\mu) \in M\), so \(h(\mu) \leq a = h(\lambda)\);
+  as \(\mu \neq \lambda\), \(h(\mu) \neq h(\lambda)\), so
+  \(h(\mu) < h(\lambda)\); it follows that \(a = h(\lambda) \in M\);
+  thus, \(a\) is the maximum of \(M\), and is also the unique upper
+  bound of \(M\) in \(X\); if \(b \in X\) and \(a \leq b\), then \(b\)
+  is an upper bound of \(M\) in \(X\), so \(b = a\); therefore, \(a\)
+  is a maximal element of \(X\).
 \end{solution}
 
 \begin{solution}[\ref{exe:x9ewqbv6}]
@@ -3833,14 +3836,14 @@ ordinals is not commutative.
   with respect to \(\leq_k\).  We will check that \(a\) is the minimum
   of \(Y\) with respect to \(\leq\).  Let \(x \in Y\).  Then
   \(x \in Y \cap X_{p(x)}\), so \(p(x) \in J\), hence
-  \(k \leq_I p(x)\).  If \(k < p(x)\), then as \(p(a) = k\), \(p(a) <
-  p(x)\), so \(a \leq x\).  On the other hand, if \(k = p(x)\), then
-  \(a, x \in Y \cap X_k\); as \(a\) is the minimum of \(Y \cap X_k\)
-  with respect to \(\leq_k\), \(a \leq_k x\); thus, \(p(a) = p(x)\),
-  and \(a \leq_{p(a)} x\), hence \(a \leq x\).  Therefore, in all the
-  cases, \(a \leq x\).  It follows that \(a\) is the minimum of \(Y\)
-  with respect to \(\leq\).  This verifies that \(\leq\) is a
-  well-order on \(X\).
+  \(k \leq_I p(x)\).  If \(k < p(x)\), then as \(p(a) = k\),
+  \(p(a) < p(x)\), so \(a \leq x\).  On the other hand, if
+  \(k = p(x)\), then \(a, x \in Y \cap X_k\); as \(a\) is the minimum
+  of \(Y \cap X_k\) with respect to \(\leq_k\), \(a \leq_k x\); thus,
+  \(p(a) = p(x)\), and \(a \leq_{p(a)} x\), hence \(a \leq x\).
+  Therefore, in all the cases, \(a \leq x\).  It follows that \(a\) is
+  the minimum of \(Y\) with respect to \(\leq\).  This verifies that
+  \(\leq\) is a well-order on \(X\).
 \end{solution}
 
 \begin{solution}[\ref{exe:mfln3otu}]
@@ -4660,8 +4663,8 @@ ordinals is not commutative.
   \(P(\alpha)\) is true.  Therefore, by \Cref{exe:zgqzqjo2}, there is
   a smallest ordinal \(\lambda\) such that \(P(\lambda)\) is true.
   The truth of \(P(\lambda)\) means that \(\lambda\) is nonempty, and
-  \(\alpha = \lambda + \gamma\) for some ordinal \(\gamma\).
-  Suppose \(\lambda_1\) and \(\lambda_2\) are ordinals such that
+  \(\alpha = \lambda + \gamma\) for some ordinal \(\gamma\).  Suppose
+  \(\lambda_1\) and \(\lambda_2\) are ordinals such that
   \(\lambda = \lambda_1 + \lambda_2\) and \(\lambda_1 \in \lambda\).
   Then \(\lambda_1\) is a proper subset of \(\lambda\) by
   \Cref{thm:lebsg6gf}.  The minimality of \(\lambda\) implies that the
