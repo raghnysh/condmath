@@ -21,7 +21,7 @@
 
 \hypersetup{pdfauthor={Raghavendra Nyshadham (rn@raghnysh.com)}}
 
-\date{2024-08-02}
+\date{2024-09-06}
 
 \begin{document}
 
@@ -121,7 +121,7 @@ any set \(X\) onto the set of all relations \(<\) on \(X\) which are:
 \begin{enumerate}
 \item \firstterm{irreflexive}: there is no element \(x\) of \(X\) such
   that \(x < x\);
-\item \emph{transitive}: if \(x,y,z \in X\), and \(x < y\) and
+\item \firstterm{transitive}: if \(x,y,z \in X\), and \(x < y\) and
   \(y < z\), then \(x < z\).
 \end{enumerate}
 The inverse of this bijection maps any relation with these two
@@ -371,9 +371,9 @@ that \(p(s(x)) = x\) for all \(x \in Y\).  The set of all sections of
 \end{theorem}
 
 Call a section \(u\) of \(p\) on a segment \(Y\) of \(X\)
-\emph{inductive} if \(u(x) = f_x(u \vert_{(-\infty, x)})\) for all
-\(x \in Y\).  The set of points where two inductive sections \(u\) and
-\(v\) of \(p\) on \(Y\) agree is an inductive subset of the
+\firstterm{inductive} if \(u(x) = f_x(u \vert_{(-\infty, x)})\) for
+all \(x \in Y\).  The set of points where two inductive sections \(u\)
+and \(v\) of \(p\) on \(Y\) agree is an inductive subset of the
 well-ordered set \(Y\), so transfinite induction (\Cref{thm:5vxgawq0})
 implies that \(u = v\).  The restriction of an inductive section of
 \(p\) on \(Y\) to a segment contained in \(Y\) is also inductive.
@@ -441,7 +441,7 @@ canonically identified with \(T\), and a section of \(p\) on a subset
 \end{theorem}
 
 For any segment \(Y\) of \(X\), call a family of sets
-\(U = (U_x)_{x \in Y}\) \emph{inductive} if
+\(U = (U_x)_{x \in Y}\) \firstterm{inductive} if
 \(U_x = F_x((U_y)_{y \in (-\infty, x)})\) for all \(x \in Y\).  If
 \(U\) and \(V\) are two inductive families on \(Y\), then the set of
 elements \(x\) of \(Y\) such that \(U_x = V_x\) is inductive, and
@@ -1814,9 +1814,9 @@ every ordinal \(\alpha\) with the property that
 \begin{theorem}
   \label{thm:ok93sv3f}
   The rank of any set \(X\) equals the union of the ordinals
-  \(\operatorname{rk}(x)^+\) as \(x\) runs over the elements of \(X\).
-  In particular, \(\operatorname{rk}(x)\) is an element of
-  \(\operatorname{rk}(X)\) for every element \(x\) of \(X\).
+  \(\operatorname{rk}(x)^+\) as \(x\) runs over \(X\).  In particular,
+  \(\operatorname{rk}(x)\) is an element of \(\operatorname{rk}(X)\)
+  for every element \(x\) of \(X\).
 \end{theorem}
 
 For every element \(x\) of \(X\), let \(\theta_x\) denote the rank of
@@ -1844,8 +1844,8 @@ of the sets \(\theta_x^+\) is a subset of \(\alpha\).  Therefore,
 the rank of \(X\).  This proves the first statement of the theorem.
 For every element \(x\) of \(X\), \(\theta_x\) is an element of
 \(\theta_x^+\), and hence of the union \(\theta\) of the sets
-\(\theta_y\) as \(y\) runs over the elements of \(X\).  This verifies
-the second statement of the theorem.
+\(\theta_y\) as \(y\) runs over \(X\).  This verifies the second
+statement of the theorem.
 
 \begin{theorem}
   \label{thm:dqbi8lx3}
@@ -1858,8 +1858,8 @@ the statement \(P(\alpha)\) that
 ordinal such that \(P(\beta)\) is true for every element \(\beta\) of
 \(\alpha\).  This means that the rank of any element \(\beta\) of
 \(\alpha\) is \(\beta\) itself.  By \Cref{thm:ok93sv3f}, the rank of
-\(\alpha\) equals the union of \(\beta^+\) as \(\beta\) runs over the
-elements of \(\alpha\).  This union equals \(\alpha\) itself by
+\(\alpha\) equals the union of \(\beta^+\) as \(\beta\) runs over
+\(\alpha\).  This union equals \(\alpha\) itself by
 \Cref{exe:qgdrw0j7}.  It follows that \(\alpha\) is its own rank.
 Thus, \(P(\alpha)\) is true.  Therefore, by the principle of
 transfinite induction (\Cref{exe:jxzsy88l}), \(P(\alpha)\) is true for
@@ -1989,8 +1989,7 @@ ordinal of \(\alpha \cup \gamma\); also, by \Cref{thm:9hac1s0p},
 \(\alpha \cup \gamma\) is a segment of \(\alpha \sqcup \beta\).  It
 follows from \Cref{exe:e0x1yv2c} that the ordinal \(\alpha + \beta\)
 of \(\alpha \sqcup \beta\) equals the union of \(\alpha + \gamma\) as
-\(\gamma\) runs over the elements of \(\beta\).  This proves the
-theorem.
+\(\gamma\) runs over \(\beta\).  This proves the theorem.
 
 \begin{theorem}
   \label{thm:506mms8z}
@@ -2660,6 +2659,13 @@ ordinals is not commutative.
 \end{exercise}
 
 \begin{exercise}
+  \label{exe:p8w4gyx9}
+  Prove that there is no sequence of ordinals
+  \((\alpha_n)_{n \in \mathbb{N}}\) such that
+  \(\alpha_n \in \alpha_{n-1}\) for all \(n > 0\).
+\end{exercise}
+
+\begin{exercise}
   \label{exe:ddc4bdfk}
   Let \(\xi\) be an ordinal, and \(X\) a set of ordinals such that
   \(\xi^+ \in X\).  Prove that \(\xi^+\) is the intersection of the
@@ -2670,6 +2676,13 @@ ordinals is not commutative.
   \label{exe:9pk4eh7k}
   Prove that there is no set \(X\) such that every ordinal is an
   element of \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vj15laqs}
+  Show that an ordinal \(\alpha\) is a limit ordinal if and only if
+  there is a set \(X\) of ordinals such that \(\alpha\) does not
+  belong to \(X\) and is the union of the elements of \(X\).
 \end{exercise}
 
 \begin{exercise}
@@ -2695,11 +2708,12 @@ ordinals is not commutative.
 \begin{exercise}[Principle of transfinite induction]
   \label{exe:h8nv276e}
   Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
-  a statement \(P(\alpha)\) about \(\alpha\).  Suppose that for any
-  ordinal \(\alpha\), \(P(\alpha^+)\) is true if \(P(\alpha)\) is
-  true, and \(P(\alpha^-)\) is true if \(P(\beta)\) is true for every
-  element \(\beta\) of \(\alpha\).  Prove that \(P(\alpha)\) is true
-  for every ordinal \(\alpha\).
+  a statement \(P(\alpha)\) about \(\alpha\).  Suppose that
+  \(P(\alpha^+)\) is true for any ordinal \(\alpha\) such that
+  \(P(\alpha)\) is true, and that \(P(\alpha)\) is true for any limit
+  ordinal \(\alpha\) such that \(P(\beta)\) is true for every element
+  \(\beta\) of \(\alpha\).  Prove that \(P(\alpha)\) is true for every
+  ordinal \(\alpha\).
 \end{exercise}
 
 \begin{exercise}
@@ -2722,24 +2736,34 @@ ordinals is not commutative.
   Let \(P\) be an assignment that attaches to every ordinal \(\alpha\)
   a statement \(P(\alpha)\) about \(\alpha\).  Suppose there is an
   ordinal \(\beta\) such that the statement \(P(\beta)\) is true.
-  Then there is a unique ordinal \(\theta\) such that \(P(\theta)\) is
-  true, and such that \(\theta\) is a subset of every ordinal
-  \(\alpha\) with the property that \(P(\alpha)\) is true.  (The
-  ordinal \(\theta\) is called the \firstterm{smallest ordinal}
+  Prove that there is a unique ordinal \(\theta\) such that
+  \(P(\theta)\) is true, and such that \(\theta\) is a subset of every
+  ordinal \(\alpha\) with the property that \(P(\alpha)\) is true.
+  (The ordinal \(\theta\) is called the \firstterm{smallest ordinal}
   \(\alpha\) such that \(P(\alpha)\) is true.)
+\end{exercise}
+
+\begin{exercise}[Hartogs' lemma]
+  \label{exe:qqhmi7in}
+  Let \(X\) be any set.  Show that there is a set \(\lambda\) whose
+  elements are the ordinals which admit an injection to \(X\).  Show
+  also that \(\lambda\) is the unique ordinal which is a subset of an
+  ordinal \(\mu\) if and only if \(\mu\) does not admit an injection
+  to \(X\).  In particular, \(\lambda\) is the smallest ordinal which
+  does not admit an injection to \(X\).
 \end{exercise}
 
 \begin{exercise}
   \label{exe:qgdrw0j7}
   Show that every ordinal \(\alpha\) equals the union of the ordinals
-  \(\beta^+\) as \(\beta\) runs over the elements of \(\alpha\).
+  \(\beta^+\) as \(\beta\) runs over \(\alpha\).
 \end{exercise}
 
 \begin{exercise}
   \label{exe:owfnmkbo}
   Let \(f\) and \(g\) be strictly increasing functions from a
   well-ordered set \(X\) to a well-ordered set \(Y\).  Suppose that
-  \(f(X)\) and \(g(X)\) are segments of \(Y\).  Then \(f = g\).
+  \(f(X)\) and \(g(X)\) are segments of \(Y\).  Prove that \(f = g\).
 \end{exercise}
 
 \begin{exercise}
@@ -2748,23 +2772,41 @@ ordinals is not commutative.
   family of segments of \(X\) whose union is \(X\), and
   \((Y_i)_{i \in I}\) a family of segments of \(Y\) whose union is
   \(Y\).  For each \(i \in I\), let \(f_i : X_i \to Y_i\) be an
-  isomorphism.  Then there is a unique function \(f : X \to Y\) such
-  that \(f(x) = f_i(x)\) for all \(i \in I\) and \(x \in X_i\).  The
-  function \(f\) is an isomorphism from \(X\) to \(Y\).
+  isomorphism.  Show that there is a unique function \(f : X \to Y\)
+  such that \(f(x) = f_i(x)\) for all \(i \in I\) and \(x \in X_i\).
+  Show also that the function \(f\) is an isomorphism from \(X\) to
+  \(Y\).
 \end{exercise}
 
 \begin{exercise}
   \label{exe:e0x1yv2c}
   Let \(X\) be a well-ordered set, and \((X_i)_{i \in I}\) a family of
-  segments of \(X\) whose union is \(X\).  Then
+  segments of \(X\) whose union is \(X\).  Prove that
   \(\operatorname{Ord}(X)\) equals the union of the sets
   \(\operatorname{Ord}(X_i)\) as \(i\) runs over \(I\).
 \end{exercise}
 
 \begin{exercise}
+  \label{exe:v5ldoxkc}
+  Let \(\alpha, \beta, \gamma\) be ordinals such that
+  \(\alpha = \beta + \gamma\).  Verify that \(\beta\) and \(\gamma\)
+  are subsets of \(\alpha\), and that \(\beta\) is an element of
+  \(\alpha\) if \(\gamma\) is nonempty.
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vwz0bksh}
+  Let \(\alpha, \beta, \beta', \gamma, \gamma'\) be ordinals.  Suppose
+  that \(\alpha = \beta + \gamma = \beta' + \gamma'\).  Prove that
+  \(\gamma'\) is a subset of \(\gamma\) if \(\beta\) is a subset of
+  \(\beta'\), and that \(\beta'\) is an element of \(\beta\) if
+  \(\gamma\) is an element of \(\gamma'\).
+\end{exercise}
+
+\begin{exercise}
   \label{exe:5b354opw}
   Let \(X\) and \(Y\) be ordered sets, and \(Y'\) a segment of \(Y\).
-  Then \(X \sqcup Y'\) is a segment of \(X \sqcup Y\).
+  Verify that \(X \sqcup Y'\) is a segment of \(X \sqcup Y\).
 \end{exercise}
 
 \begin{exercise}
@@ -2786,9 +2828,9 @@ ordinals is not commutative.
 \begin{exercise}
   \label{exe:ag2uw6ck}
   Let \(\alpha\) and \(\beta\) be ordinals such that \(\alpha\) is a
-  subset of \(\beta\).  Then there is a unique ordinal \(\gamma\) such
-  that \(\beta = \alpha + \gamma\).  (The ordinal \(\gamma\) is
-  denoted by \(\beta - \alpha\).)
+  subset of \(\beta\).  Prove that there is a unique ordinal
+  \(\gamma\) such that \(\beta = \alpha + \gamma\).  (The ordinal
+  \(\gamma\) is denoted by \(\beta - \alpha\).)
 \end{exercise}
 
 \begin{exercise}
@@ -2810,23 +2852,6 @@ ordinals is not commutative.
     \(\alpha \subset \beta + \gamma\), then either
     \(\alpha \subset \beta\) or \(\alpha \subset \gamma\).
   \end{enumerate}
-\end{exercise}
-
-\begin{exercise}
-  \label{exe:v5ldoxkc}
-  Let \(\alpha, \beta, \gamma\) be ordinals such that
-  \(\alpha = \beta + \gamma\).  Verify that \(\beta\) and \(\gamma\)
-  are subsets of \(\alpha\), and that \(\beta\) is an element of
-  \(\alpha\) if \(\gamma\) is nonempty.
-\end{exercise}
-
-\begin{exercise}
-  \label{exe:vwz0bksh}
-  Let \(\alpha, \beta, \beta', \gamma, \gamma'\) be ordinals.  Suppose
-  that \(\alpha = \beta + \gamma = \beta' + \gamma'\).  Prove that
-  \(\gamma'\) is a subset of \(\gamma\) if \(\beta\) is a subset of
-  \(\beta'\), and that \(\beta'\) is an element of \(\beta\) if
-  \(\gamma\) is an element of \(\gamma'\).
 \end{exercise}
 
 \begin{exercise}
@@ -2905,6 +2930,152 @@ ordinals is not commutative.
       \quad \text{and} \quad
       \alpha_1 \supset \dotsb \supset \alpha_n.
     \end{displaymath}
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:1npoplek}
+  An \firstterm{ordinal operation} is an assignment \(f\) that
+  attaches to every ordinal \(\alpha\) an ordinal \(f(\alpha)\).  It
+  is called \firstterm{normal} if \(f(\alpha) \in f(\beta)\) for all
+  ordinals \(\alpha, \beta\) such that \(\alpha \in \beta\), and
+  \(f(\cup_{\alpha \in X} \alpha) = \cup_{\alpha \in X} f(\alpha)\)
+  for every nonempty set \(X\) of ordinals.  Show that \(f\) is normal
+  if and only if \(f(\alpha) \in f(\alpha^+)\) for every ordinal
+  \(\alpha\), and \(f(\alpha) = \cup_{\beta \in \alpha}f(\beta)\) for
+  every nonempty limit ordinal \(\alpha\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:fxx1l9m4}
+  Let \(f\) be an ordinal operation such that
+  \(f(\alpha) \in f(\beta)\) for all ordinals \(\alpha, \beta\) such
+  that \(\alpha \in \beta\).  Prove that every ordinal \(\alpha\) is a
+  subset of \(f(\alpha)\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:pf75g5kz}
+  Let \(f\) be a normal ordinal operation, and \(\theta\) an ordinal.
+  Suppose there exists an ordinal \(\alpha_0\) such that
+  \(f(\alpha_0) \subset \theta\).  Show that there is a unique ordinal
+  \(\lambda\) such that \(f(\lambda) \subset \theta\), and such that
+  every ordinal \(\alpha\) with the property that
+  \(f(\alpha) \subset \theta\) is a subset of \(\lambda\).  (We call
+  \(\lambda\) the \firstterm{largest} ordinal such that
+  \(f(\lambda) \subset \theta\).)
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vxxp03js}
+  Let \(f\) be a normal ordinal operation, and let \(\lambda\) be an
+  ordinal.  Prove that the union \(\mu\) of the ordinals
+  \(f^n(\lambda)\) as \(n\) runs over \(\mathbb{N}\) is the smallest
+  fixed point of \(f\) such that \(\lambda\) is a subset of \(\mu\).
+  (We say that an ordinal \(\alpha\) is a \firstterm{fixed point} of
+  \(f\) if \(f(\alpha) = \alpha\).)
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:vag0ubn5}
+  Let \(f\) be a normal ordinal operation.  Show that there is no set
+  \(X\) such that every fixed point of \(f\) is an element of \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:e5fhwe1c}
+  Let \(f\) be a normal ordinal operation.  Show that there is a
+  unique normal ordinal operation \(f'\) whose value \(f'(\alpha)\) at
+  any ordinal \(\alpha\) is the smallest fixed point of \(f\) that is
+  distinct from \(f'(\beta)\) for every element \(\beta\) of
+  \(\alpha\).  (The operation \(f'\) is called the
+  \firstterm{derivative} of \(f\).)
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:hqet5ayg}
+  For every ordinal \(\theta\), define an ordinal operation
+  \(f_\theta\) by setting \(f_\theta(\alpha) = \theta + \alpha\) for
+  every ordinal \(\alpha\).  Prove that \(f_\theta\) is normal for
+  every ordinal \(\theta\), and calculate the derivative of \(f_n\)
+  for every natural number \(n\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:wezu6n6e}
+  Let \(f\) and \(g\) be the ordinal operations defined by setting
+  \(f(\alpha) = \alpha^-\) and \(g(\alpha) = \alpha^+\) for every
+  ordinal \(\alpha\).
+  \begin{enumerate}
+  \item Show that \(f(\alpha) \subset f(\beta)\) for all ordinals
+    \(\alpha, \beta\) such that \(\alpha \subset \beta\), and
+    \(f(\cup_{\alpha \in X} \alpha) = \cup_{\alpha \in X} f(\alpha)\)
+    for every set of ordinals \(X\), but \(f\) is not normal.
+  \item Show that \(g(\alpha) \in g(\beta)\) for all ordinals
+    \(\alpha, \beta\) such that \(\alpha \in \beta\), but \(g\) is not
+    normal.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:fl6hcnkt}
+  Show that an ordinal \(\alpha\) is a limit ordinal if and only if
+  \(\beta + n\) is an element of \(\alpha\) for every element
+  \(\beta\) of \(\alpha\) and every natural number \(n\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:jmxnb6v7}
+  Let \(X\) be a set of ordinals, and \(\lambda\) the union of the
+  elements of \(X\).  Prove that \(\mathbb{V}_\lambda\) is the union
+  of the sets \(\mathbb{V}_\alpha\) as \(\alpha\) runs over \(X\).
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:8if1m3yy}
+  Verify the truth of the following statements about the rank of power
+  sets and unions.
+  \begin{enumerate}
+  \item The rank of the power set of a set \(X\) equals
+    \(\operatorname{rk}(X) + 1\).
+  \item For any set \(X\),
+    \(\operatorname{rk}(\cup_{x \in X} x) = \cup_{x \in X}
+    \operatorname{rk}(x) = \operatorname{rk}(X)^-\).
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  \label{exe:rtsfrlkv}
+  Prove the following statements about the rank of product sets and
+  functions.
+  \begin{enumerate}
+  \item For all sets \(x\) and \(y\), the rank of the ordered pair
+    \((x, y)\), which is defined to be the set \(\{{x}, \{x, y\}\}\),
+    equals \((\operatorname{rk}(x) \cup \operatorname{rk}(y)) + 2\).
+  \item For any natural number \(n \geq 2\), and all sets
+    \(x_1, \dotsc, x_n\), the rank of the sequence
+    \((x_1, \dotsc, x_n)\), which is inductively defined to be the
+    ordered pair \(((x_1, \dotsc, x_{n-1}), x_n)\) if \(n > 2\), is
+    given by the equation
+    \begin{displaymath}
+      \operatorname{rk}((x_1, \dotsc,x_n)) =
+      (\operatorname{rk}(x_1) + 2(n-1)) \cup
+      (\cup_{k=2}^n (\operatorname{rk}(x_k) + 2(n-k+1)).
+    \end{displaymath}
+  \item If \(G\) is a graph, that is, a set of ordered pairs, and if
+    the ranks of the domain \(X\) of \(G\), and of the image \(G(X)\)
+    of \(G\), are limit ordinals, then
+    \(\operatorname{rk}{(G)} = \operatorname{rk}(X) \cup
+    \operatorname{rk}(G(X))\).
+  \item If we consider a function \(f : X \to Y\) to be a triple
+    \((X, Y, F)\), where \(X\) and \(Y\) are sets, and \(F\) is a
+    functional graph from \(X\) to \(Y\), that is, a graph whose
+    domain is \(X\), and whose image \(F(X)\) is a subset of \(Y\),
+    then
+    \(\operatorname{rk}(f) = (\operatorname{rk}(X) \cup
+    \operatorname{rk}(Y)) + 4\).
+  \item The set \(Y^X\) of functions from \(X\) to \(Y\) has rank
+    \((\operatorname{rk}(X) \cup \operatorname{rk}(Y)) + 5\).
   \end{enumerate}
 \end{exercise}
 
@@ -4201,6 +4372,23 @@ ordinals is not commutative.
   \(w^+\) is the infimum of \(Z\).
 \end{solution}
 
+\begin{solution}[\ref{exe:p8w4gyx9}]
+  \label{sol:r63383in}
+  Suppose there is a sequence of ordinals
+  \((\alpha_n)_{n \in \mathbb{N}}\) such that
+  \(\alpha_n \in \alpha_{n-1}\) for all \(n > 0\).  Then the set \(x\)
+  whose elements are the members \(\alpha_n\) of the sequence with
+  \(n > 0\) is a nonempty subset of \(\alpha_0\).  By one of the
+  defining conditions of an ordinal, there is an element \(\beta\) of
+  \(x\) such that \(\beta \cap x = \emptyset\).  Let \(k\) be a
+  natural number \(> 0\) for which \(\beta = \alpha_k\).  Then
+  \(\alpha_{k+1}\) is an element of \(\alpha_k = \beta\) as well as of
+  \(x\), a contradiction since the sets \(\beta\) and \(x\) are
+  disjoint.  It follows that there is no sequence of ordinals
+  \((\alpha_n)_{n \in \mathbb{N}}\) such that
+  \(\alpha_n \in \alpha_{n-1}\) for all \(n > 0\).
+\end{solution}
+
 \begin{solution}[\ref{exe:ddc4bdfk}]
   \label{sol:knjkxl0v}
   Let \(Y\) be the set of elements \(\tau\) of \(X\) such that
@@ -4228,6 +4416,28 @@ ordinals is not commutative.
   \(\alpha \notin \alpha\) for every ordinal \(\alpha\).  Therefore,
   there is no set \(X\) such that every ordinal is an element of
   \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:vj15laqs}]
+  \label{sol:dxac7ayu}
+  If \(\alpha\) is a limit ordinal, then it is the union \(\alpha^-\)
+  of the elements of \(\alpha\) by \Cref{thm:8odofa55}, and does not
+  belong to itself by \Cref{thm:7cc2cckf}, so we can take the set
+  \(X\) to be \(\alpha\) itself.
+
+  Conversely, suppose \(X\) is a set of ordinals such that \(\alpha\)
+  is not an element of \(X\) and is the union of the elements of
+  \(X\).  The transitivity of \(\alpha\) implies that \(\alpha^-\) is
+  a subset of \(\alpha\).  On the other hand, as \(\alpha\) is the
+  union of the elements of \(X\), every element \(\xi\) of \(X\) is a
+  subset of \(\alpha\); it is a proper subset of \(\alpha\) because
+  \(\alpha\) is not an element of \(X\); therefore, by
+  \Cref{thm:lebsg6gf}, \(\xi\) is an element of \(\alpha\), and is
+  hence a subset of \(\alpha^-\); thus, every element of \(X\) is a
+  subset of \(\alpha^-\); it follows that the union \(\alpha\) of the
+  elements of \(X\) is a subset of \(\alpha^-\).  This verifies that
+  \(\alpha = \alpha^-\), hence \(\alpha\) is a limit ordinal by
+  \Cref{thm:8odofa55}.
 \end{solution}
 
 \begin{solution}[\ref{exe:7tvca54w}]
@@ -4295,12 +4505,11 @@ ordinals is not commutative.
   \(\alpha = (\alpha^-)^+\); as \(P(\beta)\) is true for every element
   \(\beta\) of \(\alpha\), it follows that \(P(\alpha^-)\) is true; so
   the hypothesis on \(P\) implies that \(P(\alpha)\) is true.  On the
-  other hand, if \(\alpha\) is a limit ordinal, then by
-  \Cref{thm:8odofa55}, \(\alpha^- = \alpha\); as \(P(\beta)\) is true
-  for every element \(\beta\) of \(\alpha\), the hypothesis on \(P\)
-  implies that \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is true in
-  both the cases.  By \Cref{exe:jxzsy88l}, \(P(\alpha)\) is true for
-  every ordinal \(\alpha\).
+  other hand, if \(\alpha\) is a limit ordinal, then as \(P(\beta)\)
+  is true for every element \(\beta\) of \(\alpha\), the hypothesis on
+  \(P\) implies that \(P(\alpha)\) is true.  Thus, \(P(\alpha)\) is
+  true in both the cases.  By \Cref{exe:jxzsy88l}, \(P(\alpha)\) is
+  true for every ordinal \(\alpha\).
 \end{solution}
 
 \begin{solution}[\ref{exe:565zdnmj}]
@@ -4378,18 +4587,55 @@ ordinals is not commutative.
   Thus, \(\theta\) is the unique ordinal with the stated property.
 \end{solution}
 
+\begin{solution}[\ref{exe:qqhmi7in}]
+  \label{sol:lzxv2f03}
+  Let \(S\) be the set of all well-ordered sets \(Y\) such that the
+  underlying set of \(Y\) is a subset of \(X\); it is a subset of the
+  product of the power sets \(\mathcal{P}(X)\) and
+  \(\mathcal{P}(X \times X)\).  Denote by \(\lambda\) the set whose
+  elements are the ordinals \(\operatorname{Ord}(Y)\) as \(Y\) runs
+  over \(S\).  Every element \(\alpha\) of \(\lambda\) is the ordinal
+  of an element \(Y\) of \(S\); the unique isomorphism from \(\alpha\)
+  to \(Y\) induces an injection from \(\alpha\) to \(X\).  Conversely,
+  if \(\alpha\) is an ordinal that admits an injection \(f\) to \(X\),
+  then the set \(f(S)\) and the relation on \(f(S)\) that is the
+  transport of the canonical order on \(\alpha\) by \(f\) together
+  form a well-ordered set \(Y\); it is obvious that \(Y \in S\), and
+  that the function from \(\alpha\) to \(Y\) that is induced by \(f\)
+  is an isomorphism; so \(\alpha\) is the ordinal of \(Y\), and is
+  hence an element of \(\lambda\).  Thus, the elements of \(\lambda\)
+  are the ordinals that admit an injection to \(X\).
+
+  The set \(\lambda\) is transitive: if \(\alpha\) is an element of
+  \(\lambda\) and \(\beta\) an element of \(\alpha\), then \(\beta\)
+  is an ordinal by \Cref{thm:5qmhh3to}; as \(\alpha\) is transitive,
+  \(\beta\) is a subset of \(\alpha\); since \(\alpha \in \lambda\),
+  it admits an injection \(f\) to \(X\); the composite of the
+  inclusion from \(\beta\) to \(\alpha\) with \(f\) is an injection,
+  so \(\beta \in \lambda\).  Thus, \(\lambda\) is a transitive set of
+  ordinals, and is hence an ordinal by \Cref{thm:22wi7nhu}.
+
+  \Cref{thm:lebsg6gf,thm:xut6v700} imply that \(\lambda\) is a subset
+  of an ordinal \(\mu\) if and only if \(\mu\) is not an element of
+  \(\lambda\), that is, if and only if \(\mu\) does not admit an
+  injection to \(X\).  As for uniqueness, if \(\lambda'\) is another
+  ordinal with this property, then neither \(\lambda\) nor
+  \(\lambda'\) admits an injection to \(X\), hence each is a subset of
+  the other.
+\end{solution}
+
 \begin{solution}[\ref{exe:qgdrw0j7}]
   \label{sol:pfhq76oe}
   By the definition of the successor of an ordinal, every ordinal
   \(\beta\) is an element of \(\beta^+\).  Therefore, \(\alpha\) is a
-  subset of the union of \(\beta^+\) as \(\beta\) runs over the
-  elements of \(\alpha\).  Conversely, let \(\delta\) be an element of
-  \(\beta^+\) for some element \(\beta\) of \(\alpha\).  Then
-  \(\delta\) is either \(\beta\) or an element of \(\beta\).  If
-  \(\delta = \beta\), then, as \(\beta\) is an element of \(\alpha\),
-  \(\delta \in \alpha\).  On the other hand, if \(\delta \in \beta\),
-  then, as \(\beta\) is an element of \(\alpha\), and \(\alpha\) is
-  transitive, \(\delta \in \alpha\).  Thus, in both the cases,
+  subset of the union of \(\beta^+\) as \(\beta\) runs over
+  \(\alpha\).  Conversely, let \(\delta\) be an element of \(\beta^+\)
+  for some element \(\beta\) of \(\alpha\).  Then \(\delta\) is either
+  \(\beta\) or an element of \(\beta\).  If \(\delta = \beta\), then,
+  as \(\beta\) is an element of \(\alpha\), \(\delta \in \alpha\).  On
+  the other hand, if \(\delta \in \beta\), then, as \(\beta\) is an
+  element of \(\alpha\), and \(\alpha\) is transitive,
+  \(\delta \in \alpha\).  Thus, in both the cases,
   \(\delta \in \alpha\).  It follows that \(\alpha\) is a superset of
   the union of \(\beta^+\) as \(\beta\) runs over \(\alpha\).  It
   follows that \(\alpha = \cup_{\beta \in \alpha}\beta^+\).
@@ -4450,6 +4696,32 @@ ordinals is not commutative.
   By \Cref{exe:mybmksm1}, there is a unique isomorphism
   \(f : X \to \alpha\) such that \(f(x) = f_i(x)\) for all
   \(x \in X\).  It follows that \(\operatorname{Ord}(X) = \alpha\).
+\end{solution}
+
+\begin{solution}[\ref{exe:v5ldoxkc}]
+  \label{sol:2pzkfvo2}
+  If \(\gamma\) is empty, then \(\alpha = \beta + 0 = \beta\); on the
+  other hand, if \(\gamma\) is nonempty, then the proper subset \(0\)
+  of \(\gamma\) is an element of \(\gamma\) by \Cref{thm:lebsg6gf},
+  hence \(\beta = \beta + 0\) is an element of the transitive set
+  \(\alpha = \beta + \gamma\) by \Cref{thm:506mms8z}; therefore, in
+  both the cases, \(\beta\) is a subset of \(\alpha\).  As
+  \(0 \subset \beta\), by the same theorem, \(\gamma = 0 + \gamma\) is
+  a subset of \(\alpha = \beta + \gamma\).
+\end{solution}
+
+\begin{solution}[\ref{exe:vwz0bksh}]
+  \label{sol:27wcstr7}
+  Suppose \(\beta\) is a subset of \(\beta'\).  If \(\gamma'\) is not
+  a subset of \(\gamma\), then by \Cref{thm:lebsg6gf,thm:xut6v700},
+  \(\gamma'\) is an element of \(\gamma\), hence
+  \(\beta' + \gamma' = \alpha\) is an element of
+  \(\beta + \gamma = \alpha\) by \Cref{thm:506mms8z}; this contradicts
+  \Cref{thm:7cc2cckf}.  Therefore, \(\gamma'\) is a subset of
+  \(\gamma\).  This proves the first part of the exercise.
+
+  The second part of the exercise follows from the first by taking
+  negations.
 \end{solution}
 
 \begin{solution}[\ref{exe:5b354opw}]
@@ -4601,32 +4873,6 @@ ordinals is not commutative.
   Thus, all the four statements in the exercise are equivalent.
 \end{solution}
 
-\begin{solution}[\ref{exe:v5ldoxkc}]
-  \label{sol:2pzkfvo2}
-  If \(\gamma\) is empty, then \(\alpha = \beta + 0 = \beta\); on the
-  other hand, if \(\gamma\) is nonempty, then the proper subset \(0\)
-  of \(\gamma\) is an element of \(\gamma\) by \Cref{thm:lebsg6gf},
-  hence \(\beta = \beta + 0\) is an element of the transitive set
-  \(\alpha = \beta + \gamma\) by \Cref{thm:506mms8z}; therefore, in
-  both the cases, \(\beta\) is a subset of \(\alpha\).  As
-  \(0 \subset \beta\), by the same theorem, \(\gamma = 0 + \gamma\) is
-  a subset of \(\alpha = \beta + \gamma\).
-\end{solution}
-
-\begin{solution}[\ref{exe:vwz0bksh}]
-  \label{sol:27wcstr7}
-  Suppose \(\beta\) is a subset of \(\beta'\).  If \(\gamma'\) is not
-  a subset of \(\gamma\), then by \Cref{thm:lebsg6gf,thm:xut6v700},
-  \(\gamma'\) is an element of \(\gamma\), hence
-  \(\beta' + \gamma' = \alpha\) is an element of
-  \(\beta + \gamma = \alpha\) by \Cref{thm:506mms8z}; this contradicts
-  \Cref{thm:7cc2cckf}.  Therefore, \(\gamma'\) is a subset of
-  \(\gamma\).  This proves the first part of the exercise.
-
-  The second part of the exercise follows from the first by taking
-  negations.
-\end{solution}
-
 \begin{solution}[\ref{exe:6bo4uirh}]
   \label{sol:30t76fdi}
   The union \(\alpha\) of the elements of \(X\) is an ordinal by
@@ -4742,7 +4988,7 @@ ordinals is not commutative.
   ordinal \(\beta\) such that \(\alpha = \beta + \mu\).
 \end{solution}
 
-\begin{solution}[\Cref{exe:fdb94svq}]
+\begin{solution}[\ref{exe:fdb94svq}]
   \label{sol:mb1t9epx}
   Let \(\alpha\) be a nonempty ordinal, and
   \begin{displaymath}
@@ -4909,6 +5155,431 @@ ordinals is not commutative.
   \end{displaymath}
   Therefore, the statement \(P(\alpha)\) is true.  This proves the
   existence part of the third item of the exercise.
+\end{solution}
+
+\begin{solution}[\ref{exe:1npoplek}]
+  \label{sol:1m0wukaa}
+  Suppose \(f\) is a normal ordinal operation.  Every ordinal
+  \(\alpha\) is an element of \(\alpha^+\), so the first property of
+  normal operations shows that \(f(\alpha) \in f(\alpha^+)\).  By
+  \Cref{thm:8odofa55}, every nonempty limit ordinal \(\alpha\) equals
+  the union \(\alpha^-\) of the elements of the nonempty set
+  \(\alpha\); therefore, the second property of normal operations
+  implies that \(f(\alpha)\) is the union of the sets \(f(\beta)\) as
+  \(\beta\) runs over \(\alpha\).
+
+  Conversely, suppose that \(f\) is an ordinal operation that
+  satisfies the conditions stated in the exercise.  Let \(P\) be the
+  assignment that attaches to every ordinal \(\beta\) the statement
+  that \(f(\alpha) \in f(\beta)\) for every element \(\alpha\) of
+  \(\beta\).  We will show by transfinite induction
+  (\Cref{exe:h8nv276e}) that \(P(\beta)\) is true for every ordinal
+  \(\beta\).
+
+  Suppose \(\beta\) is an ordinal such that \(P(\beta)\) is true.  We
+  will show that \(P(\beta^+)\) is also true.  Let
+  \(\alpha \in \beta^+\).  Then either \(\alpha \in \beta\) or
+  \(\alpha = \beta\).  If \(\alpha \in \beta\), then
+  \(f(\alpha) \in f(\beta)\) because \(P(\beta)\) is true; as
+  \(f(\beta) \in f(\beta^+)\) by the hypothesis, and the ordinal
+  \(f(\beta^+)\) is a transitive set, it follows that
+  \(f(\alpha) \in f(\beta^+)\).  On the other hand, if
+  \(\alpha = \beta\), then \(f(\alpha) \in f(\beta^+)\) directly by
+  the hypothesis.  Thus, \(f(\alpha) \in f(\beta^+)\) in both the
+  cases.  Therefore, \(P(\beta^+)\) is true.
+
+  Let \(\beta\) be a limit ordinal such that \(P(\gamma)\) is true for
+  every element \(\gamma\) of \(\beta\).  We will show that
+  \(P(\beta)\) is also true.  If \(\beta\) is empty, then \(P(\beta)\)
+  is obviously true, so suppose that \(\beta\) is nonempty.  Take any
+  element \(\alpha\) of \(\beta\).  By \Cref{thm:8odofa55}, the limit
+  ordinal \(\beta\) is the union \(\beta^-\) of the elements of
+  \(\beta\).  Therefore, \(\alpha\) belongs to some element \(\gamma\)
+  of \(\beta\).  As \(P(\gamma)\) is true, we have
+  \(f(\alpha) \in f(\gamma)\).  The hypothesis on \(f\) implies that
+  \(f(\beta)\) is the union of \(f(\lambda)\) as \(\lambda\) runs over
+  \(\beta\).  So \(f(\lambda)\) is a subset of \(f(\beta)\) for every
+  element \(\lambda\) of \(\beta\).  In particular, \(f(\gamma)\) is a
+  subset of \(f(\beta)\).  It follows that the element \(f(\alpha)\)
+  of \(f(\gamma)\) is an element of \(f(\beta)\) too.  Therefore,
+  \(P(\beta)\) is true.
+
+  The above two paragraphs and \Cref{exe:h8nv276e} show that the
+  statement \(P(\beta)\) is true for every ordinal \(\beta\).  This is
+  the same as saying that \(f(\alpha) \in f(\beta)\) for all ordinals
+  \(\alpha, \beta\) such that \(\alpha \in \beta\).  It is the first
+  condition for \(f\) to be normal.
+
+  As for the second condition, let \(X\) be a nonempty set of
+  ordinals, and denote \(\lambda = \cup_{\alpha \in X} \alpha\) and
+  \(\lambda' = \cup_{\alpha \in X} f(\alpha)\).  We have to verify
+  that \(f(\lambda)\) equals \(\lambda'\).
+
+  Every element \(\alpha\) of \(X\) is a subset of \(\lambda\); by
+  \Cref{thm:lebsg6gf}, \(\alpha\) is either \(\lambda\) or an element
+  of \(\lambda\); in the former case, \(f(\alpha)\) is \(f(\lambda)\),
+  and in the latter, \(f(\alpha)\) is an element of the transitive set
+  \(f(\lambda)\) by the previous paragraph; therefore, in both the
+  cases, \(f(\alpha)\) is a subset of \(f(\lambda)\).  It follows that
+  \(\lambda'\) is a subset of \(f(\lambda)\).
+
+  We will show that \(f(\lambda)\) is a subset of \(\lambda'\).  There
+  are two cases depending on whether \(\lambda\) is an element of
+  \(X\), or not.  If \(\lambda\) is an element of \(X\), then
+  \(f(\lambda)\) is obviously a subset of the union \(\lambda'\) of
+  \(f(\alpha)\) as \(\alpha\) runs over \(X\).  So suppose \(\lambda\)
+  is not an element of \(X\).  Then by \Cref{exe:vj15laqs},
+  \(\lambda\) is a limit ordinal.  It is nonempty because \(X\) is
+  nonempty.  Therefore, by hypothesis,
+  \(f(\lambda) = \cup_{\mu \in \lambda} f(\mu)\).  Now every element
+  \(\mu\) of \(\lambda\) is an element of some element \(\alpha\) of
+  \(X\); by what has been verified above, we have
+  \(f(\mu) \in f(\alpha)\); as \(f(\alpha) \subset \lambda'\), we get
+  \(f(\mu) \in \lambda'\), hence \(f(\mu) \subset \lambda'\).  It
+  follows that the union \(f(\lambda)\) of the \(f(\mu)\) as \(\mu\)
+  runs over \(\lambda\) is a subset of \(\lambda'\).  Thus, in both
+  the cases, \(f(\lambda)\) is a subset of \(\lambda'\).
+
+  We have now shown that \(f(\lambda) = \lambda'\), so \(f\) has both
+  the properties specified in the definition of a normal operation.
+\end{solution}
+
+\begin{solution}[\ref{exe:fxx1l9m4}]
+  \label{sol:aguyl256}
+  Suppose \(\alpha\) is an ordinal which is not a subset of
+  \(f(\alpha)\).  Then by \Cref{thm:lebsg6gf,thm:xut6v700},
+  \(f(\alpha) \in \alpha\).  Define a sequence of ordinals
+  \((\alpha_n)_{n \in \mathbb{N}}\) by setting
+  \(\alpha_n = f^n(\alpha)\) for every natural number \(n\).  Then it
+  follows by induction and the base case \(\alpha_1 \in \alpha_0\)
+  that \(\alpha_k \in \alpha_{k-1}\) for all \(k > 0\).  This
+  contradicts \Cref{exe:p8w4gyx9}.  Therefore, \(\alpha\) is a subset
+  of \(f(\alpha)\).
+\end{solution}
+
+\begin{solution}[\ref{exe:pf75g5kz}]
+  \label{sol:zfegv2x7}
+  Let \(X\) be the set of ordinals \(\alpha\) that are subsets of
+  \(\theta\) and satisfy the condition that
+  \(f(\alpha) \subset \theta\).  The union \(\lambda\) of the elements
+  of \(X\) is an ordinal by \Cref{thm:9s24zgf9}.
+
+  We will show that \(f(\lambda) \subset \theta\).  By
+  \Cref{exe:fxx1l9m4}, every ordinal \(\alpha\) is a subset of
+  \(f(\alpha)\); therefore, if \(f(\alpha)\) is a subset of
+  \(\theta\), then so is \(\alpha\).  So an ordinal \(\alpha\) has the
+  property that \(f(\alpha) \subset \theta\) if and only if
+  \(\alpha \in X\).  In particular, \(\alpha_0 \in X\), hence \(X\) is
+  nonempty.  As \(f\) is normal, this implies that
+  \(f(\lambda) = \cup_{\alpha \in X}f(\alpha)\).  Since
+  \(f(\alpha) \subset \theta\) for every element \(\alpha\) of \(X\),
+  it follows that \(f(\lambda) \subset \theta\).
+
+  Suppose \(\alpha\) is any ordinal such that
+  \(f(\alpha) \subset \theta\).  As observed above, \(\alpha\) is then
+  an element of \(X\), and is hence a subset of the union \(\lambda\)
+  of the elements of \(X\).  This verifies the existence part of the
+  exercise.
+
+  As for uniqueness, if \(\lambda'\) is another ordinal with the
+  stated properties, then \(\lambda\) and \(\lambda'\) are subsets of
+  each other because both \(f(\lambda)\) and \(f(\lambda')\) are
+  subsets of \(\theta\); therefore, \(\lambda = \lambda'\).
+\end{solution}
+
+\begin{solution}[\ref{exe:vxxp03js}]
+  \label{sol:kcmslkfv}
+  Let \(X\) denote the set whose elements are the ordinals
+  \(f^n(\lambda)\) as \(n\) runs over \(\mathbb{N}\).  By
+  \Cref{thm:9s24zgf9}, the union \(\mu\) of the elements of \(X\) is
+  an ordinal.  The set \(X\) is nonempty because \(\lambda \in X\).
+  Since \(f\) is a normal operation, this implies that
+  \(f(\mu) = \cup_{n \in \mathbb{N}} f^{n+1}(\lambda)\).  By
+  \Cref{exe:fxx1l9m4}, \(\lambda \subset f(\lambda)\), so
+  \begin{displaymath}
+    \cup_{n \in \mathbb{N}} f^{n+1}(\lambda) =
+    \cup_{n \in \mathbb{N}} f^n(\lambda),
+  \end{displaymath}
+  that is, \(f(\mu) = \mu\).  Thus, \(\mu\) is a fixed point of \(f\).
+  It is obvious that \(\lambda \subset \mu\).
+
+  Suppose \(\theta\) is an ordinal such that \(f(\theta) = \theta\)
+  and \(\lambda \subset \theta\).  As \(f\) is normal, by
+  \Cref{thm:lebsg6gf,thm:xut6v700}, we have
+  \(f(\alpha) \subset f(\beta)\) for all ordinals \(\alpha, \beta\)
+  such that \(\alpha \subset \beta\).  In particular,
+  \(f(\lambda) \subset f(\mu)\), hence \(f(\lambda) \subset \mu\).  It
+  follows by induction that \(f^n(\lambda) \subset \mu\) for all
+  \(n \in \mathbb{N}\).  Therefore, the union \(\mu\) of the sets
+  \(f^n(\lambda)\) is a subset of \(\theta\).  Thus, \(\mu\) is the
+  smallest ordinal such that \(f(\mu) = \mu\) and
+  \(\lambda \subset \mu\).
+\end{solution}
+
+\begin{solution}[\ref{exe:vag0ubn5}]
+  \label{sol:k2pgf02q}
+  Let \(Y\) be the union of the elements of \(X\).  Hartogs' lemma
+  (\Cref{exe:qqhmi7in}) gives an ordinal \(\lambda\) that is a subset
+  of an ordinal \(\mu\) if and only if \(\mu\) does not admit an
+  injection to \(Y\).  \Cref{exe:vxxp03js} implies that there is a
+  fixed point \(\mu_0\) of \(f\) such that \(\lambda\) is a subset of
+  \(\mu_0\).  In particular, \(\mu_0\) does not admit an injection to
+  \(Y\).  On the other hand, every element \(x\) of \(X\) is a subset
+  of \(Y\), and the inclusion map from \(x\) to \(Y\) is an injection.
+  It follows that \(\mu_0\) is not an element of \(X\).
+\end{solution}
+
+\begin{solution}[\ref{exe:e5fhwe1c}]
+  \label{sol:6urt5uq0}
+  For every ordinal \(\alpha\), define an assignment \(F_\alpha\) that
+  attaches to every family of sets
+  \(E = (E_\beta)_{\beta \in \alpha}\) an ordinal \(F_\alpha(E)\) as
+  follows: let \(P_E\) be the assignment that attaches to every
+  ordinal \(\xi\) the statement that \(\xi\) is a fixed point of \(f\)
+  that is distinct from \(E_\beta\) for every element \(\beta\) of
+  \(\alpha\); by \Cref{exe:vag0ubn5}, there is an ordinal \(\zeta\)
+  such that \(P_E(\zeta)\) is true; using \Cref{exe:zgqzqjo2}, define
+  \(F_\alpha(E)\) to be the smallest ordinal such that
+  \(P_E(F_\alpha(E))\) is true; thus, \(F_\alpha(E)\) is the smallest
+  fixed point of \(f\) that is distinct from \(E_\beta\) for every
+  element \(\beta\) of \(\alpha\).  \Cref{thm:fsekzo48} on transfinite
+  recursion now gives a unique assignment \(f'\) that attaches to
+  every ordinal \(\alpha\) a set \(f'(\alpha)\) so that
+  \(f'(\alpha) = F_\alpha((f'(\beta))_{\beta \in \alpha})\) for every
+  ordinal \(\alpha\).  The assignment \(f'\) is evidently an ordinal
+  operation whose value \(f'(\alpha)\) at any ordinal \(\alpha\) is
+  the smallest fixed point of \(f\) that is distinct from
+  \(f'(\beta)\) for every element \(\beta\) of \(\alpha\).
+
+  Suppose \(\alpha, \beta\) are ordinals such that
+  \(\alpha \in \beta\).  Then the defining property of \(f'(\beta)\)
+  implies that \(f'(\beta) \neq f'(\gamma)\) for every element
+  \(\gamma\) of \(\beta\).  In particular,
+  \(f'(\beta) \neq f'(\alpha)\).  The transitivity of \(\beta\)
+  implies that \(\alpha\) is a subset of \(\beta\), hence
+  \(f'(\beta) \neq f'(\gamma)\) for every element \(\gamma\) of
+  \(\alpha\).  Therefore, the minimality of \(f'(\alpha)\) implies
+  that \(f'(\alpha) \subset f'(\beta)\).  As
+  \(f'(\beta) \neq f'(\alpha)\), this means that \(f'(\alpha)\) is a
+  proper subset of \(f'(\beta)\).  So by \Cref{thm:lebsg6gf},
+  \(f'(\alpha) \in f'(\beta)\).
+
+  The above paragraph shows that \(f'\) satisfies the first condition
+  in the definition of a normal operation.  In particular, by
+  \Cref{thm:lebsg6gf}, \(f'(\alpha) \subset f'(\beta)\) for all
+  ordinals \(\alpha, \beta\) such that \(\alpha \subset \beta\).
+
+  Let \(X\) be a nonempty set of ordinals, \(\alpha\) the union of the
+  elements of \(X\), and \(\alpha'\) the union of the ordinals
+  \(f'(\xi)\) as \(\xi\) runs over \(X\).  We will verify that
+  \(f'(\alpha) = \alpha'\).
+
+  The normality of \(f\) and the fact that the value \(f'(\xi)\) of
+  \(f'\) at any ordinal \(\xi\) is a fixed point of \(f\) imply that
+  \begin{displaymath}
+    f(\alpha') =
+    f(\cup_{\xi \in X} f'(\xi)) =
+    \cup_{\xi \in X} f(f'(\xi)) =
+    \cup_{\xi \in X} f'(\xi) =
+    \alpha'.
+  \end{displaymath}
+  Therefore, \(\alpha'\) is a fixed point of \(f\).
+
+  Every element \(\beta\) of \(\alpha\) is an element of \(\xi\) for
+  some \(\xi \in X\); therefore, \(f'(\beta) \in f'(\xi)\); on the
+  other hand, \(f'(\xi)\) is a subset of \(\alpha'\); so
+  \(f'(\beta) \in \alpha'\), and hence \(f'(\beta) \neq \alpha'\).
+  Thus, \(\alpha'\) is a fixed point of \(f\) that is distinct from
+  \(f'(\beta)\) for every element \(\beta\) of \(\alpha\).  The
+  minimality of \(f'(\alpha)\) implies that \(f'(\alpha)\) is a subset
+  of \(\alpha'\).
+
+  Conversely, every element \(\xi\) of \(X\) is a subset of
+  \(\alpha\), so \(f'(\xi)\) is a subset of \(f'(\alpha)\).
+  Therefore, the union \(\alpha'\) of the sets \(f'(\xi)\) as \(\xi\)
+  runs over \(X\) is also a subset of \(f'(\alpha)\).  In combination
+  with the previous paragraph, this verifies that
+  \(f'(\alpha) = \alpha'\), and completes the proof that \(f'\) is
+  normal.
+\end{solution}
+
+\begin{solution}[\ref{exe:hqet5ayg}]
+  \label{sol:2a3fy4oi}
+  By \Cref{thm:506mms8z}, \(\theta + \alpha \) is an element of
+  \(\theta + \beta\) for all ordinals \(\theta, \alpha, \beta\) such
+  that \(\alpha \in \beta\).  If \(\alpha\) is a nonempty limit
+  ordinal, then by \Cref{thm:8e0yiygg}, \(\theta + \alpha\) equals
+  \(\theta + \cup_{\beta \in \alpha} (\theta + \beta)\).  Therefore,
+  by \Cref{exe:1npoplek}, the operation \(f_\theta\) is normal for
+  every ordinal \(\theta\).
+
+  \Cref{thm:7cc2cckf,thm:lebsg6gf,thm:xut6v700} imply that any ordinal
+  \(\alpha\) is the smallest ordinal that is distinct from every
+  element of \(\alpha\); therefore, \(f_0' = f_0\).
+
+  Suppose \(n\) is a nonzero natural number.  We will prove that
+  \(f_n'(\alpha) = \omega + \alpha\) for every ordinal \(\alpha\).
+  Let \(\alpha\) be an ordinal.  We have to check that
+  \(\omega + \alpha\) is the smallest fixed point of \(f_n\) that is
+  distinct from \(\omega + \beta\) for every \(\beta \in \alpha\).
+
+  By \Cref{thm:506mms8z,thm:udacgei9},
+  \begin{displaymath}
+    f_n(\omega + \alpha) =
+    n + (\omega + \alpha) =
+    (n + \omega) + \alpha =
+    \omega + \alpha,
+  \end{displaymath}
+  so \(\omega + \alpha\) is a fixed point of \(f_n\).  If \(\beta\) is
+  an element of \(\alpha\), then by \Cref{thm:506mms8z},
+  \(\omega + \beta\) is an element of \(\omega + \alpha\), hence, by
+  \Cref{thm:7cc2cckf}, \(\omega + \alpha\) is distinct from
+  \(\omega + \beta\).  Thus, \(\omega + \alpha\) is a fixed point of
+  \(f_n\) that is distinct from \(\omega + \beta\) for every element
+  \(\beta\) of \(\alpha\).
+
+  Suppose \(\lambda\) is a fixed point of \(f_n\) that is distinct
+  from \(\omega + \beta\) for every element \(\beta\) of \(\alpha\).
+  For any natural number \(m\), by \Cref{thm:udacgei9}, \(n + m\) is
+  the sum of \(n\) and \(m\) as natural numbers; as \(n > 0\),
+  \(n + m > m\) as natural numbers, hence \(m \in n + m\); therefore,
+  by \Cref{thm:7cc2cckf}, \(n + m \neq m\).  Thus, no natural number
+  is a fixed point of \(f_n\).  Therefore, \(\lambda\) is not an
+  element of \(\omega\).  It follows from
+  \Cref{thm:lebsg6gf,thm:xut6v700} that \(\omega\) is a subset of
+  \(\lambda\).  By \Cref{exe:ag2uw6ck}, there is a unique ordinal
+  \(\mu\) such that \(\lambda = \omega + \mu\).  As \(\lambda\) is
+  distinct from \(\omega + \beta\) for every element \(\beta\) of
+  \(\alpha\), \(\mu\) is not an element of \(\alpha\).  Therefore, by
+  \Cref{thm:lebsg6gf,thm:xut6v700}, \(\alpha\) is a subset of \(\mu\).
+  It follows from \Cref{thm:506mms8z} that \(\omega + \alpha\) is a
+  subset of \(\omega + \mu = \lambda\).
+
+  The above paragraph completes the verification that when \(n > 0\),
+  \(\omega + \alpha\) is the smallest fixed point of \(f_n\) that is
+  distinct from \(\omega + \beta\) for every element \(\beta\) of
+  \(\alpha\).
+\end{solution}
+
+\begin{solution}[\ref{exe:wezu6n6e}]
+  \label{sol:br9halkv}
+  Suppose \(\alpha, \beta\) are ordinals such that \(\alpha\) is a
+  subset of \(\beta\).  If \(\alpha = \beta\), then obviously
+  \(f(\alpha) = f(\beta)\), so \(f(\alpha) \subset f(\beta)\).  Every
+  element \(\lambda\) of \(\alpha\) is an element of \(\beta\) because
+  \(\beta\) is transitive and \(\alpha \in \beta\); therefore,
+  \(\lambda\) is a subset of \(\cup_{\mu \in \beta} \mu\), that is, of
+  \(\beta^-\).  Therefore, \(\cup_{\lambda \in \alpha} \lambda\), that
+  is, \(\alpha^-\) is a subset of \(\beta^-\).
+
+  Let \(X\) be a set of ordinals, and let
+  \begin{displaymath}
+    \lambda = f(\cup_{\alpha \in X} \alpha),
+    \quad
+    \lambda' = \cup_{\alpha \in X} f(\alpha).
+  \end{displaymath}
+  Every element \(\alpha\) of \(X\) is a subset of \(\lambda\), so by
+  the previous paragraph, \(f(\alpha)\) is a subset of \(f(\lambda)\);
+  it follows that \(\lambda'\) is a subset of \(f(\lambda)\).
+
+  We will show that \(f(\lambda)\) is a subset of \(\lambda'\).  We
+  will consider two cases depending on whether \(\lambda\) is an
+  element of \(X\), or not.  If \(\lambda\) is an element of \(X\),
+  then \(f(\lambda)\) is obviously a subset of
+  \(\cup_{\alpha \in X} f(\alpha)\), that is, of \(\lambda'\).  So
+  suppose \(\lambda\) is not an element of \(X\).  It is then a limit
+  ordinal by \Cref{exe:vj15laqs}.  Therefore, by \Cref{thm:8odofa55},
+  \(\lambda\) equals the union \(\lambda^-\) of the elements of
+  \(\lambda\).  Thus, \(f(\lambda) = \cup_{\mu \in \lambda} f(\mu)\).
+  Now every element \(\mu\) of \(\lambda\) is an element, hence a
+  subset, of some element \(\alpha\) of \(X\); therefore, by what has
+  been shown above, \(f(\mu)\) is a subset of \(f(\alpha)\), which, in
+  turn, is a subset of \(\lambda'\); so we get
+  \(f(\mu) \subset \lambda'\).  It follows that the union
+  \(f(\lambda)\) of the \(f(\mu)\) as \(\mu\) runs over \(\lambda\) is
+  a subset of \(\lambda'\).  Thus, in both the cases, \(f(\lambda)\)
+  is a subset of \(\lambda'\).  We have now verified that
+  \(f(\lambda) = \lambda'\).
+
+  For any limit ordinal \(\alpha\) (for instance, \(0\) or
+  \(\omega\)), both \(f(\alpha)\) and \(f(\alpha^+)\) equal \(\alpha\)
+  by \Cref{thm:8odofa55}; thus, \(f(\alpha) \notin f(\alpha^+)\) by
+  \Cref{thm:7cc2cckf}; as \(\alpha \in \alpha^+\), it follows that the
+  operation \(f\) is not normal.  This completes the solution of the
+  first part of the exercise.
+
+  As for the second part of the exercise, it was verified in
+  \Cref{thm:8odofa55} that \(g(\alpha) \in g(\beta)\) for all ordinals
+  \(\alpha, \beta\) such that \(\alpha \in \beta\).
+  \Cref{exe:qgdrw0j7} implies that every ordinal \(\alpha\) is the
+  union of the ordinals \(g(\beta)\) as \(\beta\) runs over
+  \(\alpha\); as \(\alpha \in g(\alpha)\), this means that
+  \(\cup_{\beta \in \alpha} g(\beta)\) is an element of \(g(\alpha)\),
+  and is hence a proper subset of \(g(\alpha)\) by
+  \Cref{thm:lebsg6gf}.  In particular, for every limit ordinal
+  \(\alpha\),
+  \(g(\cup_{\beta \in \alpha} \beta) = g(\alpha^-) = g(\alpha)\) is
+  distinct from \(\cup_{\beta \in \alpha} g(\beta)\).  Thus, \(g\)
+  does not satisfy the second condition in the definition of a normal
+  operation in \Cref{exe:1npoplek}, and is hence not normal.
+\end{solution}
+
+\begin{solution}[\ref{exe:fl6hcnkt}]
+  \label{sol:7p9qk0t3}
+  Suppose \(\alpha\) is a limit ordinal.  Let \(\beta\) be an element
+  of \(\alpha\).  By \Cref{thm:8e0yiygg}, \(\beta + 0 = \beta\), so
+  \(\beta + 0\) is an element of \(\alpha\).  Suppose that \(m\) is a
+  natural number \(> 0\), and that \(\beta + (m-1)\) is an element of
+  \(\alpha\).  By \Cref{thm:506mms8z,thm:udacgei9,thm:506mms8z},
+  \begin{displaymath}
+    \beta + m = \beta + ((m-1) + 1) = (\beta + (m-1)) + 1 =
+    (\beta + (m-1))^+
+  \end{displaymath}
+  As \(\beta + (m-1)\) is an element of \(\alpha\), by
+  \Cref{thm:8odofa55}, \((\beta + (m-1))^+\) is a subset of
+  \(\alpha\).  As \(\alpha\) is a limit ordinal, \(\alpha\) is
+  distinct from \((\beta + (m-1))^+\).  Therefore,
+  \((\beta + (m-1))^+\) is a proper subset of \(\alpha\), so by
+  \Cref{thm:lebsg6gf}, \((\beta + (m-1))^+\) is an element of
+  \(\alpha\).  Thus, \(\beta + m\) is an element of \(\alpha\).  It
+  follows by induction that \(\beta + n\) is an element of \(\alpha\)
+  for every natural number \(n\).
+
+  Conversely suppose that \(\beta + n\) is an element of \(\alpha\)
+  for all \(\beta \in \alpha\) and \(n \in \mathbb{N}\).  Then for
+  every element \(\beta\) of \(\alpha\), \(\beta^+ = \beta + 1\) is an
+  element of \(\alpha\), so by \Cref{exe:qgdrw0j7} and
+  \Cref{thm:8odofa55},
+  \begin{displaymath}
+    \alpha = \cup_{\beta \in \alpha} \beta^+ \subset
+    \cup_{\gamma \in \alpha} \gamma = \alpha^-
+    \subset \alpha.
+  \end{displaymath}
+  Therefore, \(\alpha\) equals \(\alpha^-\), and is hence a limit
+  ordinal by \Cref{thm:8odofa55}.
+\end{solution}
+
+\begin{solution}[\ref{exe:jmxnb6v7}]
+  \label{sol:gq5m8lha}
+  Every element \(\alpha\) of \(X\) is a subset of the union
+  \(\lambda\) of the elements of \(X\), so by \Cref{thm:xijkf7v0},
+  \(\mathbb{V}_\alpha\) is a subset of \(\mathbb{V}_\lambda\).  It
+  follows that the union \(\mathbb{V}_X\) of the sets
+  \(\mathbb{V}_\alpha\) as \(\alpha\) runs over \(X\) is a subset of
+  \(\mathbb{V}_\lambda\).
+
+  We will verify that, conversely, \(\mathbb{V}_\lambda\) is a subset
+  of \(\mathbb{V}_X\).  In case \(\lambda\) is an element of \(X\),
+  \(\mathbb{V}_\lambda\) is obviously a subset of \(\mathbb{V}_X\).
+  So suppose that \(\lambda\) is not an element of \(X\).  Then
+  \(\lambda\) is a limit ordinal by \Cref{exe:vj15laqs}.  So
+  \(\mathbb{V}_\lambda = \cup_{\mu \in \lambda} \mathbb{V}_\mu\) by
+  \Cref{thm:xijkf7v0}.  The definition of \(\lambda\) implies that
+  every element \(\mu\) of \(\lambda\) is an element of some element
+  \(\alpha\) of \(X\); by \Cref{thm:xijkf7v0}, \(\mathbb{V}_\mu\) is a
+  subset of \(\mathbb{V}_\alpha\), and hence of \(\mathbb{V}_X\).
+  This shows that \(\mathbb{V}_\lambda\) is a subset of
+  \(\mathbb{V}_X\), and hence that they are equal.
 \end{solution}
 
 \bibsection
